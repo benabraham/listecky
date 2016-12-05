@@ -63,7 +63,8 @@ app
 
 	.get('/teacher', function(req, res){
 		res.render('teacher.njk', { layout: layout });
-	});
+	})
+;
 
 io
 	.set('origins', '*:*')
