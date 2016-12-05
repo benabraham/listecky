@@ -1,4 +1,4 @@
-* # Lístečky
+# Lístečky
 
 Aplikace nahrazující statusové post-ity pro hands-on workshopy.
 
