@@ -1,0 +1,30 @@
+{
+  "name": "Lístečky",
+  "version": "0.0.1",
+  "description": "",
+  "repository": "https://github.com/benabraham/listecky",
+  "main": "app.js",
+  "author": "Daniel Srb",
+  "private": true,
+  "license": "GPLv3",
+  "dependencies": {
+    "concurrently": "^3.1.x",
+    "express": "^4.14.x",
+    "mkdirp": "^0.5.x",
+    "nunjucks": "^3.0.x",
+    "rimraf": "^2.5.x",
+    "socket.io": "^1.7.x"
+  },
+  "engines": {
+    "node": "7.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.x",
+    "browser-sync": "^2.14.x"
+  },
+  "scripts": {
+    "start": "node app",
+    "browsersync": "browser-sync start --port 4000 --proxy \"localhost:3000\" --reload-delay 300 --no-open --no-ghost-mode --files  \"views/**/*.njk\" \"static/**/*.css\" \"static/**/*.js\"",
+    "watch": "concurrently \"nodemon app.js --ext js,njk,json\" \"npm run browsersync\""
+  }
+}

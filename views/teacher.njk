@@ -1,0 +1,36 @@
+{% extends "_base.njk" %}
+
+
+{% block title %}Lektor{% endblock %}
+
+
+{% block body %}
+
+    <h1>Lektor</h1>
+
+    <div class="buttons">
+        <button class="ready">Vyprudit ty, které nejsou hotové</button>
+        <button class="reset">Výklad začíná</button>
+    </div>
+
+    <div class="tables">
+        {% for table in layout %}
+            <div class="table">
+                <h2><em>{{ table.name }}</em> coached by <em>{{ table.coach }}</em></h2>
+
+                <div class="students">
+                    {% for student in table.students %}
+                        <div class="student {{ student.status }} {% if student.socketId %}online{% endif %} " data-student-id="{{ student.id }}">
+                            <a href="/student/{{ student.id }}">
+                                {{ student.name }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {{ super() }}
+
+{% endblock %}

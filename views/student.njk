@@ -1,0 +1,21 @@
+{% extends "_base.njk" %}
+
+
+{% block title %}Studentka {{ student.name }}{% endblock %}
+
+
+{% block body %}
+
+    <h1>{{ student.name }}</h1>
+
+    {#<pre>{{ student|dump(4) }}</pre>#}
+
+    <div class="buttons" data-student-id="{{ student.id }}">
+        <div data-id="not_done" class="button not_done {% if student.status == 'not_done'%}selected{% endif %}"><span>not done</span></div>
+        <div data-id="help" class="button help {% if student.status == 'help'%}selected{% endif %}"><span>help</span></div>
+        <div data-id="done" class="button done {% if student.status == 'done'%}selected{% endif %}"><span>done</span></div>
+    </div>
+
+    {{ super() }}
+
+{% endblock %}
