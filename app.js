@@ -49,6 +49,8 @@ for (var i = 0; i < desks.length; i++){
 }
 
 app
+	.set('port', (process.env.PORT || 3000))
+
 	.use(express.static(__dirname + '/static'))
 
 	.get('/', function(req, res){
@@ -109,6 +111,6 @@ io.on('connection', function(socket){
 	;
 });
 
-http.listen(3000, function(){
+http.listen(app.get('port'), function(){
 	console.log('-------------------\n počúvám na *:3000 \n-------------------');
 });
