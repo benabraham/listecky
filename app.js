@@ -69,7 +69,9 @@ app
 	});
 
 io
-	.set('transports', ['xhr-polling'])
+	.set('origins', '*:*')
+
+	.set('match origin protocol', true)
 
 	.on('connection', function(socket){
 
