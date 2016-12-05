@@ -5,7 +5,7 @@
   "repository": "https://github.com/benabraham/listecky",
   "main": "app.js",
   "author": "Daniel Srb",
-  "private": true,
+  "private": false,
   "license": "GPLv3",
   "dependencies": {
     "concurrently": "^3.1.x",
