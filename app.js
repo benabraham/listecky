@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 var nunjucks = require('nunjucks');
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 nunjucks.configure('views', {
 	autoescape: true,
@@ -68,49 +68,52 @@ app
 		res.render('teacher.njk', { layout: layout });
 	});
 
-io.on('connection', function(socket){
+io
+	.set('transports', ['xhr-polling'])
 
-	socket
-		.on('auth-request', function(userId){
-			if (students[userId]){ // known user
-				students[userId].socketId = socket.id; // save socket.id to user
-				io.emit('auth-success', userId);
-			}
-		})
+	.on('connection', function(socket){
 
-		.on('disconnect', function(){
-			for (var x = 0; x < students.length; x++){
-				if (students[x].socketId == socket.id){
+		socket
+			.on('auth-request', function(userId){
+				if (students[userId]){ // known user
+					students[userId].socketId = socket.id; // save socket.id to user
+					io.emit('auth-success', userId);
+				}
+			})
+
+			.on('disconnect', function(){
+				for (var x = 0; x < students.length; x++){
+					if (students[x].socketId == socket.id){
+						students[x].status = 'not_done';
+						delete students[x].socketId;
+						io.emit('statusChanged', students[x].id, 'not_done');
+						io.emit('disconnected', students[x].id);
+					}
+				}
+			})
+
+			.on('statusChange', function(studentId, statusType){
+				students[studentId].status = statusType; // save status
+				io.emit('statusChanged', studentId, statusType); // emit new status
+			})
+
+			.on('checkStatus', function(){
+				for (var x = 0; x < students.length; x++){
+					if (students[x].socketId && students[x].status != 'done'){
+						io.to(students[x].socketId).emit('checkStatusAlert');
+					}
+				}
+			})
+
+			.on('resetStatus', function(){
+				for (var x = 0; x < students.length; x++){
 					students[x].status = 'not_done';
-					delete students[x].socketId;
-					io.emit('statusChanged', students[x].id, 'not_done');
-					io.emit('disconnected', students[x].id);
+					io.emit('statusChanged', students[x].id, students[x].status, true)
 				}
-			}
-		})
+			})
+		;
+	});
 
-		.on('statusChange', function(studentId, statusType){
-			students[studentId].status = statusType; // save status
-			io.emit('statusChanged', studentId, statusType); // emit new status
-		})
-
-		.on('checkStatus', function(){
-			for (var x = 0; x < students.length; x++){
-				if (students[x].socketId && students[x].status != 'done'){
-					io.to(students[x].socketId).emit('checkStatusAlert');
-				}
-			}
-		})
-
-		.on('resetStatus', function(){
-			for (var x = 0; x < students.length; x++){
-				students[x].status = 'not_done';
-				io.emit('statusChanged', students[x].id, students[x].status, true)
-			}
-		})
-	;
-});
-
-http.listen(app.get('port'), function(){
-	console.log('-------------------\n počúvám na *:3000 \n-------------------');
+server.listen(app.get('port'), function(){
+	console.log('-------------------\n počúvám na ' + app.get('port') + ' \n-------------------');
 });
