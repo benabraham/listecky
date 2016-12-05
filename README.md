@@ -1,4 +1,4 @@
-# Lístečky
+* # Lístečky
 
 Aplikace nahrazující statusové post-ity pro hands-on workshopy.
 
@@ -8,39 +8,33 @@ Jedna instance běží na https://listecky.herokuapp.com/
 
 ### Přednášející
 
-Má rozhraní na [/teacher](https://listecky.herokuapp.com/teacher)
+* Má rozhraní na [/teacher](https://listecky.herokuapp.com/teacher)
 
 #### Statusy studentů
 
-Z něj vidí zda je student/ka online (zelený text místo bílého).
-
-A vidí status jaký si nastavila.
+* Ve svém rozhraní vidí, zda je student/ka online (zelený text místo bílého).
+* A vidí status jaký si nastavila.
 
 #### Připomenutí
 
-Tlačítkem „Vyprudit…“ se pošle otázku všem, které nemají status `done` notifikace.
+* Tlačítkem „Vyprudit…“ se pošle otázku všem, které nemají status `done` notifikace.
 
 #### Konec cvičení / začátek výkladu
 
-Tlačítkem „Výklad začíná“ se pošle všem pošle notifikace a nastaví `not_done`.  
+* Tlačítkem „Výklad začíná“ se pošle všem pošle notifikace a nastaví `not_done`.  
 
 
 ### Student/ka
 
-Na [homepage](https://listecky.herokuapp.com/) si najde svoje jméno a dál pracuje na „své“ stránce.
-
-Klikáním na jednotlivé statusy se mění. 
-
-Pokud se status změnil, znamená to, že je i na serveru.
- 
-Při zavření okna nebo refreshi se status vyresetuje na `not_done` 
-
-Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `done`, <kbd>Cancel</kbd> beze změny.  
+* Na [homepage](https://listecky.herokuapp.com/) si najde svoje jméno a dál pracuje na „své“ stránce.
+* Klikáním na jednotlivé statusy se mění. 
+* Pokud se status změnil, znamená to, že je změněný i na serveru.
+* Při zavření okna nebo refreshi se status vyresetuje na `not_done` 
+* Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `done`, <kbd>Cancel</kbd> beze změny.  
 
 ### Data
 
-Data o studentech a koučích jsou zatím natvrdo v aplikaci.
-
+* Data o studentech a koučích jsou zatím natvrdo v aplikaci (viz app.jss data)
 
 ## Provoz
 
