@@ -4,27 +4,24 @@ Aplikace nahrazující statusové post-ity pro hands-on workshopy.
 
 Jedna instance běží na https://listecky.herokuapp.com/
 
-## Funkce
-
-### Přednášející
+## Přednášející
 
 * Má rozhraní na [/teacher](https://listecky.herokuapp.com/teacher)
 
-#### Statusy studentů
+### Statusy studentů
 
 * Ve svém rozhraní vidí, zda je student/ka online (zelený text místo bílého).
 * A vidí status jaký si nastavila.
 
-#### Připomenutí
+### Připomenutí
 
 * Tlačítkem „Vyprudit…“ se pošle otázku všem, které nemají status `done` notifikace.
 
-#### Konec cvičení / začátek výkladu
+### Konec cvičení / začátek výkladu
 
 * Tlačítkem „Výklad začíná“ se pošle všem pošle notifikace a nastaví `not_done`.  
 
-
-### Student/ka
+## Student/ka
 
 * Na [homepage](https://listecky.herokuapp.com/) si najde svoje jméno a dál pracuje na „své“ stránce.
 * Klikáním na jednotlivé statusy se mění. 
@@ -32,7 +29,7 @@ Jedna instance běží na https://listecky.herokuapp.com/
 * Při zavření okna nebo refreshi se status vyresetuje na `not_done` 
 * Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `done`, <kbd>Cancel</kbd> beze změny.  
 
-### Data
+## Data
 
 * Data o studentech a koučích jsou zatím natvrdo v aplikaci (viz app.jss data)
 
