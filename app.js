@@ -28,7 +28,6 @@ var data = {
 	]
 };
 
-
 var desks = data.desks;
 var students = data.students;
 
@@ -54,13 +53,11 @@ app
 	.use(express.static(__dirname + '/static'))
 
 	.get('/', function(req, res){
-
 		res.render('index.njk', { layout: layout });
 	})
 
 	.get('/student/:id', function(req, res){
 		var student = data.students[req.params.id];
-
 		res.render('student.njk', { student: student });
 	})
 
