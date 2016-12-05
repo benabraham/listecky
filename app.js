@@ -71,8 +71,6 @@ app
 io
 	.set('origins', '*:*')
 
-	.set('match origin protocol', true)
-
 	.on('connection', function(socket){
 
 		socket
