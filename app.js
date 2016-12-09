@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
-var nunjucks = require('nunjucks');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var nunjucks = require('nunjucks');
 
 nunjucks.configure('views', {
 	autoescape: true,
@@ -112,6 +112,4 @@ io
 		;
 	});
 
-server.listen(app.get('port'), function(){
-	console.log('-------------------\n počúvám na ' + app.get('port') + ' \n-------------------');
-});
+server.listen(app.get('port'));
