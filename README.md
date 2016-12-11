@@ -13,7 +13,7 @@ Jedna instance běží na https://listecky.herokuapp.com/
 * Ve svém rozhraní vidí, zda je student/ka online (zelený text místo bílého).
 * A vidí status jaký si nastavila.
 
-### Začítek cvičení
+### Začátek cvičení
 
 * Tlačítkem „Úkol zadán“ se status odstraní a studentovi se znemožní volba statusu.  
 
