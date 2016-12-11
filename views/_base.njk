@@ -4,7 +4,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body class="status_{{ classStatus }}">
 {% block body %}
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>

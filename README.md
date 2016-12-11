@@ -13,21 +13,25 @@ Jedna instance běží na https://listecky.herokuapp.com/
 * Ve svém rozhraní vidí, zda je student/ka online (zelený text místo bílého).
 * A vidí status jaký si nastavila.
 
+### Začítek cvičení
+
+* Tlačítkem „Úkol zadán“ se status odstraní a studentovi se znemožní volba statusu.  
+
 ### Připomenutí
 
-* Tlačítkem „Vyprudit…“ se pošle otázku všem, které nemají status `done` notifikace.
+* Tlačítkem „Chci zjistit, zda už nejsou hotové“ se pošle otázku všem, které nemají status `done` notifikace.
 
 ### Konec cvičení / začátek výkladu
 
-* Tlačítkem „Výklad začíná“ se pošle všem pošle notifikace a nastaví `not_done`.  
+* Tlačítkem „Začínám výklad“ se pošle všem pošle notifikace a nastaví `not_done`.  
 
 ## Student/ka
 
 * Na [homepage](https://listecky.herokuapp.com/) si najde svoje jméno a dál pracuje na „své“ stránce.
 * Klikáním na jednotlivé statusy se mění. 
 * Pokud se status změnil, znamená to, že je změněný i na serveru.
-* Při zavření okna nebo refreshi se status vyresetuje na `not_done` 
-* Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `done`, <kbd>Cancel</kbd> beze změny.  
+* Při zavření okna nebo refreshi se status smaže.
+* Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `Hotovo`, <kbd>Cancel</kbd> beze změny.  
 
 ## Data
 

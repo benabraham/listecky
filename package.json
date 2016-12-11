@@ -1,6 +1,6 @@
 {
   "name": "Listecky",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "repository": "https://github.com/benabraham/listecky",
   "main": "app.js",
@@ -8,6 +8,7 @@
   "private": false,
   "license": "GPLv3",
   "dependencies": {
+    "better-console": "^0.2.x",
     "concurrently": "^3.1.x",
     "express": "^4.14.x",
     "mkdirp": "^0.5.x",

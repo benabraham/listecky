@@ -1,22 +1,20 @@
 {% extends "_base.njk" %}
 
 
-{% block title %}Index{% endblock %}
+{% block title %}: {% endblock %}
 
 
 {% block body %}
-
-    <h1>Najdi svoje jméno</h1>
-
-    <div class="tables">
-        {% for table in layout %}
-            <div class="table">
-                <h2>{{ table.name }} (<em>kouč/ka: {{ table.coach }})</em></h2>
-
+    <div class="teacher_desks">
+        {% for desk_id, desk in desks %}
+            <div class="teacher_desk">
+                <h2>{{ desk.coach }}'s <em>{{ desk.name }}</em></h2>
                 <div class="students">
-                    {% for student in table.students %}
-                        <div class="student">
-                            <a href="/student/{{ student.id }}">{{ student.name }}</a>
+                    {% for student_id, student in desk.students %}
+                        <div class="student {{ student.status }} {% if student.socketId %}online{% endif %}" data-student-id="{{ student_id }}">
+                            <a href="/student/{{ student_id }}">
+                                {{ student.name }}
+                            </a>
                         </div>
                     {% endfor %}
                 </div>

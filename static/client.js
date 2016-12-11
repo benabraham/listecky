@@ -1,100 +1,107 @@
 var socket = io();
-
-
-/*
- *
- * Lets emit some events!
- * By clicking on elements.
- *
- * */
-var allButtons = $('.button');
-
+var isTeacherView = window.location.pathname.match('\/teacher$');
 // student detail
-allButtons.click(function(){
-	allButtons.removeClass('selected');
-	$(this)
-		.addClass('clicked')
-		.closest('.buttons')
-		.addClass('clicked');
-	socket.emit('statusChange', $('.buttons').data('student-id'), $(this).data('id'));
-});
+var thisStudentId = window.location.pathname.match('(\/student\/)(\\d+)$');
 
+if (thisStudentId){
+    thisStudentId = parseInt(thisStudentId.slice(-1).pop());
+    var statusButtons = $('.button');
 
-// teacher overview
+    statusButtons.click(function(){
+        statusButtons.removeClass('selected');
+        $(this)
+            .addClass('clicked')
+            .closest('.buttons')
+            .addClass('clicked');
+        socket.emit('statusChange', thisStudentId, $(this).data('id'));
+    });
 
-$("button.ready").click(function(){
-	socket.emit('checkStatus');
-});
+    socket
+        .on('connect', function(){ // user authentication
+            socket.emit('auth-request', thisStudentId);
+        })
 
+        .on('checkStatusAlert', function(){ // Ask student for status
+            if (confirm('\n\n\n\nHotovo? \n\n\nOK pokud ano,\n\nCancel pokud ne.\n\n\n\n\n') == true){
+                socket.emit('statusChange', thisStudentId, 'done');
+            } else {
+                return false
+            }
+        })
+    ;
 
-$("button.reset").click(function(){
-	socket.emit('resetStatus');
-});
+} else if (isTeacherView){ // teacher overview
+    $('button.start_work').click(function(){
+        socket.emit('workStart');
+    });
 
+    $('button.check_status').click(function(){
+        socket.emit('checkStatus');
+    });
 
+    $('button.start_lecture').click(function(){
+        socket.emit('lectureStart');
+    });
 
-/*
- *
- * socket.io logic
- *
- * */
+    socket.on('disconnected', function(studentId){ // user disconnected: teacher overview
+        console.info('student', studentId, 'disconnected');
+        $('.student').each(function(){
+            if ($(this).data('student-id') == studentId){
+                $(this).removeClass('online');
+            }
+        });
+    });
+}
 
 socket
-// user authentication
-	.on('connect', function(){
-		socket
-			.emit('auth-request', $('.buttons').data('student-id'))
-			.on('auth-success', function(studentId){
-				$('.student').each(function(){
-					if ($(this).data('student-id') == studentId){
-						$(this).addClass('online');
-					}
-				});
-			});
-	})
+    .on('connect', function(){ // user authentication
+        socket.on('auth-success', function(studentId){
+            console.info('+++ auth-success:', studentId);
+            $('.student').each(function(){
+                if ($(this).data('student-id') == studentId){
+                    $(this).addClass('online');
+                }
+            });
+        });
+    })
 
-	// user disconnected: teacher overview
-	.on('disconnected', function(studentId){
-		$('.student').each(function(){
-			if ($(this).data('student-id') == studentId){
-				$(this).removeClass('online');
-			}
-		});
-	})
+    .on('statusChanged', function(studentId, statusType){ // status changed
 
-	// status changed
-	.on('statusChanged', function(studentId, statusType, statusReset){
+        if (thisStudentId == studentId){ // has this student's status changed?
+            statusButtons.each(function(){
+                $(this).removeClass('clicked selected');
+                if ($(this).data('id') == statusType){
+                    $(this)
+                        .addClass('selected')
+                        .closest('.buttons')
+                        .removeClass('clicked');
+                }
+            });
 
-		// student detail
-		if ($('.buttons').data('student-id') == studentId){
-			allButtons.each(function(){
-				$(this).removeClass('clicked selected');
-				if ($(this).data('id') == statusType){
-					$(this)
-						.addClass('selected')
-						.closest('.buttons')
-						.removeClass('clicked');
-				}
-			});
-			if (statusReset) window.alert('Výklad začíná');
-		}
+        } else if (isTeacherView){ // teacher overview
+            $('.student').each(function(){
+                if ($(this).data('student-id') == studentId){
+                    $(this).removeClass('not_done help done').addClass(statusType);
+                }
+            });
+        }
+    })
 
-		// teacher overview
-		$('.student').each(function(){
-			if ($(this).data('student-id') == studentId){
-				$(this).removeClass('not_done help done').addClass(statusType);
-			}
-		});
+    .on('lectureStarted', function(classStatus){
+        $('.status_info').text(classStatus);
+        console.info('lectureStarted');
+        $('body')
+            .removeClass('status_working status_appstarted')
+            .addClass('status_lecturing');
+        if (thisStudentId) window.alert('Výklad začíná');
+    })
 
-	})
-
-	// Ask student for status
-	.on('checkStatusAlert', function(){
-		if (confirm("Nejsi už náhodou hotová?") == true){
-			socket.emit('statusChange', $('.buttons').data('student-id'), 'done');
-		} else {
-			return false
-		}
-	})
-
+    .on('workStarted', function(classStatus){
+        $('.status_info').text(classStatus);
+        console.info('workStarted');
+        $('body')
+            .removeClass('status_lecturing status_appstarted')
+            .addClass('status_working')
+        ;
+    })
 ;
