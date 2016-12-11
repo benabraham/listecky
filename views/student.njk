@@ -5,8 +5,7 @@
 
 
 {% block body %}
-
-    <h1>{{ student.name }}</h1>
+    <h1>{{ student.name }} <small><a href="/">nejsi {{ student.name }}?</a></small></h1>
     <div class="buttons buttons_student">
         {% for status_id, status in statusTypes %}
             <div data-id="{{ status_id }}" class="button {{ status_id }} {% if student.status == status_id %}selected{% endif %}"><span>{{ status.verboseName }}</span></div>
