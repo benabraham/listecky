@@ -117,11 +117,16 @@ io
             })
 
             .on('disconnect', () =>{
+                let emitStatus = '';
+                if (classStatus == 'working'){
+                    emitStatus = 'not_done';
+                }
+
                 for (let s in students){
                     if (students[s].socketId == socket.id){
-                        students[s].status = '';
+                        students[s].status = emitStatus;
                         delete students[s].socketId;
-                        io.emit('statusChanged', s, '');
+                        io.emit('statusChanged', s, emitStatus);
                         io.emit('disconnected', s);
                         console.info('--- disconnect', students[s].name);
                     }
