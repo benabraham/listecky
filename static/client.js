@@ -94,7 +94,10 @@ socket
         $('body')
             .removeClass('status_working status_appstarted')
             .addClass('status_lecturing');
-        if (thisStudentId) window.alert('Výklad začíná');
+
+        if (thisStudentId >= 0){
+            window.alert('Výklad začíná');
+        }
     })
 
     .on('workStarted', function(classStatus){
