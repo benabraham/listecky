@@ -79,7 +79,7 @@ socket
                 }
             });
 
-        } else if (isTeacherView){ // teacher overview
+        } else { // teacher and overview
             $('.student').each(function(){
                 if ($(this).data('student-id') == studentId){
                     $(this).removeClass('not_done help done').addClass(statusType);
