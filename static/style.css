@@ -190,4 +190,11 @@ h3 { text-align: center; }
 .start_lecture { background-color: lightgrey; }
 
 .online,
-.online a { color: lawngreen; }
+.online a { color: #96ff5d; }
+
+.home_desks .online,
+.home_desks .online a {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}

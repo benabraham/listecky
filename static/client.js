@@ -43,14 +43,6 @@ if (thisStudentId){
         socket.emit('lectureStart');
     });
 
-    socket.on('disconnected', function(studentId){ // user disconnected: teacher overview
-        console.info('student', studentId, 'disconnected');
-        $('.student').each(function(){
-            if ($(this).data('student-id') == studentId){
-                $(this).removeClass('online');
-            }
-        });
-    });
 }
 
 socket
@@ -62,6 +54,15 @@ socket
                     $(this).addClass('online');
                 }
             });
+        });
+    })
+
+    .on('disconnected', function(studentId){ // user disconnected: teacher overview
+        console.info('student', studentId, 'disconnected');
+        $('.student').each(function(){
+            if ($(this).data('student-id') == studentId){
+                $(this).removeClass('online');
+            }
         });
     })
 
