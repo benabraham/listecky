@@ -95,7 +95,7 @@ socket
             .removeClass('status_working status_appstarted')
             .addClass('status_lecturing');
 
-        if (thisStudentId >= 0){
+        if (typeof thisStudentId == 'number'){
             window.alert('Výklad začíná');
         }
     })
