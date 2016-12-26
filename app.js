@@ -144,7 +144,7 @@ io
                             delete desks[d].chairs[c].socketId;
                             io.emit('statusChanged', d, c, '');
                             io.emit('disconnected', d, c);
-                            console.info('--- disconnect', d, c);
+                            console.info('--- disconnected', d, c);
                             checkDeskStatus(d);
                         }
                     }
@@ -178,9 +178,9 @@ io
             .on('lectureStart', () =>{
                 for (let d in desks){
                     for (let c in desks[d].chairs){
-                        console.info('!!! lectureStart', desks[d].chairs[c]);
                         desks[d].chairs[c].status = '';
                         io.emit('statusChanged', d, c, desks[d].chairs[c].status);
+                        console.info('!!! lectureStart', desks[d].chairs[c]);
                     }
                     checkDeskStatus(d);
                 }
@@ -191,13 +191,13 @@ io
             .on('workStart', () =>{
                 for (let d in desks){
                     for (let c in desks[d].chairs){
-                        console.info('/// workStart', desks[d].chairs[c], desks[d].chairs[c].status);
                         if (desks[d].chairs[c].socketId){
                             desks[d].chairs[c].status = 'not_done';
                         } else {
                             desks[d].chairs[c].status = '';
                         }
                         io.emit('statusChanged', d, c, desks[d].chairs[c].status);
+                        console.info('/// workStart', desks[d].chairs[c], desks[d].chairs[c].status);
                     }
                     checkDeskStatus(d);
                 }
