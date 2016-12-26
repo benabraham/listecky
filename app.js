@@ -36,6 +36,10 @@ for (let d in desks){
     desks[d].status = 'empty'; // initial desk status
     desks[d].chairs = {};
 
+    for (let c = 0; c < desks[d].layout.chairs; c++){
+        desks[d].chairs[c] = { status: '' };
+    }
+
     Object.assign(desks[d].layout, config.deskTypes[desks[d].layout.deskType]);
 
     // compute values for positioning in layout
@@ -44,12 +48,6 @@ for (let d in desks){
     desks[d].layout.dimensions = {};
     desks[d].layout.dimensions.x = 100 / config.roomSize;
     desks[d].layout.dimensions.y = 100 / config.roomSize;
-
-    for (let c = 0; c < desks[d].layout.chairs; c++){
-        desks[d].chairs[c] = { status: '' };
-    }
-
-
 }
 console.log('\n\ndesk');
 console.table(desks);
@@ -107,15 +105,6 @@ app
 
     .get('/desk/:deskId/chair/:chairId/', (req, res) =>{
         res.render('chair.njk', {
-            desk: desks[req.params.deskId],
-            chair: desks[req.params.deskId].chairs[req.params.chairId],
-            classStatus: classStatus,
-            statusTypes: config.statusTypes
-        });
-    })
-
-    .get('/desk/:deskId/chair/:chairId/edit', (req, res) =>{
-        res.render('chair-edit.njk', {
             desk: desks[req.params.deskId],
             chair: desks[req.params.deskId].chairs[req.params.chairId],
             classStatus: classStatus,
