@@ -1,6 +1,5 @@
 var socket = io();
 var isTeacherView = window.location.pathname.match('^\/teacher$');
-// student detail
 var isDetailView = window.location.pathname.match('^\/desk\/(\\d+)\/chair\/(\\d+)\/$');
 
 var nameForm = $('.l-name_form');
@@ -101,6 +100,7 @@ socket
                 .addClass('l-status--' + statusType);
         }
     })
+
     .on('deskStatusChanged', function(deskId, statusType){ // status changed
         if (isTeacherView){
             console.info('>D> deskStatusChanged', 'desk', deskId, statusType);
@@ -132,6 +132,7 @@ socket
             window.alert('Výklad začíná');
         }
     })
+
     .on('workStarted', function(classStatus){
         $('.l-class_status_info').text(classStatus);
         console.info('workStarted');
