@@ -20,10 +20,7 @@ const config = {
         0: { 'chairs': 4, 'shape': 'square' },
         1: { 'chairs': 2, 'shape': 'square' },
     },
-    'roomLayout': {
-        width: 2,
-        height: 2,
-    }
+    'roomSize': 2
 };
 
 let classStatus = 'appstarted'; // others: 'lecturing' and 'working'
@@ -42,11 +39,11 @@ for (let d in desks){
     Object.assign(desks[d].layout, config.deskTypes[desks[d].layout.deskType]);
 
     // compute values for positioning in layout
-    desks[d].layout.position.x = desks[d].layout.position.x * 100 / config.roomLayout.width;
-    desks[d].layout.position.y = desks[d].layout.position.y * 100 / config.roomLayout.height;
+    desks[d].layout.position.x = desks[d].layout.position.x * 100 / config.roomSize;
+    desks[d].layout.position.y = desks[d].layout.position.y * 100 / config.roomSize;
     desks[d].layout.dimensions = {};
-    desks[d].layout.dimensions.x = 100 / config.roomLayout.width;
-    desks[d].layout.dimensions.y = 100 / config.roomLayout.height;
+    desks[d].layout.dimensions.x = 100 / config.roomSize;
+    desks[d].layout.dimensions.y = 100 / config.roomSize;
 
     for (let c = 0; c < desks[d].layout.chairs; c++){
         desks[d].chairs[c] = { status: '' };
@@ -62,7 +59,6 @@ function checkDeskStatus(deskId){
     let i = 0, chairStatuses = [];
     for (let chair in desks[deskId].chairs){
         if (desks[deskId].chairs[chair].socketId){
-            console.log(desks[deskId].chairs[chair]);
             chairStatuses[i++] = desks[deskId].chairs[chair].status; // fill chairStatuses only with non-empty values
         }
     }
