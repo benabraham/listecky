@@ -63,7 +63,7 @@ function checkDeskStatus(deskId){
 
     let originalDeskStatus = desks[deskId].status; // save original status
 
-    if (chairStatuses){ // not empty table
+    if (chairStatuses.length){ // not empty table
 
         if (chairStatuses.some(x => x == 'not_done')){ // some working
             desks[deskId].status = 'not_done';
