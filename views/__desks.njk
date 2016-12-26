@@ -12,7 +12,14 @@
                 height: {{ desk.layout.dimensions.y }}%;
             "
         >
-            <div class="l-desk-shape l-desk-shape-{{ desk.layout.shape }}" style="transform: rotate({{ desk.layout.rotation }}deg);">
+            <div
+                class="
+                    l-desk-shape
+                    l-status--{{ desk.status|default('init') }}
+                    l-desk-shape-{{ desk.layout.shape }}
+                "
+                style="transform: rotate({{ desk.layout.rotation }}deg);"
+            >
 
                 <div class="l-desk-id">
                     <div class="l-desk-name">{{ desk.name }}</div>

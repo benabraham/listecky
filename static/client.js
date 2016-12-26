@@ -101,6 +101,14 @@ socket
                 .addClass('l-status--' + statusType);
         }
     })
+    .on('deskStatusChanged', function(deskId, statusType){ // status changed
+        if (isTeacherView){
+            console.info('>D> deskStatusChanged', 'desk', deskId, statusType);
+            $('.l-desk[data-desk-id=' + deskId + ']' + ' .l-desk-shape')
+                .removeClass('l-status--not_done l-status--help l-status--done l-status--empty l-status--init')
+                .addClass('l-status--' + statusType);
+        }
+    })
 
     .on('studentNameSet', function(deskId, chairId, studentName){ // name set
         if (thisDeskId == deskId && thisChairId == chairId){
