@@ -33,14 +33,17 @@ let desks = {
 
 for (let d in desks){
 
-    desks[d].status = 'empty'; // initial desk status
-    desks[d].chairs = {};
+    // initial desk status
+    desks[d].status = 'empty';
 
+    // add layout
+    Object.assign(desks[d].layout, config.deskTypes[desks[d].layout.deskType]);
+
+    // add empty chairs
+    desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
         desks[d].chairs[c] = { status: '' };
     }
-
-    Object.assign(desks[d].layout, config.deskTypes[desks[d].layout.deskType]);
 
     // compute values for positioning in layout
     desks[d].layout.position.x = desks[d].layout.position.x * 100 / config.roomSize;
@@ -49,8 +52,6 @@ for (let d in desks){
     desks[d].layout.dimensions.x = 100 / config.roomSize;
     desks[d].layout.dimensions.y = 100 / config.roomSize;
 }
-console.log('\n\ndesk');
-console.table(desks);
 
 function checkDeskStatus(deskId){
     // make an array of chair statuses (easier to work with)
@@ -127,15 +128,16 @@ io
     .on('connection', socket =>{
         socket
             .on('auth-request', (deskId, chairId) =>{
-                if (desks[deskId].chairs[chairId]){ // known chair
-                    desks[deskId].chairs[chairId].socketId = socket.id; // save socket.id to chair
+                if (desks[deskId].chairs[chairId]){ // is this a existing chair?
+                    desks[deskId].chairs[chairId].socketId = socket.id; // save socket.id to a chair
                     io.emit('auth-success', deskId, chairId);
-                    io.emit('statusChanged', deskId, chairId, ''); // to ensure correct status on student page refresh
+                    io.emit('statusChanged', deskId, chairId, '');
                     console.info('+++ auth-success', deskId, chairId, desks[deskId].chairs[chairId].name);
                     checkDeskStatus(deskId);
                 }
             })
 
+            // on disconnection find which chair disconnected and clear it's properties
             .on('disconnect', () =>{
                 for (let d in desks){
                     for (let c in desks[d].chairs){
