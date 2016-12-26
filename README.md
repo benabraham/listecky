@@ -10,8 +10,8 @@ Jedna instance běží na https://listecky.herokuapp.com/
 
 ### Statusy studentů
 
-* Ve svém rozhraní vidí, zda je student/ka online (zelený text místo bílého).
-* A vidí status jaký si nastavila.
+* Ve svém rozhraní vidí, zda je student/ka online (jsou neprůhledné).
+* A vidí podle barvy status jaký si nastavila.
 
 ### Začátek cvičení
 
@@ -27,15 +27,15 @@ Jedna instance běží na https://listecky.herokuapp.com/
 
 ## Student/ka
 
-* Na [homepage](https://listecky.herokuapp.com/) si najde svoje jméno a dál pracuje na „své“ stránce.
-* Klikáním na jednotlivé statusy se mění. 
-* Pokud se status změnil, znamená to, že je změněný i na serveru.
+* Na [homepage](https://listecky.herokuapp.com/) si najde svůj stůl a židli a dál pracuje na „své“ stránce.
+* Může si nastavit svoje jméno.
+* Klikáním na jednotlivé statusy se tyto mění.
 * Při zavření okna nebo refreshi se status smaže.
 * Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `Hotovo`, <kbd>Cancel</kbd> beze změny.  
 
 ## Data
 
-* Data o studentech a koučích jsou zatím natvrdo v aplikaci (viz app.jss data)
+* Data o stolech, židlích a koučích jsou zatím natvrdo v aplikaci (viz app.js)
 
 ## Provoz
 

@@ -1,26 +1,9 @@
 {% extends "_base.njk" %}
 
 
-{% block title %}: {% endblock %}
-
-
 {% block body %}
-    <div class="teacher_desks home_desks">
-        {% for desk_id, desk in desks %}
-            <div class="teacher_desk">
-                <h2>{{ desk.coach }}'s <em>{{ desk.name }}</em></h2>
-                <div class="students">
-                    {% for student_id, student in desk.students %}
-                        <div class="student {{ student.status }} {% if student.socketId %}online{% endif %}" data-student-id="{{ student_id }}">
-                            <a href="/student/{{ student_id }}">
-                                {{ student.name }}
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+
+    {% include '__desks.njk' %}
 
     {{ super() }}
 

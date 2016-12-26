@@ -1,0 +1,48 @@
+{% extends "_base.njk" %}
+
+
+{% block title %}{{ super() }}{% endblock %}
+
+
+{% block body_class %} l-page_student {{ super() }} {% endblock %}
+
+
+{% block body %}
+    <div class="l-nav-top">
+        <a href="/">výběr židle</a>
+    </div>
+
+    <div class="l-main">
+        <h1>
+            <span class="l-student_name">{{ chair.name }}</span>
+            <a class="l-set_name" href="#">změnit jméno</a>
+        </h1>
+
+        <form class="l-name_form" action="" method="post">
+            <input type="text" maxlength="32" placeholder="vyplň si jméno" name="studentName" id="studentName" {% if chair.name %}value="{{ chair.name }}"{% endif %}>
+            <input type="submit" value="uložit">
+        </form>
+
+        <div class="l-buttons l-buttons--student">
+            {% for status_id, status in statusTypes %}
+                <button
+                    data-status-id="{{ status_id }}"
+                    class="
+                    l-button
+                    l-status--{{ status_id }}
+                    {% if student.status == status_id %}l-selected{% endif %}
+                "
+                >
+                    <span>{{ status.verboseName }}</span>
+                </button>
+            {% endfor %}
+        </div>
+
+        <div class="l-lecture">Právě probíhá výklad</div>
+
+        <div class="l-intro">Ahoj!</div>
+    </div>
+
+    {{ super() }}
+
+{% endblock %}

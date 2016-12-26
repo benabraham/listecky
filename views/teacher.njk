@@ -1,39 +1,24 @@
 {% extends "_base.njk" %}
 
 
-{% block title %}: Lektor{% endblock %}
+{% block title %}{{ super() }} Lektor{% endblock %}
+
+
+{% block body_class %} l-page_lector {{ super() }} {% endblock %}
 
 
 {% block body %}
 
-    <h1>
-        Lektor
-        <small>(<span class="status_info">{{ classStatus }}</span>)</small>
-    </h1>
-
-
-    <div class="buttons">
-        <button class="start_work">Úkol zadán</button>
-        <button class="check_status">Chci zjistit, zda už nejsou hotové</button>
-        <button class="start_lecture">Začínám výklad</button>
+    <div class="l-lector-controls">
+        <div class="l-class_status_info">{{ classStatus }}</div>
+        <div class="l-buttons l-buttons--teacher">
+            <button class="l-button l-button--start_work" data-emit="workStart">Skončil jsem výklad a zadal úkol</button>
+            <button class="l-button l-button--check_status" data-emit="checkStatus">Chci zjistit, zda už nejsou hotové</button>
+            <button class="l-button l-button--start_lecture" data-emit="lectureStart">Začínám výklad</button>
+        </div>
     </div>
 
-    <div class="teacher_desks">
-        {% for desk_id, desk in desks %}
-            <div class="teacher_desk">
-                <h2>{{ desk.coach }}'s <em>{{ desk.name }}</em></h2>
-                <div class="students">
-                    {% for student_id, student in desk.students %}
-                        <div class="student {{ student.status }} {% if student.socketId %}online{% endif %}" data-student-id="{{ student_id }}">
-                            <a href="/student/{{ student_id }}">
-                                {{ student.name }}
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+    {% include '__desks.njk' %}
 
     {{ super() }}
 

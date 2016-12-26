@@ -1,6 +1,6 @@
 {
   "name": "Listecky",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "repository": "https://github.com/benabraham/listecky",
   "main": "app.js",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "express": "^4.14.x",
     "nodemon": "^1.11.x",
-    "browser-sync": "^2.14.x"
+    "browser-sync": "^2.18.x"
   },
   "scripts": {
     "start": "node app.js",

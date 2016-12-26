@@ -1,67 +1,263 @@
-*, *:before, *:after { box-sizing: border-box; }
-
-body {
-    font-family: Consolas, monospace;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
+    vertical-align: baseline;
 }
+
+body {
+    line-height: 1;
+}
+
+/*
+body.l-page_student {
+    padding: 1em;
+}
+*/
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+body,
+input,
+textarea,
+button { font-family: "Roboto Condensed", sans-serif; }
 
 h1,
 h2,
-h3 { text-align: center; }
+h3 { }
 
-.buttons { display: flex; }
+a:link { color: navy; }
 
-.buttons.clicked .button { display: none; }
+a:visited { color: navy; }
 
-.buttons.clicked:before,
-.button {
-    text-align: center;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 2%;
-    font-size: 20px;
-    font-weight: bold;
+a:hover { color: deepskyblue; }
+
+a:active { color: skyblue; }
+
+/* top nav strip */
+
+.l-nav-top {
+    background-color: #eeeeee;
     width: 100%;
 }
 
-.buttons.clicked:before {
-    content: 'čekej';
+.l-nav-top a {
+    padding: 1em;
+    display: flex;
+}
+
+/* main container */
+
+.l-main { padding: 1em; }
+
+/* text infos */
+.l-intro,
+.l-lecture {
+    margin-top: .5em;
+    display: none;
+    font-size: 5em;
+}
+
+.l-class_status--appstarted .l-intro,
+.l-class_status--lecturing .l-lecture { display: block; }
+
+/* name setting */
+
+.l-student_name {
+    font-size: 2em;
+}
+
+.l-set_name {
+    font-size: 45%;
+    font-weight: normal;
+}
+
+.l-name_form { height: 4em; }
+
+.l-name_form input { font-size: 2em; }
+
+/* buttons */
+.l-buttons { display: flex; }
+
+.l-button {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: .5em;
+    border: 2px solid white;
+    width: 100%;
+    height: 2em;
+    font-size: 2em;
+}
+
+.l-button:hover { border-color: #eeeeee; }
+
+.l-button.l-clicked {
+    border-color: #555555;
+    opacity: 0.5;
+}
+
+.l-buttons.l-clicked .l-button { display: none; }
+
+.l-buttons.l-clicked:before {
+    content: "čekej";
     color: white;
     background-color: black;
 }
 
-.button {
-    height: 20vh;
-    color: white;
-    cursor: pointer;
+.l-clicked:before,
+.l-button {
+    color: black;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.button:hover { outline: 10px solid #eeeeee; }
+.l-buttons--student { margin: 2em 0; }
 
-.button.clicked {
-    outline: 10px solid #555555;
-    opacity: 0.5;
+.l-buttons--student .l-button.l-selected { border-color: #000000; }
+
+.l-class_status--appstarted .l-buttons--student,
+.l-class_status--lecturing .l-buttons--student { display: none; }
+
+.l-class_status--appstarted .l-button--check_status,
+.l-class_status--lecturing .l-button--start_lecture,
+.l-class_status--lecturing .l-button--check_status,
+.l-class_status--working .l-button--start_work { display: none; }
+
+.l-button--start_work {
+    background-color: rgb(0, 127, 255);
+    color: #ffffff;
 }
 
-.button.selected {
-    outline: 10px solid #000000;
+.l-button--check_status { background-color: orange; }
+
+.l-button--start_lecture { background-color: lightgrey; }
+
+.l-class_status_info { text-align: center; }
+
+.l-screen {
+    text-align: center;
+    height: 4vh;
+    line-height: 4vh;
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: #ffffff;
 }
 
-.desks {
+.l-desks {
     position: relative;
-    height: 100vh;
+    height: 96vh;
     width: 100vw;
+    max-width: 96vh;
     background-color: #eeeeee;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.desk {
+.l-page_lector .l-desks {
+    height: 86vh;
+    max-width: 86vh;
+}
+
+.l-lector-controls { height: 10vh; }
+
+.l-desk {
     position: absolute;
-    background-color: #dadada;
+    background-color: #e8e8e8;
     transform-origin: center;
     display: flex;
     justify-content: center;
@@ -69,36 +265,104 @@ h3 { text-align: center; }
     align-items: center;
 }
 
-.desk-shape {
-    background-color: cornflowerblue;
-    width: 70%;
-    height: 70%;
-    overflow: hidden;
+.l-desk-shape {
+    background-color: saddlebrown;
+    width: 50%;
+    height: 50%;
+    /*overflow: hidden;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.l-desk-shape-square { }
+
+.l-desk-id {
+    text-align: center;
+    color: hsla(0, 0%, 100%, 0.7);
+}
+
+.l-desk-coach { font-style: italic; }
+
+/*.l-chairs { }*/
+
+.l-chair {
+    padding: 2.5% 0;
+    width: 65%;
+    text-align: center;
+    font-size: 13px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
     display: block;
+    color: black;
+    text-decoration: none;
 }
 
-.desk-shape-square {
+.l-chair:hover { background-color: rgba(255, 255, 255, 0.9) }
+
+.l-chair--position_0,
+.l-chair--position_1 { top: 10%; }
+
+.l-chair--position_2,
+.l-chair--position_3 { bottom: 10%; }
+
+.l-chair--position_0,
+.l-chair--position_2 { left: -30%; }
+
+.l-chair--position_1,
+.l-chair--position_3 { right: -30%; }
+
+.l-chair--online,
+.l-chair--online a { background-color: rgba(255, 255, 255, 1); }
+
+.l-chair--online,
+.l-chair--online a {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
 }
 
-.desk-shape-rectangle {
+/* universal statuses */
+.l-status--done,
+.l-status--done:link,
+.l-status--done:visited,
+.l-status--not_done,
+.l-status--not_done:link,
+.l-status--not_done:visited,
+.l-status--help,
+.l-status--help:link,
+.l-status--help:visited { color: white; }
+
+.l-status--done { background-color: rgb(0, 128, 0); }
+
+.l-status--not_done { background-color: rgb(0, 127, 255); }
+
+.l-status--help { background-color: rgb(200, 0, 0); }
+
+/*
+
+.l-desk-shape--square { }
+
+.l-desk-shape--rectangle {
     width: 50vw;
     height: 20vw;
 }
 
-.desk-shape-circle {
+.l-desk-shape--circle {
     width: 50vw;
     height: 50vw;
     border-radius: 50%;
 }
 
-.desk-shape-hexagon {
+.l-desk-shape--hexagon {
     width: 50vw;
     height: 22.5vw;
     background: red;
     position: relative;
 }
 
-.desk-shape-hexagon:before {
+.l-desk-shape--hexagon:before {
     content: "";
     position: absolute;
     top: -12.5vw;
@@ -110,7 +374,7 @@ h3 { text-align: center; }
     border-bottom: 12.5vw solid red;
 }
 
-.desk-shape-hexagon:after {
+.l-desk-shape--hexagon:after {
     content: "";
     position: absolute;
     bottom: -12.5vw;
@@ -122,79 +386,4 @@ h3 { text-align: center; }
     border-top: 12.5vw solid red;
     z-index: -100;
 }
-
-.students { display: flex; }
-
-.student {
-    width: 100%;
-    height: 10vh;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 2%;
-    background-color: darkgray;
-    font-size: 20px;
-}
-
-.student,
-.student a { color: white; }
-
-.done { background-color: rgb(0, 128, 0); }
-
-.not_done { background-color: rgb(0, 127, 255); }
-
-.help { background-color: rgb(200, 0, 0); }
-
-.intro,
-.lecture {
-    text-align: center;
-    font-size: 20vh;
-}
-
-.buttons_student,
-.lecture,
-.intro { display: none; }
-
-.status_appstarted .intro,
-.status_lecturing .lecture { display: block; }
-
-.status_working .buttons_student { display: flex; }
-
-.start_work,
-.check_status,
-.start_lecture {
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 1vh;
-    margin-bottom: 5vh;
-    width: 100%;
-    height: 10vh;
-    font-size: 2vh;
-    font-family: Consolas, monospace;
-}
-
-.status_lecturing .start_work,
-.status_working .check_status,
-.status_working .start_lecture,
-.status_appstarted .start_work,
-.status_appstarted .start_lecture { display: flex; }
-
-.start_work { background-color: rgb(0, 127, 255); }
-
-.check_status { background-color: orange; }
-
-.start_lecture { background-color: lightgrey; }
-
-.online,
-.online a { color: #96ff5d; }
-
-.home_desks .online,
-.home_desks .online a {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-}
+*/
