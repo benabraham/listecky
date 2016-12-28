@@ -186,7 +186,7 @@ io
 
                         chair.status = 'online';
                         io.emit('statusChanged', d, c, chair.status, room);
-                        console.info('!!! lectureStart', chair);
+                        console.info('!!! lectureStart', chair.name);
                     }
                     checkDeskStatus(d);
                 }
