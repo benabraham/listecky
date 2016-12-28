@@ -1,5 +1,4 @@
 var socket = io();
-var isTeacherView = window.location.pathname.match('^\/teacher$');
 var isDetailView = window.location.pathname.match('^\/desk\/(\\d+)\/chair\/(\\d+)\/$');
 
 var nameForm = $('.l-name_form');
@@ -60,7 +59,7 @@ if (isDetailView){
         event.preventDefault();
     });
 
-} else if (isTeacherView){ // teacher overview
+} else { // room overview
     $('.l-buttons--teacher .l-button').click(function(){
         socket.emit($(this).data('emit'));
     });
@@ -75,7 +74,7 @@ socket
         });
     })
 
-    .on('disconnected', function(deskId, chairId){ // user disconnected: teacher overview
+    .on('disconnected', function(deskId, chairId){ // user disconnected: room overview
         console.info('--- disconnected', 'desk', deskId, 'chair', chairId);
         $('.l-desk[data-desk-id=' + deskId + ']' + ' ' + '.l-chair[data-chair-id=' + chairId + ']')
             .removeClass('l-chair--online');
@@ -94,7 +93,7 @@ socket
                 }
             });
 
-        } else { // teacher and overview
+        } else { // room overview
             $('.l-desk[data-desk-id=' + deskId + ']' + ' ' + '.l-chair[data-chair-id=' + chairId + ']')
                 .removeClass('l-status--not_done l-status--help l-status--done')
                 .addClass('l-status--' + statusType);
@@ -102,7 +101,7 @@ socket
     })
 
     .on('deskStatusChanged', function(deskId, statusType){ // status changed
-        if (isTeacherView){
+        if (!isDetailView){
             console.info('███ deskStatusChanged', 'desk', deskId, statusType);
             $('.l-desk[data-desk-id=' + deskId + ']' + ' .l-desk-shape')
                 .removeClass('l-status--not_done l-status--help l-status--done l-status--empty l-status--init')
@@ -115,7 +114,7 @@ socket
             namePlaceholder.text(studentName).show();
             nameForm.hide();
             nameButton.show();
-        } else { // teacher and overview
+        } else { // room overview
             $('.l-desk[data-desk-id=' + deskId + ']' + ' ' + '.l-chair[data-chair-id=' + chairId + ']')
                 .text(studentName)
         }
