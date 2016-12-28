@@ -103,7 +103,7 @@ socket
 
     .on('deskStatusChanged', function(deskId, statusType){ // status changed
         if (isTeacherView){
-            console.info('>D> deskStatusChanged', 'desk', deskId, statusType);
+            console.info('███ deskStatusChanged', 'desk', deskId, statusType);
             $('.l-desk[data-desk-id=' + deskId + ']' + ' .l-desk-shape')
                 .removeClass('l-status--not_done l-status--help l-status--done l-status--empty l-status--init')
                 .addClass('l-status--' + statusType);
