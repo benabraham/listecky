@@ -194,6 +194,7 @@ io
                 for (let d in desks){
                     for (let c in desks[d].chairs){
                         let chair = desks[d].chairs[c];
+
                         if (chair.socketId){
                             chair.status = 'not_done';
                         } else {
@@ -206,7 +207,14 @@ io
                 }
                 room.roomStatus = 'working';
                 io.emit('workStarted', room.roomStatus);
-            });
+            })
+
+            .on('getRoom', () =>{
+                io
+                    .to(socket.id)
+                    .emit('roomSent', room);
+            })
+        ;
     })
 ;
 
