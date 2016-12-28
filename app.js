@@ -12,9 +12,9 @@ nunjucks.configure('views', {
 
 const config = {
     'statusTypes': {
-        'not_done': { 'verboseName': 'Pracuju' },
-        'help': { 'verboseName': 'Chci poradit' },
-        'done': { 'verboseName': 'Hotovo' },
+        'not_done': { "label": 'Pracuju' },
+        'help': { "label": 'Chci poradit' },
+        'done': { "label": 'Hotovo' },
     },
     'deskTypes': {
         0: { 'chairs': 4, 'shape': 'square' },
