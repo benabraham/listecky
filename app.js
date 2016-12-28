@@ -13,7 +13,7 @@ nunjucks.configure('views', {
 let room = {
     'size': 2, // room is always a square, this is a number of desks vertically/horizontally
     'roomStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
-    'statusTypes': {
+    'statusTypes': { // visible statuses: other are online and offline
         'not_done': { 'label': 'Pracuju' },
         'help': { 'label': 'Chci poradit' },
         'done': { 'label': 'Hotovo' },
@@ -42,7 +42,7 @@ for (let d in desks){
     // add empty chairs
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
-        desks[d].chairs[c] = { status: '' };
+        desks[d].chairs[c] = { status: 'offline', name: '?' };
     }
 
     // compute values for positioning in layout
@@ -65,29 +65,25 @@ function checkDeskStatus(deskId){
     let originalDeskStatus = desks[deskId].status; // save original status
 
     if (chairStatuses.length){ // not empty table
-
-        if (chairStatuses.some(x => x == 'not_done')){ // some working
-            desks[deskId].status = 'not_done';
-        }
-
-        if (chairStatuses.some(x => x == 'help')){ // some need help
-            desks[deskId].status = 'help';
-        }
-
         if (chairStatuses.every(x => x == 'done')){ // all done
             desks[deskId].status = 'done';
-        }
+        } else if (chairStatuses.every(x => x == 'offline')){ // all no status
+            desks[deskId].status = 'offline';
+        } else {
+            if (chairStatuses.some(x => x == 'not_done')){ // some working
+                desks[deskId].status = 'not_done';
+            }
 
-        if (chairStatuses.every(x => x == '')){ // all no status
-            desks[deskId].status = 'init';
+            if (chairStatuses.some(x => x == 'help')){ // some need help
+                desks[deskId].status = 'help';
+            }
         }
-
     } else {
         desks[deskId].status = 'empty'; // empty table
     }
 
     if (originalDeskStatus != desks[deskId].status){ // if the status has changed
-        io.emit('deskStatusChanged', deskId, desks[deskId].status); // emit new status
+        io.emit('deskStatusChanged', room); // emit new status
         console.info('███ deskStatusChanged', 'desk', deskId, desks[deskId].status);
     }
 }
@@ -103,20 +99,18 @@ app
         });
     })
 
-    .get('/desk/:deskId/chair/:chairId/', (req, res) =>{
-        res.render('chair.njk', {
-            room: room,
-            desk: desks[req.params.deskId],
-            chair: desks[req.params.deskId].chairs[req.params.chairId],
-        });
-    })
-
     .get('/teacher', (req, res) =>{
         res.render('teacher.njk', {
             room: room,
         });
     })
 
+    .get('/desk/:deskId/chair/:chairId/', (req, res) =>{
+        res.render('chair.njk', {
+            room: room,
+            chair: desks[req.params.deskId].chairs[req.params.chairId],
+        });
+    })
 ;
 
 io
@@ -125,11 +119,14 @@ io
     .on('connection', socket =>{
         socket
             .on('auth-request', (deskId, chairId) =>{
-                if (desks[deskId].chairs[chairId]){ // is this a existing chair?
-                    desks[deskId].chairs[chairId].socketId = socket.id; // save socket.id to a chair
-                    io.emit('auth-success', deskId, chairId);
-                    io.emit('statusChanged', deskId, chairId, '');
-                    console.info('+++ auth-success', deskId, chairId, desks[deskId].chairs[chairId].name);
+                let chair = desks[deskId].chairs[chairId];
+
+                if (chair){ // is this a existing chair?
+                    chair.socketId = socket.id; // save socket.id to a chair
+                    chair.status = 'online'; // save status
+                    io.emit('auth-success', room);
+                    io.emit('statusChanged', deskId, chairId, chair.status, room);
+                    console.info('+++ auth-success', deskId, chairId, chair.name);
                     checkDeskStatus(deskId);
                 }
             })
@@ -138,11 +135,13 @@ io
             .on('disconnect', () =>{
                 for (let d in desks){
                     for (let c in desks[d].chairs){
-                        if (desks[d].chairs[c].socketId == socket.id){
-                            desks[d].chairs[c].status = '';
-                            delete desks[d].chairs[c].socketId;
-                            io.emit('statusChanged', d, c, '');
-                            io.emit('disconnected', d, c);
+                        let chair = desks[d].chairs[c];
+
+                        if (chair.socketId == socket.id){
+                            chair.status = 'offline';
+                            delete chair.socketId;
+                            io.emit('statusChanged', d, c, chair.status, room);
+                            io.emit('disconnected', room);
                             console.info('--- disconnected', d, c);
                             checkDeskStatus(d);
                         }
@@ -151,24 +150,30 @@ io
             })
 
             .on('setStudentName', (deskId, chairId, studentName) =>{
-                desks[deskId].chairs[chairId].name = studentName;
-                io.emit('studentNameSet', deskId, chairId, studentName); // emit new name
+                let chair = desks[deskId].chairs[chairId];
+
+                chair.name = studentName;
+                io.emit('studentNameSet', deskId, chairId, studentName, room); // emit new name
                 console.info('\\\ setStudentName', deskId, chairId, studentName);
             })
 
             .on('statusChange', (deskId, chairId, statusType) =>{
-                desks[deskId].chairs[chairId].status = statusType; // save status
-                io.emit('statusChanged', deskId, chairId, statusType); // emit new status
-                console.info('>>> statusChanged', desks[deskId].chairs[chairId].name, statusType);
+                let chair = desks[deskId].chairs[chairId];
+
+                chair.status = statusType; // save status
+                io.emit('statusChanged', deskId, chairId, statusType, room); // emit new status
+                console.info('>>> statusChanged', chair.name, statusType);
                 checkDeskStatus(deskId);
             })
 
             .on('checkStatus', () =>{
                 for (let d in desks){
                     for (let c in desks[d].chairs){
-                        if (desks[d].chairs[c].socketId && desks[d].chairs[c].status != 'done'){
-                            io.to(desks[d].chairs[c].socketId).emit('checkStatusAlert');
-                            console.info('??? checkStatus', desks[d].chairs[c].name, desks[d].chairs[c].status);
+                        let chair = desks[d].chairs[c];
+
+                        if (chair.socketId && chair.status != 'done'){
+                            io.to(chair.socketId).emit('checkStatusAlert');
+                            console.info('??? checkStatus', chair.name, chair.status);
                         }
                     }
                 }
@@ -177,9 +182,11 @@ io
             .on('lectureStart', () =>{
                 for (let d in desks){
                     for (let c in desks[d].chairs){
-                        desks[d].chairs[c].status = '';
-                        io.emit('statusChanged', d, c, desks[d].chairs[c].status);
-                        console.info('!!! lectureStart', desks[d].chairs[c]);
+                        let chair = desks[d].chairs[c];
+
+                        chair.status = 'online';
+                        io.emit('statusChanged', d, c, chair.status, room);
+                        console.info('!!! lectureStart', chair);
                     }
                     checkDeskStatus(d);
                 }
@@ -190,13 +197,14 @@ io
             .on('workStart', () =>{
                 for (let d in desks){
                     for (let c in desks[d].chairs){
-                        if (desks[d].chairs[c].socketId){
-                            desks[d].chairs[c].status = 'not_done';
+                        let chair = desks[d].chairs[c];
+                        if (chair.socketId){
+                            chair.status = 'not_done';
                         } else {
-                            desks[d].chairs[c].status = '';
+                            chair.status = 'offline';
                         }
-                        io.emit('statusChanged', d, c, desks[d].chairs[c].status);
-                        console.info('/// workStart', desks[d].chairs[c], desks[d].chairs[c].status);
+                        io.emit('statusChanged', d, c, chair.status, room);
+                        console.info('/// workStart', chair, chair.status);
                     }
                     checkDeskStatus(d);
                 }

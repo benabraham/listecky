@@ -11,12 +11,12 @@
 
     <div class="l-main">
         <h1>
-            <span class="l-student_name">{{ chair.name }}</span>
+            <span class="l-student_name">{% if chair.name != '?' %}{{ chair.name }}{% endif %}</span>
             <a class="l-set_name" href="#">změnit jméno</a>
         </h1>
 
         <form class="l-name_form" action="" method="post">
-            <input type="text" maxlength="32" placeholder="vyplň si jméno" name="studentName" id="studentName" {% if chair.name %}value="{{ chair.name }}"{% endif %}>
+            <input type="text" maxlength="32" placeholder="vyplň si jméno" name="studentName" {% if chair.name != '?' %}value="{{ chair.name }}"{% endif %}>
             <input type="submit" value="uložit">
         </form>
 

@@ -109,8 +109,6 @@ a:hover { color: deepskyblue; }
 
 a:active { color: skyblue; }
 
-
-
 /* top nav strip */
 
 .l-nav-top {
@@ -123,12 +121,9 @@ a:active { color: skyblue; }
     display: flex;
 }
 
-
 /* main container */
 
 .l-main { padding: 1em; }
-
-
 
 /* text infos */
 .l-intro,
@@ -140,8 +135,6 @@ a:active { color: skyblue; }
 
 .l-room_status--appstarted .l-intro,
 .l-room_status--lecturing .l-lecture { display: block; }
-
-
 
 /* name setting */
 
@@ -158,8 +151,6 @@ a:active { color: skyblue; }
 
 .l-name_form input { font-size: 2em; }
 
-
-
 /* Buttons */
 
 .l-buttons { display: flex; }
@@ -172,7 +163,7 @@ a:active { color: skyblue; }
     padding: .5em;
     border: 2px solid white;
     width: 100%;
-    height:10vh;
+    height: 10vh;
     font-size: 2em;
 }
 
@@ -225,13 +216,9 @@ a:active { color: skyblue; }
 
 .l-lector-controls { height: 10vh; }
 
-
-
 /* Room status info  */
 
 .l-room_status_info { text-align: center; }
-
-
 
 /* Screen position */
 
@@ -246,7 +233,6 @@ a:active { color: skyblue; }
     color: #ffffff;
 }
 
-
 /* Desks */
 
 .l-desks {
@@ -257,11 +243,6 @@ a:active { color: skyblue; }
     background-color: #eeeeee;
     margin-left: auto;
     margin-right: auto;
-}
-
-.l-page_lector .l-desks {
-    height: 86vh;
-    max-width: 86vh;
 }
 
 .l-desk {
@@ -278,9 +259,14 @@ a:active { color: skyblue; }
     width: 50%;
     height: 50%;
     display: flex;
+}
+
+.l-desk-shape > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    position: relative;
 }
 
 .l-desk-id {
@@ -290,17 +276,18 @@ a:active { color: skyblue; }
 
 .l-desk-coach { font-style: italic; }
 
-
-
 /* Chairs */
 
 .l-chair {
-    padding: 8% 0;
+    position: absolute;
     width: 65%;
+}
+
+.l-chair a {
+    width: 100%;
+    padding: 8% 0;
     text-align: center;
     font-size: 13px;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.5);
     display: block;
     color: black;
     text-decoration: none;
@@ -320,16 +307,15 @@ a:active { color: skyblue; }
 .l-chair--position_1,
 .l-chair--position_3 { right: -30%; }
 
-.l-chair--online,
-.l-chair--online a { background-color: rgba(255, 255, 255, 1); }
+.l-status--offline { background-color: rgba(255, 255, 255, 0.5); }
 
-.l-chair--online,
-.l-chair--online a {
+.l-status--online { background-color: rgba(255, 255, 255, 1); }
+
+.l-status--online {
     pointer-events: none;
     cursor: default;
     text-decoration: none;
 }
-
 
 /* Universal statuses */
 .l-status--done,
@@ -350,7 +336,8 @@ a:active { color: skyblue; }
 
 .l-status--empty { background-color: rgb(128, 128, 128); }
 
-.l-status--init { background-color: saddlebrown; }
+/* desk status only */
+.l-desk-shape.l-status--offline { background-color: saddlebrown; }
 
 /* Shapes to be done */
 /*

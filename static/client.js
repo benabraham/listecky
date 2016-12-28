@@ -1,11 +1,6 @@
 var socket = io();
 var isDetailView = window.location.pathname.match('^\/desk\/(\\d+)\/chair\/(\\d+)\/$');
 
-var nameForm = $('.l-name_form');
-var nameButton = $('.l-set_name');
-var namePlaceholder = $('.l-student_name');
-var nameInput = $('#studentName').focus();
-
 if (isDetailView){
     var thisDeskId = parseInt(isDetailView.slice(1));
     var thisChairId = parseInt(isDetailView.slice(2));
@@ -37,6 +32,12 @@ if (isDetailView){
         })
     ;
 
+    var nameForm = $('.l-name_form');
+    var nameButton = $('.l-set_name');
+    var namePlaceholder = $('.l-student_name');
+    var nameInput = $('[name=studentName]');
+
+    // show form if no name is set
     if (namePlaceholder.text() == ''){
         nameForm.show();
         nameButton.hide();
@@ -46,41 +47,73 @@ if (isDetailView){
         nameButton.show();
     }
 
-    nameButton.on('click', function(){
-        namePlaceholder.hide();
-        nameForm.toggle();
-        nameButton.hide();
-        nameInput.focus();
-        return false;
-    });
+    // show form
+    nameButton
+        .on('click', function(){
+            namePlaceholder.hide();
+            nameForm.toggle();
+            nameButton.hide();
+            nameInput.focus();
+            return false;
+        })
+    ;
 
-    nameForm.submit(function(event){
-        socket.emit('setStudentName', thisDeskId, thisChairId, nameInput.val());
-        event.preventDefault();
-    });
+    // send data from form
+    nameForm
+        .submit(function(event){
+            socket.emit('setStudentName', thisDeskId, thisChairId, nameInput.val());
+            event.preventDefault();
+        })
+    ;
 
 } else { // room overview
-    $('.l-buttons--teacher .l-button').click(function(){
-        socket.emit($(this).data('emit'));
-    });
+    $('.l-buttons--teacher .l-button')
+        .click(function(){
+            socket.emit($(this).data('emit'));
+        })
+    ;
+}
+
+
+function setDeskChairStatuses(room){
+    $('[data-desk-id]')
+        .each(function(){
+            var desk = room.desks[$(this).data('desk-id')];
+
+            // set desk status
+            $(this)
+                .find('.l-desk-shape > div')
+                .prop('class', 'l-status--' + desk.status)
+                .end()
+                .find('[data-chair-id]')
+                .each(function(){
+                    var chair = desk.chairs[$(this).data('chair-id')];
+                    $(this)
+                        .prop('class', 'l-status--' + chair.status) // set chair status
+                        .text(chair.name) // set student name
+                    ;
+                })
+            ;
+        })
 }
 
 socket
     .on('connect', function(){ // user authentication
-        socket.on('auth-success', function(deskId, chairId){
-            console.info('+++ auth-success:', 'desk', deskId, 'chair', chairId);
-            $('.l-desk[data-desk-id=' + deskId + ']' + ' ' + '.l-chair[data-chair-id=' + chairId + ']')
-                .addClass('l-chair--online');
+        socket.on('auth-success', function(room){
+            console.info('+++ auth-success');
+
+            setDeskChairStatuses(room);
         });
     })
 
-    .on('disconnected', function(deskId, chairId){ // user disconnected: room overview
-        console.info('--- disconnected', 'desk', deskId, 'chair', chairId);
-        $('.l-desk[data-desk-id=' + deskId + ']' + ' ' + '.l-chair[data-chair-id=' + chairId + ']')
-            .removeClass('l-chair--online');
+    .on('disconnected', function(room){ // user disconnected: room overview
+        console.info('--- disconnected');
+
+        setDeskChairStatuses(room);
     })
 
-    .on('statusChanged', function(deskId, chairId, statusType){ // status changed
+    .on('statusChanged', function(deskId, chairId, statusType, room){ // status changed
+        console.info('>>> statusChanged', 'desk', deskId, 'chair', chairId, statusType);
 
         if (thisDeskId == deskId && thisChairId == chairId){
             statusButtons.each(function(){
@@ -94,38 +127,34 @@ socket
             });
 
         } else { // room overview
-            $('.l-desk[data-desk-id=' + deskId + ']' + ' ' + '.l-chair[data-chair-id=' + chairId + ']')
-                .removeClass('l-status--not_done l-status--help l-status--done')
-                .addClass('l-status--' + statusType);
+            setDeskChairStatuses(room);
         }
     })
 
-    .on('deskStatusChanged', function(deskId, statusType){ // status changed
+    .on('deskStatusChanged', function(room){ // status changed
         if (!isDetailView){
-            console.info('███ deskStatusChanged', 'desk', deskId, statusType);
-            $('.l-desk[data-desk-id=' + deskId + ']' + ' .l-desk-shape')
-                .removeClass('l-status--not_done l-status--help l-status--done l-status--empty l-status--init')
-                .addClass('l-status--' + statusType);
+            console.info('███ deskStatusChanged');
+
+            setDeskChairStatuses(room);
         }
     })
 
-    .on('studentNameSet', function(deskId, chairId, studentName){ // name set
+    .on('studentNameSet', function(deskId, chairId, studentName, room){ // name set
         if (thisDeskId == deskId && thisChairId == chairId){
             namePlaceholder.text(studentName).show();
             nameForm.hide();
             nameButton.show();
         } else { // room overview
-            $('.l-desk[data-desk-id=' + deskId + ']' + ' ' + '.l-chair[data-chair-id=' + chairId + ']')
-                .text(studentName)
+            setDeskChairStatuses(room);
         }
     })
 
     .on('lectureStarted', function(roomStatus){
-        $('.l-room_status_info').text(roomStatus);
         console.info('lectureStarted');
-        $('body')
-            .removeClass('l-room_status--working l-room_status--appstarted')
-            .addClass('l-room_status--lecturing');
+
+        $('.l-room_status_info').text(roomStatus);
+
+        $('body').prop('class', 'l-room_status--' + roomStatus);
 
         if (typeof thisChairId == 'number'){
             window.alert('Výklad začíná');
@@ -133,11 +162,10 @@ socket
     })
 
     .on('workStarted', function(roomStatus){
-        $('.l-room_status_info').text(roomStatus);
         console.info('workStarted');
-        $('body')
-            .removeClass('l-room_status--lecturing l-room_status--appstarted')
-            .addClass('l-room_status--working')
-        ;
+
+        $('.l-room_status_info').text(roomStatus);
+
+        $('body').prop('class', 'l-room_status--' + roomStatus);
     })
 ;
