@@ -11,7 +11,8 @@ Jedna instance běží na https://listecky.herokuapp.com/
 ### Statusy studentů
 
 * Ve svém rozhraní vidí, zda je student/ka online (jsou neprůhledné).
-* A vidí podle barvy status jaký si nastavil/a.
+* Podle barvy rámečku se jménem studenta vidí status jaký aktuálně má.
+* Podle barvy stolu vidí rychle, zda je někdo přítomen, zda jsou všichni hotovi nebo jesti někdo u stolu potřebuje pomoc.
 
 ### Začátek cvičení
 
