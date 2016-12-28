@@ -12,7 +12,7 @@ nunjucks.configure('views', {
 
 let room = {
     'roomStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
-    'statusTypes': { // visible statuses: other are online and offline
+    'statusTypes': { // only statuses with labels and own buttons, there is also online and offline status
         'not_done': { 'label': 'Pracuju' },
         'help': { 'label': 'Chci poradit' },
         'done': { 'label': 'Hotovo' },
