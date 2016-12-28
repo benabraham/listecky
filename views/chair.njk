@@ -4,6 +4,14 @@
 {% block title %}{{ super() }}{% endblock %}
 
 
+{% block js_vars %}
+    {{ super() }}
+    var thisDeskId = {{ deskId }}
+    var thisChairId = {{ chairId }};
+    var isDetailView = true;
+{% endblock %}
+
+
 {% block body %}
     <div class="l-nav-top">
         <a href="/">výběr židle</a>

@@ -1,23 +1,24 @@
 var socket = io();
-var isDetailView = window.location.pathname.match('^\/desk\/(\\d+)\/chair\/(\\d+)\/$');
+
+var isDetailView = (typeof isDetailView === 'undefined') ? false : isDetailView;
 
 if (isDetailView){
-    var thisDeskId = parseInt(isDetailView.slice(1));
-    var thisChairId = parseInt(isDetailView.slice(2));
-
     var statusButtons = $('.l-buttons--student .l-button');
 
-    statusButtons.click(function(){
-        statusButtons.removeClass('l-selected');
-        $(this)
-            .addClass('l-clicked')
-            .closest('.l-buttons')
-            .addClass('l-clicked');
+    statusButtons
+        .click(function(){
+            statusButtons
+                .removeClass('l-selected');
 
-        console.info('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
+            $(this)
+                .addClass('l-clicked')
+                .closest('.l-buttons')
+                .addClass('l-clicked');
 
-        socket.emit('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
-    });
+            console.info('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
+
+            socket.emit('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
+        });
 
     socket
         .on('connect', function(){ // user authentication
@@ -28,7 +29,7 @@ if (isDetailView){
             if (confirm('\n\n\n\nHotovo? \n\n\nOK pokud ano,\n\nCancel pokud ne.\n\n\n\n\n') == true){
                 socket.emit('statusChange', thisDeskId, thisChairId, 'done');
             } else {
-                return false
+                return false;
             }
         })
     ;
@@ -99,7 +100,6 @@ if (isDetailView){
     }
 
     setDeskChairStatuses(room);
-
 }
 
 socket
@@ -119,7 +119,9 @@ socket
     .on('statusChanged', function(deskId, chairId, statusType, room){ // status changed
         console.info('>>> statusChanged', 'desk', deskId, 'chair', chairId, statusType);
 
-        if (thisDeskId == deskId && thisChairId == chairId){
+        if (isDetailView){
+            setDeskChairStatuses(room);
+        } else if (thisDeskId == deskId && thisChairId == chairId){
             statusButtons.each(function(){
                 $(this).removeClass('l-clicked l-selected');
                 if ($(this).data('status-id') == statusType){
@@ -129,11 +131,7 @@ socket
                         .removeClass('l-clicked');
                 }
             });
-
         }
-
-        if (!isDetailView) setDeskChairStatuses(room);
-
     })
 
     .on('deskStatusChanged', function(room){ // status changed
@@ -142,13 +140,15 @@ socket
     })
 
     .on('studentNameSet', function(deskId, chairId, studentName, room){ // name set
-        if (thisDeskId == deskId && thisChairId == chairId){
-            namePlaceholder.text(studentName).show();
-            nameForm.hide();
-            nameButton.show();
+        if (isDetailView){
+            if (thisDeskId == deskId && thisChairId == chairId){
+                namePlaceholder.text(studentName).show();
+                nameForm.hide();
+                nameButton.show();
+            }
+        } else {
+            setDeskChairStatuses(room);
         }
-
-        if (!isDetailView) setDeskChairStatuses(room);
     })
 
     .on('lectureStarted', function(roomStatus){
@@ -158,7 +158,7 @@ socket
 
         $('body').prop('class', 'l-room_status--' + roomStatus);
 
-        if (typeof thisChairId == 'number'){
+        if (isDetailView){
             window.alert('Výklad začíná');
         }
     })

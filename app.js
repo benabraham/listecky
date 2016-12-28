@@ -102,6 +102,8 @@ app
     .get('/desk/:deskId/chair/:chairId/', (req, res) =>{
         res.render('chair.njk', {
             room: room,
+            deskId: req.params.deskId,
+            chairId: req.params.chairId,
             chair: desks[req.params.deskId].chairs[req.params.chairId],
         });
     })
