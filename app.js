@@ -45,12 +45,6 @@ for (let d in desks){
         desks[d].chairs[c] = { status: 'offline', name: '?' };
     }
 
-    // compute values for positioning in layout
-    desks[d].layout.position.x = desks[d].layout.position.x * 100 / room.size;
-    desks[d].layout.position.y = desks[d].layout.position.y * 100 / room.size;
-    desks[d].layout.dimensions = {};
-    desks[d].layout.dimensions.x = 100 / room.size;
-    desks[d].layout.dimensions.y = 100 / room.size;
 }
 
 function checkDeskStatus(deskId){
