@@ -11,21 +11,21 @@ nunjucks.configure('views', {
 });
 
 let room = {
-    'size': 2, // room is always a square, this is a number of desks vertically/horizontally
     'roomStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
     'statusTypes': { // visible statuses: other are online and offline
         'not_done': { 'label': 'Pracuju' },
         'help': { 'label': 'Chci poradit' },
         'done': { 'label': 'Hotovo' },
     },
-    'deskTypes': {
-        0: { 'chairs': 4, 'shape': 'square' },
-        1: { 'chairs': 2, 'shape': 'square' },
-    },
+    'size': 2, // room is always a square, this is a number of desks vertically/horizontally
     'desks': {
         0: { 'name': '', 'coach': 'Kamila', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 0, 'deskType': 0 } },
         1: { 'name': '', 'coach': 'Karel', 'layout': { 'position': { 'x': 1, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
         2: { 'name': '', 'coach': 'Klára', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
+    },
+    'deskTypes': {
+        0: { 'chairs': 4, 'shape': 'square' },
+        1: { 'chairs': 2, 'shape': 'square' },
     },
 };
 
