@@ -10,26 +10,26 @@ nunjucks.configure('views', {
     express: app
 });
 
-const config = {
+let room = {
+    'classStatus': 'appstarted', // others: 'lecturing' and 'working'
     'statusTypes': {
-        'not_done': { "label": 'Pracuju' },
-        'help': { "label": 'Chci poradit' },
-        'done': { "label": 'Hotovo' },
+        'not_done': { 'label': 'Pracuju' },
+        'help': { 'label': 'Chci poradit' },
+        'done': { 'label': 'Hotovo' },
     },
     'deskTypes': {
         0: { 'chairs': 4, 'shape': 'square' },
         1: { 'chairs': 2, 'shape': 'square' },
     },
-    'roomSize': 2
+    'roomSize': 2,
+    'desks': {
+        0: { 'name': '', 'coach': 'Kamila', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 0, 'deskType': 0 } },
+        1: { 'name': '', 'coach': 'Karel', 'layout': { 'position': { 'x': 1, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
+        2: { 'name': '', 'coach': 'Klára', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
+    },
 };
 
-let classStatus = 'appstarted'; // others: 'lecturing' and 'working'
-
-let desks = {
-    0: { 'name': '', 'coach': 'Kamila', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 0, 'deskType': 0 } },
-    1: { 'name': '', 'coach': 'Karel', 'layout': { 'position': { 'x': 1, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
-    2: { 'name': '', 'coach': 'Klára', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
-};
+let desks = room.desks;
 
 for (let d in desks){
 
@@ -37,7 +37,7 @@ for (let d in desks){
     desks[d].status = 'empty';
 
     // add layout
-    Object.assign(desks[d].layout, config.deskTypes[desks[d].layout.deskType]);
+    Object.assign(desks[d].layout, room.deskTypes[desks[d].layout.deskType]);
 
     // add empty chairs
     desks[d].chairs = {};
@@ -46,11 +46,11 @@ for (let d in desks){
     }
 
     // compute values for positioning in layout
-    desks[d].layout.position.x = desks[d].layout.position.x * 100 / config.roomSize;
-    desks[d].layout.position.y = desks[d].layout.position.y * 100 / config.roomSize;
+    desks[d].layout.position.x = desks[d].layout.position.x * 100 / room.roomSize;
+    desks[d].layout.position.y = desks[d].layout.position.y * 100 / room.roomSize;
     desks[d].layout.dimensions = {};
-    desks[d].layout.dimensions.x = 100 / config.roomSize;
-    desks[d].layout.dimensions.y = 100 / config.roomSize;
+    desks[d].layout.dimensions.x = 100 / room.roomSize;
+    desks[d].layout.dimensions.y = 100 / room.roomSize;
 }
 
 function checkDeskStatus(deskId){
@@ -99,27 +99,24 @@ app
 
     .get('/', (req, res) =>{
         res.render('index.njk', {
-            desks: desks,
-            statusTypes: config.statusTypes
+            room: room,
         });
     })
 
     .get('/desk/:deskId/chair/:chairId/', (req, res) =>{
         res.render('chair.njk', {
+            room: room,
             desk: desks[req.params.deskId],
             chair: desks[req.params.deskId].chairs[req.params.chairId],
-            classStatus: classStatus,
-            statusTypes: config.statusTypes
         });
     })
 
     .get('/teacher', (req, res) =>{
         res.render('teacher.njk', {
-            desks: desks,
-            statusTypes: config.statusTypes,
-            classStatus: classStatus
+            room: room,
         });
     })
+
 ;
 
 io
@@ -186,8 +183,8 @@ io
                     }
                     checkDeskStatus(d);
                 }
-                classStatus = 'lecturing';
-                io.emit('lectureStarted', classStatus);
+                room.classStatus = 'lecturing';
+                io.emit('lectureStarted', room.classStatus);
             })
 
             .on('workStart', () =>{
@@ -203,8 +200,8 @@ io
                     }
                     checkDeskStatus(d);
                 }
-                classStatus = 'working';
-                io.emit('workStarted', classStatus);
+                room.classStatus = 'working';
+                io.emit('workStarted', room.classStatus);
             });
     })
 ;
