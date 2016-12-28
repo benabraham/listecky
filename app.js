@@ -11,7 +11,8 @@ nunjucks.configure('views', {
 });
 
 let room = {
-    'classStatus': 'appstarted', // others: 'lecturing' and 'working'
+    'size': 2, // room is always a square, this is a number of desks vertically/horizontally
+    'classStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
     'statusTypes': {
         'not_done': { 'label': 'Pracuju' },
         'help': { 'label': 'Chci poradit' },
@@ -21,7 +22,6 @@ let room = {
         0: { 'chairs': 4, 'shape': 'square' },
         1: { 'chairs': 2, 'shape': 'square' },
     },
-    'roomSize': 2,
     'desks': {
         0: { 'name': '', 'coach': 'Kamila', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 0, 'deskType': 0 } },
         1: { 'name': '', 'coach': 'Karel', 'layout': { 'position': { 'x': 1, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
@@ -46,11 +46,11 @@ for (let d in desks){
     }
 
     // compute values for positioning in layout
-    desks[d].layout.position.x = desks[d].layout.position.x * 100 / room.roomSize;
-    desks[d].layout.position.y = desks[d].layout.position.y * 100 / room.roomSize;
+    desks[d].layout.position.x = desks[d].layout.position.x * 100 / room.size;
+    desks[d].layout.position.y = desks[d].layout.position.y * 100 / room.size;
     desks[d].layout.dimensions = {};
-    desks[d].layout.dimensions.x = 100 / room.roomSize;
-    desks[d].layout.dimensions.y = 100 / room.roomSize;
+    desks[d].layout.dimensions.x = 100 / room.size;
+    desks[d].layout.dimensions.y = 100 / room.size;
 }
 
 function checkDeskStatus(deskId){
