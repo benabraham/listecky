@@ -62,9 +62,9 @@ function checkDeskStatus(deskId){
     if (chairStatuses.length){ // not empty table
         if (chairStatuses.every(x => x == 'done')){ // all done
             desks[deskId].status = 'done';
-        } else if (chairStatuses.every(x => x == 'offline')){ // all no status
+        } else if (chairStatuses.every(x => x == 'offline')){ // all offline
             desks[deskId].status = 'offline';
-        } else if (chairStatuses.every(x => x == 'online')){ // all just online
+        } else if (chairStatuses.every(x => x == 'online')){ // all online
             desks[deskId].status = 'online';
         } else {
             if (chairStatuses.some(x => x == 'not_done')){ // some working
@@ -78,7 +78,6 @@ function checkDeskStatus(deskId){
     } else {
         desks[deskId].status = 'empty'; // empty table
     }
-    console.warn(originalDeskStatus, desks[deskId].status);
 
     if (originalDeskStatus != desks[deskId].status){ // if the status has changed
         io.emit('deskStatusChanged', room); // emit new status
