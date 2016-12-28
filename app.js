@@ -12,7 +12,7 @@ nunjucks.configure('views', {
 
 let room = {
     'size': 2, // room is always a square, this is a number of desks vertically/horizontally
-    'classStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
+    'roomStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
     'statusTypes': {
         'not_done': { 'label': 'Pracuju' },
         'help': { 'label': 'Chci poradit' },
@@ -183,8 +183,8 @@ io
                     }
                     checkDeskStatus(d);
                 }
-                room.classStatus = 'lecturing';
-                io.emit('lectureStarted', room.classStatus);
+                room.roomStatus = 'lecturing';
+                io.emit('lectureStarted', room.roomStatus);
             })
 
             .on('workStart', () =>{
@@ -200,8 +200,8 @@ io
                     }
                     checkDeskStatus(d);
                 }
-                room.classStatus = 'working';
-                io.emit('workStarted', room.classStatus);
+                room.roomStatus = 'working';
+                io.emit('workStarted', room.roomStatus);
             });
     })
 ;

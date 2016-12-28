@@ -10,7 +10,7 @@
                 left:{{ desk.layout.position.y }}%;
                 width: {{ desk.layout.dimensions.x }}%;
                 height: {{ desk.layout.dimensions.y }}%;
-            "
+                "
         >
             <div
                 class="
@@ -26,24 +26,22 @@
                     <div class="l-desk-coach">{{ desk.coach }}</div>
                 </div>
 
-                <div class="l-chairs">
-                    {% for chair_id, chair in desk.chairs %}
-                        <a
-                            class="
+                {% for chair_id, chair in desk.chairs %}
+                    <a
+                        class="
                                 l-chair
                                 l-chair--position_{{ chair_id }}
                                 {% if chair.status %}l-status--{{ chair.status }}{% endif %}
                                 {% if chair.socketId %}l-chair--online{% endif %}
                             "
-                            data-chair-id="{{ chair_id }}"
-                            href="/desk/{{ desk_id }}/chair/{{ chair_id }}/"
-                        >
-                            {{ chair.name|default('?') }}
-                            {#<br>{{ chair.status }}#}
-                            {#<br>{{ desk_id }}/{{ chair_id }}#}
-                        </a>
-                    {% endfor %}
-                </div>
+                        data-chair-id="{{ chair_id }}"
+                        href="/desk/{{ desk_id }}/chair/{{ chair_id }}/"
+                    >
+                        {{ chair.name|default('?') }}
+                        {#<br>{{ chair.status }}#}
+                        {#<br>{{ desk_id }}/{{ chair_id }}#}
+                    </a>
+                {% endfor %}
             </div>
 
         </div>

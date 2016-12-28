@@ -85,15 +85,7 @@ video {
     vertical-align: baseline;
 }
 
-body {
-    line-height: 1;
-}
-
-/*
-body.l-page_student {
-    padding: 1em;
-}
-*/
+body { line-height: 1; }
 
 table {
     border-collapse: collapse;
@@ -109,10 +101,6 @@ input,
 textarea,
 button { font-family: "Roboto Condensed", sans-serif; }
 
-h1,
-h2,
-h3 { }
-
 a:link { color: navy; }
 
 a:visited { color: navy; }
@@ -120,6 +108,8 @@ a:visited { color: navy; }
 a:hover { color: deepskyblue; }
 
 a:active { color: skyblue; }
+
+
 
 /* top nav strip */
 
@@ -133,9 +123,12 @@ a:active { color: skyblue; }
     display: flex;
 }
 
+
 /* main container */
 
 .l-main { padding: 1em; }
+
+
 
 /* text infos */
 .l-intro,
@@ -145,8 +138,10 @@ a:active { color: skyblue; }
     font-size: 5em;
 }
 
-.l-class_status--appstarted .l-intro,
-.l-class_status--lecturing .l-lecture { display: block; }
+.l-room_status--appstarted .l-intro,
+.l-room_status--lecturing .l-lecture { display: block; }
+
+
 
 /* name setting */
 
@@ -163,7 +158,10 @@ a:active { color: skyblue; }
 
 .l-name_form input { font-size: 2em; }
 
-/* buttons */
+
+
+/* Buttons */
+
 .l-buttons { display: flex; }
 
 .l-button {
@@ -208,13 +206,13 @@ a:active { color: skyblue; }
 
 .l-buttons--student .l-button.l-selected { border-color: #000000; }
 
-.l-class_status--appstarted .l-buttons--student,
-.l-class_status--lecturing .l-buttons--student { display: none; }
+.l-room_status--appstarted .l-buttons--student,
+.l-room_status--lecturing .l-buttons--student { display: none; }
 
-.l-class_status--appstarted .l-button--check_status,
-.l-class_status--lecturing .l-button--start_lecture,
-.l-class_status--lecturing .l-button--check_status,
-.l-class_status--working .l-button--start_work { display: none; }
+.l-room_status--appstarted .l-button--check_status,
+.l-room_status--lecturing .l-button--start_lecture,
+.l-room_status--lecturing .l-button--check_status,
+.l-room_status--working .l-button--start_work { display: none; }
 
 .l-button--start_work {
     background-color: rgb(0, 127, 255);
@@ -225,7 +223,17 @@ a:active { color: skyblue; }
 
 .l-button--start_lecture { background-color: lightgrey; }
 
-.l-class_status_info { text-align: center; }
+.l-lector-controls { height: 10vh; }
+
+
+
+/* Room status info  */
+
+.l-room_status_info { text-align: center; }
+
+
+
+/* Screen position */
 
 .l-screen {
     text-align: center;
@@ -237,6 +245,9 @@ a:active { color: skyblue; }
     background-color: black;
     color: #ffffff;
 }
+
+
+/* Desks */
 
 .l-desks {
     position: relative;
@@ -253,8 +264,6 @@ a:active { color: skyblue; }
     max-width: 86vh;
 }
 
-.l-lector-controls { height: 10vh; }
-
 .l-desk {
     position: absolute;
     background-color: #e8e8e8;
@@ -268,14 +277,11 @@ a:active { color: skyblue; }
 .l-desk-shape {
     width: 50%;
     height: 50%;
-    /*overflow: hidden;*/
     display: flex;
     justify-content: center;
     flex-direction: column;
     position: relative;
 }
-
-.l-desk-shape-square { }
 
 .l-desk-id {
     text-align: center;
@@ -284,7 +290,9 @@ a:active { color: skyblue; }
 
 .l-desk-coach { font-style: italic; }
 
-/*.l-chairs { }*/
+
+
+/* Chairs */
 
 .l-chair {
     padding: 8% 0;
@@ -322,7 +330,8 @@ a:active { color: skyblue; }
     text-decoration: none;
 }
 
-/* universal statuses */
+
+/* Universal statuses */
 .l-status--done,
 .l-status--done:link,
 .l-status--done:visited,
@@ -343,6 +352,7 @@ a:active { color: skyblue; }
 
 .l-status--init { background-color: saddlebrown; }
 
+/* Shapes to be done */
 /*
 
 .l-desk-shape--square { }

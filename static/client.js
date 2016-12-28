@@ -121,24 +121,24 @@ socket
         }
     })
 
-    .on('lectureStarted', function(classStatus){
-        $('.l-class_status_info').text(classStatus);
+    .on('lectureStarted', function(roomStatus){
+        $('.l-room_status_info').text(roomStatus);
         console.info('lectureStarted');
         $('body')
-            .removeClass('l-class_status--working l-class_status--appstarted')
-            .addClass('l-class_status--lecturing');
+            .removeClass('l-room_status--working l-room_status--appstarted')
+            .addClass('l-room_status--lecturing');
 
         if (typeof thisChairId == 'number'){
             window.alert('Výklad začíná');
         }
     })
 
-    .on('workStarted', function(classStatus){
-        $('.l-class_status_info').text(classStatus);
+    .on('workStarted', function(roomStatus){
+        $('.l-room_status_info').text(roomStatus);
         console.info('workStarted');
         $('body')
-            .removeClass('l-class_status--lecturing l-class_status--appstarted')
-            .addClass('l-class_status--working')
+            .removeClass('l-room_status--lecturing l-room_status--appstarted')
+            .addClass('l-room_status--working')
         ;
     })
 ;
