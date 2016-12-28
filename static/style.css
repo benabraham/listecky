@@ -309,13 +309,15 @@ a:active { color: skyblue; }
 
 .l-status--offline { background-color: rgba(255, 255, 255, 0.5); }
 
-.l-status--online { background-color: rgba(255, 255, 255, 1); }
-
-.l-status--online {
+.l-chair .l-status--online {
+    background-color: rgba(255, 255, 255, 1);
     pointer-events: none;
     cursor: default;
     text-decoration: none;
 }
+
+/* desk status only */
+.l-desk-shape > .l-status--online { background-color: saddlebrown; }
 
 /* Universal statuses */
 .l-status--done,
@@ -334,10 +336,7 @@ a:active { color: skyblue; }
 
 .l-status--help { background-color: rgb(200, 0, 0); }
 
-.l-status--empty { background-color: rgb(128, 128, 128); }
-
-/* desk status only */
-.l-desk-shape.l-status--offline { background-color: saddlebrown; }
+.l-status--empty { background-color: rgb(145, 145, 145); }
 
 /* Shapes to be done */
 /*

@@ -58,11 +58,14 @@ function checkDeskStatus(deskId){
 
     let originalDeskStatus = desks[deskId].status; // save original status
 
+    console.error(chairStatuses);
     if (chairStatuses.length){ // not empty table
         if (chairStatuses.every(x => x == 'done')){ // all done
             desks[deskId].status = 'done';
         } else if (chairStatuses.every(x => x == 'offline')){ // all no status
             desks[deskId].status = 'offline';
+        } else if (chairStatuses.every(x => x == 'online')){ // all just online
+            desks[deskId].status = 'online';
         } else {
             if (chairStatuses.some(x => x == 'not_done')){ // some working
                 desks[deskId].status = 'not_done';
@@ -75,6 +78,7 @@ function checkDeskStatus(deskId){
     } else {
         desks[deskId].status = 'empty'; // empty table
     }
+    console.warn(originalDeskStatus, desks[deskId].status);
 
     if (originalDeskStatus != desks[deskId].status){ // if the status has changed
         io.emit('deskStatusChanged', room); // emit new status
@@ -180,9 +184,11 @@ io
                     for (let c in desks[d].chairs){
                         let chair = desks[d].chairs[c];
 
-                        chair.status = 'online';
-                        io.emit('statusChanged', d, c, chair.status, room);
-                        console.info('!!! lectureStart', chair.name);
+                        if (chair.socketId){
+                            chair.status = 'online';
+                            io.emit('statusChanged', d, c, chair.status, room);
+                            console.info('!!! lectureStart', chair.name);
+                        }
                     }
                     checkDeskStatus(d);
                 }
