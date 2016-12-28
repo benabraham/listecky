@@ -58,7 +58,6 @@ function checkDeskStatus(deskId){
 
     let originalDeskStatus = desks[deskId].status; // save original status
 
-    console.error(chairStatuses);
     if (chairStatuses.length){ // not empty table
         if (chairStatuses.every(x => x == 'done')){ // all done
             desks[deskId].status = 'done';
