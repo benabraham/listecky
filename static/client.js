@@ -23,6 +23,7 @@ if (isDetailView){
         .on('connect', function(){ // user authentication
             socket.emit('auth-request', thisDeskId, thisChairId);
         })
+
         .on('checkStatusAlert', function(){ // Ask student for status
             if (confirm('\n\n\n\nHotovo? \n\n\nOK pokud ano,\n\nCancel pokud ne.\n\n\n\n\n') == true){
                 socket.emit('statusChange', thisDeskId, thisChairId, 'done');
@@ -72,44 +73,47 @@ if (isDetailView){
             socket.emit($(this).data('emit'));
         })
     ;
-}
 
-
-function setDeskChairStatuses(room){
-    $('[data-desk-id]')
-        .each(function(){
-            var desk = room.desks[$(this).data('desk-id')];
-
-            // set desk status
-            $(this)
-                .find('.l-desk-shape > div')
-                .prop('class', 'l-status--' + desk.status)
-                .end()
-                .find('[data-chair-id]')
+    function setDeskChairStatuses(room){
+        if (room){
+            $('[data-desk-id]')
                 .each(function(){
-                    var chair = desk.chairs[$(this).data('chair-id')];
+                    var desk = room.desks[$(this).data('desk-id')];
+
+                    // set desk status
                     $(this)
-                        .prop('class', 'l-status--' + chair.status) // set chair status
-                        .text(chair.name) // set student name
+                        .find('.l-desk-shape > div')
+                        .prop('class', 'l-status--' + desk.status)
+                        .end()
+                        .find('[data-chair-id]')
+                        .each(function(){
+                            var chair = desk.chairs[$(this).data('chair-id')];
+                            $(this)
+                                .prop('class', 'l-status--' + chair.status) // set chair status
+                                .text(chair.name) // set student name
+                            ;
+                        })
                     ;
                 })
-            ;
-        })
+        }
+    }
+
+    setDeskChairStatuses(room);
+
 }
 
 socket
     .on('connect', function(){ // user authentication
         socket.on('auth-success', function(room){
             console.info('+++ auth-success');
-
-            setDeskChairStatuses(room);
+            if (!isDetailView) setDeskChairStatuses(room);
         });
     })
 
     .on('disconnected', function(room){ // user disconnected: room overview
         console.info('--- disconnected');
 
-        setDeskChairStatuses(room);
+        if (!isDetailView) setDeskChairStatuses(room);
     })
 
     .on('statusChanged', function(deskId, chairId, statusType, room){ // status changed
@@ -126,17 +130,15 @@ socket
                 }
             });
 
-        } else { // room overview
-            setDeskChairStatuses(room);
         }
+
+        if (!isDetailView) setDeskChairStatuses(room);
+
     })
 
     .on('deskStatusChanged', function(room){ // status changed
-        if (!isDetailView){
-            console.info('███ deskStatusChanged');
-
-            setDeskChairStatuses(room);
-        }
+        console.info('███ deskStatusChanged');
+        if (!isDetailView) setDeskChairStatuses(room);
     })
 
     .on('studentNameSet', function(deskId, chairId, studentName, room){ // name set
@@ -144,9 +146,9 @@ socket
             namePlaceholder.text(studentName).show();
             nameForm.hide();
             nameButton.show();
-        } else { // room overview
-            setDeskChairStatuses(room);
         }
+
+        if (!isDetailView) setDeskChairStatuses(room);
     })
 
     .on('lectureStarted', function(roomStatus){

@@ -19,7 +19,7 @@
                 "
                 style="transform: rotate({{ desk.layout.rotation }}deg);"
             >
-                <div class="l-status--{{ desk.status }}">
+                <div class="">
 
                     <div class="l-desk-id">
                         <div class="l-desk-name">{{ desk.name }}</div>
@@ -29,7 +29,7 @@
                     {% for chair_id, chair in desk.chairs %}
                         <div class="l-chair l-chair--position_{{ chair_id }}">
                             <a
-                                class="l-status--{{ chair.status }}"
+                                class=""
                                 data-chair-id="{{ chair_id }}"
                                 href="/desk/{{ desk_id }}/chair/{{ chair_id }}/"
                             >
