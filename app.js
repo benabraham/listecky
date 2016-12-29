@@ -218,6 +218,8 @@ io
                     .to(socket.id)
                     .emit('roomSent', room);
             })
+
+            .on('keepAlive', () =>{ console.info('pinged by', socket.id); })
         ;
     })
 ;

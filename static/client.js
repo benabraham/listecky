@@ -107,6 +107,11 @@ $(document).ready(function(){
         window.setTimeout(function(){
             socket.emit('getRoom');
         }, 50);
+
+        // ping server every 29 minutes to maintain it alive
+        window.setInterval(function(){
+            socket.emit('keepAlive');
+        }, 29 * 60 * 1000);
     }
 
     socket
