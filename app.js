@@ -17,11 +17,18 @@ let room = {
         'help': { 'label': 'Chci poradit' },
         'done': { 'label': 'Hotovo' },
     },
-    'size': 2, // room is always a square, this is a number of desks vertically/horizontally
+    'size': 4, // room is always a square, this is a number of desks vertically/horizontally
     'desks': {
-        0: { 'name': '', 'coach': 'Kamila', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 0, 'deskType': 0 } },
-        1: { 'name': '', 'coach': 'Karel', 'layout': { 'position': { 'x': 1, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
-        2: { 'name': '', 'coach': 'Klára', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'deskType': 1 } },
+        0: { 'name': '1', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 45, 'deskType': 0 } },
+        1: { 'name': '2', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'deskType': 0 } },
+        2: { 'name': '3', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 2 }, 'rotation': 0, 'deskType': 0 } },
+        3: { 'name': '4', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
+        4: { 'name': '5', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
+        5: { 'name': '6', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
+        6: { 'name': '7', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
+        7: { 'name': '8', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 2 }, 'rotation': 0, 'deskType': 0 } },
+        8: { 'name': '9', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 1 }, 'rotation': 0, 'deskType': 0 } },
+        9: { 'name': '10', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 0 }, 'rotation': -45, 'deskType': 1 } },
     },
     'deskTypes': {
         0: { 'chairs': 4, 'shape': 'square' },
