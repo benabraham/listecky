@@ -131,7 +131,7 @@ io
                     chair.status = 'online'; // save status
                     io.emit('auth-success', room);
                     io.emit('statusChanged', deskId, chairId, chair.status, room);
-                    console.info('+++ auth-success', deskId, chairId, chair.name);
+                    console.info('*** auth-success', deskId, chairId, chair.name);
                     checkDeskStatus(deskId);
                 }
             })
@@ -147,7 +147,7 @@ io
                             delete chair.socketId;
                             io.emit('statusChanged', d, c, chair.status, room);
                             io.emit('disconnected', room);
-                            console.info('--- disconnected', d, c);
+                            console.info('††† disconnected', d, c);
                             checkDeskStatus(d);
                         }
                     }
@@ -159,7 +159,7 @@ io
 
                 chair.name = studentName;
                 io.emit('studentNameSet', deskId, chairId, studentName, room); // emit new name
-                console.info('\\\ setStudentName', deskId, chairId, studentName);
+                console.info('•••', deskId, chairId, studentName);
             })
 
             .on('statusChange', (deskId, chairId, statusType) =>{

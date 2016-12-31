@@ -117,13 +117,13 @@ $(document).ready(function(){
     socket
         .on('connect', function(){ // user authentication
             socket.on('auth-success', function(room){
-                console.info('+++ auth-success');
+                console.info('*** auth-success');
                 if (!isDetailView) setDeskChairStatuses(room);
             });
         })
 
         .on('disconnected', function(room){ // user disconnected: room overview
-            console.info('--- disconnected');
+            console.info('††† disconnected');
 
             if (!isDetailView) setDeskChairStatuses(room);
         })
@@ -149,7 +149,7 @@ $(document).ready(function(){
         })
 
         .on('deskStatusChanged', function(room){ // status changed
-            console.info('███ deskStatusChanged');
+            console.info('▒▒▒ deskStatusChanged');
             if (!isDetailView) setDeskChairStatuses(room);
         })
 
