@@ -214,35 +214,42 @@ a:active { color: skyblue; }
 
 .l-button--start_lecture { background-color: lightgrey; }
 
-.l-lector-controls { height: 10vh; }
+.l-lector-controls { height: 20vh; }
 
 /* Room status info  */
 
 .l-room_status_info { text-align: center; }
 
-/* Screen position */
+/* Desks */
+.l-desks {
+    position: relative;
+    height: 80vh;
+    width: 100vw;
+    max-width: 80vh;
+    background-color: #eeeeee;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 400px;
+    min-width: 400px;
+}
 
+.l-desks--home {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vh;
+    background-color: red;
+}
+
+/* Screen position */
 .l-screen {
     text-align: center;
     height: 4vh;
     line-height: 4vh;
-    width: 30vw;
+    width: 25%;
     margin-left: auto;
     margin-right: auto;
     background-color: black;
     color: #ffffff;
-}
-
-/* Desks */
-
-.l-desks {
-    position: relative;
-    height: 96vh;
-    width: 100vw;
-    max-width: 96vh;
-    background-color: #eeeeee;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .l-desk {
