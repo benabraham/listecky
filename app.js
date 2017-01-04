@@ -4,11 +4,24 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const nunjucks = require('nunjucks');
 const console = require('better-console');
+const marked = require('marked');
 
 nunjucks.configure('views', {
     autoescape: true,
     express: app
 });
+
+marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: true,
+    tables: true,
+    breaks: true,
+    pedantic: false,
+    sanitize: true,
+    smartLists: true,
+    smartypants: false
+});
+
 
 let room = {
     'roomStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
@@ -91,6 +104,10 @@ function checkDeskStatus(deskId){
         io.emit('deskStatusChanged', room); // emit new status
         console.info('▒▒▒ deskStatusChanged', 'desk', deskId, desks[deskId].status);
     }
+}
+
+function formatMessages(msg){
+    return marked(msg);
 }
 
 app
@@ -224,22 +241,24 @@ io
 
             .on('chatMessageSend', (chatMessage) =>{
                 if (chatMessage){
-                    chatMessages.push(chatMessage);
-                    io.emit('chatMessagesSent', chatMessages);
                     console.info('>>> chatMessageSent', chatMessage);
+
+                    chatMessages.push(chatMessage);
+                    io.emit('chatMessagesSent', chatMessages.map(formatMessages));
                 }
             })
 
             .on('chatLastMessageDelete', () =>{
-                chatMessages.pop();
-                io.emit('chatMessagesSent', chatMessages);
                 console.info('××× chatLastMessageDelete');
+
+                chatMessages.pop();
+                io.emit('chatMessagesSent', chatMessages.map(formatMessages));
             })
 
             .on('getChatMessages', () =>{
                 io
                     .to(socket.id)
-                    .emit('chatMessagesSent', chatMessages);
+                    .emit('chatMessagesSent', chatMessages.map(formatMessages));
             })
 
             .on('getRoom', () =>{

@@ -165,7 +165,7 @@ a:active { color: skyblue; }
     line-height: 0.9;
     width: 100%;
     height: 10vh;
-    font-size: 2vh;
+    font-size: 1.6rem;
     border-radius: 2px;
     box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.4);
 }
@@ -241,8 +241,8 @@ a:active { color: skyblue; }
     padding: 0 5px;
 }
 
-.l-chat form {
-    height: 15vh;
+.l-chat-form {
+    height: 20vh;
 }
 
 .l-chat input,
@@ -278,21 +278,80 @@ a:active { color: skyblue; }
 .l-chat-log {
     border-top: 1px solid #dddddd;
     overflow: auto;
-    height: 70vh;
+    height: 65vh;
 }
 
 .l-chat-log--student {
     height: auto;
 }
 
-.l-chat-log pre {
-    word-wrap: normal;
-    word-break: normal;
-    overflow-wrap: normal;
-    padding: 5px 0 5px;
+.l-chat-message {
+    padding: 10px 0 0 10px;
     border-bottom: 1px solid #dddddd;
+    font-size: 16px;
+}
+
+.l-chat-message p,
+.l-chat-message li,
+.l-chat-message pre,
+.l-chat-message table,
+.l-chat-message h1,
+.l-chat-message h2,
+.l-chat-message h2,
+.l-chat-message h3,
+.l-chat-message h4,
+.l-chat-message h5,
+.l-chat-message h6 {
+    margin-bottom: 10px;
+}
+
+.l-chat-message * + h1,
+.l-chat-message * + h2,
+.l-chat-message * + h2,
+.l-chat-message * + h3,
+.l-chat-message * + h4,
+.l-chat-message * + h5,
+.l-chat-message * + h6 {
+    margin-top: 1.2em;
+}
+
+.l-chat-message blockquote {
+    padding: 5px 0 5px 10px;
+    line-height: 1.2;
+    border-left: 1px solid #dddddd;
+    margin: 10px 0 10px 10px;
+}
+
+.l-chat-message li {
+    margin-left: 2em;
+}
+
+.l-chat-message pre {
+    padding: 10px;
+    line-height: 1.2;
+}
+
+.l-chat-message code,
+.l-chat-message pre {
     font-family: Consolas, monaco, monospace;
-    font-size: 12px;
+    background: #eeeeee;
+}
+
+.l-chat-message code {
+    display: inline-block;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.l-chat-message table th,
+.l-chat-message table td {
+    border: 1px solid #cccccc;
+    padding: 4px 6px;
+    text-align: left;
+}
+
+.l-chat-message table th {
+    font-weight: bold;
 }
 
 /* Room status info  */
