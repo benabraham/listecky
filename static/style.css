@@ -159,18 +159,21 @@ a:active { color: skyblue; }
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    margin: 0 5px;
     padding: .5em;
-    border: 2px solid white;
+    border: 0 none;
     width: 100%;
     height: 10vh;
-    font-size: 2em;
+    font-size: 2vh;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.4);
 }
 
-.l-button:hover { border-color: #eeeeee; }
+.l-button:hover {
+    box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.4), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.3);
+}
 
 .l-button.l-clicked {
-    border-color: #555555;
     opacity: 0.5;
 }
 
@@ -195,7 +198,9 @@ a:active { color: skyblue; }
 
 .l-buttons--student { margin: 2em 0; }
 
-.l-buttons--student .l-button.l-selected { border-color: #000000; }
+.l-buttons--student .l-button.l-selected {
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, 0.8), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.5);
+}
 
 .l-room_status--appstarted .l-buttons--student,
 .l-room_status--lecturing .l-buttons--student { display: none; }
