@@ -19,10 +19,10 @@
                         <option value="0">Vyber zprávu</option>
                         <option value="1">titulek předpřipravené zprávy</option>
                     </select>#}
-                    <textarea name="chatMessage" id="" cols="30" rows="5"></textarea>
+                    <textarea name="chatMessage" id="" cols="30" rows="5" tabindex="1"></textarea>
                     <div class="l-chat-buttons">
-                        <button class="l-button" data-emit="chatLastMessageDelete">smazat poslední</button>
-                        <input class="l-button l-button--primary" type="submit" value="odeslat zprávu" >
+                        <button tabindex="3" class="l-button" data-emit="chatLastMessageDelete">smazat poslední</button>
+                        <input tabindex="2" class="l-button l-button--primary" type="submit" value="odeslat zprávu" >
                     </div>
                 </form>
                 <div class="l-chat-log"></div>

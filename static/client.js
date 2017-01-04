@@ -115,10 +115,12 @@ $(document).ready(function(){
 
         var chatForm = $('.l-chat form');
         var chatInput = $('[name=chatMessage]');
+        chatInput.focus();
+
         chatForm
             .submit(function(event){
                 socket.emit('chatMessageSend', chatInput.val());
-                chatInput.val('');
+                chatInput.val('').focus();
                 event.preventDefault();
             })
         ;
