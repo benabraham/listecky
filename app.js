@@ -87,7 +87,7 @@ function checkDeskStatus(deskId){
 
     if (originalDeskStatus != desks[deskId].status){ // if the status has changed
         io.emit('deskStatusChanged', room); // emit new status
-        console.info('███ deskStatusChanged', 'desk', deskId, desks[deskId].status);
+        console.info('▒▒▒ deskStatusChanged', 'desk', deskId, desks[deskId].status);
     }
 }
 
