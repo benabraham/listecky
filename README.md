@@ -26,6 +26,13 @@ Jedna instance běží na https://listecky.herokuapp.com/
 
 * Tlačítkem „Začínám výklad“ se pošle všem pošle notifikace a nastaví `not_done`.  
 
+### Chat
+
+* Chat umožňuje posílat i víceřádkové zprávy od přednášejícího všem studentům.
+* Lze smazat nejnovější zprávu.
+* Zprávy jsou dostupné všem i když se připojí později.
+* Přijímání ani posílání zpráv není podmíněno stavem třídy.
+
 ## Student/ka
 
 * Na [homepage](https://listecky.herokuapp.com/) si najde svůj stůl a židli a dál pracuje na „své“ stránce.

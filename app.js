@@ -36,6 +36,8 @@ let room = {
     },
 };
 
+let chatMessages = [];
+
 let desks = room.desks;
 
 for (let d in desks){
@@ -220,13 +222,35 @@ io
                 io.emit('workStarted', room.roomStatus);
             })
 
+            .on('chatMessageSend', (chatMessage) =>{
+                if (chatMessage){
+                    chatMessages.push(chatMessage);
+                    io.emit('chatMessagesSent', chatMessages);
+                    console.info('>>> chatMessageSent', chatMessage);
+                }
+            })
+
+            .on('chatLastMessageDelete', () =>{
+                chatMessages.pop();
+                io.emit('chatMessagesSent', chatMessages);
+                console.info('××× chatLastMessageDelete');
+            })
+
+            .on('getChatMessages', () =>{
+                io
+                    .to(socket.id)
+                    .emit('chatMessagesSent', chatMessages);
+            })
+
             .on('getRoom', () =>{
                 io
                     .to(socket.id)
                     .emit('roomSent', room);
             })
 
-            .on('keepAlive', () =>{ console.info('pinged by', socket.id); })
+            .on('keepAlive', () =>{
+                console.info('pinged by', socket.id);
+            })
         ;
     })
 ;

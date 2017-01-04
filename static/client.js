@@ -1,6 +1,20 @@
 $(document).ready(function(){
     var socket = io();
 
+    var entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+    };
+
+    function escapeHtml(string){
+        return String(string).replace(/[&<>"'\/]/g, function(s){
+            return entityMap[s];
+        });
+    }
 
     if (typeof isDetailView === 'undefined') isDetailView = false;
 
@@ -95,8 +109,19 @@ $(document).ready(function(){
                             })
                         ;
                     })
+                ;
             }
         }
+
+        var chatForm = $('.l-chat form');
+        var chatInput = $('[name=chatMessage]');
+        chatForm
+            .submit(function(event){
+                socket.emit('chatMessageSend', chatInput.val());
+                chatInput.val('');
+                event.preventDefault();
+            })
+        ;
 
         // get data with a little delay to allow disconnection events even in case of using the back button
         window.setTimeout(function(){
@@ -109,14 +134,38 @@ $(document).ready(function(){
         }, 29 * 60 * 1000);
     }
 
+    window.setTimeout(function(){
+        socket.emit('getChatMessages');
+    }, 100);
 
     // universal simple emiting method
     $('[data-emit]')
-        .click(function(){
+        .click(function(event){
             console.info('simple-emit', $(this).data('emit'));
             socket.emit($(this).data('emit'));
+            event.preventDefault();
         })
     ;
+
+    // fill chat log with messages
+
+    function chatFill(chatMessages){
+        var chatDeleteMessageButton = $('[data-emit=chatLastMessageDelete]');
+        var chatLog = $('.l-chat-log');
+        var chatLength = chatMessages.length;
+
+        chatLog.empty();
+
+        if (chatLength && chatDeleteMessageButton){
+            chatDeleteMessageButton.show();
+        } else {
+            chatDeleteMessageButton.hide();
+        }
+
+        for (var i = 0; i < chatLength; i++){
+            chatLog.prepend('<pre>' + escapeHtml(chatMessages[i]) + '</pre>');
+        }
+    }
 
     socket
         .on('connect', function(){ // user authentication
@@ -185,6 +234,11 @@ $(document).ready(function(){
             $('.l-room_status_info').text(roomStatus);
 
             $('body').prop('class', 'l-room_status--' + roomStatus);
+        })
+
+        .on('chatMessagesSent', function(chatMessages){
+            console.info('chatMessagesSent');
+            chatFill(chatMessages);
         })
 
         .on('roomSent', function(room){

@@ -5,17 +5,32 @@
 
 
 {% block body %}
-
-    <div class="l-lector-controls">
-        <div class="l-room_status_info">{{ room.roomStatus }}</div>
-        <div class="l-buttons l-buttons--teacher">
-            <button class="l-button l-button--start_work" data-emit="workStart">Skončil jsem výklad a zadal úkol</button>
-            <button class="l-button l-button--check_status" data-emit="checkStatus">Chci zjistit, zda už nejsou hotové</button>
-            <button class="l-button l-button--start_lecture" data-emit="lectureStart">Začínám výklad</button>
+    <div class="l-lector">
+        <div class="l-lector-controls">
+            <div class="l-room_status_info">{{ room.roomStatus }}</div>
+            <div class="l-buttons l-buttons--teacher">
+                <button class="l-button l-button--start_work" data-emit="workStart">Skončil jsem výklad a zadal úkol</button>
+                <button class="l-button l-button--check_status" data-emit="checkStatus">Chci zjistit, zda už nejsou hotové</button>
+                <button class="l-button l-button--start_lecture" data-emit="lectureStart">Začínám výklad</button>
+            </div>
+            <div class="l-chat">
+                <form action="" method="post">
+                    {#<select name="" id="">
+                        <option value="0">Vyber zprávu</option>
+                        <option value="1">titulek předpřipravené zprávy</option>
+                    </select>#}
+                    <textarea name="chatMessage" id="" cols="30" rows="5"></textarea>
+                    <div class="l-chat-buttons">
+                        <button class="l-button" data-emit="chatLastMessageDelete">smazat poslední</button>
+                        <input class="l-button l-button--primary" type="submit" value="odeslat zprávu" >
+                    </div>
+                </form>
+                <div class="l-chat-log"></div>
+            </div>
         </div>
-    </div>
 
-    {% include '__desks.njk' %}
+        {% include '__desks.njk' %}
+    </div>
 
     {{ super() }}
 
