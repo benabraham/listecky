@@ -225,7 +225,11 @@ a:active { color: skyblue; }
     height: 100vh;
 }
 
-.l-lector-controls { height: 50vh; }
+.l-lector-controls {
+    height: 50vh;
+    width: 70%;
+    min-width: 400px;
+}
 
 .l-buttons--teacher {
     height: 12vh;
@@ -309,8 +313,14 @@ a:active { color: skyblue; }
     width: 100%;
     position: relative;
     height: 100%;
-    max-width: 100vh;
+    max-width: 110vh;
+    max-height: 120vw;
     background-color: #eeeeee;
+}
+
+.l-desks--lector {
+    min-width: 500px;
+    min-height: 500px;
 }
 
 .l-desks--home {

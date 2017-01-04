@@ -1,4 +1,4 @@
-<div class="l-desks {% if isHome %}l-desks--home{% endif %}">
+<div class="l-desks {% if isHome %}l-desks--home{% else %}l-desks--lector{% endif %}">
     <div class="l-screen">plátno</div>
     {% for desk_id, desk in room.desks %}
         <div
