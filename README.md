@@ -29,6 +29,7 @@ Jedna instance běží na https://listecky.herokuapp.com/
 ### Chat
 
 * Chat umožňuje posílat i víceřádkové zprávy od přednášejícího všem studentům.
+* Zprávy lze formátovat pomocí syntaxe [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) 
 * Lze smazat nejnovější zprávu.
 * Zprávy jsou dostupné všem i když se připojí později.
 * Přijímání ani posílání zpráv není podmíněno stavem třídy.
