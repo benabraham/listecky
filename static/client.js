@@ -72,11 +72,6 @@ $(document).ready(function(){
         ;
 
     } else { // room overview
-        $('.l-buttons--teacher .l-button')
-            .click(function(){
-                socket.emit($(this).data('emit'));
-            })
-        ;
 
         function setDeskChairStatuses(room){
             if (room){
@@ -113,6 +108,15 @@ $(document).ready(function(){
             socket.emit('keepAlive');
         }, 29 * 60 * 1000);
     }
+
+
+    // universal simple emiting method
+    $('[data-emit]')
+        .click(function(){
+            console.info('simple-emit', $(this).data('emit'));
+            socket.emit($(this).data('emit'));
+        })
+    ;
 
     socket
         .on('connect', function(){ // user authentication
