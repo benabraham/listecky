@@ -2,17 +2,32 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const nunjucks = require('nunjucks');
 const console = require('better-console');
-const marked = require('marked');
 
+
+// nunjucks templates
+const nunjucks = require('nunjucks');
 nunjucks.configure('views', {
     autoescape: true,
     express: app
 });
 
+
+// markdown renderer
+const marked = require('marked');
+
+// define custom renderer (add target="_blank" to all links)
+let customRenderer = new marked.Renderer();
+this.link = function(href, title, text){
+    let out = '<a href="' + href + '" target="_blank" rel="noopener noreferrer"';
+    if (title) out += ' title="' + title + '"';
+    out += '>' + text + '</a>';
+    return out;
+};
+
+// set options to markdown renderer
 marked.setOptions({
-    renderer: new marked.Renderer(),
+    renderer: customRenderer,
     gfm: true,
     tables: true,
     breaks: true,
