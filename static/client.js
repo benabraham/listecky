@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var socket = io();
 
-
     if (typeof isDetailView === 'undefined') isDetailView = false;
 
     if (isDetailView){
@@ -124,11 +123,16 @@ $(document).ready(function(){
         socket.emit('getChatMessages');
     }, 100);
 
-    // universal simple emiting method
+    // universal simple emiting
     $('[data-emit]')
         .click(function(event){
             console.info('simple-emit', $(this).data('emit'));
-            socket.emit($(this).data('emit'));
+            if ($(this).data('require-input')){
+                var breakLength = window.prompt('Zadejte délku přestávky v minutách', '10');
+                socket.emit($(this).data('emit'), breakLength);
+            } else {
+                socket.emit($(this).data('emit'));
+            }
             event.preventDefault();
         })
     ;
@@ -152,6 +156,22 @@ $(document).ready(function(){
             chatLog.prepend('<div class="l-chat-message">' + chatMessages[i] + '</div>');
         }
     }
+
+    // helper to convert time to readable
+    function msToTime(duration){
+        var seconds = parseInt((duration / 1000) % 60);
+        var minutes = parseInt((duration / (1000 * 60)) % 60);
+        var hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+
+        hours = (hours < 10) ? '0' + hours : hours;
+        minutes = (minutes < 10) ? '0' + minutes : minutes;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+        return hours + ':' + minutes + ':' + seconds;
+    }
+
+    var breakCountdownTime = $('.l-break_countdown-time');
+    var roomStatusText = $('.l-room_status_info-status');
 
     socket
         .on('connect', function(){ // user authentication
@@ -207,7 +227,7 @@ $(document).ready(function(){
         .on('lectureStarted', function(roomStatus){
             console.info('lectureStarted');
 
-            $('.l-room_status_info').text(roomStatus);
+            roomStatusText.text(roomStatus);
 
             $('body').prop('class', 'l-room_status--' + roomStatus);
 
@@ -217,9 +237,38 @@ $(document).ready(function(){
         .on('workStarted', function(roomStatus){
             console.info('workStarted');
 
-            $('.l-room_status_info').text(roomStatus);
+            roomStatusText.text(roomStatus);
 
             $('body').prop('class', 'l-room_status--' + roomStatus);
+        })
+
+        .on('breakStarted', function(roomStatus){
+            console.info('breakStarted');
+
+            roomStatusText.text(roomStatus);
+
+            $('body').prop('class', 'l-room_status--' + roomStatus);
+
+            if (isDetailView) window.alert('Začala přestávka');
+        })
+
+        .on('breakTimeChanged', function(breakTimeLeft){
+            breakCountdownTime.text(msToTime(breakTimeLeft));
+        })
+
+        .on('breakTimeEnded', function(roomStatus){
+            console.info('breakTimeEnded');
+
+            breakCountdownTime.empty();
+
+            roomStatusText.text(roomStatus);
+
+            $('body').prop('class', 'l-room_status--' + roomStatus);
+
+        })
+
+        .on('stopwatchTimeChanged', function(stopwatchTime){
+            breakCountdownTime.text(msToTime(stopwatchTime));
         })
 
         .on('chatMessagesSent', function(chatMessages){

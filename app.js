@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+const Timer = require('tiny-timer');
 const console = require('better-console');
 
 
@@ -39,7 +40,7 @@ marked.setOptions({
 
 
 let room = {
-    'roomStatus': 'appstarted', // other statuses: 'lecturing' and 'working'
+    'roomStatus': 'initial', // other statuses: 'lecturing', 'working' and 'break'
     'statusTypes': { // only statuses with labels and own buttons, there is also online and offline status
         'not_done': { 'label': 'Pracuju' },
         'help': { 'label': 'Chci poradit' },
@@ -121,8 +122,31 @@ function checkDeskStatus(deskId){
     }
 }
 
+// helper to format chat messages
 function formatMessages(msg){
     return marked(msg);
+}
+
+// define global countdown and stopwatch timers
+let countdownTimer = new Timer({ interval: 4900, stopwatch: false });
+
+function stopCountdownTimer(){
+    countdownTimer.stop();
+    io.emit('breakTimeEnded', room.roomStatus);
+}
+
+let stopwatch = new Timer({ interval: 14900, stopwatch: true });
+let stopwatchMaxTime = 10*60*60*1000;
+stopwatch
+    .on('tick',(elapsed)=>{
+        io.emit('stopwatchTimeChanged',elapsed);
+    })
+    .start(stopwatchMaxTime);
+
+function restartStopwatch(){
+    console.error(room.roomStatus, stopwatch.time);
+    stopwatch.stop();
+    stopwatch.start(stopwatchMaxTime);
 }
 
 app
@@ -201,7 +225,7 @@ io
 
                 chair.status = statusType; // save status
                 io.emit('statusChanged', deskId, chairId, statusType, room); // emit new status
-                console.info('>>> statusChanged', chair.name, statusType);
+                console.info('>>> statusChanged', chair.name, statusType, 'elapsed', stopwatch.duration);
                 checkDeskStatus(deskId);
             })
 
@@ -219,6 +243,9 @@ io
             })
 
             .on('lectureStart', () =>{
+                restartStopwatch();
+                stopCountdownTimer();
+
                 for (let d in desks){
                     for (let c in desks[d].chairs){
                         let chair = desks[d].chairs[c];
@@ -236,22 +263,60 @@ io
             })
 
             .on('workStart', () =>{
+                restartStopwatch();
+                stopCountdownTimer();
+
                 for (let d in desks){
                     for (let c in desks[d].chairs){
                         let chair = desks[d].chairs[c];
 
                         if (chair.socketId){
                             chair.status = 'not_done';
+                            console.info('/// workStart', chair, chair.status);
                         } else {
                             chair.status = 'offline';
                         }
                         io.emit('statusChanged', d, c, chair.status, room);
-                        console.info('/// workStart', chair, chair.status);
                     }
                     checkDeskStatus(d);
                 }
                 room.roomStatus = 'working';
                 io.emit('workStarted', room.roomStatus);
+            })
+
+            .on('breakStart', (breakLength) =>{
+                restartStopwatch();
+                stopCountdownTimer();
+
+                room.roomStatus = 'break';
+                io.emit('breakStarted', room.roomStatus);
+
+                let breakTimeLeft = breakLength * 60 * 1000; // to milliseconds
+
+                countdownTimer
+                    .on('tick', (breakTimeLeft) =>{
+                        io.emit('breakTimeChanged', breakTimeLeft);
+                    })
+                    .on('done', () =>{
+                        console.info('%%% breakTimeEnded');
+
+                        room.roomStatus = 'initial';
+                        io.emit('breakTimeEnded', room.roomStatus);
+                    })
+                    .start(breakTimeLeft);
+
+                for (let d in desks){
+                    for (let c in desks[d].chairs){
+                        let chair = desks[d].chairs[c];
+
+                        if (chair.socketId){
+                            chair.status = 'online';
+                            io.emit('statusChanged', d, c, chair.status, room);
+                            console.info('……… breakStarted', breakLength, chair.name);
+                        }
+                    }
+                    checkDeskStatus(d);
+                }
             })
 
             .on('chatMessageSend', (chatMessage) =>{

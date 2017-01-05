@@ -101,18 +101,18 @@ input,
 textarea,
 button { font-family: "Roboto Condensed", sans-serif; }
 
-a:link { color: navy; }
+a:link { color: hsl(240, 100%, 25%); }
 
-a:visited { color: navy; }
+a:visited { color: hsl(240, 100%, 25%); }
 
-a:hover { color: deepskyblue; }
+a:hover { color: hsl(195, 100%, 50%); }
 
-a:active { color: skyblue; }
+a:active { color: hsl(197, 71%, 73%); }
 
 /* top nav strip */
 
 .l-nav-top {
-    background-color: #eeeeee;
+    background-color: hsl(0, 0%, 93%);
     width: 100%;
 }
 
@@ -126,15 +126,15 @@ a:active { color: skyblue; }
 .l-main { padding: 1em; }
 
 /* text infos */
-.l-intro,
-.l-lecture {
+.l-student_status_info {
     margin-top: .5em;
     display: none;
     font-size: 5em;
 }
 
-.l-room_status--appstarted .l-intro,
-.l-room_status--lecturing .l-lecture { display: block; }
+.l-room_status--initial .l-student_status_info--intro,
+.l-room_status--break .l-student_status_info--break,
+.l-room_status--lecturing .l-student_status_info--lecture { display: block; }
 
 /* name setting */
 
@@ -182,13 +182,13 @@ a:active { color: skyblue; }
 
 .l-buttons.l-clicked:before {
     content: "čekej";
-    color: white;
-    background-color: black;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 0%);
 }
 
 .l-clicked:before,
 .l-button {
-    color: black;
+    color: hsl(0, 0%, 0%);
     text-align: center;
     width: 100%;
     display: flex;
@@ -200,25 +200,45 @@ a:active { color: skyblue; }
 .l-buttons--student { margin: 2em 0; }
 
 .l-buttons--student .l-button.l-selected {
-    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, 0.8), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.5);
+    box-shadow: inset 0 3px 6px 0 hsla(0, 0%, 0%, 0.8), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.5);
 }
 
-.l-room_status--appstarted .l-buttons--student,
-.l-room_status--lecturing .l-buttons--student { display: none; }
+.l-room_status--initial .l-buttons--student,
+.l-room_status--lecturing .l-buttons--student,
+.l-room_status--break .l-buttons--student { display: none; }
 
-.l-room_status--appstarted .l-button--check_status,
+.l-room_status--initial .l-button--check_status,
 .l-room_status--lecturing .l-button--start_lecture,
 .l-room_status--lecturing .l-button--check_status,
-.l-room_status--working .l-button--start_work { display: none; }
+.l-room_status--working .l-button--check_status,
+.l-room_status--working .l-button--start_work,
+.l-room_status--break .l-button--check_status,
+.l-room_status--break .l-button--start_break { display: none; }
 
-.l-button--start_work {
-    background-color: rgb(0, 127, 255);
-    color: #ffffff;
+.l-button--primary {
+    background-color: hsl(210, 50%, 50%);
+    color: hsl(0, 0%, 100%);
 }
 
-.l-button--check_status { background-color: orange; }
+.l-room_status--initial .l-button--start_work,
+.l-room_status--initial .l-button--start_break {
+    background-color: hsl(0, 0%, 87%);
+    color: hsl(0, 0%, 0%);
+    width: 50%;
+}
 
-.l-button--start_lecture { background-color: lightgrey; }
+.l-button--start_work {
+}
+
+.l-button--start_break {
+    width: 50%;
+    background-color: hsl(203, 92%, 75%);
+    color: hsl(203, 82%, 33%);
+}
+
+.l-button--check_status { background-color: hsl(40, 100%, 50%); }
+
+/*.l-button--start_lecture { background-color: lightgrey; }*/
 
 .l-lector {
     display: flex;
@@ -254,7 +274,7 @@ a:active { color: skyblue; }
 
 .l-chat textarea {
     height: 10vh;
-    border: 1px solid #dddddd;
+    border: 1px solid hsl(0, 0%, 87%);
 }
 
 .l-chat select { display: none; }
@@ -270,13 +290,11 @@ a:active { color: skyblue; }
 }
 
 .l-chat-buttons .l-button--primary {
-    background-color: rgb(0, 127, 255);
-    color: #ffffff;
     width: 150%;
 }
 
 .l-chat-log {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid hsl(0, 0%, 87%);
     overflow: auto;
     height: 65vh;
 }
@@ -287,7 +305,7 @@ a:active { color: skyblue; }
 
 .l-chat-message {
     padding: 10px 0 0 10px;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid hsl(0, 0%, 87%);
     font-size: 16px;
 }
 
@@ -318,7 +336,7 @@ a:active { color: skyblue; }
 .l-chat-message blockquote {
     padding: 5px 0 5px 10px;
     line-height: 1.2;
-    border-left: 1px solid #dddddd;
+    border-left: 1px solid hsl(0, 0%, 87%);
     margin: 10px 0 10px 10px;
 }
 
@@ -334,7 +352,7 @@ a:active { color: skyblue; }
 .l-chat-message code,
 .l-chat-message pre {
     font-family: Consolas, monaco, monospace;
-    background: #eeeeee;
+    background: hsl(0, 0%, 93%);
 }
 
 .l-chat-message code {
@@ -345,7 +363,7 @@ a:active { color: skyblue; }
 
 .l-chat-message table th,
 .l-chat-message table td {
-    border: 1px solid #cccccc;
+    border: 1px solid hsl(0, 0%, 80%);
     padding: 4px 6px;
     text-align: left;
 }
@@ -374,7 +392,7 @@ a:active { color: skyblue; }
     height: 100%;
     max-width: 110vh;
     max-height: 120vw;
-    background-color: #eeeeee;
+    background-color: hsl(0, 0%, 93%);
 }
 
 .l-desks--lector {
@@ -400,13 +418,13 @@ a:active { color: skyblue; }
     width: 25%;
     margin-left: auto;
     margin-right: auto;
-    background-color: black;
-    color: #ffffff;
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
 }
 
 .l-desk {
     position: absolute;
-    background-color: #e8e8e8;
+    background-color: hsl(0, 0%, 91%);
     transform-origin: center;
     display: flex;
     justify-content: center;
@@ -448,11 +466,11 @@ a:active { color: skyblue; }
     text-align: center;
     font-size: 13px;
     display: block;
-    color: black;
+    color: hsl(0, 0%, 0%);
     text-decoration: none;
 }
 
-.l-chair:hover { background-color: rgba(255, 255, 255, 0.9) }
+.l-chair:hover { background-color: hsla(0, 0%, 100%, 0.9) }
 
 .l-chair--position_0,
 .l-chair--position_1 { top: 10%; }
@@ -466,10 +484,10 @@ a:active { color: skyblue; }
 .l-chair--position_1,
 .l-chair--position_3 { right: -30%; }
 
-.l-status--offline { background-color: rgba(255, 255, 255, 0.5); }
+.l-status--offline { background-color: hsla(0, 0%, 100%, 0.5); }
 
 .l-chair .l-status--online {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: hsl(0, 0%, 100%);
     pointer-events: none;
     cursor: default;
     text-decoration: none;
@@ -487,15 +505,15 @@ a:active { color: skyblue; }
 .l-status--not_done:visited,
 .l-status--help,
 .l-status--help:link,
-.l-status--help:visited { color: white; }
+.l-status--help:visited { color: hsl(0, 0%, 100%); }
 
-.l-status--done { background-color: rgb(0, 128, 0); }
+.l-status--done { background-color: hsl(120, 100%, 25%); }
 
-.l-status--not_done { background-color: rgb(0, 127, 255); }
+.l-status--not_done { background-color: hsl(210, 100%, 50%); }
 
-.l-status--help { background-color: rgb(200, 0, 0); }
+.l-status--help { background-color: hsl(0, 100%, 39%); }
 
-.l-status--empty { background-color: rgb(145, 145, 145); }
+.l-status--empty { background-color: hsl(0, 0%, 57%); }
 
 /* Shapes to be done */
 /*

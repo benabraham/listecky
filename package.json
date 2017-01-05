@@ -15,7 +15,8 @@
     "mkdirp": "^0.5.x",
     "nunjucks": "^3.0.x",
     "rimraf": "^2.5.x",
-    "socket.io": "^1.7.x"
+    "socket.io": "^1.7.x",
+    "tiny-timer": "^1.1.1"
   },
   "engines": {
     "node": "7.2.0"
