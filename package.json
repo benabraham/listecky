@@ -19,7 +19,7 @@
     "tiny-timer": "^1.1.1"
   },
   "engines": {
-    "node": "7.2.0"
+    "node": "7.4.0"
   },
   "devDependencies": {
     "express": "^4.14.x",
