@@ -135,8 +135,8 @@ function stopCountdownTimer(){
     io.emit('breakTimeEnded', room.roomStatus);
 }
 
-let stopwatch = new Timer({ interval: 14900, stopwatch: true });
-let stopwatchMaxTime = 10*60*60*1000;
+let stopwatch = new Timer({ interval: 15000, stopwatch: true });
+let stopwatchMaxTime = 10*60*60*1000; // Timer requires a time set: 10 hours should be more than enough
 stopwatch
     .on('tick',(elapsed)=>{
         io.emit('stopwatchTimeChanged',elapsed);
