@@ -210,7 +210,6 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-room_status--initial .l-button--check_status,
 .l-room_status--lecturing .l-button--start_lecture,
 .l-room_status--lecturing .l-button--check_status,
-.l-room_status--working .l-button--check_status,
 .l-room_status--working .l-button--start_work,
 .l-room_status--break .l-button--check_status,
 .l-room_status--break .l-button--start_break { display: none; }
@@ -224,10 +223,12 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-room_status--initial .l-button--start_break {
     background-color: hsl(0, 0%, 87%);
     color: hsl(0, 0%, 0%);
-    width: 50%;
 }
 
-.l-button--start_work {
+.l-room_status--initial .l-button--start_work,
+.l-room_status--initial .l-button--start_break,
+.l-button--check_status {
+    width: 50%;
 }
 
 .l-button--start_break {
