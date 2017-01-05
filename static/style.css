@@ -127,7 +127,7 @@ a:active { color: hsl(197, 71%, 73%); }
 
 /* text infos */
 .l-student_status_info {
-    margin-top: .5em;
+    margin-top: 0.5em;
     display: none;
     font-size: 5em;
 }
@@ -160,7 +160,7 @@ a:active { color: hsl(197, 71%, 73%); }
     flex-direction: column;
     align-items: center;
     margin: 0 5px;
-    padding: 1em .5em;
+    padding: 1em 0.5em;
     border: 0 none;
     line-height: 0.9;
     width: 100%;
@@ -280,7 +280,7 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-chat select { display: none; }
 
 .l-chat .l-button {
-    padding: .5em 0;
+    padding: 0.5em 0;
     font-size: 1em;
     height: auto;
 }
