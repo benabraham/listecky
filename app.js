@@ -48,20 +48,16 @@ let room = {
     },
     'size': 4, // room is always a square, this is a number of desks vertically/horizontally
     'desks': {
-        0: { 'name': '1', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 45, 'deskType': 0 } },
-        1: { 'name': '2', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'deskType': 0 } },
-        2: { 'name': '3', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 2 }, 'rotation': 0, 'deskType': 0 } },
-        3: { 'name': '4', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
-        4: { 'name': '5', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
-        5: { 'name': '6', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
-        6: { 'name': '7', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 3 }, 'rotation': 0, 'deskType': 0 } },
-        7: { 'name': '8', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 2 }, 'rotation': 0, 'deskType': 0 } },
-        8: { 'name': '9', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 1 }, 'rotation': 0, 'deskType': 0 } },
-        9: { 'name': '10', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 0 }, 'rotation': -45, 'deskType': 1 } },
-    },
-    'deskTypes': {
-        0: { 'chairs': 4, 'shape': 'square' },
-        1: { 'chairs': 2, 'shape': 'square' },
+        0: { 'name': 'stůl 01', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 45, 'chairs': 4, 'shape': 'square' } },
+        1: { 'name': 'stůl 02', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+        2: { 'name': 'stůl 03', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 2 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+        3: { 'name': 'stůl 04', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+        4: { 'name': 'stůl 05', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+        5: { 'name': 'stůl 06', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+        6: { 'name': 'stůl 07', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+        7: { 'name': 'stůl 08', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 2 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+        8: { 'name': 'stůl 09', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 1 }, 'rotation': 0, 'chairs': 3, 'shape': 'square' } },
+        9: { 'name': 'stůl 10', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 0 }, 'rotation': -45, 'chairs': 2, 'shape': 'square' } },
     },
 };
 
@@ -74,15 +70,11 @@ for (let d in desks){
     // initial desk status
     desks[d].status = 'empty';
 
-    // add layout
-    Object.assign(desks[d].layout, room.deskTypes[desks[d].layout.deskType]);
-
     // add empty chairs
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
         desks[d].chairs[c] = { status: 'offline', name: '?' };
     }
-
 }
 
 function checkDeskStatus(deskId){
@@ -136,10 +128,10 @@ function stopCountdownTimer(){
 }
 
 let stopwatch = new Timer({ interval: 15000, stopwatch: true });
-let stopwatchMaxTime = 10*60*60*1000; // Timer requires a time set: 10 hours should be more than enough
+let stopwatchMaxTime = 10 * 60 * 60 * 1000; // Timer requires a time set: 10 hours should be more than enough
 stopwatch
-    .on('tick',(elapsed)=>{
-        io.emit('stopwatchTimeChanged',elapsed);
+    .on('tick', (elapsed) =>{
+        io.emit('stopwatchTimeChanged', elapsed);
     })
     .start(stopwatchMaxTime);
 
