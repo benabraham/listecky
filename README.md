@@ -20,11 +20,19 @@ Jedna instance běží na https://listecky.herokuapp.com/
 
 ### Připomenutí
 
-* Tlačítkem „Chci zjistit, zda už nejsou hotové“ se pošle otázku všem, které nemají status `done` notifikace.
+* Tlačítkem „Nemají už hotovo?“ se pošle otázku všem, které nemají status `done` notifikace.
 
 ### Konec cvičení / začátek výkladu
 
 * Tlačítkem „Začínám výklad“ se pošle všem pošle notifikace a nastaví `not_done`.  
+
+### Přestávka
+
+* Tlačítkem „Přestávka“ se po zadání délky přestávky v minutách se spustí odpočet, pošle notifikace a nastaví `not_done`.
+  
+### Stopky
+
+* Pokud není přestávka zobrazuje se mu čas, který aktuální stav trvá.
 
 ### Chat
 
