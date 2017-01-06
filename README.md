@@ -69,11 +69,21 @@ Jedna instance běží na https://listecky.herokuapp.com/
 
 Je to funkční na heroku.com, ale lze provozovat lokálně.
 
-Pro provoz na heroku nastavit http-session-affinity takto:
+
+### Heroku
+
+Pro provoz na Heroku nastavit http-session-affinity takto:
 
 ```
 > heroku features:enable http-session-affinity
 ```
+
+A časovou zónu:
+
+```
+> heroku config:add TZ="Europe/Prague"
+```
+
 
 ## Vývoj
 

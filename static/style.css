@@ -373,18 +373,29 @@ a:active { color: hsl(197, 71%, 73%); }
     font-weight: bold;
 }
 
+/* system messages */
+/* yes it's hacking, reusing element that shouldn't be, but nobody uses h6! */
+.l-chat-message h6:only-child {
+    background: hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 80%);
+    font-size: 2em;
+    text-align: center;
+    padding: 0.5em;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
 /* Room status info  */
 
 .l-room_status_info {
-    text-align: center;
     height: 3vh;
     padding: 0.2vh;
     font-size: 2vh;
+    display: flex;
+    justify-content: space-between;
 }
 
-.l-room_status_info:before {
-    content: "stav třídy: ";
-}
+.l-room_status_info-duration { text-align: right; }
 
 /* Desks */
 .l-desks {

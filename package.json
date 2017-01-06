@@ -13,6 +13,7 @@
     "express": "^4.14.x",
     "marked": "^0.3.x",
     "mkdirp": "^0.5.x",
+    "moment": "^2.17.x",
     "nunjucks": "^3.0.x",
     "rimraf": "^2.5.x",
     "socket.io": "^1.7.x",

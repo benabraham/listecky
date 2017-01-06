@@ -4,9 +4,20 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const Timer = require('tiny-timer');
 const console = require('better-console');
+const moment = require('moment');
 
 
-// nunjucks templates
+
+/*
+ * moment library set locale
+ */
+let now = moment().locale('cs');
+
+
+
+/*
+ * nunjucks templates
+ */
 const nunjucks = require('nunjucks');
 nunjucks.configure('views', {
     autoescape: true,
@@ -14,7 +25,10 @@ nunjucks.configure('views', {
 });
 
 
-// markdown renderer
+
+/*
+ * markdown renderer
+ */
 const marked = require('marked');
 
 // define custom renderer (add target="_blank" to all links)
@@ -39,6 +53,10 @@ marked.setOptions({
 });
 
 
+
+/*
+ * room object
+ */
 let room = {
     'roomStatus': 'initial', // other statuses: 'lecturing', 'working' and 'break'
     'statusTypes': { // only statuses with labels and own buttons, there is also online and offline status
@@ -65,6 +83,11 @@ let chatMessages = [];
 
 let desks = room.desks;
 
+
+
+/*
+ * set up desks
+ */
 for (let d in desks){
 
     // initial desk status
@@ -77,6 +100,11 @@ for (let d in desks){
     }
 }
 
+
+
+/*
+ * Check and sets desks status
+ */
 function checkDeskStatus(deskId){
     // make an array of chair statuses (easier to work with)
     let i = 0, chairStatuses = [];
@@ -114,21 +142,48 @@ function checkDeskStatus(deskId){
     }
 }
 
-// helper to format chat messages
+
+
+/*
+ * helper to format chat messages
+ */
 function formatMessages(msg){
     return marked(msg);
 }
 
-// define global countdown and stopwatch timers
-let countdownTimer = new Timer({ interval: 4900, stopwatch: false });
 
-function stopCountdownTimer(){
+
+/*
+ * Countdown timer
+ */
+let countdownTimer = new Timer({ interval: 1900, stopwatch: false });
+
+countdownTimer
+    .on('tick', (breakTimeLeft) =>{
+        io.volatile.emit('breakTimeChanged', room.roomStatus, breakTimeLeft);
+    })
+
+    .on('done', () =>{
+        console.info('%%% breakTimeEnded');
+        stopCountdownTimer(true);
+    });
+
+// stops timer and sets everything
+function stopCountdownTimer(isByTimer){
     countdownTimer.stop();
-    io.emit('breakTimeEnded', room.roomStatus);
+    room.roomStatus = 'initial';
+    io.emit('breakTimeEnded', room.roomStatus, isByTimer);
+    console.info('stopCountdownTimer', countdownTimer.status);
 }
 
-let stopwatch = new Timer({ interval: 15000, stopwatch: true });
+
+
+/*
+ * Stopwatch
+ */
+let stopwatch = new Timer({ interval: 59000, stopwatch: true });
 let stopwatchMaxTime = 10 * 60 * 60 * 1000; // Timer requires a time set: 10 hours should be more than enough
+
 stopwatch
     .on('tick', (elapsed) =>{
         io.emit('stopwatchTimeChanged', elapsed);
@@ -136,11 +191,26 @@ stopwatch
     .start(stopwatchMaxTime);
 
 function restartStopwatch(){
-    console.error(room.roomStatus, stopwatch.time);
+    console.error('this should be saved somewhere…', room.roomStatus, stopwatch.time);
     stopwatch.stop();
     stopwatch.start(stopwatchMaxTime);
 }
 
+/*
+ * function to send a chat message
+ */
+function addChatMessage(chatMessage){
+    if (chatMessage){
+        console.info('>>> chatMessageSent', chatMessage);
+
+        chatMessages.push(chatMessage);
+        io.emit('chatMessagesSent', chatMessages.map(formatMessages));
+    }
+}
+
+/*
+ * express app
+ */
 app
     .set('port', (process.env.PORT || 3000))
 
@@ -168,11 +238,17 @@ app
     })
 ;
 
+
+
+/*
+ * Socket.io
+ */
 io
     .set('origins', '*:*')
 
     .on('connection', socket =>{
         socket
+
             .on('auth-request', (deskId, chairId) =>{
                 let chair = desks[deskId].chairs[chairId];
 
@@ -185,6 +261,7 @@ io
                     checkDeskStatus(deskId);
                 }
             })
+
 
             // on disconnection find which chair disconnected and clear it's properties
             .on('disconnect', () =>{
@@ -204,6 +281,7 @@ io
                 }
             })
 
+
             .on('setStudentName', (deskId, chairId, studentName) =>{
                 let chair = desks[deskId].chairs[chairId];
 
@@ -211,6 +289,7 @@ io
                 io.emit('studentNameSet', deskId, chairId, studentName, room); // emit new name
                 console.info('•••', deskId, chairId, studentName);
             })
+
 
             .on('statusChange', (deskId, chairId, statusType) =>{
                 let chair = desks[deskId].chairs[chairId];
@@ -220,6 +299,7 @@ io
                 console.info('>>> statusChanged', chair.name, statusType, 'elapsed', stopwatch.duration);
                 checkDeskStatus(deskId);
             })
+
 
             .on('checkStatus', () =>{
                 for (let d in desks){
@@ -234,9 +314,10 @@ io
                 }
             })
 
+
             .on('lectureStart', () =>{
                 restartStopwatch();
-                stopCountdownTimer();
+                stopCountdownTimer(false);
 
                 for (let d in desks){
                     for (let c in desks[d].chairs){
@@ -254,9 +335,10 @@ io
                 io.emit('lectureStarted', room.roomStatus);
             })
 
+
             .on('workStart', () =>{
                 restartStopwatch();
-                stopCountdownTimer();
+                stopCountdownTimer(false);
 
                 for (let d in desks){
                     for (let c in desks[d].chairs){
@@ -276,26 +358,20 @@ io
                 io.emit('workStarted', room.roomStatus);
             })
 
+
             .on('breakStart', (breakLength) =>{
                 restartStopwatch();
-                stopCountdownTimer();
-
-                room.roomStatus = 'break';
-                io.emit('breakStarted', room.roomStatus);
+                stopCountdownTimer(false);
 
                 let breakTimeLeft = breakLength * 60 * 1000; // to milliseconds
 
-                countdownTimer
-                    .on('tick', (breakTimeLeft) =>{
-                        io.emit('breakTimeChanged', breakTimeLeft);
-                    })
-                    .on('done', () =>{
-                        console.info('%%% breakTimeEnded');
+                room.roomStatus = 'break';
 
-                        room.roomStatus = 'initial';
-                        io.emit('breakTimeEnded', room.roomStatus);
-                    })
-                    .start(breakTimeLeft);
+                addChatMessage('###### přestávka do ' + now.add(breakLength, 'minutes').format('HH:mm'));
+
+                io.emit('breakStarted', room.roomStatus, breakTimeLeft);
+
+                countdownTimer.start(breakTimeLeft);
 
                 for (let d in desks){
                     for (let c in desks[d].chairs){
@@ -311,14 +387,12 @@ io
                 }
             })
 
-            .on('chatMessageSend', (chatMessage) =>{
-                if (chatMessage){
-                    console.info('>>> chatMessageSent', chatMessage);
 
-                    chatMessages.push(chatMessage);
-                    io.emit('chatMessagesSent', chatMessages.map(formatMessages));
-                }
+
+            .on('chatMessageSend', (chatMessage) =>{
+                addChatMessage(chatMessage);
             })
+
 
             .on('chatLastMessageDelete', () =>{
                 console.info('××× chatLastMessageDelete');
@@ -327,17 +401,21 @@ io
                 io.emit('chatMessagesSent', chatMessages.map(formatMessages));
             })
 
+
             .on('getChatMessages', () =>{
                 io
                     .to(socket.id)
                     .emit('chatMessagesSent', chatMessages.map(formatMessages));
             })
 
+
+
             .on('getRoom', () =>{
                 io
                     .to(socket.id)
                     .emit('roomSent', room);
             })
+
 
             .on('keepAlive', () =>{
                 console.info('pinged by', socket.id);
@@ -347,3 +425,4 @@ io
 ;
 
 server.listen(app.get('port'));
+

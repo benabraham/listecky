@@ -7,7 +7,11 @@
 {% block body %}
     <div class="l-lector">
         <div class="l-lector-controls">
-            <div class="l-room_status_info"><span class="l-room_status_info-status">{{ room.roomStatus }}</span> <span class="l-break_countdown-time"></span></div>
+            <div class="l-room_status_info">
+                <div class="l-room_status_info-status">stav třídy: <span class="l-room_status_info-status-text">{{ room.roomStatus }}</span></div>
+                <div class="l-room_status_info-duration">stav trvá: <span class="l-room_status_info-duration-text">00:00</span></div>
+
+            </div>
             <div class="l-buttons l-buttons--teacher">
                 <button class="l-button l-button--primary l-button--start_work" data-emit="workStart">Úkol zadán</button>
                 <button class="l-button l-button--check_status" data-emit="checkStatus">Nemají už hotovo?</button>

@@ -23,7 +23,7 @@
             <a class="l-set_name" href="#">změnit jméno</a>
         </h1>
 
-        <div class="l-student_status_info--intro l-student_status_info">Za chvíli začneme.</div>
+        <div class="l-student_status_info--intro l-student_status_info">Začínáme.</div>
 
         <form class="l-name_form" action="" method="post">
             <input type="text" maxlength="32" placeholder="vyplň si jméno" name="studentName" {% if chair.name != '?' %}value="{{ chair.name }}"{% endif %}>
@@ -46,9 +46,9 @@
             {% endfor %}
         </div>
 
-        <div class="l-student_status_info--lecture l-student_status_info">Právě probíhá výklad</div>
+        <div class="l-student_status_info--lecture l-student_status_info">Právě probíhá výklad.</div>
 
-        <div class="l-student_status_info--break l-student_status_info">Je přestávka, odpočiň si. Máš na to ještě <span class="l-break_countdown-time"></span></div>
+        <div class="l-student_status_info--break l-student_status_info"><span class="l-break_countdown-time"></span></div>
 
         <div class="l-chat-log l-chat-log--student"></div>
     </div>
