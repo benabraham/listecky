@@ -308,7 +308,7 @@ io
 
                 chair.status = statusType; // save status
                 io.emit('statusChanged', deskId, chairId, statusType, room); // emit new status
-                console.info('>>> statusChanged', chair.name, statusType, 'elapsed', stopwatch.duration);
+                console.info('>>> statusChanged', chair.name, statusType, 'elapsed', stopwatch.time);
                 checkDeskStatus(deskId);
             })
 
