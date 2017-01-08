@@ -139,7 +139,22 @@ a:active { color: hsl(197, 71%, 73%); }
 /* name setting */
 
 .l-student_name {
+    display: flex;
+    align-items: center;
+}
+
+.l-student_name-text {
     font-size: 2em;
+}
+
+.l-name_actions {
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-name_actions > a {
+    padding: 5px;
 }
 
 .l-set_name {
@@ -147,9 +162,21 @@ a:active { color: hsl(197, 71%, 73%); }
     font-weight: normal;
 }
 
+.l-unset_name {
+    font-size: 45%;
+    font-weight: normal;
+}
+
 .l-name_form { height: 4em; }
 
 .l-name_form input { font-size: 2em; }
+
+.l-name_form input:required:invalid + input[type=submit],
+.l-name_form input:focus:invalid + input[type=submit] {
+    visibility: hidden;
+}
+
+.l-name_form input:required:valid + input[type=submit] { visibility: visible; }
 
 /* Buttons */
 
@@ -483,7 +510,7 @@ a:active { color: hsl(197, 71%, 73%); }
     text-align: center;
     color: hsla(0, 0%, 100%, 0.7);
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

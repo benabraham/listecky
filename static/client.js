@@ -38,30 +38,52 @@ $(document).ready(
             ;
 
             var nameForm = $('.l-name_form');
-            var nameButton = $('.l-set_name');
-            var namePlaceholder = $('.l-student_name');
+            var nameChangeformShowButton = $('.l-set_name');
+            var nameRemoveButton = $('.l-unset_name');
+            var namePlaceholder = $('.l-student_name-text');
             var nameInput = $('[name=studentName]');
 
             // show form if no name is set
-            if (namePlaceholder.text() == ''){
-                nameForm.show();
-                nameButton.hide();
-                nameInput.focus();
-            } else {
-                nameForm.hide();
-                nameButton.show();
+            function setNameForm(studentName){
+                if (studentName) namePlaceholder.text(studentName);
+
+                if (namePlaceholder.text() == '' || namePlaceholder.text() == '?'){
+                    nameInput.val('');
+                    nameChangeformShowButton.hide();
+                    nameRemoveButton.hide();
+                    namePlaceholder.hide();
+                    nameForm.show();
+                    nameInput.focus();
+                } else {
+                    nameInput.val(namePlaceholder.text());
+                    nameForm.hide();
+                    nameChangeformShowButton.show();
+                    nameRemoveButton.show();
+                    namePlaceholder.show();
+                }
             }
 
+            setNameForm();
+
             // show form
-            nameButton
+            nameChangeformShowButton
                 .on('click', function(){
+                    nameChangeformShowButton.hide();
+                    nameRemoveButton.hide();
                     namePlaceholder.hide();
-                    nameForm.toggle();
-                    nameButton.hide();
+                    nameForm.show();
                     nameInput.focus();
                     return false;
                 })
             ;
+
+            nameRemoveButton
+                .on('click', function(event){
+                    socket.emit('setStudentName', thisDeskId, thisChairId, '?');
+                    event.preventDefault();
+                })
+            ;
+
 
             // send data from form
             nameForm
@@ -70,6 +92,8 @@ $(document).ready(
                     event.preventDefault();
                 })
             ;
+
+            // window.onbeforeunload = function(){ return 'Opravdu chceš odejít z téhle stránky?'; };
 
         } else { // room overview
 
@@ -248,9 +272,7 @@ $(document).ready(
             .on('studentNameSet', function(deskId, chairId, studentName, room){ // name set
                 if (isDetailView){
                     if (thisDeskId == deskId && thisChairId == chairId){
-                        namePlaceholder.text(studentName).show();
-                        nameForm.hide();
-                        nameButton.show();
+                        setNameForm(studentName);
                     }
                 } else {
                     setDeskChairStatuses(room);

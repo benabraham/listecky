@@ -291,12 +291,7 @@ io
 
             .on('setStudentName', (deskId, chairId, studentName) =>{
                 let chair = desks[deskId].chairs[chairId];
-
-                if (studentName != ''){
-                    chair.name = studentName;
-                } else {
-                    chair.name = defaultName;
-                }
+                chair.name = studentName;
 
                 io.emit('studentNameSet', deskId, chairId, studentName, room); // emit new name
                 console.info('•••', deskId, chairId, studentName);
