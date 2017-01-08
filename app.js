@@ -100,7 +100,7 @@ for (let d in desks){
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
         var x = d * 10 + c;
-        desks[d].chairs[c] = { status: 'offline', name: x };
+        desks[d].chairs[c] = { status: 'offline', name: defaultName };
     }
 }
 
