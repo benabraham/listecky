@@ -88,6 +88,8 @@ let room = {
  * set up desks
  */
 let desks = room.desks;
+const defaultName = '?';
+
 for (let d in desks){
 
     // initial desk status
@@ -97,7 +99,7 @@ for (let d in desks){
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
         var x = d * 10 + c;
-        desks[d].chairs[c] = { status: 'offline', name: '?' };
+        desks[d].chairs[c] = { status: 'offline', name: defaultName };
     }
 }
 
@@ -290,7 +292,12 @@ io
             .on('setStudentName', (deskId, chairId, studentName) =>{
                 let chair = desks[deskId].chairs[chairId];
 
-                chair.name = studentName;
+                if (studentName != ''){
+                    chair.name = studentName;
+                } else {
+                    chair.name = defaultName;
+                }
+
                 io.emit('studentNameSet', deskId, chairId, studentName, room); // emit new name
                 console.info('•••', deskId, chairId, studentName);
             })
