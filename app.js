@@ -230,7 +230,7 @@ app
     })
 
     .get('/teacher', (req, res) =>{
-        res.render('teacher.njk', {
+        res.render('lector.njk', {
             room: room,
         });
     })

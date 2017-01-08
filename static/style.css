@@ -284,7 +284,7 @@ a:active { color: hsl(197, 71%, 73%); }
     min-width: 400px;
 }
 
-.l-buttons--teacher {
+.l-buttons-lector {
     height: 12vh;
 }
 
@@ -630,16 +630,6 @@ a:active { color: hsl(197, 71%, 73%); }
 }
 
 .l-desks--lector .l-chair a { transform: rotate(180deg); }
-
-/*
-.l-desk-chairs_number--1 a,
-.l-desk-chairs_number--2 a { width: 60%; }
-
-.l-desk-chairs_number--3 a,
-.l-desk-chairs_number--4 a { width: 90%; }
-
-.l-desk-chairs_number--5 a,
-.l-desk-chairs_number--6 a { width: 95%; }*/
 
 .l-chair a:hover { background-color: hsla(0, 0%, 100%, 0.9) }
 
