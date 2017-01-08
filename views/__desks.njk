@@ -14,7 +14,8 @@
             <div
                 class="
                     l-desk-shape
-                    l-desk-shape-{{ desk.layout.shape }}
+                    l-desk-shape--{{ desk.layout.shape }}
+                    l-desk-chairs_number--{{ desk.layout.chairs }}
                 "
                 style="transform: rotate({{ desk.layout.rotation }}deg);"
             >
@@ -25,17 +26,19 @@
                         <div class="l-desk-coach">{{ desk.coach }}</div>
                     </div>
 
-                    {% for chair_id, chair in desk.chairs %}
-                        <div class="l-chair l-chair--position_{{ chair_id }}">
-                            <a
-                                class=""
-                                data-chair-id="{{ chair_id }}"
-                                href="/desk/{{ desk_id }}/chair/{{ chair_id }}/"
-                            >
+                    <div class="l-desk-chairs">
+                        {% for chair_id, chair in desk.chairs %}
+                            <div class="l-chair">
+                                <a
+                                    class=""
+                                    data-chair-id="{{ chair_id }}"
+                                    href="/desk/{{ desk_id }}/chair/{{ chair_id }}/"
+                                >
 
-                            </a>
-                        </div>
-                    {% endfor %}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
 

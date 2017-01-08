@@ -66,28 +66,28 @@ let room = {
     },
     'size': 4, // room is always a square, this is a number of desks vertically/horizontally
     'desks': {
-        0: { 'name': 'stůl 01', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 0 }, 'rotation': 45, 'chairs': 4, 'shape': 'square' } },
-        1: { 'name': 'stůl 02', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-        2: { 'name': 'stůl 03', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 2 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-        3: { 'name': 'stůl 04', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-        4: { 'name': 'stůl 05', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-        5: { 'name': 'stůl 06', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-        6: { 'name': 'stůl 07', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-        7: { 'name': 'stůl 08', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 2 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-        8: { 'name': 'stůl 09', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 1 }, 'rotation': 0, 'chairs': 3, 'shape': 'square' } },
-        9: { 'name': 'stůl 10', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 0 }, 'rotation': -45, 'chairs': 2, 'shape': 'square' } },
+        1: { 'name': '1-chair square', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'chairs': 1, 'shape': 'square' } },
+        2: { 'name': '2-chair square', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 1 }, 'rotation': 0, 'chairs': 2, 'shape': 'square' } },
+        3: { 'name': '3-chair square', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 1 }, 'rotation': 0, 'chairs': 3, 'shape': 'square' } },
+        4: { 'name': '4-chair square', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 1 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
+
+        5: { 'name': '1-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 2 }, 'rotation': 0, 'chairs': 1, 'shape': 'rectangle' } },
+        6: { 'name': '2-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 2 }, 'rotation': 0, 'chairs': 2, 'shape': 'rectangle' } },
+        7: { 'name': '3-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 2 }, 'rotation': 0, 'chairs': 3, 'shape': 'rectangle' } },
+        8: { 'name': '4-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'rectangle' } },
+        9: { 'name': '5-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 3 }, 'rotation': 0, 'chairs': 5, 'shape': 'rectangle' } },
+        10: { 'name': '6-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 3 }, 'rotation': 0, 'chairs': 6, 'shape': 'rectangle' } },
+
+        // 11: { 'name': 'kruh s 4', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'circle' } },
     },
 };
-
-let chatMessages = [];
-
-let desks = room.desks;
 
 
 
 /*
  * set up desks
  */
+let desks = room.desks;
 for (let d in desks){
 
     // initial desk status
@@ -96,6 +96,7 @@ for (let d in desks){
     // add empty chairs
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
+        var x = d * 10 + c;
         desks[d].chairs[c] = { status: 'offline', name: '?' };
     }
 }
@@ -145,8 +146,22 @@ function checkDeskStatus(deskId){
 
 
 /*
- * helper to format chat messages
+ * chat messages
  */
+
+let chatMessages = [];
+
+// send a chat message
+function addChatMessage(chatMessage){
+    if (chatMessage){
+        console.info('>>> chatMessageSent', chatMessage);
+
+        chatMessages.push(chatMessage);
+        io.emit('chatMessagesSent', chatMessages.map(formatMessages));
+    }
+}
+
+// format chat messages
 function formatMessages(msg){
     return marked(msg);
 }
@@ -196,17 +211,7 @@ function restartStopwatch(){
     stopwatch.start(stopwatchMaxTime);
 }
 
-/*
- * function to send a chat message
- */
-function addChatMessage(chatMessage){
-    if (chatMessage){
-        console.info('>>> chatMessageSent', chatMessage);
 
-        chatMessages.push(chatMessage);
-        io.emit('chatMessagesSent', chatMessages.map(formatMessages));
-    }
-}
 
 /*
  * express app

@@ -106,8 +106,13 @@ $(document).ready(
                     socket.emit('chatMessageSend', chatInput.val());
                     chatInput.val('').focus();
                     event.preventDefault();
-                })
-            ;
+                });
+
+            chatInput.keydown(function(event){
+                if ((event.ctrlKey || e.metaKey) && (event.keyCode == 13 || event.keyCode == 10)){
+                    $('.l-chat-form').submit();
+                }
+            });
 
             // get data with a little delay to allow disconnection events even in case of using the back button
             window.setTimeout(function(){

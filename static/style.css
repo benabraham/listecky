@@ -174,6 +174,11 @@ a:active { color: hsl(197, 71%, 73%); }
     box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.4), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.3);
 }
 
+.l-button:focus {
+    outline: hsl(60, 90%, 50%) solid 3px;
+    box-shadow: 0;
+}
+
 .l-button.l-clicked {
     opacity: 0.5;
 }
@@ -374,7 +379,7 @@ a:active { color: hsl(197, 71%, 73%); }
 }
 
 /* system messages */
-/* yes it's hacking, reusing element that shouldn't be, but nobody uses h6! */
+/* yes it's a hack, reusing element that shouldn't be, but nobody uses h6! */
 .l-chat-message h6:only-child {
     background: hsl(0, 0%, 20%);
     color: hsl(0, 0%, 80%);
@@ -403,8 +408,8 @@ a:active { color: hsl(197, 71%, 73%); }
     position: relative;
     height: 100%;
     max-width: 110vh;
-    max-height: 120vw;
-    background-color: hsl(0, 0%, 93%);
+    max-height: 110vw;
+    background-color: hsl(0, 0%, 90%);
 }
 
 .l-desks--lector {
@@ -436,65 +441,173 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-desk {
     position: absolute;
-    background-color: hsl(0, 0%, 91%);
     transform-origin: center;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
 }
 
 .l-desk-shape {
-    width: 50%;
-    height: 50%;
-    display: flex;
+    background-color: hsl(0, 0%, 60%);
+}
+
+.l-desk-shape--square {
+    width: 60%;
+    height: 60%;
+}
+
+.l-desk-shape--rectangle {
+    width: 95%;
+    height: 30%;
+}
+
+.l-desk-shape--circle {
+    width: 75%;
+    height: 75%;
+    border-radius: 100%;
 }
 
 .l-desk-shape > div {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
+/* Desk identification (name and coach name) */
 .l-desk-id {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
     text-align: center;
     color: hsla(0, 0%, 100%, 0.7);
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
 }
+
+.l-desk-name,
+.l-desk-coach { text-align: center; }
 
 .l-desk-coach { font-style: italic; }
 
 /* Chairs */
+.l-desk-chairs {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
 
 .l-chair {
     position: absolute;
-    width: 65%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.l-desk-shape--square .l-chair { width: 100%; }
+
+.l-desk-shape--square .l-chair:nth-child(1) { bottom: -20%; }
+
+.l-desk-shape--square .l-chair:nth-child(2) {
+    left: -60%;
+    top: 40%;
+    transform: rotate(-90deg);
+}
+
+.l-desk-shape--square .l-chair:nth-child(3) {
+    right: -60%;
+    top: 40%;
+    transform: rotate(-90deg);
+}
+
+.l-desk-shape--square .l-chair:nth-child(4) { top: -20%; }
+
+/* Rectangle chairs */
+
+.l-desk-shape--rectangle .l-chair { width: 33.33%; }
+
+.l-desk-shape--rectangle .l-chair:nth-child(-n+3) { bottom: -30%; }
+
+.l-desk-shape--rectangle .l-chair:nth-child(n+4) { top: -30%; }
+
+.l-desk-shape--rectangle .l-chair:nth-child(3n+1) { left: 0; }
+
+.l-desk-shape--rectangle .l-chair:nth-child(3n+2) { left: 33.33%; }
+
+.l-desk-shape--rectangle .l-chair:nth-child(3n+3) { left: 66.66%; }
+
+/* 1-chair */
+.l-desk-shape--rectangle.l-desk-chairs_number--1 .l-chair { width: 100%; }
+
+/* 2-chair */
+.l-desk-shape--rectangle.l-desk-chairs_number--2 .l-chair:nth-child(3n+2) { left: 50%; }
+
+/* 3-chair */
+.l-desk-shape--rectangle.l-desk-chairs_number--3 .l-chair { width: 33.33%; }
+
+.l-desk-shape--rectangle.l-desk-chairs_number--2 .l-chair { width: 50%; }
+
+/* 4-chair */
+.l-desk-shape--rectangle.l-desk-chairs_number--4 .l-chair { width: 50%; }
+
+.l-desk-shape--rectangle.l-desk-chairs_number--4 .l-chair:nth-child(2) { left: 50%; }
+
+.l-desk-shape--rectangle.l-desk-chairs_number--4 .l-chair:nth-child(3) { top: -30%; left: 50%; }
+
+/* 5-chair */
+.l-desk-shape--rectangle.l-desk-chairs_number--5 .l-chair:nth-child(n+4) { width: 50%; }
+
+.l-desk-shape--rectangle.l-desk-chairs_number--5 .l-chair:nth-child(5) { left: 50%; }
+
+/*
+.l-desk-shape--circle .l-chair { transform-origin: center; position: relative; }
+
+.l-desk-shape--circle .l-chair:nth-child(1),
+.l-desk-shape--circle .l-chair:nth-child(4) { transform: rotate(45deg); }
+
+.l-desk-shape--circle .l-chair:nth-child(2),
+.l-desk-shape--circle .l-chair:nth-child(3) { transform: rotate(-45deg); }
+
+.l-desk-shape--circle .l-chair:nth-child(odd) { left: -14%; }
+
+.l-desk-shape--circle .l-chair:nth-child(even) { left: 14%; }
+
+.l-desk-shape--circle .l-chair:nth-child(1),
+.l-desk-shape--circle .l-chair:nth-child(2) { top: -14%; }
+
+.l-desk-shape--circle .l-chair:nth-child(3),
+.l-desk-shape--circle .l-chair:nth-child(4) { top: 14%; }
+*/
 
 .l-chair a {
-    width: 100%;
-    padding: 8% 0;
-    text-align: center;
-    font-size: 13px;
     display: block;
+    text-align: center;
+    padding: 3px;
+    overflow: hidden;
+    font-size: 12px;
     color: hsl(0, 0%, 0%);
     text-decoration: none;
+    min-width: 50%;
 }
 
-.l-chair:hover { background-color: hsla(0, 0%, 100%, 0.9) }
+/*
+.l-desk-chairs_number--1 a,
+.l-desk-chairs_number--2 a { width: 60%; }
 
-.l-chair--position_0,
-.l-chair--position_1 { top: 10%; }
+.l-desk-chairs_number--3 a,
+.l-desk-chairs_number--4 a { width: 90%; }
 
-.l-chair--position_2,
-.l-chair--position_3 { bottom: 10%; }
+.l-desk-chairs_number--5 a,
+.l-desk-chairs_number--6 a { width: 95%; }*/
 
-.l-chair--position_0,
-.l-chair--position_2 { left: -30%; }
-
-.l-chair--position_1,
-.l-chair--position_3 { right: -30%; }
+.l-chair a:hover { background-color: hsla(0, 0%, 100%, 0.9) }
 
 .l-status--offline { background-color: hsla(0, 0%, 100%, 0.5); }
 
@@ -526,52 +639,3 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-status--help { background-color: hsl(0, 100%, 39%); }
 
 .l-status--empty { background-color: hsl(0, 0%, 57%); }
-
-/* Shapes to be done */
-/*
-
-.l-desk-shape--square { }
-
-.l-desk-shape--rectangle {
-    width: 50vw;
-    height: 20vw;
-}
-
-.l-desk-shape--circle {
-    width: 50vw;
-    height: 50vw;
-    border-radius: 50%;
-}
-
-.l-desk-shape--hexagon {
-    width: 50vw;
-    height: 22.5vw;
-    background: red;
-    position: relative;
-}
-
-.l-desk-shape--hexagon:before {
-    content: "";
-    position: absolute;
-    top: -12.5vw;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 25vw solid transparent;
-    border-right: 25vw solid transparent;
-    border-bottom: 12.5vw solid red;
-}
-
-.l-desk-shape--hexagon:after {
-    content: "";
-    position: absolute;
-    bottom: -12.5vw;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 25vw solid transparent;
-    border-right: 25vw solid transparent;
-    border-top: 12.5vw solid red;
-    z-index: -100;
-}
-*/
