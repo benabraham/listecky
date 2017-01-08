@@ -198,7 +198,7 @@ function stopCountdownTimer(isByTimer){
 /*
  * Stopwatch
  */
-let stopwatch = new Timer({ interval: 59000, stopwatch: true });
+let stopwatch = new Timer({ interval: 9900, stopwatch: true });
 let stopwatchMaxTime = 10 * 60 * 60 * 1000; // Timer requires a time set: 10 hours should be more than enough
 
 stopwatch
