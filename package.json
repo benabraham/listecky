@@ -8,7 +8,7 @@
   "private": false,
   "license": "GPL-3.0",
   "dependencies": {
-    "better-console": "^0.2.x",
+    "better-console": "^1.0.x",
     "concurrently": "^3.1.x",
     "express": "^4.14.x",
     "marked": "^0.3.x",
