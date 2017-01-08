@@ -477,8 +477,6 @@ a:active { color: hsl(197, 71%, 73%); }
     align-items: center;
 }
 
-.l-desks--lector .l-desk { transform: rotate(180deg); }
-
 .l-desk-shape {
     background-color: hsl(0, 0%, 60%);
 }
@@ -519,6 +517,8 @@ a:active { color: hsl(197, 71%, 73%); }
     justify-content: center;
     align-items: center;
 }
+
+.l-desks--lector .l-desk-id { transform: rotate(180deg); }
 
 .l-desk-name,
 .l-desk-coach { text-align: center; }
@@ -628,6 +628,8 @@ a:active { color: hsl(197, 71%, 73%); }
     text-decoration: none;
     min-width: 50%;
 }
+
+.l-desks--lector .l-chair a { transform: rotate(180deg); }
 
 /*
 .l-desk-chairs_number--1 a,
