@@ -283,7 +283,7 @@ $(document).ready(
                 $('body').prop('class', 'l-room_status--' + roomStatus);
 
                 if (isDetailView){
-                    window.alert('Začala přestávka');
+                    // window.alert('Začala přestávka');
                     breakDurationText.text(breakTimeLeft(breakTimeLeft));
                 } else {
                     roomStatusText.text(roomStatus + ' ' + msToTime(breakTimeLeft));
