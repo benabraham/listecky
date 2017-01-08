@@ -312,19 +312,28 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-chat select { display: none; }
 
+.l-chat-buttons {
+    display: flex;
+}
+
 .l-chat .l-button {
     padding: 0.5em 0;
     font-size: 1em;
     height: auto;
 }
 
-.l-chat-buttons {
-    display: flex;
-}
-
 .l-chat-buttons .l-button--primary {
     width: 150%;
 }
+
+.l-chat textarea:required:invalid ~ .l-chat-buttons .l-button--primary,
+.l-chat textarea:required:invalid:hover ~ .l-chat-buttons .l-button--primary,
+.l-chat textarea:focus:invalid ~ .l-chat-buttons .l-button--primary {
+    background-color: hsl(0, 0%, 87%);
+    box-shadow: none;
+}
+
+.l-chat textarea:required:valid ~ .l-chat-buttons .l-button--primary { background-color: hsl(210, 50%, 50%); }
 
 .l-chat-log {
     border-top: 1px solid hsl(0, 0%, 87%);
