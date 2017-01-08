@@ -442,6 +442,7 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-desks--lector {
     min-width: 500px;
     min-height: 500px;
+    transform: rotate(180deg);
 }
 
 .l-desks--home {
@@ -466,6 +467,8 @@ a:active { color: hsl(197, 71%, 73%); }
     color: hsl(0, 0%, 100%);
 }
 
+.l-desks--lector .l-screen { transform: rotate(180deg); }
+
 .l-desk {
     position: absolute;
     transform-origin: center;
@@ -473,6 +476,8 @@ a:active { color: hsl(197, 71%, 73%); }
     justify-content: center;
     align-items: center;
 }
+
+.l-desks--lector .l-desk { transform: rotate(180deg); }
 
 .l-desk-shape {
     background-color: hsl(0, 0%, 60%);
