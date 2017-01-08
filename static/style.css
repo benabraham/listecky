@@ -646,9 +646,14 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-chair .l-status--online {
     background-color: hsl(0, 0%, 100%);
+    outline: 1px solid hsl(0, 0%, 80%);
+}
+
+.l-desks:not(.l-desks--lector) .l-chair .l-status--online {
     pointer-events: none;
     cursor: default;
     text-decoration: none;
+    user-select: none;
 }
 
 /* desk status only */
