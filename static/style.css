@@ -486,11 +486,8 @@ a:active { color: hsl(197, 71%, 73%); }
     align-items: center;
 }
 
-.l-desk-shape {
-    background-color: hsl(0, 0%, 60%);
-}
-
-.l-desk-shape--square {
+.l-desk-shape--square,
+.l-desk-shape--circle {
     width: 60%;
     height: 60%;
 }
@@ -500,15 +497,13 @@ a:active { color: hsl(197, 71%, 73%); }
     height: 30%;
 }
 
-.l-desk-shape--circle {
-    width: 75%;
-    height: 75%;
-    border-radius: 100%;
-}
-
 .l-desk-shape > div {
     width: 100%;
     height: 100%;
+}
+
+.l-desk-shape--circle > div {
+    border-radius: 100%;
 }
 
 /* Desk identification (name and coach name) */
@@ -552,25 +547,31 @@ a:active { color: hsl(197, 71%, 73%); }
     align-items: center;
 }
 
-.l-desk-shape--square .l-chair { width: 100%; }
+/* square and round table's chair */
+.l-desk-shape--square .l-chair,
+.l-desk-shape--circle .l-chair { width: 100%; }
 
-.l-desk-shape--square .l-chair:nth-child(1) { bottom: -20%; }
+.l-desk-shape--square .l-chair:nth-child(1),
+.l-desk-shape--circle .l-chair:nth-child(1) { bottom: -20%; }
 
-.l-desk-shape--square .l-chair:nth-child(2) {
-    left: -60%;
-    top: 40%;
-    transform: rotate(-90deg);
-}
-
-.l-desk-shape--square .l-chair:nth-child(3) {
+.l-desk-shape--square .l-chair:nth-child(2),
+.l-desk-shape--circle .l-chair:nth-child(2) {
     right: -60%;
     top: 40%;
     transform: rotate(-90deg);
 }
 
-.l-desk-shape--square .l-chair:nth-child(4) { top: -20%; }
+.l-desk-shape--square .l-chair:nth-child(3),
+.l-desk-shape--circle .l-chair:nth-child(3) {
+    left: -60%;
+    top: 40%;
+    transform: rotate(-90deg);
+}
 
-/* Rectangle chairs */
+.l-desk-shape--square .l-chair:nth-child(4),
+.l-desk-shape--circle .l-chair:nth-child(4) { top: -20%; }
+
+/* Rectangle table chairs */
 
 .l-desk-shape--rectangle .l-chair { width: 33.33%; }
 
@@ -607,8 +608,10 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-desk-shape--rectangle.l-desk-chairs_number--5 .l-chair:nth-child(5) { left: 50%; }
 
+/* Round table chairs */
+
 /*
-.l-desk-shape--circle .l-chair { transform-origin: center; position: relative; }
+.l-desk-shape--circle .l-chair { position: absolute; width: 100%; }
 
 .l-desk-shape--circle .l-chair:nth-child(1),
 .l-desk-shape--circle .l-chair:nth-child(4) { transform: rotate(45deg); }
@@ -616,15 +619,15 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-desk-shape--circle .l-chair:nth-child(2),
 .l-desk-shape--circle .l-chair:nth-child(3) { transform: rotate(-45deg); }
 
-.l-desk-shape--circle .l-chair:nth-child(odd) { left: -14%; }
+.l-desk-shape--circle .l-chair:nth-child(odd) { left: -45%; }
 
-.l-desk-shape--circle .l-chair:nth-child(even) { left: 14%; }
+.l-desk-shape--circle .l-chair:nth-child(even) { left: 45%; }
 
 .l-desk-shape--circle .l-chair:nth-child(1),
-.l-desk-shape--circle .l-chair:nth-child(2) { top: -14%; }
+.l-desk-shape--circle .l-chair:nth-child(2) { top: 80%; }
 
 .l-desk-shape--circle .l-chair:nth-child(3),
-.l-desk-shape--circle .l-chair:nth-child(4) { top: 14%; }
+.l-desk-shape--circle .l-chair:nth-child(4) { top: 0; }
 */
 
 .l-chair a {
@@ -676,4 +679,4 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-status--help { background-color: hsl(0, 100%, 39%); }
 
-.l-status--empty { background-color: hsl(0, 0%, 57%); }
+.l-status--empty { background-color: hsl(0, 0%, 70%); }

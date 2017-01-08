@@ -78,7 +78,8 @@ let room = {
         9: { 'name': '5-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 3 }, 'rotation': 0, 'chairs': 5, 'shape': 'rectangle' } },
         10: { 'name': '6-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 3 }, 'rotation': 0, 'chairs': 6, 'shape': 'rectangle' } },
 
-        // 11: { 'name': 'kruh s 4', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'circle' } },
+        11: { 'name': '4-chair circle', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 2 }, 'rotation': 0, 'chairs': 4, 'shape': 'circle' } },
+        12: { 'name': '2-chair circle', 'coach': 'rotated', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 45, 'chairs': 2, 'shape': 'circle' } },
     },
 };
 
@@ -99,7 +100,7 @@ for (let d in desks){
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
         var x = d * 10 + c;
-        desks[d].chairs[c] = { status: 'offline', name: defaultName };
+        desks[d].chairs[c] = { status: 'offline', name: x };
     }
 }
 
