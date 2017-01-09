@@ -42,7 +42,7 @@ $(document).ready(
 
             socket
                 .on('connect', function(){ // user authentication
-                    startInterval(2000, function(){
+                    startInterval(3000, function(){
                         socket.emit('auth-request', thisDeskId, thisChairId);
                     });
                 })
