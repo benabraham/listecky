@@ -1,3 +1,9 @@
+/* helper functions */
+function startInterval(milliseconds, callback){
+    callback();
+    return setInterval(callback, milliseconds);
+}
+
 $(document).ready(
     function(){
         var socket = io();
@@ -25,15 +31,9 @@ $(document).ready(
 
             socket
                 .on('connect', function(){ // user authentication
-
-                    (function auth(){
+                    startInterval(2000, function(){
                         socket.emit('auth-request', thisDeskId, thisChairId);
-
-                        window.setInterval(function(){
-                            auth();
-                        }, 2000);
-                    })();
-
+                    });
                 })
 
                 .on('checkStatusAlert', function(){ // Ask student for status
