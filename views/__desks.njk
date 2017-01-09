@@ -1,55 +1,57 @@
 <div class="l-desks {% if isHome %}l-desks--home{% else %}l-desks--lector{% endif %}">
-    <div class="l-screen">plátno</div>
-    {% for desk_id, desk in room.desks %}
-        <div
-            class="l-desk"
-            data-desk-id="{{ desk_id }}"
-            style="
-                left: {{ desk.layout.position.x * 100 / room.size | round(4) }}%;
-                top: {{ desk.layout.position.y * 100 / room.size | round(4) }}%;
-                width: {{ 100 / room.size | round(4) }}%;
-                height: {{ 100 / room.size | round(4) }}%;
-                "
-        >
+    <div class="l-desks-P">
+        <div class="l-screen">plátno</div>
+        {% for desk_id, desk in room.desks %}
             <div
-                class="
+                class="l-desk"
+                data-desk-id="{{ desk_id }}"
+                style="
+                    left: {{ desk.layout.position.x * 100 / room.size | round(4) }}%;
+                    top: {{ desk.layout.position.y * 100 / room.size | round(4) }}%;
+                    width: {{ 100 / room.size | round(4) }}%;
+                    height: {{ 100 / room.size | round(4) }}%;
+                    "
+            >
+                <div
+                    class="
                     l-desk-shape
                     l-desk-shape--{{ desk.layout.shape }}
                     l-desk-chairs_number--{{ desk.layout.chairs }}
                 "
-                style="transform: rotate({{ desk.layout.rotation }}deg);"
-            >
-                <div>
+                    style="transform: rotate({{ desk.layout.rotation }}deg);"
+                >
+                    <div>
 
-                    <div
-                        class="l-desk-id-rotation_compensation"
-                        {% if desk.layout.shape == 'square' or desk.layout.shape == 'circle' %}
-                            {% set rotationRemainder = desk.layout.rotation % 90 %}
-                            style="transform: rotate({% if rotationRemainder > 0 %}-{% endif %}{{ desk.layout.rotation|abs }}deg);"
-                        {% endif %}
-                    >
-                        <div class="l-desk-id">
-                            <div class="l-desk-name">{{ desk.name }}</div>
-                            <div class="l-desk-coach">{{ desk.coach }}</div>
+                        <div
+                            class="l-desk-id-rotation_compensation"
+                            {% if desk.layout.shape == 'square' or desk.layout.shape == 'circle' %}
+                                {% set rotationRemainder = desk.layout.rotation % 90 %}
+                                style="transform: rotate({% if rotationRemainder > 0 %}-{% endif %}{{ desk.layout.rotation|abs }}deg);"
+                            {% endif %}
+                        >
+                            <div class="l-desk-id">
+                                <div class="l-desk-name">{{ desk.name }}</div>
+                                <div class="l-desk-coach">{{ desk.coach }}</div>
+                            </div>
+                        </div>
+
+                        <div class="l-desk-chairs">
+                            {% for chair_id, chair in desk.chairs %}
+                                <div class="l-chair">
+                                    <a
+                                        class=""
+                                        data-chair-id="{{ chair_id }}"
+                                        href="/desk/{{ desk_id }}/chair/{{ chair_id }}/"
+                                    >
+
+                                    </a>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
-
-                    <div class="l-desk-chairs">
-                        {% for chair_id, chair in desk.chairs %}
-                            <div class="l-chair">
-                                <a
-                                    class=""
-                                    data-chair-id="{{ chair_id }}"
-                                    href="/desk/{{ desk_id }}/chair/{{ chair_id }}/"
-                                >
-
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
                 </div>
-            </div>
 
-        </div>
-    {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
 </div>

@@ -382,9 +382,7 @@ a:active { color: hsl(197, 71%, 73%); }
     margin: 10px 0 10px 10px;
 }
 
-.l-chat-message li {
-    margin-left: 2em;
-}
+.l-chat-message li { margin-left: 2em; }
 
 .l-chat-message pre {
     padding: 10px;
@@ -410,9 +408,7 @@ a:active { color: hsl(197, 71%, 73%); }
     text-align: left;
 }
 
-.l-chat-message table th {
-    font-weight: bold;
-}
+.l-chat-message table th { font-weight: bold; }
 
 /* system messages */
 /* yes it's a hack, reusing element that shouldn't be, but nobody uses h6! */
@@ -441,7 +437,6 @@ a:active { color: hsl(197, 71%, 73%); }
 /* Desks */
 .l-desks {
     width: 100%;
-    position: relative;
     height: 100%;
     max-width: 110vh;
     max-height: 110vw;
@@ -451,8 +446,17 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-desks--lector {
     min-width: 500px;
     min-height: 500px;
-    transform: rotate(180deg);
 }
+
+.l-desks-P {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.l-desks--lector .l-desks-P { transform: rotate(180deg); }
 
 .l-desks--home {
     margin-left: auto;
@@ -502,9 +506,7 @@ a:active { color: hsl(197, 71%, 73%); }
     height: 100%;
 }
 
-.l-desk-shape--circle > div {
-    border-radius: 100%;
-}
+.l-desk-shape--circle > div { border-radius: 100%; }
 
 /* Desk identification (name and coach name) */
 .l-desk-id-rotation_compensation {

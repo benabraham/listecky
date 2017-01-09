@@ -8,6 +8,17 @@ $(document).ready(
     function(){
         var socket = io();
 
+        function resizeDesks(){
+            var container = $('.l-desks');
+            var dimension = Math.min(container.height(), container.width());
+            $('.l-desks-P')
+                .width(dimension)
+                .height(dimension);
+        }
+
+        resizeDesks();
+        window.addEventListener('resize', resizeDesks);
+
         if (typeof isDetailView === 'undefined') isDetailView = false;
 
         if (isDetailView){
