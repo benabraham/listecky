@@ -298,16 +298,12 @@ $(document).ready(
                 }
             })
 
-            .on('lectureStarted', function(roomStatus){
+            .on('lectureStarted', function(roomStatus, notify){
                 console.info('lectureStarted');
 
                 $('body').prop('class', 'l-room_status--' + roomStatus);
 
-                if (isDetailView){
-                    window.alert('Výklad začíná');
-                } else {
-                    roomStatusText.text(roomStatus);
-                }
+                if (!isDetailView) roomStatusText.text(roomStatus);
             })
 
             .on('workStarted', function(roomStatus){
