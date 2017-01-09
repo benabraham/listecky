@@ -262,7 +262,7 @@ io
 
                 if (chair){ // is this a existing chair?
                     chair.socketId = socket.id; // save socket.id to a chair
-                    chair.status = 'online'; // save status
+                    if (chair.status == 'offline') chair.status = 'online'; // save status
                     io.emit('auth-success', room);
                     io.emit('statusChanged', deskId, chairId, chair.status, room);
                     console.info('*** auth-success', deskId, chairId, chair.name);
