@@ -507,6 +507,11 @@ a:active { color: hsl(197, 71%, 73%); }
 }
 
 /* Desk identification (name and coach name) */
+.l-desk-id-rotation_compensation {
+    width: 100%;
+    height: 100%;
+}
+
 .l-desk-id {
     width: 100%;
     height: 100%;

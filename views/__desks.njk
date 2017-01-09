@@ -19,11 +19,19 @@
                 "
                 style="transform: rotate({{ desk.layout.rotation }}deg);"
             >
-                <div class="">
+                <div>
 
-                    <div class="l-desk-id">
-                        <div class="l-desk-name">{{ desk.name }}</div>
-                        <div class="l-desk-coach">{{ desk.coach }}</div>
+                    <div
+                        class="l-desk-id-rotation_compensation"
+                        {% if desk.layout.shape == 'square' or desk.layout.shape == 'circle' %}
+                            {% set rotationRemainder = desk.layout.rotation % 90 %}
+                            style="transform: rotate({% if rotationRemainder > 0 %}-{% endif %}{{ desk.layout.rotation|abs }}deg);"
+                        {% endif %}
+                    >
+                        <div class="l-desk-id">
+                            <div class="l-desk-name">{{ desk.name }}</div>
+                            <div class="l-desk-coach">{{ desk.coach }}</div>
+                        </div>
                     </div>
 
                     <div class="l-desk-chairs">
