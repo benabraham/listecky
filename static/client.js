@@ -25,7 +25,15 @@ $(document).ready(
 
             socket
                 .on('connect', function(){ // user authentication
-                    socket.emit('auth-request', thisDeskId, thisChairId);
+
+                    (function auth(){
+                        socket.emit('auth-request', thisDeskId, thisChairId);
+
+                        window.setInterval(function(){
+                            auth();
+                        }, 2000);
+                    })();
+
                 })
 
                 .on('checkStatusAlert', function(){ // Ask student for status
