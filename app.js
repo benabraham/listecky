@@ -99,8 +99,24 @@ for (let d in desks){
     // add empty chairs
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
-        var x = d * 10 + c;
+        let x = d * 10 + c;
         desks[d].chairs[c] = { status: 'offline', name: defaultName };
+    }
+}
+
+
+
+/*
+ * emits event statusChanged if chair status has changed
+ */
+function statusChanged(deskId, chairId, newStatus, originalStatus = desks[deskId].chairs[chairId].status){
+    let chair = desks[deskId].chairs[chairId];
+    if (newStatus != originalStatus){
+        chair.status = newStatus;
+        io.emit('statusChanged', deskId, chairId, newStatus, room);
+        checkDeskStatus(deskId);
+
+        console.log('>>> statusChanged', desks[deskId].chairs[chairId].name, 'from', originalStatus, 'to', newStatus, 'elapsed', stopwatch.time);
     }
 }
 
@@ -110,7 +126,7 @@ for (let d in desks){
  * Check and sets desks status
  */
 function checkDeskStatus(deskId){
-    // make an array of chair statuses (easier to work with)
+    // make an array of chairf statuses (easier to work with)
     let i = 0, chairStatuses = [];
     for (let chair in desks[deskId].chairs){
         if (desks[deskId].chairs[chair].socketId){
@@ -262,11 +278,9 @@ io
 
                 if (chair){ // is this a existing chair?
                     chair.socketId = socket.id; // save socket.id to a chair
-                    if (chair.status == 'offline') chair.status = 'online'; // save status
+                    if (chair.status == 'offline') statusChanged(deskId, chairId, 'online');
                     io.emit('auth-success', room);
-                    io.emit('statusChanged', deskId, chairId, chair.status, room);
                     console.info('*** auth-success', deskId, chairId, chair.name);
-                    checkDeskStatus(deskId);
                 }
             })
 
@@ -278,12 +292,10 @@ io
                         let chair = desks[d].chairs[c];
 
                         if (chair.socketId == socket.id){
-                            chair.status = 'offline';
                             delete chair.socketId;
-                            io.emit('statusChanged', d, c, chair.status, room);
+                            statusChanged(d, c, 'offline');
                             io.emit('disconnected', room);
                             console.info('††† disconnected', d, c);
-                            checkDeskStatus(d);
                         }
                     }
                 }
@@ -300,12 +312,7 @@ io
 
 
             .on('statusChange', (deskId, chairId, statusType) =>{
-                let chair = desks[deskId].chairs[chairId];
-
-                chair.status = statusType; // save status
-                io.emit('statusChanged', deskId, chairId, statusType, room); // emit new status
-                console.info('>>> statusChanged', chair.name, statusType, 'elapsed', stopwatch.time);
-                checkDeskStatus(deskId);
+                statusChanged(deskId, chairId, statusType);
             })
 
 
@@ -332,8 +339,7 @@ io
                         let chair = desks[d].chairs[c];
 
                         if (chair.socketId){
-                            chair.status = 'online';
-                            io.emit('statusChanged', d, c, chair.status, room);
+                            statusChanged(d, c, 'online');
                             console.info('!!! lectureStart', chair.name);
                         }
                     }
@@ -353,14 +359,12 @@ io
                         let chair = desks[d].chairs[c];
 
                         if (chair.socketId){
-                            chair.status = 'not_done';
-                            console.info('/// workStart', chair, chair.status);
+                            statusChanged(d, c, 'not_done');
+                            console.info('/// workStart', chair.name, chair.status);
                         } else {
-                            chair.status = 'offline';
+                            statusChanged(d, c, 'offline');
                         }
-                        io.emit('statusChanged', d, c, chair.status, room);
                     }
-                    checkDeskStatus(d);
                 }
                 room.roomStatus = 'working';
                 io.emit('workStarted', room.roomStatus);
@@ -387,7 +391,7 @@ io
 
                         if (chair.socketId){
                             chair.status = 'online';
-                            io.emit('statusChanged', d, c, chair.status, room);
+                            statusChanged(d, c, 'online');
                             console.info('……… breakStarted', breakLength, chair.name);
                         }
                     }
