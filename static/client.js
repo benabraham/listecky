@@ -68,7 +68,7 @@ $(document).ready(
             function setNameForm(studentName){
                 if (studentName) namePlaceholder.text(studentName);
 
-                if (namePlaceholder.text() == '' || namePlaceholder.text() == '?'){
+                if (namePlaceholder.text() == '' || namePlaceholder.text() == 'volno'){
                     nameInput.val('');
                     nameChangeformShowButton.hide();
                     nameRemoveButton.hide();
@@ -100,7 +100,7 @@ $(document).ready(
 
             nameRemoveButton
                 .on('click', function(event){
-                    socket.emit('setStudentName', thisDeskId, thisChairId, '?');
+                    socket.emit('setStudentName', thisDeskId, thisChairId, 'volno');
                     event.preventDefault();
                 })
             ;

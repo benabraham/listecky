@@ -89,7 +89,7 @@ let room = {
  * set up desks
  */
 let desks = room.desks;
-const defaultName = '?';
+const defaultName = 'volno';
 
 for (let d in desks){
 
