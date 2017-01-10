@@ -620,26 +620,6 @@ a:active { color: hsl(197, 71%, 73%); }
 
 /* Round table chairs */
 
-/*
-.l-desk-shape--circle .l-chair { position: absolute; width: 100%; }
-
-.l-desk-shape--circle .l-chair:nth-child(1),
-.l-desk-shape--circle .l-chair:nth-child(4) { transform: rotate(45deg); }
-
-.l-desk-shape--circle .l-chair:nth-child(2),
-.l-desk-shape--circle .l-chair:nth-child(3) { transform: rotate(-45deg); }
-
-.l-desk-shape--circle .l-chair:nth-child(odd) { left: -45%; }
-
-.l-desk-shape--circle .l-chair:nth-child(even) { left: 45%; }
-
-.l-desk-shape--circle .l-chair:nth-child(1),
-.l-desk-shape--circle .l-chair:nth-child(2) { top: 80%; }
-
-.l-desk-shape--circle .l-chair:nth-child(3),
-.l-desk-shape--circle .l-chair:nth-child(4) { top: 0; }
-*/
-
 .l-chair a {
     display: block;
     text-align: center;
