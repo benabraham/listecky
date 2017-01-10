@@ -99,7 +99,6 @@ for (let d in desks){
     // add empty chairs
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
-        let x = d * 10 + c;
         desks[d].chairs[c] = { status: 'offline', name: defaultName };
     }
 }
