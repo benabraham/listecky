@@ -226,28 +226,19 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-buttons--student { margin: 2em 0; }
 
-.l-buttons--student .l-button:not(.l-selected) { color: hsla(0, 0%, 100%, 0.9); }
+.l-buttons--student .l-button { box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.4), inset 0 100px 100px 0 hsla(0, 0%, 100%, 0.8); }
+.l-buttons--student .l-button:hover { box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.4), inset 0 100px 100px 0 hsla(0, 0%, 100%, 0.6); }
 
-.l-buttons--student .l-button:not(.l-selected):hover { color: hsla(0, 0%, 100%, 1); }
+.l-buttons--student .l-button:not(.l-button--selected) { color: hsla(0, 0%, 0%, 0.6); }
 
-.l-button.l-selected {
-    box-shadow: inset 0 3px 6px 0 hsla(0, 0%, 0%, 0.9), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.7);
+.l-buttons--student .l-button:not(.l-button--selected):hover { color: hsla(0, 0%, 100%, 1); }
+
+.l-button.l-button--selected {
+    box-shadow: inset 0 3px 6px 0 hsla(0, 0%, 0%, 0.2), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.2);
     pointer-events: none;
     cursor: default;
-}
-
-.l-button.l-selected span:before,
-.l-button.l-selected span:after {
-    font-size: 80%;
-    color: hsla(0, 0%, 100%, 0.4);
-}
-
-.l-button.l-selected span:before {
-    content: '▶';
-}
-
-.l-button.l-selected span:after {
-    content: '◀';
+    color: hsla(0, 0%, 100%, 0.95);
+    text-shadow: white 10px;
 }
 
 .l-room_status--initial .l-buttons--student,
@@ -285,8 +276,6 @@ a:active { color: hsl(197, 71%, 73%); }
 }
 
 .l-button--check_status { background-color: hsl(40, 100%, 50%); }
-
-/*.l-button--start_lecture { background-color: lightgrey; }*/
 
 .l-lector {
     display: flex;
@@ -682,10 +671,13 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-status--help:link,
 .l-status--help:visited { color: hsl(0, 0%, 100%); }
 
+.l-button-status--done,
 .l-status--done { background-color: hsl(120, 100%, 25%); }
 
+.l-button-status--not_done,
 .l-status--not_done { background-color: hsl(210, 100%, 50%); }
 
+.l-button-status--help,
 .l-status--help { background-color: hsl(0, 100%, 39%); }
 
 .l-status--empty { background-color: hsl(0, 0%, 70%); }

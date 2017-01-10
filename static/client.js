@@ -68,10 +68,10 @@ $(document).ready(
 
             statusButtons
                 .click(function(){
-                    if (!$(this).hasClass('l-selected')){
+                    if (!$(this).hasClass('l-button--selected')){
 
                         statusButtons
-                            .removeClass('l-selected');
+                            .removeClass('l-button--selected');
 
                         $(this)
                             .addClass('l-clicked')
@@ -273,10 +273,10 @@ $(document).ready(
                 if (isDetailView){
                     if (thisDeskId == deskId && thisChairId == chairId){
                         statusButtons.each(function(){
-                            $(this).removeClass('l-clicked l-selected');
+                            $(this).removeClass('l-clicked l-button--selected');
                             if ($(this).data('status-id') == statusType){
                                 $(this)
-                                    .addClass('l-selected')
+                                    .addClass('l-button--selected')
                                     .closest('.l-buttons')
                                     .removeClass('l-clicked');
                             }

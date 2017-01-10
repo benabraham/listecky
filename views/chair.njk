@@ -41,8 +41,8 @@
                     data-status-id="{{ status_id }}"
                     class="
                         l-button
-                        l-status--{{ status_id }}
-                        {% if student.status == status_id %}l-selected{% endif %}
+                        l-button-status--{{ status_id }}
+                        {% if student.status == status_id %}l-button--selected{% endif %}
                     "
                 >
                     <span>{{ status.label }}</span>
