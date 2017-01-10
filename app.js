@@ -136,7 +136,7 @@ function checkDeskStatus(deskId){
 
     let originalDeskStatus = desks[deskId].status; // save original status
 
-    if (chairStatuses.length){ // not empty table
+    if (chairStatuses.length){ // not an empty table
         if (chairStatuses.every(x => x == 'done')){ // all done
             desks[deskId].status = 'done';
         } else if (chairStatuses.every(x => x == 'offline')){ // all offline
