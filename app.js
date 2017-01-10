@@ -144,7 +144,7 @@ function checkDeskStatus(deskId){
         } else if (chairStatuses.every(x => x == 'online')){ // all online
             desks[deskId].status = 'online';
         } else {
-            if (chairStatuses.some(x => x == 'not_done')){ // some working
+            if (chairStatuses.some(x => x != 'done')){ // some not done
                 desks[deskId].status = 'not_done';
             }
 
