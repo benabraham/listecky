@@ -225,17 +225,34 @@ a:active { color: hsl(197, 71%, 73%); }
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
     user-select: none;
 }
 
 .l-buttons--student { margin: 2em 0; }
 
-.l-buttons--student .l-button.l-selected {
-    box-shadow: inset 0 3px 6px 0 hsla(0, 0%, 0%, 0.8), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.5);
+.l-buttons--student .l-button:not(.l-selected) { color: hsla(0, 0%, 100%, 0.9); }
+
+.l-buttons--student .l-button:not(.l-selected):hover { color: hsla(0, 0%, 100%, 1); }
+
+.l-button.l-selected {
+    box-shadow: inset 0 3px 6px 0 hsla(0, 0%, 0%, 0.9), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.7);
     pointer-events: none;
     cursor: default;
+}
+
+.l-button.l-selected span:before,
+.l-button.l-selected span:after {
+    font-size: 80%;
+    color: hsla(0, 0%, 100%, 0.4);
+}
+
+.l-button.l-selected span:before {
+    content: '▶';
+}
+
+.l-button.l-selected span:after {
+    content: '◀';
 }
 
 .l-room_status--initial .l-buttons--student,
