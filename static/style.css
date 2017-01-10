@@ -227,12 +227,15 @@ a:active { color: hsl(197, 71%, 73%); }
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    user-select: none;
 }
 
 .l-buttons--student { margin: 2em 0; }
 
 .l-buttons--student .l-button.l-selected {
     box-shadow: inset 0 3px 6px 0 hsla(0, 0%, 0%, 0.8), inset 0 0 100px 0 hsla(0, 0%, 0%, 0.5);
+    pointer-events: none;
+    cursor: default;
 }
 
 .l-room_status--initial .l-buttons--student,

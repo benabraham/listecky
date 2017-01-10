@@ -27,17 +27,20 @@ $(document).ready(
 
             statusButtons
                 .click(function(){
-                    statusButtons
-                        .removeClass('l-selected');
+                    if (!$(this).hasClass('l-selected')){
 
-                    $(this)
-                        .addClass('l-clicked')
-                        .closest('.l-buttons')
-                        .addClass('l-clicked');
+                        statusButtons
+                            .removeClass('l-selected');
 
-                    console.info('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
+                        $(this)
+                            .addClass('l-clicked')
+                            .closest('.l-buttons')
+                            .addClass('l-clicked');
 
-                    socket.emit('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
+                        console.info('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
+
+                        socket.emit('statusChange', thisDeskId, thisChairId, $(this).data('status-id'));
+                    }
                 });
 
             socket
