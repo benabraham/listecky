@@ -19,6 +19,47 @@ $(document).ready(
         resizeDesks();
         window.addEventListener('resize', resizeDesks);
 
+
+        // format time in milliseconds to a human readable sentence
+        function breakTimeLeftFormat(duration){
+            var minutes = Math.round((duration / (1000 * 60)));
+            var timeString;
+
+            switch (minutes){
+                case 0:
+                    timeString = 'Začneme za necelou minutu.';
+                    break;
+                case 1:
+                    timeString = 'Zbývá už jen minuta přestávky.';
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    timeString = 'Přestávka končí za ' + minutes + ' minuty.';
+                    break;
+                default:
+                    timeString = 'Přestávka končí za ' + minutes + ' minut.';
+                    break;
+            }
+            return timeString;
+        }
+
+        // format time in milliseconds to readable format
+        function msToTime(duration){
+            var hours = Math.round((duration / (1000 * 60 * 60)) % 24);
+            var minutes = Math.round((duration / (1000 * 60)) % 60);
+            /*var seconds = Math.round((duration / 1000) % 60);*/
+
+            var hoursString = (hours < 10) ? '0' + hours : hours;
+            var minutesString = (minutes < 10) ? '0' + minutes : minutes;
+            /*var secondsString = (seconds < 10) ? '0' + seconds : seconds;*/
+
+            var timeString = hoursString + ':' + minutesString;
+            /*if (hours === 0 && minutes < 1) timeString += ':' + secondsString;*/
+            return timeString;
+        }
+
+
         if (typeof isDetailView === 'undefined') isDetailView = false;
 
         if (isDetailView){
@@ -208,45 +249,6 @@ $(document).ready(
             }
         }
 
-        // format time in milliseconds to readable format
-        function msToTime(duration){
-            var hours = Math.round((duration / (1000 * 60 * 60)) % 24);
-            var minutes = Math.round((duration / (1000 * 60)) % 60);
-            /*var seconds = Math.round((duration / 1000) % 60);*/
-
-            var hoursString = (hours < 10) ? '0' + hours : hours;
-            var minutesString = (minutes < 10) ? '0' + minutes : minutes;
-            /*var secondsString = (seconds < 10) ? '0' + seconds : seconds;*/
-
-            var timeString = hoursString + ':' + minutesString;
-            /*if (hours === 0 && minutes < 1) timeString += ':' + secondsString;*/
-            return timeString;
-        }
-
-        // format time in milliseconds to a human readable sentence
-        function breakTimeLeft(duration){
-            var minutes = Math.round((duration / (1000 * 60)));
-            var timeString;
-
-            switch (minutes){
-                case 0:
-                    timeString = 'Začneme za necelou minutu.';
-                    break;
-                case 1:
-                    timeString = 'Zbývá už jen minuta přestávky.';
-                    break;
-                case 2:
-                case 3:
-                case 4:
-                    timeString = 'Přestávka končí za ' + minutes + ' minuty.';
-                    break;
-                default:
-                    timeString = 'Přestávka končí za ' + minutes + ' minut.';
-                    break;
-            }
-            return timeString;
-        }
-
         var roomStatusText = $('.l-room_status_info-status-text');
         var roomStatusDurationText = $('.l-room_status_info-duration-text');
         var breakDurationText = $('.l-break_countdown-time');
@@ -323,7 +325,7 @@ $(document).ready(
 
                 if (isDetailView){
                     // window.alert('Začala přestávka');
-                    breakDurationText.text(breakTimeLeft(breakTimeLeft));
+                    breakDurationText.text(breakTimeLeftFormat(breakTimeLeft));
                 } else {
                     roomStatusText.text(roomStatus + ' ' + msToTime(breakTimeLeft));
                 }
@@ -333,7 +335,7 @@ $(document).ready(
                 roomStatusText.text(roomStatus + ' ' + msToTime(breakTimeLeft));
 
                 if (isDetailView){
-                    breakDurationText.text(breakTimeLeft(breakTimeLeft));
+                    breakDurationText.text(breakTimeLeftFormat(breakTimeLeft));
                 }
 
             })
