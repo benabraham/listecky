@@ -633,24 +633,31 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-desks--lector .l-chair a { transform: rotate(180deg); }
 
-.l-chair a:hover { background-color: hsla(0, 0%, 100%, 0.9) }
+.l-chair a:hover { background-color: hsla(0, 0%, 100%, 0.9); }
 
-.l-status--offline { background-color: hsla(0, 0%, 100%, 0.5); }
-
-.l-chair .l-status--online {
-    background-color: hsl(0, 0%, 100%);
-    outline: 1px solid hsl(0, 0%, 80%);
+.l-status--offline,
+.l-desks--home .l-chair .l-status--offline {
+    background-color: transparent;
+    outline: 1px dotted hsl(0, 0%, 80%);
 }
 
-.l-desks:not(.l-desks--lector) .l-chair .l-status--online {
+.l-status--offline:hover,
+.l-desks--home .l-chair .l-status--offline:hover {
+    outline-style: solid;
+    outline-color: hsl(0, 0%, 50%);
+}
+
+.l-chair .l-status--online,
+.l-desks--home .l-chair .l-status--online {
+    background-color: hsl(50, 80%, 80%);
+}
+
+.l-desks--home .l-chair > a:not(.l-status--offline) {
     pointer-events: none;
     cursor: default;
-    text-decoration: none;
     user-select: none;
+    text-decoration: none;
 }
-
-/* desk status only */
-.l-desk-shape > .l-status--online { background-color: saddlebrown; }
 
 /* Universal statuses */
 .l-status--done,
@@ -670,3 +677,15 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-status--help { background-color: hsl(0, 100%, 39%); }
 
 .l-status--empty { background-color: hsl(0, 0%, 70%); }
+
+/* desk status only */
+.l-desk-shape > .l-status--online,
+.l-desks--home .l-desk-shape > div:not(.l-status--online) { background-color: hsl(25, 75%, 30%); }
+
+/* show statuses for teacher only */
+.l-desks--home a,
+.l-desks--home a:link,
+.l-desks--home a:visited {
+    color: hsl(0, 0%, 40%);
+    background-color: hsl(0, 0%, 100%);
+}
