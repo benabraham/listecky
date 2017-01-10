@@ -125,7 +125,7 @@ function statusChanged(deskId, chairId, newStatus, originalStatus = desks[deskId
  * Check and sets desks status
  */
 function checkDeskStatus(deskId){
-    // make an array of chairf statuses (easier to work with)
+    // make an array of chair statuses (easier to work with)
     let i = 0, chairStatuses = [];
     for (let chair in desks[deskId].chairs){
         if (desks[deskId].chairs[chair].socketId){
