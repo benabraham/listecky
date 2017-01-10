@@ -45,9 +45,8 @@ $(document).ready(
 
             socket
                 .on('connect', function(){ // user authentication
-                    startInterval(3000, function(){
-                        socket.emit('auth-request', thisDeskId, thisChairId);
-                    });
+                    socket.emit('auth-request', thisDeskId, thisChairId);
+                    // startInterval(3000, function(){ });
                 })
 
                 .on('checkStatusAlert', function(){ // Ask student for status
