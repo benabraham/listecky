@@ -195,7 +195,7 @@ $(document).ready(
                 });
 
             chatInput.keydown(function(event){
-                if ((event.ctrlKey || e.metaKey) && (event.keyCode == 13 || event.keyCode == 10)){
+                if ((event.ctrlKey || event.metaKey) && (event.keyCode == 13 || event.keyCode == 10)){
                     $('.l-chat-form').submit();
                 }
             });
