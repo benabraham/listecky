@@ -29,11 +29,12 @@ nunjucks.configure('views', {
 /*
  * markdown renderer
  */
-const marked = require('marked');
+let marked = require('marked');
 
 // define custom renderer (add target="_blank" to all links)
 let customRenderer = new marked.Renderer();
-this.link = function(href, title, text){
+
+customRenderer.link = function(href, title, text){
     let out = '<a href="' + href + '" target="_blank" rel="noopener noreferrer"';
     if (title) out += ' title="' + title + '"';
     out += '>' + text + '</a>';
@@ -167,7 +168,7 @@ function checkDeskStatus(deskId){
  * chat messages
  */
 
-let chatMessages = [];
+let chatMessages = ['~Shift~', 'https://www.google.com/'];
 
 // send a chat message
 function addChatMessage(chatMessage){
