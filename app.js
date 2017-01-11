@@ -168,7 +168,7 @@ function checkDeskStatus(deskId){
  * chat messages
  */
 
-let chatMessages = ['~Shift~', 'https://www.google.com/'];
+let chatMessages = [];
 
 // send a chat message
 function addChatMessage(chatMessage){
