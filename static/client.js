@@ -27,18 +27,18 @@ $(document).ready(
 
             switch (minutes){
                 case 0:
-                    timeString = 'Začneme za necelou minutu.';
+                    timeString = 'We’re starting in a minute';
                     break;
                 case 1:
-                    timeString = 'Zbývá už jen minuta přestávky.';
+                    timeString = 'There’s only a minute left.';
                     break;
                 case 2:
                 case 3:
                 case 4:
-                    timeString = 'Přestávka končí za ' + minutes + ' minuty.';
+                    timeString = 'Break ends in ' + minutes + ' minutes.';
                     break;
                 default:
-                    timeString = 'Přestávka končí za ' + minutes + ' minut.';
+                    timeString = 'Break ends in ' + minutes + ' minutes.';
                     break;
             }
             return timeString;
@@ -91,7 +91,7 @@ $(document).ready(
                 })
 
                 .on('checkStatusAlert', function(){ // Ask student for status
-                    if (confirm('\n\n\n\nHotovo? \n\n\nOK pokud ano,\n\nCancel pokud ne.\n\n\n\n\n') == true){
+                    if (confirm('\n\n\n\nAre you done? \n\n\nOK if yes,\n\nCancel if not.\n\n\n\n\n') == true){
                         socket.emit('statusChange', thisDeskId, thisChairId, 'done');
                     } else {
                         return false;
@@ -109,7 +109,7 @@ $(document).ready(
             function setNameForm(studentName){
                 if (studentName) namePlaceholder.text(studentName);
 
-                if (namePlaceholder.text() == '' || namePlaceholder.text() == 'volno'){
+                if (namePlaceholder.text() == '' || namePlaceholder.text() == 'free chair'){
                     nameInput.val('');
                     nameChangeformShowButton.hide();
                     nameRemoveButton.hide();
@@ -141,7 +141,7 @@ $(document).ready(
 
             nameRemoveButton
                 .on('click', function(event){
-                    socket.emit('setStudentName', thisDeskId, thisChairId, 'volno');
+                    socket.emit('setStudentName', thisDeskId, thisChairId, 'free chair');
                     event.preventDefault();
                 })
             ;
@@ -344,10 +344,11 @@ $(document).ready(
                 console.info('breakTimeEnded', roomStatus, isByTimer);
 
                 roomStatusText.text(roomStatus);
-
+/*
                 if (isDetailView){
-                    if (isByTimer) window.alert('Jsi tu?');
+                    if (isByTimer) window.alert('Are you here?');
                 }
+*/
 
                 $('body').prop('class', 'l-room_status--' + roomStatus);
 

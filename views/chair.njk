@@ -14,25 +14,25 @@
 
 {% block body %}
     <div class="l-nav-top">
-        <a href="/">výběr židle</a>
+        <a href="/">choose another chair</a>
     </div>
 
     <div class="l-main">
-        <p>Tuhle stránku si nech pořád otevřenou.</p>
+        <p>Keep this page open</p>
 
         <h1 class="l-student_name">
             <span class="l-student_name-text">{% if chair.name != '?' %}{{ chair.name }}{% endif %}</span>
             <span class="l-name_actions">
-                <a class="l-unset_name" href="#">smazat</a>
-                <a class="l-set_name" href="#">změnit jméno</a>
+                <a class="l-unset_name" href="#">delete</a>
+                <a class="l-set_name" href="#">change name</a>
             </span>
         </h1>
 
-        <div class="l-student_status_info--intro l-student_status_info">Začneme.</div>
+        <div class="l-student_status_info--intro l-student_status_info">We'll start soon.</div>
 
         <form class="l-name_form" action="" method="post">
-            <input type="text" maxlength="32" placeholder="vyplň si jméno" name="studentName" required pattern=".+" value="">
-            <input type="submit" value="uložit">
+            <input type="text" maxlength="32" placeholder="fill your name" name="studentName" required pattern=".+" value="">
+            <input type="submit" value="save">
         </form>
 
         <div class="l-buttons l-buttons--student">
@@ -50,7 +50,7 @@
             {% endfor %}
         </div>
 
-        <div class="l-student_status_info--lecture l-student_status_info">Právě probíhá výklad.</div>
+        <div class="l-student_status_info--lecture l-student_status_info">Listen now</div>
 
         <div class="l-student_status_info--break l-student_status_info"><span class="l-break_countdown-time"></span></div>
 

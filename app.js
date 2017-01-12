@@ -7,11 +7,12 @@ const console = require('better-console');
 const moment = require('moment');
 
 
+let locale = 'en';
 
 /*
  * moment library set locale
  */
-let now = moment().locale('cs');
+let now = moment().locale(locale);
 
 
 
@@ -56,14 +57,30 @@ marked.setOptions({
 
 
 /*
+ * quick and dirty i18n
+ */
+let strings = {
+    'not_done': { cs: 'Pracuju', en: 'Working' },
+    'help': { cs: 'Chci poradit', en: 'I need help' },
+    'done': { cs: 'Hotovo', en: 'Done' },
+};
+
+function _(string){
+    let translation = 'not translated';
+    if (strings[string][locale]) translation = strings[string][locale];
+    return translation;
+};
+
+
+/*
  * room object
  */
 let room = {
     'roomStatus': 'initial', // other statuses: 'lecturing', 'working' and 'break'
     'statusTypes': { // only statuses with labels and own buttons, there is also online and offline status
-        'not_done': { 'label': 'Pracuju' },
-        'help': { 'label': 'Chci poradit' },
-        'done': { 'label': 'Hotovo' },
+        'not_done': { 'label': _('not_done') },
+        'help': { 'label': _('help') },
+        'done': { 'label': _('done') },
     },
     'size': 4, // room is always a square, this is a number of desks vertically/horizontally
     'desks': {
@@ -85,12 +102,11 @@ let room = {
 };
 
 
-
 /*
  * set up desks
  */
 let desks = room.desks;
-const defaultName = 'volno';
+const defaultName = 'free chair';
 
 for (let d in desks){
 
@@ -379,7 +395,7 @@ io
 
                 room.roomStatus = 'break';
 
-                addChatMessage('###### přestávka do ' + now.add(breakLength, 'minutes').format('HH:mm'));
+                addChatMessage('###### break ends at ' + now.add(breakLength, 'minutes').format('HH:mm'));
 
                 io.emit('breakStarted', room.roomStatus, breakTimeLeft);
 
