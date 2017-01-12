@@ -63,10 +63,11 @@ let strings = {
     'not_done': { cs: 'Pracuju', en: 'Working' },
     'help': { cs: 'Chci poradit', en: 'I need help' },
     'done': { cs: 'Hotovo', en: 'Done' },
+    'free_chair': { cs: 'volno', en: 'Free chair' },
 };
 
 function _(string){
-    let translation = 'not translated';
+    let translation = '*'+string;
     if (strings[string][locale]) translation = strings[string][locale];
     return translation;
 };
@@ -106,7 +107,7 @@ let room = {
  * set up desks
  */
 let desks = room.desks;
-const defaultName = 'free chair';
+const defaultName = _('free_chair');
 
 for (let d in desks){
 
