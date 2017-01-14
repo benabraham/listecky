@@ -102,8 +102,6 @@ let name = _('free_chair');
 
 let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
-console.log(names);
-
 for (let d in desks){
 
     // initial desk status
@@ -119,8 +117,6 @@ for (let d in desks){
                 name = _('free_chair');
             }
         }
-        console.log(d, c, name);
-
         desks[d].chairs[c] = { status: 'offline', name: name };
     }
 }
