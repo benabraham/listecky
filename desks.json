@@ -1,0 +1,19 @@
+{
+    "size": "4",
+    "desks": {
+        "1": { "name": "1-chair square", "coach": "", "layout": { "position": { "x": 0, "y": 1 }, "rotation": 0, "chairs": 1, "shape": "square" } },
+        "2": { "name": "2-chair square", "coach": "", "layout": { "position": { "x": 1, "y": 1 }, "rotation": 0, "chairs": 2, "shape": "square" } },
+        "3": { "name": "3-chair square", "coach": "", "layout": { "position": { "x": 2, "y": 1 }, "rotation": 0, "chairs": 3, "shape": "square" } },
+        "4": { "name": "4-chair square", "coach": "", "layout": { "position": { "x": 3, "y": 1 }, "rotation": 0, "chairs": 4, "shape": "square" } },
+
+        "5": { "name": "1-chair rectangle", "coach": "", "layout": { "position": { "x": 0, "y": 2 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
+        "6": { "name": "2-chair rectangle", "coach": "", "layout": { "position": { "x": 1, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "7": { "name": "3-chair rectangle", "coach": "", "layout": { "position": { "x": 3, "y": 2 }, "rotation": 0, "chairs": 3, "shape": "rectangle" } },
+        "8": { "name": "4-chair rectangle", "coach": "", "layout": { "position": { "x": 0, "y": 3 }, "rotation": 0, "chairs": 4, "shape": "rectangle" } },
+        "9": { "name": "5-chair rectangle", "coach": "", "layout": { "position": { "x": 1, "y": 3 }, "rotation": 0, "chairs": 5, "shape": "rectangle" } },
+        "10": { "name": "6-chair rectangle", "coach": "", "layout": { "position": { "x": 3, "y": 3 }, "rotation": 0, "chairs": 6, "shape": "rectangle" } },
+
+        "11": { "name": "4-chair circle", "coach": "", "layout": { "position": { "x": 2, "y": 2 }, "rotation": 0, "chairs": 4, "shape": "circle" } },
+        "12": { "name": "2-chair circle", "coach": "rotated", "layout": { "position": { "x": 2, "y": 3 }, "rotation": 45, "chairs": 2, "shape": "circle" } }
+    }
+}

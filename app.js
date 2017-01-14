@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
+const fs = require('fs');
 const io = require('socket.io')(server);
 const Timer = require('tiny-timer');
 const console = require('better-console');
 const moment = require('moment');
-
 
 let locale = 'en';
 
@@ -67,15 +67,19 @@ let strings = {
 };
 
 function _(string){
-    let translation = '*'+string;
+    let translation = '*' + string;
     if (strings[string][locale]) translation = strings[string][locale];
     return translation;
 };
 
 
+
 /*
  * room object
  */
+
+let config = JSON.parse(fs.readFileSync('desks.json', 'utf8'));
+
 let room = {
     'roomStatus': 'initial', // other statuses: 'lecturing', 'working' and 'break'
     'statusTypes': { // only statuses with labels and own buttons, there is also online and offline status
@@ -83,41 +87,41 @@ let room = {
         'help': { 'label': _('help') },
         'done': { 'label': _('done') },
     },
-    'size': 4, // room is always a square, this is a number of desks vertically/horizontally
-    'desks': {
-        1: { 'name': '1-chair square', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 1 }, 'rotation': 0, 'chairs': 1, 'shape': 'square' } },
-        2: { 'name': '2-chair square', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 1 }, 'rotation': 0, 'chairs': 2, 'shape': 'square' } },
-        3: { 'name': '3-chair square', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 1 }, 'rotation': 0, 'chairs': 3, 'shape': 'square' } },
-        4: { 'name': '4-chair square', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 1 }, 'rotation': 0, 'chairs': 4, 'shape': 'square' } },
-
-        5: { 'name': '1-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 2 }, 'rotation': 0, 'chairs': 1, 'shape': 'rectangle' } },
-        6: { 'name': '2-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 2 }, 'rotation': 0, 'chairs': 2, 'shape': 'rectangle' } },
-        7: { 'name': '3-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 2 }, 'rotation': 0, 'chairs': 3, 'shape': 'rectangle' } },
-        8: { 'name': '4-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 0, 'y': 3 }, 'rotation': 0, 'chairs': 4, 'shape': 'rectangle' } },
-        9: { 'name': '5-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 1, 'y': 3 }, 'rotation': 0, 'chairs': 5, 'shape': 'rectangle' } },
-        10: { 'name': '6-chair rectangle', 'coach': '', 'layout': { 'position': { 'x': 3, 'y': 3 }, 'rotation': 0, 'chairs': 6, 'shape': 'rectangle' } },
-
-        11: { 'name': '4-chair circle', 'coach': '', 'layout': { 'position': { 'x': 2, 'y': 2 }, 'rotation': 0, 'chairs': 4, 'shape': 'circle' } },
-        12: { 'name': '2-chair circle', 'coach': 'rotated', 'layout': { 'position': { 'x': 2, 'y': 3 }, 'rotation': 45, 'chairs': 2, 'shape': 'circle' } },
-    },
+    'size': config.size,  // room is always a square, this is a number of desks vertically/horizontally
+    'desks': config.desks,
 };
+
 
 
 /*
  * set up desks
  */
 let desks = room.desks;
-const defaultName = _('free_chair');
+
+let name = _('free_chair');
+
+let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
+
+console.log(names);
 
 for (let d in desks){
 
     // initial desk status
     desks[d].status = 'empty';
 
-    // add empty chairs
+    // add chairs and give them a name if known
     desks[d].chairs = {};
     for (let c = 0; c < desks[d].layout.chairs; c++){
-        desks[d].chairs[c] = { status: 'offline', name: defaultName };
+        if (typeof names != 'undefined') if (typeof names[d] != 'undefined'){
+            if (names[d][c] != '' && typeof names[d][c] != 'undefined'){
+                name = names[d][c];
+            } else {
+                name = _('free_chair');
+            }
+        }
+        console.log(d, c, name);
+
+        desks[d].chairs[c] = { status: 'offline', name: name };
     }
 }
 
