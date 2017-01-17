@@ -27,18 +27,18 @@ $(document).ready(
 
             switch (minutes){
                 case 0:
-                    timeString = 'We’re starting in a minute';
+                    timeString = i18n.break_end_under_minute;
                     break;
                 case 1:
-                    timeString = 'There’s only a minute left.';
+                    timeString = i18n.break_end_in_a_minute;
                     break;
                 case 2:
                 case 3:
                 case 4:
-                    timeString = 'Break ends in ' + minutes + ' minutes.';
+                    timeString = i18n.break_ends_in + ' ' + minutes + ' ' + i18n.minutes_2_4 + '.';
                     break;
                 default:
-                    timeString = 'Break ends in ' + minutes + ' minutes.';
+                    timeString = i18n.break_ends_in + ' ' + minutes + ' ' + i18n.minutes + '.';
                     break;
             }
             return timeString;
@@ -91,7 +91,7 @@ $(document).ready(
                 })
 
                 .on('checkStatusAlert', function(){ // Ask student for status
-                    if (confirm('\n\n\n\nAre you done? \n\n\nOK if yes,\n\nCancel if not.\n\n\n\n\n') == true){
+                    if (confirm(i18n.check_status_message) == true){
                         socket.emit('statusChange', thisDeskId, thisChairId, 'done');
                     } else {
                         return false;
@@ -109,7 +109,7 @@ $(document).ready(
             function setNameForm(studentName){
                 if (studentName) namePlaceholder.text(studentName);
 
-                if (namePlaceholder.text() == '' || namePlaceholder.text() == 'free chair'){
+                if (namePlaceholder.text() == '' || namePlaceholder.text() == i18n.free_chair){
                     nameInput.val('');
                     nameChangeformShowButton.hide();
                     nameRemoveButton.hide();
@@ -141,7 +141,7 @@ $(document).ready(
 
             nameRemoveButton
                 .on('click', function(event){
-                    socket.emit('setStudentName', thisDeskId, thisChairId, 'free chair');
+                    socket.emit('setStudentName', thisDeskId, thisChairId, i18n.free_chair);
                     event.preventDefault();
                 })
             ;
@@ -220,7 +220,7 @@ $(document).ready(
             .click(function(event){
                 console.info('simple-emit', $(this).data('emit'));
                 if ($(this).data('require-input')){
-                    var breakLength = window.prompt('Zadej délku přestávky v minutách', '10');
+                    var breakLength = window.prompt(i18n.break_length_prompt, '10');
                     if (breakLength) socket.emit($(this).data('emit'), breakLength);
                 } else {
                     socket.emit($(this).data('emit'));
@@ -307,7 +307,7 @@ $(document).ready(
 
                 $('body').prop('class', 'l-room_status--' + roomStatus);
 
-                if (!isDetailView) roomStatusText.text(roomStatus);
+                if (!isDetailView) roomStatusText.text(i18n[roomStatus]);
             })
 
             .on('workStarted', function(roomStatus){
@@ -315,7 +315,7 @@ $(document).ready(
 
                 $('body').prop('class', 'l-room_status--' + roomStatus);
 
-                if (!isDetailView) roomStatusText.text(roomStatus);
+                if (!isDetailView) roomStatusText.text(i18n[roomStatus]);
             })
 
             .on('breakStarted', function(roomStatus, breakTimeLeft){
@@ -324,15 +324,15 @@ $(document).ready(
                 $('body').prop('class', 'l-room_status--' + roomStatus);
 
                 if (isDetailView){
-                    // window.alert('Začala přestávka');
+                    // window.alert(i18.break_started);
                     breakDurationText.text(breakTimeLeftFormat(breakTimeLeft));
                 } else {
-                    roomStatusText.text(roomStatus + ' ' + msToTime(breakTimeLeft));
+                    roomStatusText.text(i18n[roomStatus] + ' ' + msToTime(breakTimeLeft));
                 }
             })
 
             .on('breakTimeChanged', function(roomStatus, breakTimeLeft){
-                roomStatusText.text(roomStatus + ' ' + msToTime(breakTimeLeft));
+                roomStatusText.text(i18n[roomStatus] + ' ' + msToTime(breakTimeLeft));
 
                 if (isDetailView){
                     breakDurationText.text(breakTimeLeftFormat(breakTimeLeft));
@@ -343,10 +343,10 @@ $(document).ready(
             .on('breakTimeEnded', function(roomStatus, isByTimer){
                 console.info('breakTimeEnded', roomStatus, isByTimer);
 
-                roomStatusText.text(roomStatus);
+                roomStatusText.text(i18n[roomStatus]);
 /*
                 if (isDetailView){
-                    if (isByTimer) window.alert('Are you here?');
+                    if (isByTimer) window.alert(i18n.are_you_here);
                 }
 */
 

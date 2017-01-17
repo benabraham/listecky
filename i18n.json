@@ -1,0 +1,158 @@
+{
+    "not_done": {
+        "cs": "Pracuju",
+        "en": "Working"
+    },
+    "help": {
+        "cs": "Chci poradit",
+        "en": "I need help"
+    },
+    "done": {
+        "cs": "Hotovo",
+        "en": "Done"
+    },
+    "screen": {
+        "cs": "plátno",
+        "en": "screen"
+    },
+    "free_chair": {
+        "cs": "volno",
+        "en": "Free chair"
+    },
+    "choose_another_chair": {
+        "cs": "vybrat jinou židli",
+        "en": "choose another chair"
+    },
+    "keep_this_page_open": {
+        "cs": "Tuhle stránku si nech pořád otevřenou.",
+        "en": "Keep this page open"
+    },
+    "fill_your_name": {
+        "cs": "tvoje jméno",
+        "en": "fill your name"
+    },
+    "change_name": {
+        "cs": "změnit jméno",
+        "en": "change name"
+    },
+    "delete": {
+        "cs": "smazat",
+        "en": "delete"
+    },
+    "starting_soon": {
+        "cs": "Začneme.",
+        "en": "We'll start soon."
+    },
+    "listen_now": {
+        "cs": "Právě probíhá výklad.",
+        "en": "Listen now."
+    },
+    "save": {
+        "cs": "uložit",
+        "en": "save"
+    },
+    "break_end_under_minute": {
+        "cs": "Začneme za necelou minutu.",
+        "en": "We’re starting in a minute"
+    },
+    "break_end_in_a_minute": {
+        "cs": "Zbývá už jen minuta přestávky.",
+        "en": "There’s only a minute left."
+    },
+    "break_ends_in": {
+        "cs": "Přestávka končí za",
+        "en": "Break ends in"
+    },
+    "break_ends_at": {
+        "cs": "Přestávka končí v",
+        "en": "Break ends at"
+    },
+    "minutes": {
+        "cs": "minut",
+        "en": "minutes"
+    },
+    "minutes_2_4": {
+        "cs": "minuty",
+        "en": "minutes"
+    },
+    "check_status_message": {
+        "cs": "\n\n\n\nHotovo? \n\n\nOK pokud ano,\n\nCancel pokud ne.\n\n\n\n\n",
+        "en": "\n\n\n\nAre you done? \n\n\nOK if yes,\n\nCancel if not.\n\n\n\n\n"
+    },
+    "break_length_prompt": {
+        "cs": "Zadej délku přestávky v minutách",
+        "en": "Enter break length in minutes"
+    },
+    "break_started": {
+        "cs": "Začala přestávka",
+        "en": "Break has started"
+    },
+    "are_you_here": {
+        "cs": "Jsi tu?",
+        "en": "Are you here?"
+    },
+    "class_status": {
+        "cs": "stav třídy",
+        "en": "class status"
+    },
+    "status_duration": {
+        "cs": "stav trvá",
+        "en": "task duration"
+    },
+    "button_start_work": {
+        "cs": "Úkol zadán",
+        "en": "Task set"
+    },
+    "button_check_status": {
+        "cs": "Nemají už hotovo?",
+        "en": "Check status"
+    },
+    "button_lecture_start": {
+        "cs": "Skrýt studentům tlačítka",
+        "en": "Hide student's buttons"
+    },
+    "button_start_break": {
+        "cs": "Přestávka",
+        "en": "Start a break"
+    },
+    "choose_message": {
+        "cs": "Vyber zprávu",
+        "en": "Choose a message"
+    },
+    "chat_message_placeholder": {
+        "cs": "GitHub flavored Markdown (z URL se udělají odkazy, pokud mají protokol)",
+        "en": "GitHub flavored Markdown (URLs change to links if they contain protocol)"
+    },
+    "button_delete_last_message": {
+        "cs": "smazat poslední",
+        "en": "delete last message"
+    },
+    "button_send_message": {
+        "cs": "odeslat zprávu (ctrl/cmd+enter)",
+        "en": "send message (ctrl/cmd+enter)"
+    },
+    "title_lector": {
+        "cs": "Lektor",
+        "en": "Lector"
+    },
+    "initial": {
+        "cs": "výchozí",
+        "en": "initial"
+    },
+    "lecturing": {
+        "cs": "přednášení",
+        "en": "lecturing"
+    },
+    "working": {
+        "cs": "pracují",
+        "en": "working"
+    },
+    "break": {
+        "cs": "přestávka",
+        "en": "break"
+    },
+    "current_language": {
+        "cs": "česky",
+        "en": "english"
+    }
+}

@@ -14,25 +14,25 @@
 
 {% block body %}
     <div class="l-nav-top">
-        <a href="/">choose another chair</a>
+        <a href="/">{{ i18n.choose_another_chair }}</a>
     </div>
 
     <div class="l-main">
-        <p>Keep this page open</p>
+        <p>{{ i18n.keep_this_page_open }}</p>
 
         <h1 class="l-student_name">
             <span class="l-student_name-text">{% if chair.name != '?' %}{{ chair.name }}{% endif %}</span>
             <span class="l-name_actions">
-                <a class="l-unset_name" href="#">delete</a>
-                <a class="l-set_name" href="#">change name</a>
+                <a class="l-unset_name" href="#">{{ i18n.delete }}</a>
+                <a class="l-set_name" href="#">{{ i18n.change_name }}</a>
             </span>
         </h1>
 
-        <div class="l-student_status_info--intro l-student_status_info">We'll start soon.</div>
+        <div class="l-student_status_info--intro l-student_status_info">{{ i18n.starting_soon }}</div>
 
         <form class="l-name_form" action="" method="post">
-            <input type="text" maxlength="32" placeholder="fill your name" name="studentName" required pattern=".+" value="">
-            <input type="submit" value="save">
+            <input type="text" maxlength="32" placeholder="{{ i18n.fill_your_name }}" name="studentName" required pattern=".+" value="">
+            <input type="submit" value="{{ i18n.save }}">
         </form>
 
         <div class="l-buttons l-buttons--student">
@@ -50,7 +50,7 @@
             {% endfor %}
         </div>
 
-        <div class="l-student_status_info--lecture l-student_status_info">Listen now</div>
+        <div class="l-student_status_info--lecture l-student_status_info">{{ i18n.listen_now }}</div>
 
         <div class="l-student_status_info--break l-student_status_info"><span class="l-break_countdown-time"></span></div>
 

@@ -2,12 +2,14 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const fs = require('fs');
+const _ = require('lodash');
 const io = require('socket.io')(server);
 const Timer = require('tiny-timer');
 const console = require('better-console');
 const moment = require('moment');
 
-let locale = 'en';
+let locale = 'cs';
+
 
 /*
  * moment library set locale
@@ -59,19 +61,10 @@ marked.setOptions({
 /*
  * quick and dirty i18n
  */
-let strings = {
-    'not_done': { cs: 'Pracuju', en: 'Working' },
-    'help': { cs: 'Chci poradit', en: 'I need help' },
-    'done': { cs: 'Hotovo', en: 'Done' },
-    'free_chair': { cs: 'volno', en: 'Free chair' },
-};
+let i18n = JSON.parse(fs.readFileSync('i18n.json', 'utf8'));
 
-function _(string){
-    let translation = '*' + string;
-    if (strings[string][locale]) translation = strings[string][locale];
-    return translation;
-};
-
+// use only current locale values
+i18n = _.mapValues(i18n, locale);
 
 
 /*
@@ -83,9 +76,9 @@ let config = JSON.parse(fs.readFileSync('desks.json', 'utf8'));
 let room = {
     'roomStatus': 'initial', // other statuses: 'lecturing', 'working' and 'break'
     'statusTypes': { // only statuses with labels and own buttons, there is also online and offline status
-        'not_done': { 'label': _('not_done') },
-        'help': { 'label': _('help') },
-        'done': { 'label': _('done') },
+        'not_done': { 'label': i18n.not_done },
+        'help': { 'label': i18n.help },
+        'done': { 'label': i18n.done },
     },
     'size': config.size,  // room is always a square, this is a number of desks vertically/horizontally
     'desks': config.desks,
@@ -98,7 +91,7 @@ let room = {
  */
 let desks = room.desks;
 
-let name = _('free_chair');
+let name = i18n.free_chair;
 
 let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
@@ -114,10 +107,10 @@ for (let d in desks){
             if (names[d][c] != '' && typeof names[d][c] != 'undefined'){
                 name = names[d][c];
             } else {
-                name = _('free_chair');
+                name = i18n.free_chair;
             }
         } else {
-            name = _('free_chair');
+            name = i18n.free_chair;
         }
         desks[d].chairs[c] = { status: 'offline', name: name };
     }
@@ -135,7 +128,7 @@ function statusChanged(deskId, chairId, newStatus, originalStatus = desks[deskId
         io.emit('statusChanged', deskId, chairId, newStatus, room);
         checkDeskStatus(deskId);
 
-        console.log('>>> statusChanged', desks[deskId].chairs[chairId].name, 'from', originalStatus, 'to', newStatus, 'elapsed', stopwatch.time);
+        console.info('>>> statusChanged', desks[deskId].chairs[chairId].name, 'from', originalStatus, 'to', newStatus, 'elapsed', stopwatch.time);
     }
 }
 
@@ -262,12 +255,14 @@ app
     .get('/', (req, res) =>{
         res.render('index.njk', {
             room: room,
+            i18n: i18n,
         });
     })
 
     .get('/teacher', (req, res) =>{
         res.render('lector.njk', {
             room: room,
+            i18n: i18n,
         });
     })
 
@@ -277,6 +272,7 @@ app
             deskId: req.params.deskId,
             chairId: req.params.chairId,
             chair: desks[req.params.deskId].chairs[req.params.chairId],
+            i18n: i18n,
         });
     })
 ;
@@ -398,7 +394,7 @@ io
 
                 room.roomStatus = 'break';
 
-                addChatMessage('###### break ends at ' + now.add(breakLength, 'minutes').format('HH:mm'));
+                addChatMessage('###### ' + i18n.break_ends_at + ' ' + now.add(breakLength, 'minutes').format('HH:mm'));
 
                 io.emit('breakStarted', room.roomStatus, breakTimeLeft);
 
