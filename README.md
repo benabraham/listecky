@@ -84,6 +84,12 @@ A časovou zónu:
 > heroku config:add TZ="Europe/Prague"
 ```
 
+A angličtinu (výchozí je čeština)
+
+```
+> heroku config:set locale="en"
+```
+
 
 ## Vývoj
 

@@ -36,8 +36,8 @@
         "en": "change name"
     },
     "delete": {
-        "cs": "smazat",
-        "en": "delete"
+        "cs": "smazat jméno",
+        "en": "delete name"
     },
     "starting_soon": {
         "cs": "Začneme.",

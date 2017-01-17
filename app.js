@@ -8,13 +8,25 @@ const Timer = require('tiny-timer');
 const console = require('better-console');
 const moment = require('moment');
 
-let locale = 'cs';
 
 
 /*
- * moment library set locale
+ * set locale
  */
+// default
+let locale = 'cs';
+
+// get from server
+if (typeof process.env.locale != 'undefined') locale = process.env.locale;
+
+// moment library set locale
 let now = moment().locale(locale);
+
+// quick and dirty i18n
+let i18n = JSON.parse(fs.readFileSync('i18n.json', 'utf8'));
+
+// use only current locale values
+i18n = _.mapValues(i18n, locale);
 
 
 
@@ -57,16 +69,6 @@ marked.setOptions({
 });
 
 
-
-/*
- * quick and dirty i18n
- */
-let i18n = JSON.parse(fs.readFileSync('i18n.json', 'utf8'));
-
-// use only current locale values
-i18n = _.mapValues(i18n, locale);
-
-
 /*
  * room object
  */
@@ -76,9 +78,9 @@ let config = JSON.parse(fs.readFileSync('desks.json', 'utf8'));
 let room = {
     'roomStatus': 'initial', // other statuses: 'lecturing', 'working' and 'break'
     'statusTypes': { // only statuses with labels and own buttons, there is also online and offline status
-        'not_done': { 'label': i18n.not_done },
-        'help': { 'label': i18n.help },
-        'done': { 'label': i18n.done },
+        'not_done': { 'label': i18n['not_done'] },
+        'help': { 'label': i18n['help'] },
+        'done': { 'label': i18n['done'] },
     },
     'size': config.size,  // room is always a square, this is a number of desks vertically/horizontally
     'desks': config.desks,
@@ -91,7 +93,7 @@ let room = {
  */
 let desks = room.desks;
 
-let name = i18n.free_chair;
+let name = i18n['free_chair'];
 
 let names = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 
@@ -107,10 +109,10 @@ for (let d in desks){
             if (names[d][c] != '' && typeof names[d][c] != 'undefined'){
                 name = names[d][c];
             } else {
-                name = i18n.free_chair;
+                name = i18n['free_chair'];
             }
         } else {
-            name = i18n.free_chair;
+            name = i18n['free_chair'];
         }
         desks[d].chairs[c] = { status: 'offline', name: name };
     }
@@ -394,7 +396,7 @@ io
 
                 room.roomStatus = 'break';
 
-                addChatMessage('###### ' + i18n.break_ends_at + ' ' + now.add(breakLength, 'minutes').format('HH:mm'));
+                addChatMessage('###### ' + i18n['break_ends_at'] + ' ' + now.add(breakLength, 'minutes').format('HH:mm'));
 
                 io.emit('breakStarted', room.roomStatus, breakTimeLeft);
 
