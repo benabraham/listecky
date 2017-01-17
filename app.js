@@ -116,6 +116,8 @@ for (let d in desks){
             } else {
                 name = _('free_chair');
             }
+        } else {
+            name = _('free_chair');
         }
         desks[d].chairs[c] = { status: 'offline', name: name };
     }
