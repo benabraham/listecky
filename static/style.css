@@ -247,10 +247,13 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-room_status--lecturing .l-buttons--student,
 .l-room_status--break .l-buttons--student { display: none; }
 
+.l-room_status--initial .l-button--restart_work,
 .l-room_status--initial .l-button--check_status,
+.l-room_status--lecturing .l-button--restart_work,
 .l-room_status--lecturing .l-button--start_lecture,
 .l-room_status--lecturing .l-button--check_status,
 .l-room_status--working .l-button--start_work,
+.l-room_status--break .l-button--restart_work,
 .l-room_status--break .l-button--check_status,
 .l-room_status--break .l-button--start_break { display: none; }
 

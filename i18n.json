@@ -103,13 +103,17 @@
         "cs": "Úkol zadán",
         "en": "Task set"
     },
+    "button_restart_work": {
+        "cs": "Resetovat status studentů",
+        "en": "Reset students' status"
+    },
     "button_check_status": {
         "cs": "Nemají už hotovo?",
         "en": "Check status"
     },
     "button_lecture_start": {
-        "cs": "Skrýt studentům tlačítka",
-        "en": "Hide student's buttons"
+        "cs": "Výklad začíná",
+        "en": "Lecturing start"
     },
     "button_start_break": {
         "cs": "Přestávka",
