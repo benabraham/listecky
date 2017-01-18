@@ -189,7 +189,9 @@ $(document).ready(
 
             $('.l-chat-form')
                 .submit(function(event){
-                    socket.emit('chatMessageSend', chatInput.val());
+                    var type = 'markdown';
+                    if ($('[name=asCode]').is(':checked')) type = 'code';
+                    socket.emit('chatMessageSend', type, chatInput.val());
                     chatInput.val('').focus();
                     event.preventDefault();
                 });
@@ -222,6 +224,23 @@ $(document).ready(
                 if ($(this).data('require-input')){
                     var breakLength = window.prompt(i18n['break_length_prompt'], '10');
                     if (breakLength) socket.emit($(this).data('emit'), breakLength);
+                } else if ($(this).data('get-value')){
+                    var select = $($(this).data('get-value'));
+                    var selectValue = select.val();
+                    var maxSelectedValue = select.find('option').length - 2;
+
+                    if (selectValue != 'default'){
+                        socket.emit($(this).data('emit'), selectValue);
+                        if (selectValue >= maxSelectedValue){
+                            selectValue = 'default';
+                        } else {
+                            selectValue++;
+                        }
+                        select.val(selectValue);
+                    } else {
+                        socket.emit($(this).data('emit'));
+                    }
+
                 } else {
                     socket.emit($(this).data('emit'));
                 }
@@ -359,7 +378,7 @@ $(document).ready(
             })
 
             .on('chatMessagesSent', function(chatMessages){
-                console.info('chatMessagesSent');
+                console.info('chatMessagesSent', chatMessages);
                 chatFill(chatMessages);
             })
 

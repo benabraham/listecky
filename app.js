@@ -63,7 +63,7 @@ marked.setOptions({
     tables: true,
     breaks: true,
     pedantic: false,
-    sanitize: true,
+    sanitize: false,
     smartLists: true,
     smartypants: false
 });
@@ -185,19 +185,91 @@ function checkDeskStatus(deskId){
 let chatMessages = [];
 
 // send a chat message
-function addChatMessage(chatMessage){
+function addChatMessage(chatMessage, type = 'markdown'){
     if (chatMessage){
-        console.info('>>> chatMessageSent', chatMessage);
+        console.info('>>> chatMessageSent', '\ntype:', type, '\nmessage:', chatMessage);
 
-        chatMessages.push(chatMessage);
+        chatMessages.push({ 'type': type, 'text': chatMessage });
+
         io.emit('chatMessagesSent', chatMessages.map(formatMessages));
     }
 }
 
 // format chat messages
 function formatMessages(msg){
-    return marked(msg);
+    if (msg.type === 'markdown'){
+        return marked(msg.text);
+    } else if (msg.type === 'code'){
+        return marked('\n```\n' + msg.text + '\n```\n');
+    } else if (msg.type === 'html'){
+        return msg.text;
+    } else {
+        return 'ERROR unknown message type';
+    }
 }
+
+
+
+/*
+ * Tasks
+ */
+
+// load and split tasks file
+let tasksRaw = fs
+    .readFileSync('tasks.md', 'utf8')
+    .split(/\r?\n===\s*\r?\n/g);
+
+let tasks = {};
+
+// extract h1 heading from Markdown
+function getTaskHeading(text){
+    if (text){
+        return text.match(/^# (.+)$/m)[1];
+    } else {
+        return false;
+    }
+}
+
+// remove h1 heading from Markdown
+function removeTaskHeading(text){
+    if (text){
+        return text.match(/^# .+\n*(.+)/m)[1];
+    } else {
+        return false;
+    }
+}
+
+// fill tasks with data
+tasksRaw.forEach((task, index) =>{
+    let taskContent = task.split(/\r?\n---\s*\r?\n/g);
+
+    tasks[index] = { html: '<div class="l-task">' };
+
+    if (getTaskHeading(taskContent[0])){
+        tasks[index].main = {
+            'heading': getTaskHeading(taskContent[0]),
+            'body': taskContent[0]
+        };
+        tasks[index].html += marked(tasks[index].main.body);
+    }
+
+    if (getTaskHeading(taskContent[1])){
+        tasks[index].bonus = {
+            'heading': getTaskHeading(taskContent[1]),
+            'body': removeTaskHeading(taskContent[1])
+        };
+        tasks[index].html +=
+            '<details>' +
+            '<summary>' + tasks[index].bonus.heading + '</summary>' +
+            marked(tasks[index].bonus.body) +
+            '</details>';
+
+    }
+    tasks[index].html += '</div>'
+});
+
+// test emit messages
+// for (let key in tasks) addChatMessage(tasks[key].html, 'html');
 
 
 
@@ -265,6 +337,7 @@ app
         res.render('lector.njk', {
             room: room,
             i18n: i18n,
+            tasks: tasks,
         });
     })
 
@@ -367,7 +440,7 @@ io
             })
 
 
-            .on('workStart', () =>{
+            .on('workStart', (taskId=false) =>{
                 restartStopwatch();
                 stopCountdownTimer(false);
 
@@ -384,6 +457,9 @@ io
                     }
                 }
                 room.roomStatus = 'working';
+                if(taskId){
+                    addChatMessage(tasks[taskId].html, 'html');
+                }
                 io.emit('workStarted', room.roomStatus);
             })
 
@@ -418,8 +494,8 @@ io
 
 
 
-            .on('chatMessageSend', (chatMessage) =>{
-                addChatMessage(chatMessage);
+            .on('chatMessageSend', (type, chatMessage) =>{
+                addChatMessage(chatMessage, type);
             })
 
 

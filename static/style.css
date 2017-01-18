@@ -99,6 +99,7 @@ table {
 body,
 input,
 textarea,
+select,
 button { font-family: "Roboto Condensed", sans-serif; }
 
 a:link { color: hsl(240, 100%, 25%); }
@@ -297,9 +298,22 @@ a:active { color: hsl(197, 71%, 73%); }
     height: 12vh;
 }
 
+.l-task-chooser {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-task-chooser select {
+    height: 4vh;
+    width: 100%;
+    margin: 10px 5px;
+}
+
 /* chat */
 .l-chat {
-    height: 85vh;
+    height: 80vh;
     padding: 0 5px;
 }
 
@@ -321,9 +335,13 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-chat select { display: none; }
 
-.l-chat-buttons {
-    display: flex;
+.l-chat label {
+    padding-left: 5px;
+    padding-right: 5px;
+    user-select: none;
 }
+
+.l-chat-buttons { display: flex; }
 
 .l-chat .l-button {
     padding: 0.5em 0;
@@ -347,7 +365,7 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-chat-log {
     border-top: 1px solid hsl(0, 0%, 87%);
     overflow: auto;
-    height: 65vh;
+    height: 60vh;
 }
 
 .l-chat-log--student {
@@ -393,6 +411,18 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-chat-message li { margin-left: 2em; }
 
+.l-chat-message kbd {
+    padding: 2px 5px;
+    min-width: 1.5em;
+    text-align: center;
+    display: inline-block;
+    background: hsl(207, 85%, 38%);
+    color: #fff;
+    border-radius: 3px;
+    border: 1px solid hsl(207, 85%, 46%);
+    line-height: 105%;
+}
+
 .l-chat-message pre {
     padding: 10px;
     line-height: 1.2;
@@ -419,6 +449,30 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-chat-message table th { font-weight: bold; }
 
+.l-chat-message .l-task {
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: hsl(200, 50%, 93%);
+}
+
+.l-chat-message details {
+    padding: 10px;
+    background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.l-chat-message summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    outline: 0 none;
+    user-select: none;
+}
+
+.l-chat-message details[open] summary {
+    margin-bottom: 10px;
+}
+
 /* system messages */
 /* yes it's a hack, reusing element that shouldn't be, but nobody uses h6! */
 .l-chat-message h6:only-child {
@@ -430,6 +484,10 @@ a:active { color: hsl(197, 71%, 73%); }
     font-weight: normal;
     margin-right: 10px;
 }
+
+/* hide notes */
+/* yes, this should be done on backend, but for now it's good enough */
+.l-chat-message blockquote > blockquote { display: none; }
 
 /* Room status info  */
 

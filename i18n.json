@@ -120,8 +120,8 @@
         "en": "Start a break"
     },
     "choose_message": {
-        "cs": "Vyber zprávu",
-        "en": "Choose a message"
+        "cs": "Vyber úkol",
+        "en": "Choose a task"
     },
     "chat_message_placeholder": {
         "cs": "GitHub flavored Markdown (z URL se udělají odkazy, pokud mají protokol)",
@@ -154,6 +154,10 @@
     "break": {
         "cs": "přestávka",
         "en": "break"
+    },
+    "checkbox_send_as_code": {
+        "cs": "jako kód",
+        "en": "as a code"
     },
     "current_language": {
         "cs": "česky",

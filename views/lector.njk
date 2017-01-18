@@ -13,21 +13,26 @@
 
             </div>
             <div class="l-buttons l-buttons-lector">
-                <button class="l-button l-button--start_work l-button--primary" data-emit="workStart">{{ i18n['button_start_work'] }}</button>
+                <button class="l-button l-button--start_work l-button--primary" data-emit="workStart" data-get-value="#taskChooser">{{ i18n['button_start_work'] }}</button>
                 <button class="l-button l-button--restart_work" data-emit="workStart">{{ i18n['button_restart_work'] }}</button>
                 <button class="l-button l-button--check_status" data-emit="checkStatus">{{ i18n['button_check_status'] }}</button>
                 <button class="l-button l-button--start_lecture l-button--primary" data-emit="lectureStart">{{ i18n['button_lecture_start'] }}</button>
                 <button class="l-button l-button--start_break l-button--primary " data-emit="breakStart" data-require-input="true">{{ i18n['button_start_break'] }}</button>
             </div>
+            <div class="l-task-chooser">
+                <select name="taskChooser" id="taskChooser">
+                    <option value="default">{{ i18n['choose_message'] }}</option>
+                    {% for id, task in tasks %}
+                        <option value="{{ id }}">{{ task.main.heading }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <div class="l-chat">
                 <form action="" method="post" class="l-chat-form">
-                    {#<select name="" id="">
-                        <option value="0">{{ i18n['choose_message'] }}Vyber zprávu</option>
-                        <option value="1">titulek předpřipravené zprávy</option>
-                    </select>#}
                     <textarea name="chatMessage" id="" cols="30" rows="5" tabindex="1" required placeholder="{{ i18n['chat_message_placeholder'] }}"></textarea>
                     <div class="l-chat-buttons">
                         <button tabindex="3" class="l-button" data-emit="chatLastMessageDelete">{{ i18n['button_delete_last_message'] }}</button>
+                        <label for="asCode"><input type="checkbox" name="asCode" id="asCode"> {{ i18n['checkbox_send_as_code'] }}</label>
                         <input tabindex="2" class="l-button l-button--primary" type="submit" value="{{ i18n['button_send_message'] }}">
                     </div>
                 </form>

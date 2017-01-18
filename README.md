@@ -16,7 +16,9 @@ Jedna instance běží na https://listecky.herokuapp.com/
 
 ### Začátek cvičení
 
-* Tlačítkem „Úkol zadán“ se studentovi umožní volba statusu.  
+* Tlačítkem „Úkol zadán“ se studentovi umožní volba statusu.
+* Pokud je vybraná hodnota v selectu pod ním, pošle se zadání úkolu a automaticky se posune na další úkol, pokud existuje.
+* Texty úkolů je třeba zadat před spuštěním aplikace do `tasks.md` v daném formátu (viz ukázkový).
 
 ### Připomenutí
 
@@ -37,7 +39,8 @@ Jedna instance běží na https://listecky.herokuapp.com/
 ### Chat
 
 * Chat umožňuje posílat i víceřádkové zprávy od přednášejícího všem studentům.
-* Zprávy lze formátovat pomocí syntaxe [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) 
+* Zprávy lze formátovat pomocí syntaxe [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+* „Jako kód“ obalí celý odeslaný kód do `<pre>` a `<code>` (ekvivalent ``` před a za v Markdownu).
 * Lze smazat nejnovější zprávu.
 * Zprávy jsou dostupné všem i když se připojí později.
 * Přijímání ani posílání zpráv není podmíněno stavem třídy.
