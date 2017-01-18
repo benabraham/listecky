@@ -17,7 +17,7 @@ Jedna instance běží na https://listecky.herokuapp.com/
 ### Začátek cvičení
 
 * Tlačítkem „Úkol zadán“ se studentovi umožní volba statusu.
-* Pokud je vybraná hodnota v selectu pod ním, pošle se zadání úkolu a automaticky se posune na další úkol, pokud existuje.
+* Pokud je vybraná jiná hodnota v selectu pod ním, než „Vyber úkol“, pošle se zadání úkolu a automaticky se posune na další úkol, pokud existuje.
 * Texty úkolů je třeba zadat před spuštěním aplikace do `tasks.md` v daném formátu (viz ukázkový).
 
 ### Připomenutí
