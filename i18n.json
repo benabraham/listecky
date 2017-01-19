@@ -100,8 +100,8 @@
         "en": "task duration"
     },
     "button_start_work": {
-        "cs": "Úkol zadán",
-        "en": "Task set"
+        "cs": "Zadat úkol",
+        "en": "Set task"
     },
     "button_restart_work": {
         "cs": "Resetovat status studentů",
