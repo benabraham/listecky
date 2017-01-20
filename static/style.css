@@ -457,6 +457,7 @@ a:active { color: hsl(197, 71%, 73%); }
     background-color: hsl(200, 50%, 93%);
 }
 
+.l-chat-message .l-task pre,
 .l-chat-message .l-task code {
     background-color: hsl(0, 0%, 100%);
 }
