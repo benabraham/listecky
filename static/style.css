@@ -426,6 +426,7 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-chat-message pre {
     padding: 10px;
     line-height: 1.2;
+    white-space: pre-wrap;
 }
 
 .l-chat-message code,
@@ -454,6 +455,10 @@ a:active { color: hsl(197, 71%, 73%); }
     margin-bottom: 10px;
     margin-right: 10px;
     background-color: hsl(200, 50%, 93%);
+}
+
+.l-chat-message .l-task code {
+    background-color: hsl(0, 0%, 100%);
 }
 
 .l-chat-message details {
