@@ -403,10 +403,12 @@ a:active { color: hsl(197, 71%, 73%); }
 }
 
 .l-chat-message blockquote {
-    padding: 5px 0 5px 10px;
+    padding: 10px 0 5px 10px;
     line-height: 1.2;
     border-left: 1px solid hsl(0, 0%, 87%);
-    margin: 10px 0 10px 10px;
+    margin: 30px 0 20px 10px;
+    font-style: italic;
+    font-size: 85%;
 }
 
 .l-chat-message li { margin-left: 2em; }
