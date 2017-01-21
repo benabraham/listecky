@@ -231,7 +231,7 @@ $(document).ready(
 
                     if (selectValue != 'default'){
                         socket.emit($(this).data('emit'), selectValue);
-                        if (selectValue >= maxSelectedValue){
+                        if (selectValue > maxSelectedValue){
                             selectValue = 'default';
                         } else {
                             selectValue++;
