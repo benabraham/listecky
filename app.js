@@ -217,7 +217,7 @@ function formatMessages(msg){
 // load and split tasks file
 let tasksRaw = fs
     .readFileSync('tasks.md', 'utf8')
-    .split(/\r?\n===\s*\r?\n/g);
+    .split(/\r?\n---\s*\r?\n/g);
 
 let tasks = {};
 
@@ -241,7 +241,7 @@ function removeTaskHeading(text){
 
 // fill tasks with data
 tasksRaw.forEach((task, index) =>{
-    let taskContent = task.split(/\r?\n---\s*\r?\n/g);
+    let taskContent = task.split(/\r?\n----\s*\r?\n/g);
 
     tasks[index] = { html: '<div class="l-task">' };
 
