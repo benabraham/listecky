@@ -56,6 +56,11 @@ customRenderer.link = function(href, title, text){
     return out;
 };
 
+// remove ids from headings
+customRenderer.heading = function(text, level){
+    return `<h${level}>${text}</h${level}>`;
+};
+
 // set options to markdown renderer
 marked.setOptions({
     renderer: customRenderer,
@@ -440,7 +445,7 @@ io
             })
 
 
-            .on('workStart', (taskId=false) =>{
+            .on('workStart', (taskId = false) =>{
                 restartStopwatch();
                 stopCountdownTimer(false);
 
@@ -457,7 +462,7 @@ io
                     }
                 }
                 room.roomStatus = 'working';
-                if(taskId){
+                if (taskId){
                     addChatMessage(tasks[taskId].html, 'html');
                 }
                 io.emit('workStarted', room.roomStatus);
