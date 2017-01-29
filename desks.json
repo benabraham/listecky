@@ -7,7 +7,7 @@
         "13": { "name": "4-chair square", "coach": "", "layout": { "position": { "x": 3, "y": 0 }, "rotation": 0, "chairs": 4, "shape": "square" } },
 
         "20": { "name": "4-chair circle", "coach": "", "layout": { "position": { "x": 2, "y": 4 }, "rotation": 0, "chairs": 4, "shape": "circle" } },
-        "21": { "name": "2-chair circle", "coach": "rotated", "layout": { "position": { "x": 3, "y": 4 }, "rotation": 45, "chairs": 2, "shape": "circle" } },
+        "21": { "name": "2-chair circle", "coach": "rotated and shifted", "layout": { "position": { "x": 3, "y": 4, "x_shift": 0.5, "y_shift": -0.3 }, "rotation": 45, "chairs": 2, "shape": "circle" } },
 
         "30": { "name": "1-chair rectangle", "coach": "", "layout": { "position": { "x": 0, "y": 3 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
         "31": { "name": "2-chair rectangle", "coach": "", "layout": { "position": { "x": 1, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
