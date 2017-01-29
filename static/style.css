@@ -576,6 +576,11 @@ a:active { color: hsl(197, 71%, 73%); }
     height: 30%;
 }
 
+.l-desk-shape--rectangle_long {
+    width: 95%;
+    height: 20%;
+}
+
 .l-desk-shape > div {
     width: 100%;
     height: 100%;
@@ -629,6 +634,8 @@ a:active { color: hsl(197, 71%, 73%); }
     justify-content: center;
     align-items: center;
     user-select: none;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 /* square and round table's chair */
@@ -673,12 +680,14 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-desk-shape--rectangle.l-desk-chairs_number--1 .l-chair { width: 100%; }
 
 /* 2-chair */
-.l-desk-shape--rectangle.l-desk-chairs_number--2 .l-chair:nth-child(3n+2) { left: 50%; }
+.l-desk-shape--rectangle.l-desk-chairs_number--2 .l-chair { width: 80%; }
+
+.l-desk-shape--rectangle.l-desk-chairs_number--2 .l-chair:nth-child(1) { left: -15%; }
+
+.l-desk-shape--rectangle.l-desk-chairs_number--2 .l-chair:nth-child(2) { left: 35%; }
 
 /* 3-chair */
 .l-desk-shape--rectangle.l-desk-chairs_number--3 .l-chair { width: 33.33%; }
-
-.l-desk-shape--rectangle.l-desk-chairs_number--2 .l-chair { width: 50%; }
 
 /* 4-chair */
 .l-desk-shape--rectangle.l-desk-chairs_number--4 .l-chair { width: 50%; }
@@ -691,6 +700,60 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-desk-shape--rectangle.l-desk-chairs_number--5 .l-chair:nth-child(n+4) { width: 50%; }
 
 .l-desk-shape--rectangle.l-desk-chairs_number--5 .l-chair:nth-child(5) { left: 50%; }
+
+
+/* Rectangle long table chairs */
+
+.l-desk-shape--rectangle_long .l-chair { width: 25%; }
+
+.l-desk-shape--rectangle_long .l-chair:nth-child(-n+4) { bottom: -30%; }
+
+.l-desk-shape--rectangle_long .l-chair:nth-child(n+5) { top: -30%; }
+
+.l-desk-shape--rectangle_long .l-chair:nth-child(4n+1) { left: 0; }
+
+.l-desk-shape--rectangle_long .l-chair:nth-child(4n+2) { left: 25%; }
+
+.l-desk-shape--rectangle_long .l-chair:nth-child(4n+3) { left: 50%; }
+
+.l-desk-shape--rectangle_long .l-chair:nth-child(4n+4) { left: 75%; }
+
+/* 1-chair */
+.l-desk-shape--rectangle_long.l-desk-chairs_number--1 .l-chair { width: 100%; }
+
+/* 2-chair */
+.l-desk-shape--rectangle_long.l-desk-chairs_number--2 .l-chair { width: 50%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--2 .l-chair:nth-child(3n+2) { left: 50%; }
+
+/* 3-chair */
+.l-desk-shape--rectangle_long.l-desk-chairs_number--3 .l-chair { width: 33.33%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--3 .l-chair:nth-child(1) { left: 0%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--3 .l-chair:nth-child(2) { left: 33.33%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--3 .l-chair:nth-child(3) { left: 66.66%; }
+
+/* 5-chair */
+.l-desk-shape--rectangle_long.l-desk-chairs_number--5 .l-chair:nth-child(n+5) { width: 50%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--5 .l-chair:nth-child(5) { left: 0; }
+
+/* 6-chair */
+.l-desk-shape--rectangle_long.l-desk-chairs_number--6 .l-chair:nth-child(n+5) { width: 50%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--6 .l-chair:nth-child(6) { left: 50%; }
+
+/* 7-chair */
+.l-desk-shape--rectangle_long.l-desk-chairs_number--7 .l-chair:nth-child(n+5) { width: 33.33%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--7 .l-chair:nth-child(5) { left: 0%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--7 .l-chair:nth-child(6) { left: 33.33%; }
+
+.l-desk-shape--rectangle_long.l-desk-chairs_number--7 .l-chair:nth-child(7) { left: 66.66%; }
+
 
 /* Round table chairs */
 
