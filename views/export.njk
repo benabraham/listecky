@@ -1,0 +1,40 @@
+{% extends "_base.njk" %}
+
+
+{% block title %}{{ super() }}{% endblock %}
+
+
+{% block js_vars %} {% endblock %}
+
+
+{% block body %}
+<h1>Exports</h1>
+<h2>room</h2>
+<textarea class="l-export"> {{ room|dump }} </textarea>
+
+<h2>stopwatchLog</h2>
+
+<h3>js</h3>
+<textarea class="l-export"> {{ stopwatchLog|dump }} </textarea>
+
+<h3>tab delimited</h3>
+<textarea class="l-export">
+timestamp&#9;status&#9;duration
+{% for logItem in stopwatchLog -%}
+{{ logItem.timestamp }}&#9;{{ logItem.roomStatus }}&#9;{{ logItem.duration }}
+{% endfor %}
+</textarea>
+
+<h2>chatMessagesLog</h2>
+
+<h3>js</h3>
+<textarea class="l-export"> {{ chatMessagesLog|dump }} </textarea>
+
+<h3>tab delimited</h3>
+<textarea class="l-export">
+timestamp&#9;type&#9;text
+{% for logItem in chatMessagesLog -%}
+{{ logItem.timestamp }}&#9;{{ logItem.type }}&#9;{{ logItem.text }}
+{% endfor %}
+</textarea>
+{% endblock %}
