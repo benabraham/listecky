@@ -351,6 +351,14 @@ app
 		});
 	})
 
+	.get('/coach', (req, res) =>{
+		res.render('coach.njk', {
+			room: room,
+			i18n: i18n,
+			tasks: tasks,
+		});
+	})
+
 	.get('/desk/:deskId/chair/:chairId/', (req, res) =>{
 		res.render('chair.njk', {
 			room: room,

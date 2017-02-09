@@ -1,0 +1,15 @@
+{% extends "_base.njk" %}
+
+
+{% block title %}{{ super() }} {{ i18n['title_coach'] }}{% endblock %}
+
+
+{% block body %}
+    {% set isCoach = true %}
+    {% include '__desks.njk' %}
+
+    <div class="l-chat-log"></div>
+
+    {{ super() }}
+
+{% endblock %}

@@ -544,6 +544,17 @@ a:active { color: hsl(197, 71%, 73%); }
 	max-width: 100vh;
 }
 
+
+.l-desks--coach {
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 400px;
+	min-width: 400px;
+	height: 100vh;
+	width: 100vw;
+	max-width: 100vh;
+}
+
 /* Screen position */
 .l-screen {
 	text-align: center;
@@ -868,6 +879,7 @@ a:active { color: hsl(197, 71%, 73%); }
 	background-color: hsl(50, 80%, 80%);
 }
 
+.l-desks--coach .l-chair,
 .l-desks--home .l-chair > a:not(.l-status--offline) {
 	pointer-events: none;
 	cursor: default;

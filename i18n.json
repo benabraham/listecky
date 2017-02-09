@@ -139,6 +139,10 @@
         "cs": "Lektor",
         "en": "Lector"
     },
+    "title_coach": {
+        "cs": "Kouč",
+        "en": "Coach"
+    },
     "initial": {
         "cs": "výchozí",
         "en": "initial"

@@ -1,4 +1,4 @@
-<div class="l-desks {% if isHome %}l-desks--home{% else %}l-desks--lector{% endif %}">
+<div class="l-desks {% if isHome %}l-desks--home{% elif isCoach %}l-desks--coach{% else %}l-desks--lector{% endif %}">
     <div class="l-desks-P">
         <div class="l-screen">{{ i18n['screen'] }}</div>
         {% for desk_id, desk in room.desks %}
