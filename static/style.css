@@ -521,7 +521,7 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-desks--lector {
 	min-width: 500px;
 	min-height: 500px;
-	border-left:1px solid hsl(0, 0%, 90%);
+	border-left: 1px solid hsl(0, 0%, 90%);
 }
 
 .l-desks-P {
@@ -543,7 +543,6 @@ a:active { color: hsl(197, 71%, 73%); }
 	width: 100vw;
 	max-width: 100vh;
 }
-
 
 .l-desks--coach {
 	margin-left: auto;
@@ -925,5 +924,9 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-export {
 	width: 100%;
-	height:10vh;
+	height: 10vh;
+}
+
+.l-tasks {
+	padding: 1em;
 }

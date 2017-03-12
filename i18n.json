@@ -143,6 +143,10 @@
         "cs": "Kouč",
         "en": "Coach"
     },
+    "title_tasks": {
+        "cs": "Úkoly",
+        "en": "Tasks"
+    },
     "initial": {
         "cs": "výchozí",
         "en": "initial"
