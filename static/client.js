@@ -252,7 +252,7 @@ $(document).ready(
 
         function chatFill(chatMessages){
             var chatDeleteMessageButton = $('[data-emit=chatLastMessageDelete]');
-            var chatLog = $('.l-chat-log');
+            var chatLog = $('.l-js-chat-log');
             var chatLength = chatMessages.length;
 
             chatLog.empty();

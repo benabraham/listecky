@@ -19,6 +19,7 @@ Jedna instance běží na https://listecky.herokuapp.com/
 * Tlačítkem „Úkol zadán“ se studentovi umožní volba statusu.
 * Pokud je vybraná jiná hodnota v selectu pod ním, než „Vyber úkol“, pošle se zadání úkolu a automaticky se posune na další úkol, pokud existuje.
 * Texty úkolů je třeba zadat před spuštěním aplikace do `tasks.md` v daném formátu (viz ukázkový).
+* Texty všech úkolů jsou na [/tasks](https://listecky.herokuapp.com/tasks)
 
 ### Připomenutí
 
@@ -51,8 +52,8 @@ Jedna instance běží na https://listecky.herokuapp.com/
 * Může si nastavit svoje jméno.
 * Klikáním na jednotlivé statusy se tyto mění.
 * Při zavření okna nebo refreshi se status smaže.
-* Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `Hotovo`, <kbd>Cancel</kbd> beze změny.  
-
+* Pokud přednášející pošle připomínací notifikaci, znamená kliknutí na <kbd>OK</kbd>, změnu na stav `Hotovo`, <kbd>Cancel</kbd> beze změny.
+  
 ## Data
 
 * Data o stolech, židlích a koučích jsou zatím natvrdo v aplikaci (viz app.js)

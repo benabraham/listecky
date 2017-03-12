@@ -1,0 +1,22 @@
+{% extends "_base.njk" %}
+
+
+{% block title %}{{ super() }} {{ i18n['title_tasks'] }}{% endblock %}
+
+
+{% block body %}
+    <div class="l-tasks">
+        <h1>Úkoly</h1>
+
+        <div class="l-chat-log l-chat-log--student">
+            {% for task, y in tasks %}
+                <div class="l-chat-message">
+                    {{ tasks[task].html|safe }}
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    {{ super() }}
+
+{% endblock %}
