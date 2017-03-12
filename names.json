@@ -25,5 +25,9 @@
 
   "50": [ "Predefined Name 1", "Predefined Name 2", "Predefined Name 3", "Predefined Name 4", "Predefined Name 5", "Predefined Name 6" ],
 
-  "60": [ "Predefined Name 1", "Predefined Name 2", "Predefined Name 3" ]
+  "60": [ "Predefined Name 1", "Predefined Name 2", "Predefined Name 3" ],
+
+  "70": [ "Predefined Name 1", "Predefined Name 2", "Predefined Name 3", "Predefined Name 4", "Predefined Name 5", "Predefined Name 6" ],
+  "71": [ "Predefined Name 1", "Predefined Name 2", "Predefined Name 3", "Predefined Name 4", "Predefined Name 5", "Predefined Name 6" ]
+
 }

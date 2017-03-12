@@ -27,6 +27,9 @@
 
         "50": { "name": "6-chair hexagon", "coach": "", "layout": { "position": { "x": 4, "y": 0 }, "rotation": 0, "chairs": 6, "shape": "hexagon" } },
 
-        "60": { "name": "3-chair half hexagon", "coach": "", "layout": { "position": { "x": 4, "y": 1 }, "rotation": 0, "chairs": 3, "shape": "hexagon_half" } }
+        "60": { "name": "3-chair half hexagon", "coach": "", "layout": { "position": { "x": 4, "y": 1 }, "rotation": 0, "chairs": 3, "shape": "hexagon_half" } },
+
+        "70": { "name": "6-chair ellipse", "coach": "", "layout": { "position": { "x": 4, "y": 3 }, "rotation": 0, "chairs": 6, "shape": "ellipse" } },
+        "71": { "name": "2-chair ellipse", "coach": "", "layout": { "position": { "x": 4, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "ellipse" } }
     }
 }
