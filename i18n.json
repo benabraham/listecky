@@ -170,5 +170,9 @@
     "current_language": {
         "cs": "česky",
         "en": "english"
+    },
+    "Messages": {
+        "cs": "Zprávy",
+        "en": "Messages"
     }
 }

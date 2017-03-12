@@ -6,9 +6,15 @@
 
 {% block body %}
     {% set isCoach = true %}
+
+
     {% include '__desks.njk' %}
 
-    <div class="l-chat-log l-js-chat-log"></div>
+    <a class="l-button l-button--primary" href="/tasks">přehled všech úkolů</a>
+
+    <h2 class="l-coach-messages-heading">{{ i18n['Messages'] }}</h2>
+
+    <div class="l-chat-log l-chat-log--coach l-js-chat-log"></div>
 
     {{ super() }}
 
