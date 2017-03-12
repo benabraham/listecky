@@ -258,9 +258,15 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-room_status--break .l-button--check_status,
 .l-room_status--break .l-button--start_break { display: none; }
 
-.l-button--primary {
+.l-button--primary,
+.l-button--primary:link,
+.l-button--primary:visited,
+.l-button--primary:hover,
+.l-button--primary:focus,
+.l-button--primary:active {
 	background-color: hsl(210, 50%, 50%);
 	color: hsl(0, 0%, 100%);
+	text-decoration: none;
 }
 
 .l-room_status--initial .l-button--start_work,
@@ -368,6 +374,7 @@ a:active { color: hsl(197, 71%, 73%); }
 	height: 60vh;
 }
 
+.l-chat-log--coach,
 .l-chat-log--student {
 	height: auto;
 }
@@ -929,4 +936,10 @@ a:active { color: hsl(197, 71%, 73%); }
 
 .l-tasks {
 	padding: 1em;
+}
+
+.l-coach-messages-heading {
+	border-top: 1px solid #ddd;
+	padding-top: 1em;
+	margin: 2em 1em 1em;
 }
