@@ -582,6 +582,11 @@ a:active { color: hsl(197, 71%, 73%); }
 	align-items: center;
 }
 
+.l-desk-shape {
+	display: flex;
+	align-items: center;
+}
+
 .l-desk-shape--square,
 .l-desk-shape--circle {
 	width: 60%;
@@ -598,12 +603,20 @@ a:active { color: hsl(197, 71%, 73%); }
 	height: 20%;
 }
 
+.l-desk-shape--ellipse {
+	width: 70%;
+	height: 70%;
+}
+
 .l-desk-shape > div {
 	width: 100%;
 	height: 100%;
 }
 
-.l-desk-shape--circle > div { border-radius: 100%; }
+.l-desk-shape--circle > div,
+.l-desk-shape--ellipse > div { border-radius: 100%; }
+
+.l-desk-shape--ellipse > div { height: 66%; }
 
 .l-desk-shape--hexagon {
 	width: 70%;
@@ -850,6 +863,54 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-desk-shape--hexagon_half .l-chair:nth-child(2) { right: -22%; }
 
 .l-desk-shape--hexagon_half .l-chair:nth-child(3) { left: -22%; }
+
+/* Ellipse table chairs */
+
+.l-desk-shape--ellipse .l-chair { width: 40%; }
+
+.l-desk-shape--ellipse .l-chair:nth-child(1),
+.l-desk-shape--ellipse .l-chair:nth-child(6) { left: 30%; }
+
+.l-desk-shape--ellipse .l-chair:nth-child(1) { bottom: -5%; }
+
+.l-desk-shape--ellipse .l-chair:nth-child(2),
+.l-desk-shape--ellipse .l-chair:nth-child(3) { bottom: 10%; }
+
+.l-desk-shape--ellipse .l-chair:nth-child(3),
+.l-desk-shape--ellipse .l-chair:nth-child(4) { transform: rotate(40deg); }
+
+.l-desk-shape--ellipse .l-chair:nth-child(2),
+.l-desk-shape--ellipse .l-chair:nth-child(5) { transform: rotate(-40deg); }
+
+.l-desk-shape--ellipse .l-chair:nth-child(2),
+.l-desk-shape--ellipse .l-chair:nth-child(4) { right: -18%; }
+
+.l-desk-shape--ellipse .l-chair:nth-child(3),
+.l-desk-shape--ellipse .l-chair:nth-child(5) { left: -18%; }
+
+.l-desk-shape--ellipse .l-chair:nth-child(4),
+.l-desk-shape--ellipse .l-chair:nth-child(5) { top: 10%; }
+
+.l-desk-shape--ellipse .l-chair:nth-child(6) { top: -5%; }
+
+/* 1-chair */
+.l-desk-shape--ellipse.l-desk-chairs_number--1 .l-chair { width: 100%; }
+
+/* 2-chair */
+.l-desk-shape--ellipse.l-desk-chairs_number--2 .l-chair {
+	width: 70%;
+	bottom: 5%;
+}
+
+.l-desk-shape--ellipse.l-desk-chairs_number--2 .l-chair:nth-child(1) {
+	transform: rotate(20deg);
+	left: -20%;
+}
+
+.l-desk-shape--ellipse.l-desk-chairs_number--2 .l-chair:nth-child(2) {
+	transform: rotate(-20deg);
+	right: -20%;
+}
 
 /* general chairs */
 
