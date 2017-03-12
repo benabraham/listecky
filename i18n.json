@@ -147,6 +147,10 @@
         "cs": "Úkoly",
         "en": "Tasks"
     },
+    "title_app": {
+        "cs": "Lístečky",
+        "en": "Stickies"
+    },
     "initial": {
         "cs": "výchozí",
         "en": "initial"
