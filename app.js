@@ -505,7 +505,7 @@ io
 
 				room.roomStatus = 'break';
 
-				addChatMessage('###### ' + i18n['break_ends_at'] + ' ' + now.add(breakLength, 'minutes').format('HH:mm'));
+				addChatMessage('###### ' + i18n['break_ends_at'] + ' ' + now.clone().add(breakLength, 'minutes').format('HH:mm'));
 
 				io.emit('breakStarted', room.roomStatus, breakTimeLeft);
 
