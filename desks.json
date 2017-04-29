@@ -23,6 +23,8 @@
         "42": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "43": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "44": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "45": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } }
+        "45": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+
+        "51": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } }
     }
 }
