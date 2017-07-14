@@ -87,7 +87,7 @@ let room = {
 		'help': { 'label': i18n['help'] },
 		'done': { 'label': i18n['done'] },
 	},
-	'size': config.size,  // room is always a square, this is a number of desks vertically/horizontally
+	'size': config.size, // number of desks horizontally and vertically
 	'desks': config.desks,
 };
 
