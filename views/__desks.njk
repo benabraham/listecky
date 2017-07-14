@@ -6,10 +6,10 @@
                 class="l-desk"
                 data-desk-id="{{ desk_id }}"
                 style="
-                    left: {{ ( desk.layout.position.x + desk.layout.position.x_shift|default(0) ) * 100 / room.size | round(4) }}%;
-                    top:  {{ ( desk.layout.position.y + desk.layout.position.y_shift|default(0) ) * 100 / room.size | round(4) }}%;
-                    width:  {{ 100 / room.size | round(4) }}%;
-                    height: {{ 100 / room.size | round(4) }}%;
+                    left: {{ ( desk.layout.position.x + desk.layout.position.x_shift|default(0) ) * 100 / room.size.x | round(4) }}%;
+                    top:  {{ ( desk.layout.position.y + desk.layout.position.y_shift|default(0) ) * 100 / room.size.y | round(4) }}%;
+                    width:  {{ 100 / room.size.x | round(4) }}%;
+                    height: {{ 100 / room.size.y | round(4) }}%;
                     "
             >
                 <div
