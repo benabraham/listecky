@@ -1,5 +1,8 @@
 {
-    "size": "5",
+    "size": {
+        "x": 5,
+        "y": 5
+    },
     "desks": {
         "11": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "12": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
