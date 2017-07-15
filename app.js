@@ -280,7 +280,7 @@ tasksRaw.forEach((task, index) =>{
 });
 
 // test emit messages
-for (let key in tasks) addChatMessage(tasks[key].html, 'html');
+// for (let key in tasks) addChatMessage(tasks[key].html, 'html');
 
 
 
