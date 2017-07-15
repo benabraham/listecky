@@ -271,9 +271,11 @@ tasksRaw.forEach((task, index) =>{
 
 		tasks[index].html +=
 			'<details>' +
-			'<summary>' + tasks[index].bonus.heading + '</summary>' +
-			 marked(tasks[index].bonus.body) +
-				'</details>';
+			'<summary>' +
+			tasks[index].bonus.heading +
+			'</summary>' +
+			marked(tasks[index].bonus.body) +
+			'</details>';
 
 	}
 	tasks[index].html += '</div>'
