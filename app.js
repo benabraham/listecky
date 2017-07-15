@@ -195,9 +195,9 @@ function addChatMessage(chatMessage, type = 'markdown'){
 	if (chatMessage){
 		console.info('>>> chatMessageSent', '\ntype:', type, '\nmessage:', chatMessage);
 
-		chatMessages.push({ 'timestamp': now.format(),'type': type, 'text': chatMessage });
+		chatMessages.push({ 'timestamp': now.format(), 'type': type, 'text': chatMessage });
 
-		chatMessagesLog.push({ 'timestamp': now.format(),'type': type, 'text': chatMessage });
+		chatMessagesLog.push({ 'timestamp': now.format(), 'type': type, 'text': chatMessage });
 
 		io.emit('chatMessagesSent', chatMessages.map(formatMessages));
 	}
@@ -222,13 +222,6 @@ function formatMessages(msg){
  * Tasks
  */
 
-// load and split tasks file
-let tasksRaw = fs
-	.readFileSync('tasks.md', 'utf8')
-	.split(/\r?\n---\s*\r?\n/g);
-
-let tasks = {};
-
 // extract h1 heading from Markdown
 function getTaskHeading(text){
 	if (text){
@@ -241,11 +234,18 @@ function getTaskHeading(text){
 // remove h1 heading from Markdown
 function removeTaskHeading(text){
 	if (text){
-		return text.match(/^# .+\n*(.+)/m)[1];
+		return text.match(/^# .+\r?\n([\s\S]*)/m)[1];
 	} else {
 		return false;
 	}
 }
+
+// load and split tasks file
+let tasksRaw = fs
+	.readFileSync('tasks.md', 'utf8')
+	.split(/\r?\n---\s*\r?\n/g);
+
+let tasks = {};
 
 // fill tasks with data
 tasksRaw.forEach((task, index) =>{
@@ -253,31 +253,34 @@ tasksRaw.forEach((task, index) =>{
 
 	tasks[index] = { html: '<div class="l-task">' };
 
+
 	if (getTaskHeading(taskContent[0])){
 		tasks[index].main = {
 			'heading': getTaskHeading(taskContent[0]),
 			'body': taskContent[0]
 		};
 		tasks[index].html += marked(tasks[index].main.body);
+
 	}
 
-	if (getTaskHeading(taskContent[1])){
+	if (getTaskHeading(taskContent[1])){ // if has bonus task
 		tasks[index].bonus = {
 			'heading': getTaskHeading(taskContent[1]),
 			'body': removeTaskHeading(taskContent[1])
 		};
+
 		tasks[index].html +=
 			'<details>' +
 			'<summary>' + tasks[index].bonus.heading + '</summary>' +
-			marked(tasks[index].bonus.body) +
-			'</details>';
+			 marked(tasks[index].bonus.body) +
+				'</details>';
 
 	}
 	tasks[index].html += '</div>'
 });
 
 // test emit messages
-// for (let key in tasks) addChatMessage(tasks[key].html, 'html');
+for (let key in tasks) addChatMessage(tasks[key].html, 'html');
 
 
 
