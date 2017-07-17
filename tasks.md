@@ -111,7 +111,7 @@ Abys viděla výsledek, je třeba stránku publikovat (tlačítko vpravo nahoře
 
 **Dej hotovo.**
 
-> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189074)
+> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/297089)
 
 ----
 
@@ -123,7 +123,7 @@ Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůf
 
 # 07 Připojíme styly
 
-> Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189074)
+> Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/297089)
 
 1. Připoj si `styly.css` k HTML.
 1. Nastav barvu písma pro celou stránku a jinou nastav nadpisům (všem stejnou). Třeba 
@@ -172,13 +172,13 @@ Nadpisy udělej o něco větší než byly doposud.
 1. Nastav všem třem nějakou světlou barvu pozadí.
 1. Dej hotovo.
 
-> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189090)
+> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/297097)
 
 ---
 
 # 11 Přidáme třídy
 
-> Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189090)
+> Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/297097)
 
 1. Pomocí tříd nastav každé sekci jinou barvu pozadí (dej si pozor na dostatečný kontrast).
 
@@ -186,7 +186,7 @@ Doporučené názvy tříd: `kontakt`, `galerie`, `paticka`.
 
 **Dej hotovo.**
 
-> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189097)
+> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/297080)
 
 ----
 
@@ -199,7 +199,7 @@ Doporučené názvy tříd: `kontakt`, `galerie`, `paticka`.
 
 # 12 Nastavíme obrázkům šířku
 
-> Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189097)
+> Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/297080)
 
 Nastav obrázkům šířku 300 pixelů.
 
