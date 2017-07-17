@@ -600,13 +600,11 @@ a:active { color: hsl(197, 71%, 73%); }
 
 
 .l-desk-shape--rectangle_long {
-	width: 85%;
+	width: 60%;
 	height: 40%;
 }
 
-.l-desk:nth-of-type(even) .l-desk-shape--rectangle_long{ margin-left: -13%; }
-
-.l-desk:nth-of-type(odd) .l-desk-shape--rectangle_long{ margin-right: -13%; }
+.l-desk:nth-of-type(3n) .l-desk-shape--rectangle_long{ width: 85%; }
 
 
 .l-desk-shape--ellipse {
