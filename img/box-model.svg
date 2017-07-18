@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 708.66 425.2">
+  <defs>
+    <marker id="d" orient="auto" overflow="visible">
+      <path fill="#00f" fill-rule="evenodd" stroke="#00f" stroke-width=".8pt" d="M-10 0l-4 4L0 0l-14-4 4 4z"/>
+    </marker>
+    <marker id="c" orient="auto" overflow="visible">
+      <path fill="#00f" fill-rule="evenodd" stroke="#00f" stroke-width=".8pt" d="M10 0l4-4L0 0l14 4-4-4z"/>
+    </marker>
+    <marker id="b" orient="auto" overflow="visible">
+      <path fill="#00f" fill-rule="evenodd" stroke="#00f" stroke-width=".8pt" d="M-10 0l-4 4L0 0l-14-4 4 4z"/>
+    </marker>
+    <marker id="a" orient="auto" overflow="visible">
+      <path fill="#00f" fill-rule="evenodd" stroke="#00f" stroke-width=".8pt" d="M10 0l4-4L0 0l14 4-4-4z"/>
+    </marker>
+  </defs>
+  <text x="295.14" y="341.93" style="line-height:125%" font-size="40" font-family="sans-serif" letter-spacing="0" word-spacing="0" transform="translate(-166.413 -417.74)"/>
+  <path fill="none" stroke="#000" stroke-width=".82" d="M193.04 141.7h360.68v91.4H193.04z" stroke-dasharray=".82 .82"/>
+  <path fill="none" stroke="#000" stroke-width="17.6" d="M150.37 96.86h446v181.08h-446z"/>
+  <path fill="none" stroke="#000" stroke-width=".91" d="M106.17 54.32h534.4V320.5h-534.4z" stroke-dasharray=".91 .91"/>
+  <text x="539.79" y="549.93" fill="#00f" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" font-size="25" font-family="sans-serif" letter-spacing="0" word-spacing="0" text-anchor="middle" transform="translate(-166.413 -417.74)">
+    <tspan x="539.79" y="549.93">padding</tspan>
+  </text>
+  <text x="538.62" y="523.56" fill="#fff" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" font-size="25" font-family="sans-serif" letter-spacing="0" word-spacing="0" text-anchor="middle" transform="translate(-166.413 -417.74)">
+    <tspan x="538.62" y="523.56">border</tspan>
+  </text>
+  <text x="539.74" y="498.38" fill="#00f" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" font-size="25" font-family="sans-serif" letter-spacing="0" word-spacing="0" text-anchor="middle" transform="translate(-166.413 -417.74)">
+    <tspan x="539.74" y="498.38">margin</tspan>
+  </text>
+  <path fill="none" stroke="#00f" stroke-width="1.04" d="M141.6 290.62v80.7"/>
+  <text x="451.27" y="806.13" fill="#00f" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" font-size="25" font-family="sans-serif" letter-spacing="0" word-spacing="0" text-anchor="middle" transform="translate(-78.413 -453.89)">
+    <tspan x="451.27" y="806.13">width</tspan>
+  </text>
+  <path fill="none" stroke="#00f" stroke-width="1.04" d="M603.6 290.62v80.7"/>
+  <path fill="none" stroke="#00f" d="M220 818.08h461.43" marker-start="url(#a)" marker-end="url(#b)" transform="translate(-78.413 -453.89)"/>
+  <text x="-642.16" y="762.27" fill="#00f" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" transform="rotate(-90 -266.15 -187.738)" font-size="25" font-family="sans-serif" letter-spacing="0" word-spacing="0" text-anchor="middle">
+    <tspan x="-642.16" y="762.27">height</tspan>
+  </text>
+  <path fill="none" stroke="#00f" stroke-width="1.11" d="M610.1 88.9h92.84"/>
+  <path fill="none" stroke="#00f" d="M774.2 740.48V544.05" marker-start="url(#c)" marker-end="url(#d)" transform="translate(-78.413 -453.89)"/>
+  <path fill="none" stroke="#00f" stroke-width="1.11" d="M610.1 287.86h92.84"/>
+  <g>
+    <path fill="none" stroke="#000" stroke-width=".82" d="M-340.96 141.7H19.72v91.4h-360.68z" stroke-dasharray=".82 .82"/>
+  </g>
+  <path fill="none" stroke="#000" stroke-width="17.6" d="M-383.63 96.86h446v181.08h-446z"/>
+  <path fill="none" stroke="#000" stroke-width=".91" d="M-427.83 54.32h534.4V320.5h-534.4z" stroke-dasharray=".91 .91"/>
+  <g font-size="25" font-family="sans-serif" letter-spacing="0" word-spacing="0" text-anchor="middle">
+    <text x="517.58" y="26.56" fill="#00f" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" transform="rotate(90 192.333 -137.523)">
+      <tspan x="517.58" y="26.56">padding</tspan>
+    </text>
+    <text x="516.42" y=".19" fill="#fff" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" transform="rotate(90 192.333 -137.523)">
+      <tspan x="516.42" y=".19">border</tspan>
+    </text>
+    <text x="517.54" y="-24.99" fill="#00f" style="line-height:125%;-inkscape-font-specification:'sans-serif, Normal';text-align:center" transform="rotate(90 192.333 -137.523)">
+      <tspan x="517.54" y="-24.99">margin</tspan>
+    </text>
+  </g>
+</svg>
