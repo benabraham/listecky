@@ -162,6 +162,14 @@ Nadpisy udělej o něco větší než byly doposud.
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189084)
 
+----
+
+# Bonus
+
+1. Lépe by vypadalo, kdyby mezi řádky bylo trochu více volného místa. Typografové by řekli že je potřeba větší _řádkový proklad_, anglicky _line height_.
+
+_Tip: Tato vlastnost se také dědí, lze ji tedy nastavit nějakému nadřrazenému prvku._
+
 ---
 
 # 10 Nastavíme barvu pozadí
@@ -243,6 +251,12 @@ Přidej vnitřní odsazení (padding) 10px.
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189100)
 
+----
+
+# Bonus
+
+1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
+
 ---
 
 # 15 Větší mezery mezi obrázky
@@ -259,7 +273,7 @@ Přidej obrázkům vnější odsazení 5px, aby na sebe nebyly tak nalepené.
 
 # Bonus
 
-Nastav jiné odsazení po stranách než nahoře a dole.
+Nastav obrázkům větší padding dole než na ostatních stranách.
 
 ---
 
@@ -278,7 +292,7 @@ Nastav jiné odsazení po stranách než nahoře a dole.
 
 # Bonus
 
-Vycentruj vodorovně Galerii a Kontakt ‒ [najdi si jak](https://www.google.cz/search?q=horizontální%20centrování%20css)
+Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a Kontakt ‒ [najdi si jak](https://www.google.cz/search?q=horizontální%20centrování%20css)
 
 ---
 
@@ -289,9 +303,10 @@ Vycentruj vodorovně Galerii a Kontakt ‒ [najdi si jak](https://www.google.cz/
 Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl i její obsah. Tip: nelze to vyřešit jen pomocí CSS.
 
 1. Je třeba **uvnitř** _divu_ `galerie` všechny obrázky obalit novým `<div>`, třeba s třídou `obsah`.
-1. Pro `.kontakt` odstraň nastavení maximální šířky.
-1. `<div class="obsah">` nastav maximální šířku 960px.
-1. Aby to bylo opravdu až do kraje, je třeba také přepsat výchozí margin pro prvek `<body>` na nulový.
+1. Pro `.kontakt` a `.galerie` odstraň nastavení maximální šířky… 
+1. … a nastavit ji pro `<div class="obsah">`
+1. Aby to bylo opravdu až do kraje, je třeba také přepsat výchozí `margin` pro prvek `<body>` na nulu.
+1. Hlavní nadpis (h1) a odstavec pod ním je ale teď do kraje, chtělo by to vyřešit… 
 1. Dej hotovo.
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189107)
@@ -300,7 +315,8 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 
 # Bonus
 
-Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba nyní stejně vycentrovat _div_ s třídou `obsah`.
+1. Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba nyní stejným způsobem vycentrovat _div_ s třídou `obsah`.
+1. Původní centrování můžeš odebrat, nemá na nic vliv.
 
 ---
 
@@ -309,10 +325,16 @@ Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba ny
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189107)
 
 1. Uprav CSS pro barvu nadpisů tak, aby využíval vícenásobný selektor.
-1. Obarvi všechny odkazy v patičce bíle aniž bys přidávala novou třídu.
+1. Zkus využít vícenásobný selektor i pro nastavení stejného paddingu hlavních sekcí.
 1. Dej hotovo.
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189109)
+
+----
+
+# Bonus
+
+1. Obarvi všechny odkazy v patičce bíle aniž bys přidávala novou třídu.
 
 ---
 
@@ -320,7 +342,7 @@ Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba ny
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189109)
 
-1. Udělej jinou barvou odkaz po najetí kurzorem v kontaktech
+1. Udělej jinou barvou odkaz(y) po najetí kurzorem v kontaktech
 1. Dej hotovo.
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189137)
@@ -329,9 +351,8 @@ Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba ny
 
 # Bonus
 
-1. Uprav všechny odkazy tak, aby jim po najetí myši zmizelo podtržení.
-1. Odkazy v patičce bílou barvou, po najetí myši nějakou jinou, ale jinou než v kontaktech.
-1. Dej hotovo.
+1. Uprav všechny odkazy na stránce tak, aby jim po najetí myši zmizelo podtržení.
+1. Odkazy v patičce udělej bílou barvou, po najetí myši nějakou jinou a zároveň jinou než v kontaktech.
 
 ---
 
@@ -341,7 +362,7 @@ Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba ny
 
 1. Navigace jako odrážkový seznam, se 3 položkami podle sekcí stránky.
 1. Nezapomeň na odkaz na úvodní stránku!
-1. Odkaz na stránku (atribut `href`) zatím nechej prázdný.
+1. Odkaz na stránku (atribut `href`) zatím nechej prázdný, to znamená jen napsat uvozovky a nic mezi ně.
 1. Dej hotovo.
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189138)
@@ -352,8 +373,8 @@ Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba ny
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189138)
 
-1. nastyluj menu tak, aby položky byly vedle sebe a vycentrované
-1. udělej efekt podbarvení po najetí na položku menu
+1. Nastyluj menu tak, aby položky byly vedle sebe.
+1. Přidej jiné podbarvení celé položky po najetí na ni.
 1. Dej hotovo.
 
 Tip: podívej se, co dělá vlastnost `list-style-type`.
@@ -368,7 +389,6 @@ Tip: podívej se, co dělá vlastnost `list-style-type`.
 
 Všechno, co je potřeba pro tenhle úkol už umíš.
 
-
 1. Přidej další sekci, tentokrát `O mně` nad Galerii.
 1. Dej do ní text 
     ```
@@ -376,7 +396,7 @@ Všechno, co je potřeba pro tenhle úkol už umíš.
 
     Znám a mám nejrůznější věci, které svým kamarádům rád půjčuji a rád je všemu naučím. Rád pořádám nebezpečné výpravy, ale všechna zvířátka se se mnou cítí v bezpečí. Občas cestuji do Afriky a zase zpátky, a mám moc rád svého medvídka. Dopoledne trávím hledáním Hnetubuda.
     ```
-1. Přidej obrázek `krystufek-robin.jpg`
+1. Přidej obrázek `krystufek-robin.png`
 1. Dej hotovo.
 
 
@@ -386,7 +406,7 @@ Všechno, co je potřeba pro tenhle úkol už umíš.
 
 # Bonus
 
-Zkus udělat obrázek Kryštůfka Robina kruhový jen pomocí CSS (tip hledej zaoblené rohy).
+Mapa a obrázek Kryštůfka Robina není moc dobře vidět. Líp by vypadaly, kdyby byly přes celou šířku stránky.
 
 ---
 
@@ -394,8 +414,8 @@ Zkus udělat obrázek Kryštůfka Robina kruhový jen pomocí CSS (tip hledej za
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189143)
 
-1. V levém sloupci vytvoř nové HTML soubory `kontakt.html` a `galerie.html`. Pravým tlačítkem myši, klikni do sloupce _SOUBORY_ a vyber _Nový soubor_ a vyplň jméno.
-1. Do navigace přidej odkazy na tyto soubory a nezapomeň taky na odkaz na index.html.
+1. V Thimble vytvoř nové HTML soubory `kontakt.html` a `galerie.html`. V levém sloupci, kde už je index.html, klikni do šedé plochy pravým tlačítkem myši a vyber _Nový soubor_ a vyplň jeho název včetně `.html` na konci.
+1. Do navigace přidej odkazy na tyto soubory a nezapomeň taky na odkaz na `index.html`.
 1. Zkopíruj do nich všechen stávající HTML kód z `index.html` (kód, který ti vložil _Thimble_ do nových souborů přepiš).
 1. Odmaž na každé ze 3 stránek obsah, který tam nepatří (záhlaví a patičku budou mít všechny stránky shodnou).
 1. Zruš barevné pozadí pro jednotlivé sekce. Teď už není potřeba je odlišovat, když každá je na stránce sama. (Stačí odmazat daná pravidla.)
@@ -412,7 +432,8 @@ Pozor, aby při odmazávání nezůstaly nadbytečné otvírací/uzavírací tag
 
 1. Na každé stránce zvýrazni (odliš) v navigaci odkaz na aktuální stránku (musíš přidat novou třídu a přiřadit ji na každé stránce u jiného odkazu).
 1. Nahraď aktivní odkazy elementem `span` (řádková obdoba neutrálního `div`), aby na aktivní odkaz nešlo kliknout. Pomocí pokročilých selektorů zachovej pro takto změněný prvek vzhled aktivního odkazu.
-1. Dej hotovo.
+
+1. Nastav celé stránce jinou než bílou barvu pozadí.
 
 ---
 
@@ -428,4 +449,4 @@ Pozor, aby při odmazávání nezůstaly nadbytečné otvírací/uzavírací tag
 
 [Všechny úkoly, k dispozici tak, aby sis je mohla projít i doma](https://hackmd.io/s/BylzJbePx)
 
-[Púův web, jak by taky mohl vypadat](https://thimbleprojects.org/czechitas/189149/) (se všemi bonusovými úkoly)
+[Púův web, jak by taky mohl vypadat, když se udělají všechny bonusové úkoly](https://thimbleprojects.org/czechitas/189149/).
