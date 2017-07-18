@@ -1,29 +1,3 @@
 {
-  "11": [ "Dan", "volno"],
-  "12": [ "volno", "Petra", "Martina"],
-  "13": [ "volno", "Johana"],
 
-  "21": [ "volno", "Lucia"],
-  "22": [ "Helena", "volno", "Štěpánka"],
-  "23": [ "Nikola", "volno"],
-
-  "31": [ "volno", "Klára"],
-  "32": [ "Lenka", "Monika", "Kačka"],
-  "33": [ "volno", "Jana"],
-
-  "41": [ "volno", "Lucie"],
-  "42": [ "Lucka", "volno", "volno"],
-  "43": [ "Martina", "volno"],
-
-  "51": [ "volno", "Katka"],
-  "52": [ "volno", "volno", "Lucie"],
-  "53": [ "volno", "Miriam"],
-
-  "61": [ "Andrea", "volno"],
-  "62": [ "Misa", "volno", "Jitka"],
-  "63": [ "Katka", "volno"],
-
-  "71": [ "Adéla", "Andrea"],
-  "72": [ "Eva", "volno", "Lucie"],
-  "73": [ "Anička", "Klára"]
 }
