@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "browsersync": "browser-sync start --port 4000 --proxy \"localhost:3000\" --reload-delay 300 --no-open --no-ghost-mode --files  \"views/**/*.njk\" \"static/**/*.css\" \"static/**/*.js\"",
+    "browsersync": "browser-sync start --port 4000 --proxy \"localhost:3000\" --reload-delay 300 --no-open --no-ghost-mode --files  \"views/**/*.njk\" \"static/**/*.css\" \"static/**/*.js\" \"desks.json\"",
     "watch": "concurrently \"nodemon app.js --ext js,njk,json\" \"npm run browsersync\""
   }
 }
