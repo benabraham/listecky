@@ -26,18 +26,7 @@
 
 ---
 
-# 02 Zkusíme si první tagy
-
-1. Vytvoř nadpis 1. úrovně (název webu): „Web Kryštůfka Robina“.
-1. Větu označkuj jako odstavec.
-1. Protože kamarádství je pro medvídka Pú podstatné, označ text „dobré kamarády“ jako velmi důležitý.
-1. Nezapomeň dát vědět, že máš hotovo a nezapomeň na to ani až dokončíš další úkoly.
-
-> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189042)
-
-----
-
-# Shrnutí výkladu
+## Shrnutí výkladu
 
 ```html
 <h1>Hlavní nadpis</h1>
@@ -49,7 +38,18 @@
 
 ----
 
-# Bonus
+# 02 Zkusíme si první tagy
+
+1. Vytvoř nadpis 1. úrovně (název webu): „Web Kryštůfka Robina“.
+1. Větu označkuj jako odstavec.
+1. Protože kamarádství je pro medvídka Pú podstatné, označ text „dobré kamarády“ jako velmi důležitý.
+1. Nezapomeň dát vědět, že máš hotovo a nezapomeň na to ani až dokončíš další úkoly.
+
+> Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189042)
+
+----
+
+## Bonus
 
 Něco. test
 
@@ -75,7 +75,7 @@ Něco. test
 
 ----
 
-# Bonus (pokud máš hotovo)
+## Bonus (pokud máš hotovo)
 
 1. Slovo „e-mail“ udělej jako odkaz na medvídkův mail (pooh@example.com) [najdi si jak](https://google.com).
 1. Přidej stejnému odkazu další atribut `title` s hodnotou _Když pošleš med, budu radši._. Co to dělá zjištíš tak, že zaparkuješ šipku myši (kurzor) nad odkazem v náhledu stránky.
@@ -133,7 +133,7 @@ Abys viděla výsledek, je třeba stránku publikovat (tlačítko vpravo nahoře
 
 ----
 
-# Bonus
+## Bonus
 
 Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůfka Robina o medvídkovi Pú a jeho kamarádech.` [najdi si jak](https://www.google.cz/search?q=meta+description)
 
@@ -164,7 +164,7 @@ Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůf
 
 ----
 
-# Bonus
+## Bonus
 
 1. vycentruj hlavní nadpis
 
@@ -182,7 +182,7 @@ Nadpisy udělej o něco větší než byly doposud.
 
 ----
 
-# Bonus
+## Bonus
 
 1. Lépe by vypadalo, kdyby mezi řádky bylo trochu více volného místa. Typografové by řekli že je potřeba větší _řádkový proklad_, anglicky _line height_.
 
@@ -216,7 +216,7 @@ Doporučené názvy tříd: `kontakt`, `galerie`, `paticka`.
 
 ----
 
-# Bonus
+## Bonus
 
 1. V patičce vycentruj text
 1. Přidej třídu `.small` a s její pomocí zmenši text odstavci s licencí v patičce.
@@ -235,7 +235,7 @@ Nastav obrázkům šířku 300 pixelů.
 
 ----
 
-# Bonus
+## Bonus
 
 1. Obrázku mapy nastav šířku na celou šířku pomocí třídy `obrazek-siroky` a procent.
 
@@ -253,7 +253,7 @@ Nastav obrázkům šířku 300 pixelů.
 
 ----
 
-# Bonus
+## Bonus
 
 Změň barvu horního ohraničení (nebo dolního, nebo pravého anebo levého)
 
@@ -271,7 +271,7 @@ Přidej vnitřní odsazení (padding) 10px.
 
 ----
 
-# Bonus
+## Bonus
 
 1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
 
@@ -289,7 +289,7 @@ Přidej obrázkům vnější odsazení 5px, aby na sebe nebyly tak nalepené.
 
 ----
 
-# Bonus
+## Bonus
 
 Nastav obrázkům větší padding dole než na ostatních stranách.
 
@@ -308,7 +308,7 @@ Nastav obrázkům větší padding dole než na ostatních stranách.
 
 ----
 
-# Bonus
+## Bonus
 
 Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a Kontakt ‒ [najdi si jak](https://www.google.cz/search?q=horizontální%20centrování%20css)
 
@@ -331,7 +331,7 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 
 ----
 
-# Bonus
+## Bonus
 
 1. Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba nyní stejným způsobem vycentrovat _div_ s třídou `obsah`.
 1. Původní centrování můžeš odebrat, nemá na nic vliv.
@@ -350,7 +350,7 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 
 ----
 
-# Bonus
+## Bonus
 
 1. Obarvi všechny odkazy v patičce bíle aniž bys přidávala novou třídu.
 
@@ -367,7 +367,7 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 
 ----
 
-# Bonus
+## Bonus
 
 1. Uprav všechny odkazy na stránce tak, aby jim po najetí myši zmizelo podtržení.
 1. Odkazy v patičce udělej bílou barvou, po najetí myši nějakou jinou a zároveň jinou než v kontaktech.
@@ -422,7 +422,7 @@ Všechno, co je potřeba pro tenhle úkol už umíš.
 
 ----
 
-# Bonus
+## Bonus
 
 Obrázek Kryštůfka Robina není moc dobře vidět. Líp by vypadal, kdyby byl přes celou šířku stránky. 
 
@@ -450,7 +450,7 @@ Pozor, aby při odmazávání nezůstaly nadbytečné otvírací/uzavírací tag
 
 ----
 
-# Bonus
+## Bonus
 
 1. Na každé stránce zvýrazni (odliš) v navigaci odkaz na aktuální stránku (musíš přidat novou třídu a přiřadit ji na každé stránce u jiného odkazu).
 1. Nahraď aktivní odkazy elementem `span` (řádková obdoba neutrálního `div`), aby na aktivní odkaz nešlo kliknout. Pomocí pokročilých selektorů zachovej pro takto změněný prvek vzhled aktivního odkazu.
