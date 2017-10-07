@@ -14,11 +14,17 @@ Nemá ani bonus.
 
 ----
 
-# Bonusový úkol
+## Bonusový úkol
 
 * zkus ještě najít na https://google.com
 
 ---
+
+## Extra text před úkol 3
+
+Něco ze slajdů asi.
+
+----
 
 # Úkol číslo 3
 
@@ -27,12 +33,12 @@ Nemá ani bonus.
 
 ----
 
-# Ještě jedna sekce zvýrazněná
-
-Něco ze slajdů asi.
-
-----
-
-# Bonusový úkol k zamyšlení
+## Bonusový úkol k zamyšlení
 
 Podívej se kolem sebe na tu krásu.
+
+---
+
+# Úkol číslo 4  
+
+Poslední.
