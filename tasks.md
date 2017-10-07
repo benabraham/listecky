@@ -47,12 +47,6 @@
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189042)
 
-----
-
-## Bonus
-
-Něco. test
-
 ---
 
 ## Shrnutí výkladu
