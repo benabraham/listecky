@@ -383,6 +383,7 @@ a:active { color: hsl(197, 71%, 73%); }
 	padding: 10px 0 0 10px;
 	border-bottom: 1px solid hsl(0, 0%, 87%);
 	font-size: 16px;
+	line-height: 1.2;
 }
 
 .l-chat-message p,
@@ -469,6 +470,12 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-chat-message .l-task pre,
 .l-chat-message .l-task code {
 	background-color: hsl(0, 0%, 100%);
+}
+
+.l-chat-message .l-task-other {
+	padding: 20px 20px 5px;
+	background-color: #fff;
+	margin-bottom: 20px;
 }
 
 .l-chat-message details {
@@ -566,7 +573,7 @@ a:active { color: hsl(197, 71%, 73%); }
 	text-align: center;
 	line-height: 1.5em;
 	width: 25%;
-	margin-left: auto;
+	margin-left: 15%;
 	margin-right: auto;
 	background-color: hsl(0, 0%, 0%);
 	color: hsl(0, 0%, 100%);
@@ -594,7 +601,7 @@ a:active { color: hsl(197, 71%, 73%); }
 }
 
 .l-desk-shape--rectangle {
-	width: 95%;
+	width: 100%;
 	height: 30%;
 }
 
@@ -919,7 +926,7 @@ a:active { color: hsl(197, 71%, 73%); }
 	text-align: center;
 	padding: 3px;
 	overflow: hidden;
-	font-size: 12px;
+	font-size: 16px;
 	color: hsl(0, 0%, 0%);
 	text-decoration: none;
 	min-width: 50%;
