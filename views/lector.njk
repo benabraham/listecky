@@ -23,7 +23,7 @@
                 <select name="taskChooser" id="taskChooser">
                     <option value="default">{{ i18n['choose_message'] }}</option>
                     {% for id, task in tasks %}
-                        <option value="{{ id }}">{{ task.main.heading }}</option>
+                        <option value="{{ id }}">{{ task.heading }}</option>
                     {% endfor %}
                 </select>
             </div>
