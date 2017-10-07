@@ -274,13 +274,17 @@ tasksRaw.forEach((task, index) =>{
 			if (getTaskHeading(taskContent[i]).startsWith('Bonus')){ // if is a Bonus task
 				tasks[index].html +=
 					'<details>' +
-					'<summary>' + tasks[index].bonus.heading + '</summary>' +
+					'<summary>' +
+					tasks[index].bonus.heading +
+					'</summary>' +
 					marked(tasks[index].bonus.body) +
 					'</details>';
 			} else { // other types of content
 				tasks[index].html +=
 					'<div class="l-task-other">' +
-					'<h2>' + tasks[index].bonus.heading + '</h2>' +
+					'<h2>' +
+					tasks[index].bonus.heading +
+					'</h2>' +
 					marked(tasks[index].bonus.body) +
 					'</div>';
 			}
