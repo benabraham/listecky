@@ -55,6 +55,20 @@ Něco. test
 
 ---
 
+## Shrnutí výkladu
+
+```html
+<h1>Hlavní nadpis</h1>
+
+<h2>Nadpis druhé úrovně</h2>
+
+<h3>Nadpis třetí úrovně</h3>
+
+<a href="https://google.com">odkaz na Google.com</a>
+```
+
+----
+
 # 03 Přidáme _Kontakt_
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189042)
@@ -81,6 +95,14 @@ Něco. test
 1. Přidej stejnému odkazu další atribut `title` s hodnotou _Když pošleš med, budu radši._. Co to dělá zjištíš tak, že zaparkuješ šipku myši (kurzor) nad odkazem v náhledu stránky.
 
 ---
+
+## Shrnutí výkladu
+
+```html
+<img src="pu.jpg" alt="medvěd">
+```
+
+----
 
 # 04 Přidáme mapu
 
@@ -119,6 +141,18 @@ stopy.jpg
 
 ---
 
+## Shrnutí výkladu
+
+```html
+<head>
+    …
+    <title>Název stránky</title>
+    …
+</head>
+```
+
+----
+
 # 06 Doplníme titulek
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189058)
@@ -139,6 +173,18 @@ Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůf
 
 ---
 
+## Shrnutí výkladu
+
+```html
+<head>
+    …
+    <link rel="stylesheet" href="nazevsouboru.css">
+    …
+</head>
+```
+
+----
+
 # 07 Připojíme styly
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/297089)
@@ -150,6 +196,22 @@ Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůf
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189082/)
 
 ---
+
+## Shrnutí výkladu
+
+```css
+p {
+	font-style: italic;  /* nebo normal */
+
+	font-weight: bold; /* nebo normal */
+
+	font-family: sans-serif; /* nebo serif */
+
+	text-align: center; /* nebo left nebo right */
+}
+```
+
+----
 
 # 08 Upravíme písmo
 
@@ -170,6 +232,18 @@ Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůf
 
 ---
 
+## Shrnutí výkladu
+
+```css
+font-size: 20px;
+
+/* nebo */
+
+font-size: 150%;
+```
+
+----
+
 # 09 Měníme velikosti písma
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189083)
@@ -186,9 +260,19 @@ Nadpisy udělej o něco větší než byly doposud.
 
 1. Lépe by vypadalo, kdyby mezi řádky bylo trochu více volného místa. Typografové by řekli že je potřeba větší _řádkový proklad_, anglicky _line height_.
 
-_Tip: Tato vlastnost se také dědí, lze ji tedy nastavit nějakému nadřrazenému prvku._
+_Tip: Tato vlastnost se také dědí, lze ji tedy nastavit nějakému nadřazenému prvku._
 
 ---
+
+## Shrnutí výkladu
+
+```css
+p { background-color: green; }
+
+h1 { background-color: #008000; }
+```
+
+----
 
 # 10 Nastavíme barvu pozadí
 
@@ -201,6 +285,18 @@ _Tip: Tato vlastnost se také dědí, lze ji tedy nastavit nějakému nadřrazen
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/297097)
 
 ---
+
+## Shrnutí výkladu
+
+```html
+<h1 class="tip">Tip</h1>
+```
+
+```css
+.tip { color: blue; }
+```
+
+----
 
 # 11 Přidáme třídy
 
@@ -223,6 +319,17 @@ Doporučené názvy tříd: `kontakt`, `galerie`, `paticka`.
 
 ---
 
+## Shrnutí výkladu
+
+```css
+.tip {
+	width: 300px;
+	height: 100px;
+}
+```
+
+----
+
 # 12 Nastavíme obrázkům šířku
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/297080)
@@ -240,6 +347,23 @@ Nastav obrázkům šířku 300 pixelů.
 1. Obrázku mapy nastav šířku na celou šířku pomocí třídy `obrazek-siroky` a procent.
 
 ---
+
+## Shrnutí výkladu
+
+```css
+div {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+/* to samé pomocí shorthandu */
+div {
+    border: 1px solid black;
+}
+```
+
+----
 
 # 13 Orámujeme obrázky
 
@@ -259,6 +383,14 @@ Změň barvu horního ohraničení (nebo dolního, nebo pravého anebo levého)
 
 ---
 
+## Shrnutí výkladu
+
+```css
+.tip { padding: 25px; }
+```
+
+----
+
 # 14 Vnitřní odsazení obrázků
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189099)
@@ -276,6 +408,14 @@ Přidej vnitřní odsazení (padding) 10px.
 1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
 
 ---
+
+## Shrnutí výkladu
+
+```css
+.tip { margin: 10px; }
+```
+
+----
 
 # 15 Větší mezery mezi obrázky
 
@@ -338,6 +478,17 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 
 ---
 
+## Shrnutí výkladu
+
+```css
+h1,
+h2 { color: green; }
+
+.tip h2 { color: blue; }
+```
+
+----
+
 # 18 Zjednodušujeme kód
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189107)
@@ -355,6 +506,24 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 1. Obarvi všechny odkazy v patičce bíle aniž bys přidávala novou třídu.
 
 ---
+
+## Shrnutí výkladu
+
+```css
+a { color: navy; }
+
+a:link { color: blue; } /* nenavštívený */
+
+a:visited { color: purple; } /* navštívený */
+
+a:hover { color: red; } /* najetí myší */
+
+a:focus { color: green; } /* aktivovaný */
+
+a:active { color: yellow; } /* při kliknutí */
+```
+
+----
 
 # 19 Měníme barvu odkazů po najetí myši
 
@@ -374,6 +543,17 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 
 ---
 
+## Shrnutí výkladu
+
+```html
+<ul>
+    <li>odrážkový</li>
+    <li>seznam</li>
+</ul>
+```
+
+----
+
 # 20 Přidáme navigaci (menu)
 
 > Pokud jsi nestihla předchozí cvičení, [udělej si znovu _Upravit/Remix_](https://thimbleprojects.org/czechitas/189137)
@@ -386,6 +566,18 @@ Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189138)
 
 ---
+
+## Shrnutí výkladu
+
+```html
+a { display: block; }
+
+div { display: inline; }
+
+span { display: inline-block; }
+```
+
+----
 
 # 21 Odkazy v navigaci na jeden řádek
 
