@@ -250,6 +250,7 @@ let tasks = {};
 // fill tasks with data
 tasksRaw.forEach((task, index) =>{
 	let taskContent = task.split(/\r?\n----\s*\r?\n/g);
+	let taskContentLength = taskContent.length;
 
 	tasks[index] = { html: '<div class="l-task">' };
 
@@ -263,19 +264,29 @@ tasksRaw.forEach((task, index) =>{
 
 	}
 
-	if (getTaskHeading(taskContent[1])){ // if has bonus task
-		tasks[index].bonus = {
-			'heading': getTaskHeading(taskContent[1]),
-			'body': removeTaskHeading(taskContent[1])
-		};
+	for (let i = 1; i < taskContentLength; i++){
+		if (getTaskHeading(taskContent[i])){ // is text?
+			tasks[index].bonus = {
+				'heading': getTaskHeading(taskContent[i]),
+				'body': removeTaskHeading(taskContent[i])
+			};
 
-		tasks[index].html +=
-			'<details>' +
-			'<summary>' + tasks[index].bonus.heading + '</summary>' +
-			 marked(tasks[index].bonus.body) +
-				'</details>';
-
+			if (getTaskHeading(taskContent[i]).startsWith('Bonus')){ // if is a Bonus task
+				tasks[index].html +=
+					'<details>' +
+					'<summary>' + tasks[index].bonus.heading + '</summary>' +
+					marked(tasks[index].bonus.body) +
+					'</details>';
+			} else { // other types of content
+				tasks[index].html +=
+					'<div class="l-task-other">' +
+					'<h2>' + tasks[index].bonus.heading + '</h2>' +
+					marked(tasks[index].bonus.body) +
+					'</div>';
+			}
+		}
 	}
+
 	tasks[index].html += '</div>'
 });
 

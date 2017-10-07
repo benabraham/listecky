@@ -35,6 +35,24 @@
 
 > Pokud nevíš, jak má výsledek vypadat, [podívej se sem](https://thimbleprojects.org/czechitas/189042)
 
+----
+
+# Shrnutí výkladu
+
+```html
+<h1>Hlavní nadpis</h1>
+
+<p>odstavec</p>
+
+<strong>důležitý text</strong>
+```
+
+----
+
+# Bonus
+
+Něco. test
+
 ---
 
 # 03 Přidáme _Kontakt_

@@ -383,6 +383,7 @@ a:active { color: hsl(197, 71%, 73%); }
 	padding: 10px 0 0 10px;
 	border-bottom: 1px solid hsl(0, 0%, 87%);
 	font-size: 16px;
+	line-height: 1.2;
 }
 
 .l-chat-message p,
@@ -469,6 +470,12 @@ a:active { color: hsl(197, 71%, 73%); }
 .l-chat-message .l-task pre,
 .l-chat-message .l-task code {
 	background-color: hsl(0, 0%, 100%);
+}
+
+.l-chat-message .l-task-other {
+	padding: 20px 20px 5px;
+	background-color: #fff;
+	margin-bottom: 20px;
 }
 
 .l-chat-message details {
@@ -598,14 +605,12 @@ a:active { color: hsl(197, 71%, 73%); }
 	height: 30%;
 }
 
-
 .l-desk-shape--rectangle_long {
 	width: 60%;
 	height: 40%;
 }
 
-.l-desk:nth-of-type(3n) .l-desk-shape--rectangle_long{ width: 85%; }
-
+.l-desk:nth-of-type(3n) .l-desk-shape--rectangle_long { width: 85%; }
 
 .l-desk-shape--ellipse {
 	width: 70%;
