@@ -27,6 +27,12 @@ Nemá ani bonus.
 
 ----
 
+# Ještě jedna sekce zvýrazněná
+
+Něco ze slajdů asi.
+
+----
+
 # Bonusový úkol k zamyšlení
 
 Podívej se kolem sebe na tu krásu.
