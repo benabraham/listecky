@@ -419,6 +419,9 @@ a:active { color: hsl(197, 71%, 73%); }
 	font-size: 85%;
 }
 
+.l-chat-message ul,
+.l-chat-message ol { margin-top: .5em; }
+
 .l-chat-message li { margin-left: 2em; }
 
 .l-chat-message kbd {
