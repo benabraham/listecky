@@ -11,10 +11,57 @@
 
 ---
 
+## Shrnutí zkratek
+
+
+### Základní 
+
+<kbd>Home</kbd> <kbd>End</kbd> začátek, konec řádku
+
+<kbd class="nichtvergissmeinnicht">Ctrl+A</kbd> Výběr všeho
+
+<kbd>Ctrl+C</kbd> Kopírovat
+ 
+<kbd>Ctrl+V</kbd> Vložit
+
+<kbd>Ctrl+X</kbd> Kopírovat a smazat (vyjmout) _výběr nebo bez výběru pro celý řádek_ 
+
+odsazení <kbd>Tab</kbd> přidat <kbd>Shift+Tab</kbd> ubrat _lze odsazovat více řádků najednou_ 
+
+Postupně <kbd>Ctrl+A</kbd> <kbd>Ctrl+C</kbd> <kbd>Ctrl+V</kbd> srovná odsazení celého souboru (Thimble při vložení kódu automaticky odsazuje)
+
+
+### Další 
+
+<kbd class="nichtvergissmeinnicht">Ctrl+→</kbd> Posun po slovech doprava
+
+<kbd class="nichtvergissmeinnicht">Ctrl+←</kbd> Posun po slovech doleva
+
+<kbd>Ctrl+Shift+→</kbd> Výběr po slovech doprava
+
+<kbd>Ctrl+Shift+←</kbd> Výběr po slovech doleva
+
+
+### Pokročilé
+
+<kbd class="nichtvergissmeinnicht">Ctrl+/</kbd> Zakomentuj (výběr nebo řádek) ‒ (<kbd>/</kbd> tam, kde je na US klávesnici)
+
+<kbd class="nichtvergissmeinnicht">Ctrl+D</kbd> Duplikovat (výběr nebo řádek)
+
+<kbd class="nichtvergissmeinnicht">Ctrl+E</kbd> rychlá editace (v css barvy, v html styly)
+
+<kbd class="nichtvergissmeinnicht">Alt+K</kbd> Inline dokumentace v angličtině
+
+
+----
+
 # 01 Osaháme si Thimble a klávesové zkratky
 
 1. Otevři si [výchozí cvičení](https://thimbleprojects.org/czechitas/140019/) a klikni vpravo na _Upravit/Remix_.
-1. Podíváme se pod ozubené kolečko: lze si upravit velikost textu i barevné schéma.
+1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu a barevné schéma tak, abys kód dobře viděla.
+1. Dále pod ozubeným kolečkem nastav: 
+    - „Automaticky uzavírat značky“: ne 
+    - „Automatické doplňování kódu“: ne
 1. Zkopíruj si následující text <kbd>Ctrl+C</kbd> a vlož ho do souboru `index.html` <kbd>Ctrl+V</kbd>.
     ```
     Web Kryštůfka Robina 
