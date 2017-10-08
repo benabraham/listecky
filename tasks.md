@@ -76,7 +76,7 @@ Postupně <kbd>Ctrl+A</kbd> <kbd>Ctrl+C</kbd> <kbd>Ctrl+V</kbd> srovná odsazen�
 ## Shrnutí výkladu
 
 ```html
-<h1>Hlavní nadpis</h1>
+<h1>Nadpis nejvyšší úrovně</h1>
 
 <p>odstavec</p>
 
@@ -87,7 +87,7 @@ Postupně <kbd>Ctrl+A</kbd> <kbd>Ctrl+C</kbd> <kbd>Ctrl+V</kbd> srovná odsazen�
 
 # 02 Zkusíme si první tagy
 
-1. Vytvoř nadpis 1. úrovně (název webu): „Web Kryštůfka Robina“.
+1. Vytvoř nadpis nejvyšší úrovně (název webu): „Web Kryštůfka Robina“.
 1. Větu označkuj jako odstavec.
 1. Protože kamarádství je pro medvídka Pú podstatné, označ text „dobré kamarády“ jako velmi důležitý.
 1. Nezapomeň dát vědět, že máš hotovo a nezapomeň na to ani až dokončíš další úkoly.
@@ -99,7 +99,7 @@ Postupně <kbd>Ctrl+A</kbd> <kbd>Ctrl+C</kbd> <kbd>Ctrl+V</kbd> srovná odsazen�
 ## Shrnutí výkladu
 
 ```html
-<h1>Hlavní nadpis</h1>
+<h1>Nadpis nejvyšší úrovně</h1>
 
 <h2>Nadpis druhé úrovně</h2>
 
