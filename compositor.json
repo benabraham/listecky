@@ -1,0 +1,86 @@
+{
+  "name": "benabraham/listecky",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "Lístečky",
+  "branch": "master",
+  "style": {
+    "name": "Material",
+    "componentSet": {
+      "nav": "nav/DarkAbsoluteNav",
+      "header": "header/GradientHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "Roboto, sans-serif",
+    "heading": {
+      "fontWeight": 500,
+      "letterSpacing": "-0.01em"
+    },
+    "colors": {
+      "text": "#212121",
+      "background": "#fff",
+      "primary": "#2196f3",
+      "secondary": "#1565c0",
+      "highlight": "#ff4081",
+      "border": "#e0e0e0",
+      "muted": "#f5f5f5"
+    },
+    "layout": {
+      "centered": true,
+      "bannerHeight": "80vh",
+      "maxWidth": 896
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/benabraham/listecky",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://listecky.herokuapp.com/",
+          "text": "Demo"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "Lístečky",
+      "subhead": "Aplikace nahrazující statusové post-ity pro hands-on workshopy.",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "listecky: Aplikace nahrazující statusové post-ity pro hands-on workshopy.",
+          "url": ""
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "benabraham",
+          "repo": "listecky"
+        }
+      ],
+      "text": "v0.5.0"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n\n<p>Jedna instance b&#x11B;&#x17E;&#xED; na <a href=\"https://listecky.herokuapp.com/\">https://listecky.herokuapp.com/</a></p>\n<h2>P&#x159;edn&#xE1;&#x161;ej&#xED;c&#xED;</h2>\n<ul>\n<li>M&#xE1; rozhran&#xED; na <a href=\"https://listecky.herokuapp.com/teacher\">/teacher</a></li>\n</ul>\n<h3>Statusy student&#x16F;</h3>\n<ul>\n<li>Ve sv&#xE9;m rozhran&#xED; vid&#xED;, zda je student/ka online (jsou nepr&#x16F;hledn&#xE9;).</li>\n<li>Podle barvy r&#xE1;me&#x10D;ku se jm&#xE9;nem studenta vid&#xED; status jak&#xFD; aktu&#xE1;ln&#x11B; m&#xE1;.</li>\n<li>Podle barvy stolu vid&#xED; rychle, zda je n&#x11B;kdo p&#x159;&#xED;tomen, zda jsou v&#x161;ichni hotovi nebo jesti n&#x11B;kdo u stolu pot&#x159;ebuje pomoc.</li>\n</ul>\n<h3>Za&#x10D;&#xE1;tek cvi&#x10D;en&#xED;</h3>\n<ul>\n<li>Tla&#x10D;&#xED;tkem &#x201E;&#xDA;kol zad&#xE1;n&#x201C; se studentovi umo&#x17E;n&#xED; volba statusu.</li>\n<li>Pokud je vybran&#xE1; jin&#xE1; hodnota v selectu pod n&#xED;m, ne&#x17E; &#x201E;Vyber &#xFA;kol&#x201C;, po&#x161;le se zad&#xE1;n&#xED; &#xFA;kolu a automaticky se posune na dal&#x161;&#xED; &#xFA;kol, pokud existuje.</li>\n<li>Texty &#xFA;kol&#x16F; je t&#x159;eba zadat p&#x159;ed spu&#x161;t&#x11B;n&#xED;m aplikace do <code>tasks.md</code> v dan&#xE9;m form&#xE1;tu (viz uk&#xE1;zkov&#xFD;).</li>\n<li>Texty v&#x161;ech &#xFA;kol&#x16F; jsou na <a href=\"https://listecky.herokuapp.com/tasks\">/tasks</a></li>\n</ul>\n<h3>P&#x159;ipomenut&#xED;</h3>\n<ul>\n<li>Tla&#x10D;&#xED;tkem &#x201E;Nemaj&#xED; u&#x17E; hotovo?&#x201C; se po&#x161;le ot&#xE1;zku v&#x161;em, kter&#xE9; nemaj&#xED; status <code>done</code> notifikace.</li>\n</ul>\n<h3>Konec cvi&#x10D;en&#xED; / za&#x10D;&#xE1;tek v&#xFD;kladu</h3>\n<ul>\n<li>Tla&#x10D;&#xED;tkem &#x201E;Za&#x10D;&#xED;n&#xE1;m v&#xFD;klad&#x201C; se po&#x161;le v&#x161;em po&#x161;le notifikace a nastav&#xED; <code>not_done</code>.  </li>\n</ul>\n<h3>P&#x159;est&#xE1;vka</h3>\n<ul>\n<li>Tla&#x10D;&#xED;tkem &#x201E;P&#x159;est&#xE1;vka&#x201C; se po zad&#xE1;n&#xED; d&#xE9;lky p&#x159;est&#xE1;vky v minut&#xE1;ch se spust&#xED; odpo&#x10D;et, po&#x161;le notifikace a nastav&#xED; <code>not_done</code>.</li>\n</ul>\n<h3>Stopky</h3>\n<ul>\n<li>Pokud nen&#xED; p&#x159;est&#xE1;vka zobrazuje se mu &#x10D;as, kter&#xFD; aktu&#xE1;ln&#xED; stav trv&#xE1;.</li>\n</ul>\n<h3>Chat</h3>\n<ul>\n<li>Chat umo&#x17E;&#x148;uje pos&#xED;lat i v&#xED;ce&#x159;&#xE1;dkov&#xE9; zpr&#xE1;vy od p&#x159;edn&#xE1;&#x161;ej&#xED;c&#xED;ho v&#x161;em student&#x16F;m.</li>\n<li>Zpr&#xE1;vy lze form&#xE1;tovat pomoc&#xED; syntaxe <a href=\"https://guides.github.com/features/mastering-markdown/\">GitHub Flavored Markdown</a></li>\n<li>&#x201E;Jako k&#xF3;d&#x201C; obal&#xED; cel&#xFD; odeslan&#xFD; k&#xF3;d do <code>&lt;pre&gt;</code> a <code>&lt;code&gt;</code> (ekvivalent ``` p&#x159;ed a za v Markdownu).</li>\n<li>Lze smazat nejnov&#x11B;j&#x161;&#xED; zpr&#xE1;vu.</li>\n<li>Zpr&#xE1;vy jsou dostupn&#xE9; v&#x161;em i kdy&#x17E; se p&#x159;ipoj&#xED; pozd&#x11B;ji.</li>\n<li>P&#x159;ij&#xED;m&#xE1;n&#xED; ani pos&#xED;l&#xE1;n&#xED; zpr&#xE1;v nen&#xED; podm&#xED;n&#x11B;no stavem t&#x159;&#xED;dy.</li>\n</ul>\n<h2>Student/ka</h2>\n<ul>\n<li>Na <a href=\"https://listecky.herokuapp.com/\">homepage</a> si najde sv&#x16F;j st&#x16F;l a &#x17E;idli a d&#xE1;l pracuje na &#x201E;sv&#xE9;&#x201C; str&#xE1;nce.</li>\n<li>M&#x16F;&#x17E;e si nastavit svoje jm&#xE9;no.</li>\n<li>Klik&#xE1;n&#xED;m na jednotliv&#xE9; statusy se tyto m&#x11B;n&#xED;.</li>\n<li>P&#x159;i zav&#x159;en&#xED; okna nebo refreshi se status sma&#x17E;e.</li>\n<li>Pokud p&#x159;edn&#xE1;&#x161;ej&#xED;c&#xED; po&#x161;le p&#x159;ipom&#xED;nac&#xED; notifikaci, znamen&#xE1; kliknut&#xED; na OK, zm&#x11B;nu na stav <code>Hotovo</code>, Cancel beze zm&#x11B;ny.</li>\n</ul>\n<h2>Data</h2>\n<ul>\n<li>Data o stolech, &#x17E;idl&#xED;ch a kou&#x10D;&#xED;ch jsou zat&#xED;m natvrdo v aplikaci (viz app.js)</li>\n</ul>\n<h2>Provoz</h2>\n<pre>&gt; npm <span class=\"hljs-keyword\">run</span><span class=\"bash\"> start</span></pre><h2>Instalace</h2>\n<pre>&gt; npm <span class=\"hljs-keyword\">install</span></pre><p>Je to funk&#x10D;n&#xED; na heroku.com, ale lze provozovat lok&#xE1;ln&#x11B;.</p>\n<h3>Heroku</h3>\n<p>Pro provoz na Heroku nastavit http-session-affinity takto:</p>\n<pre>&gt; heroku features:<span class=\"hljs-built_in\">enable</span> http-session-affinity</pre><p>A &#x10D;asovou z&#xF3;nu:</p>\n<pre>&gt; heroku config:<span class=\"hljs-keyword\">add</span><span class=\"bash\"> TZ=<span class=\"hljs-string\">&quot;Europe/Prague&quot;</span></span></pre><p>A angli&#x10D;tinu (v&#xFD;choz&#xED; je &#x10D;e&#x161;tina)</p>\n<pre>&gt; heroku config:<span class=\"hljs-built_in\">set</span> <span class=\"hljs-built_in\">locale</span>=<span class=\"hljs-string\">&quot;en&quot;</span></pre><h2>V&#xFD;voj</h2>\n<p>localhost:4000 (browsersync)</p>\n<pre>&gt; npm <span class=\"hljs-keyword\">run</span><span class=\"bash\"> watch</span></pre>"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/benabraham/listecky",
+          "text": "GitHub"
+        }
+      ]
+    }
+  ]
+}
