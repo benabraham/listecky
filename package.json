@@ -10,13 +10,13 @@
   "dependencies": {
     "better-console": "^1.0.x",
     "concurrently": "^3.5.x",
-    "express": "^4.15.x",
+    "express": "^4.16.x",
     "lodash": "^4.17.x",
     "marked": "^0.3.x",
     "mkdirp": "^0.5.x",
-    "moment": "^2.18.x",
-    "nunjucks": "^3.0.x",
-    "rimraf": "^2.5.x",
+    "moment": "^2.21.x",
+    "nunjucks": "^3.1.x",
+    "rimraf": "^2.6.x",
     "socket.io": "^2.0.x",
     "tiny-timer": "^1.1.x"
   },
@@ -24,8 +24,8 @@
     "node": "8.1.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.x",
-    "nodemon": "^1.11.x"
+    "browser-sync": "^2.23.x",
+    "nodemon": "^1.17.x"
   },
   "scripts": {
     "start": "node app.js",
