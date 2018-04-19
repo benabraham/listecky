@@ -8,24 +8,24 @@
   "private": false,
   "license": "GPL-3.0",
   "dependencies": {
-    "better-console": "^1.0.x",
-    "concurrently": "^3.5.x",
-    "express": "^4.16.x",
-    "lodash": "^4.17.x",
-    "marked": "^0.3.x",
+    "better-console": "^1.0.1",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.5",
+    "marked": "^0.3.19",
     "mkdirp": "^0.5.x",
-    "moment": "^2.21.x",
+    "moment": "^2.22.1",
     "nunjucks": "^3.1.x",
     "rimraf": "^2.6.x",
-    "socket.io": "^2.0.x",
+    "socket.io": "^2.1.0",
     "tiny-timer": "^1.1.x"
   },
   "engines": {
-    "node": "8.1.4"
+    "node": "9.11.1"
   },
   "devDependencies": {
     "browser-sync": "^2.23.x",
-    "nodemon": "^1.17.x"
+    "nodemon": "^1.17.3"
   },
   "scripts": {
     "start": "node app.js",
