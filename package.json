@@ -21,7 +21,7 @@
     "tiny-timer": "^1.1.x"
   },
   "engines": {
-    "node": "8.1.4"
+    "node": "9.11.1"
   },
   "devDependencies": {
     "browser-sync": "^2.23.x",
