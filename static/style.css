@@ -575,7 +575,7 @@ a:active { color: hsl(197, 71%, 73%); }
 	text-align: center;
 	line-height: 1.5em;
 	width: 25%;
-	margin-left: 60%;
+	margin-left: 37.5%;
 	margin-right: auto;
 	background-color: hsl(0, 0%, 0%);
 	color: hsl(0, 0%, 100%);
@@ -608,15 +608,8 @@ a:active { color: hsl(197, 71%, 73%); }
 }
 
 .l-desk-shape--rectangle_long {
-	width: 60%;
-	height: 40%;
-}
-
-.l-desk:nth-of-type(3n) .l-desk-shape--rectangle_long { width: 85%; }
-
-.l-desk-shape--ellipse {
-	width: 70%;
-	height: 70%;
+	width: 95%;
+	height: 20%;
 }
 
 .l-desk-shape--ellipse {
