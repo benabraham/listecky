@@ -1,38 +1,53 @@
 {
     "size": {
-        "x": 5,
-        "y": 6
+        "x": 4,
+        "y": 10
     },
     "desks": {
         "0": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "1": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "2": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "3": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "2": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "3": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 0 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
 
         "10": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 1 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "11": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 1 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "12": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 1 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "13": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 1 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "12": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 1 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "13": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 1 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
 
         "20": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "21": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "22": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "23": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "22": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "23": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 2 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
 
         "30": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "31": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "32": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "33": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "32": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "33": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
 
         "40": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "41": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "42": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "43": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "42": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "43": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
 
-        "50": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 5 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "51": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 5 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "52": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 5 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "53": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 5 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } }
+        "60": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 6 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "61": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 6 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "62": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 6 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "63": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 6 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+
+        "70": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 7 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "71": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 7 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "72": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 7 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "73": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 7 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+
+        "80": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 8 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "81": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 8 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "82": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 8 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "83": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 8 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+
+        "90": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 9 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "91": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 9 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "92": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 9 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "93": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 9 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } }
 
     }
 }
