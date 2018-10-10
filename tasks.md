@@ -7,9 +7,7 @@
 1. Heslo musí být nejméně 6 znaků dlouhé.
 1. V dalším okně vyplň svůj profil (stačí skutečné jméno a příjmení ‒ zjednoduší to komunikaci).
 1. Podívej se do doručené pošty (prohledej i spam) a najdi e-mail od Repl.it s textem _Verify your e-mail_. Klikni na odkaz v něm obsažený a účet máš ověřen.
-1. Zpátky na stránku Repl.it! Klikni na tlačítko _Start Coding Now_.
-1. Do vyhledávacího pole zadej HTML a zvol jedinou možnost, která se nabídne.
-1. Otevře se ti stránka s editorem a dalšími pod okny, což pro tuto chvíli stačí.
+1. Přijmi pozvání do _Classroom_ kliknutím na tento odkaz https://repl.it/classroom/invite/0W5J96q
 1. Dej nám vědět, že máš hotovo, kliknutím na tlačítko „Hotovo“ na této stránce.
 
 ---
