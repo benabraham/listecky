@@ -168,15 +168,15 @@
 
 **Před** nadpis _Kontakt_ dej další nadpis „Galerie“ a pod něj text `Společně se svými zvířecími kamarády zažíváme bláznivá dobrodružství.` a tyto obrázky (můžeš si zkopírovat)
 ```
-drak.jpg
-koupel.jpg
-oslik.jpg
-oslik-prasatko.jpg
-kralik.jpg
-protivitr.jpg
-pu-koupelna.jpg
-pu-robin.jpg
-stopy.jpg
+<img src="obrazky/drak.jpg" alt="drak">
+<img src="obrazky/koupel.jpg" alt="koupel">
+<img src="obrazky/oslik.jpg" alt="Oslík">
+<img src="obrazky/oslik-prasatko.jpg" alt="Oslík a Prasátko">
+<img src="obrazky/kralik.jpg" alt="Králík">
+<img src="obrazky/protivitr.jpg" alt="protivítr">
+<img src="obrazky/pu-koupelna.jpg" alt="Pů v koupelně">
+<img src="obrazky/pu-robin.jpg" alt="Pů a Robin">
+<img src="obrazky/stopy.jpg" alt="stopy">
 ```
 
 **Dej hotovo.**
@@ -197,6 +197,9 @@ stopy.jpg
 
 ----
 
+<details>
+<summary>Vynechaný úkol</summary>
+
 # 06 Doplníme titulek
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/06)
@@ -209,11 +212,15 @@ Abys viděla výsledek, je třeba stránku v samostatném okně. Klikni na ikonu
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://06--tvorimweb1.repl.co/)
 
+
 ----
 
 ## Bonus
 
 Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůfka Robina o medvídkovi Pú a jeho kamarádech.` [najdi si jak](https://www.google.cz/search?q=meta+description)
+
+</details>
+
 
 ---
 
@@ -512,6 +519,9 @@ Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a K
 
 ---
 
+<details>
+<summary>Vynechaný úkol</summary>
+
 # 17 Roztáhneme pozadí až do okraje
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/17)
@@ -536,6 +546,8 @@ Nelze to vyřešit jen v CSS:
 1. Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba nyní stejným způsobem vycentrovat _div_ s třídou `obsah`.
 1. Původní centrování můžeš odebrat, nemá už na nic vliv.
 
+</details>
+
 ---
 
 ## Shrnutí výkladu
@@ -548,6 +560,10 @@ h2 { color: green; }
 ```
 
 ----
+
+<details>
+<summary>Vynechaný úkol</summary>
+
 
 # 18 Zjednodušujeme kód
 
@@ -564,6 +580,8 @@ h2 { color: green; }
 ## Bonus
 
 1. Obarvi všechny odkazy v patičce bíle aniž bys přidávala novou třídu.
+
+</details>
 
 ---
 
@@ -585,6 +603,10 @@ a:active { color: yellow; } /* při kliknutí */
 
 ----
 
+
+<details>
+<summary>Vynechaný úkol</summary>
+
 # 19 Měníme barvu odkazů po najetí myši
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/19)
@@ -602,6 +624,7 @@ a:active { color: yellow; } /* při kliknutí */
 1. Odkazy v patičce udělej bílou barvou, pokud už to nemáš z předchozího cvičení.
 1. Odkazům v patičce při najetí myši nastav jinou barvu (jinou než v kontaktech), třeba žlutou `hsl(50, 100%, 70%)`.
 
+</details>
 
 ---
 
@@ -711,6 +734,9 @@ Pokud ne, nastav šířku na celou šířku pomocí třídy `obrazek-siroky` a p
 
 ---
 
+<details>
+<summary>Vynechaný úkol</summary>
+
 # 23 Rozdělíme web na jednotlivé stránky
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/23)
@@ -732,6 +758,8 @@ _Pozor, aby při odmazávání nezůstaly nadbytečné otvírací/uzavírací ta
 
 1. Na každé stránce zvýrazni (odliš) v navigaci odkaz na aktuální stránku (musíš přidat novou třídu a přiřadit ji na každé stránce u jiného odkazu).
 1. Nahraď aktivní odkazy elementem `span` (řádková obdoba neutrálního `div`), aby na aktivní odkaz nešlo kliknout. Pomocí pokročilých selektorů zachovej pro takto změněný prvek vzhled aktivního odkazu.
+
+</details>
 
 ---
 
