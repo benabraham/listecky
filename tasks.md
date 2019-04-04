@@ -62,7 +62,7 @@
 1. Otevři si [výchozí cvičení](https://repl.it/@tvorimweb1/00) a nahoře klikni na _fork_.
 1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu (_font size_) a barevné schéma (_theme_) tak, abys kód dobře viděla.
 1. Dále si případně pod ozubeným kolečkem nastav: _code intelligence_ na _disabled_
-1. Zkopíruj si následující text <kbd>Ctrl+C</kbd> a vlož ho do souboru `index.html` <kbd>Ctrl+V</kbd> místo komentáře v souboru.
+1. Zkopíruj si následující text <kbd>Ctrl+C</kbd> a vlož ho do souboru `index.html` <kbd>Ctrl+V</kbd> místo řádku s komentářem v souboru.
 	```
 	Web Kryštůfka Robina
 
@@ -132,7 +132,7 @@
 
 ## Bonus (pokud máš hotovo)
 
-1. Slovo „e-mail“ udělej jako odkaz na medvídkův mail (pooh@example.com) [najdi si jak](https://google.com).
+1. Slovo „e-mail“ udělej jako odkaz na medvídkův mail (pooh@example.com), [najdi si jak](https://google.com).
 1. Přidej stejnému odkazu další atribut `title` s hodnotou _Když pošleš med, budu radši._. Co to dělá zjištíš tak, že zaparkuješ šipku myši (kurzor) nad odkazem v náhledu stránky.
 
 ---
@@ -165,46 +165,20 @@
 
 **Před** nadpis _Kontakt_ dej další nadpis „Galerie“ a pod něj text `Společně se svými zvířecími kamarády zažíváme bláznivá dobrodružství.` a tyto obrázky (můžeš si zkopírovat)
 ```
-drak.jpg
-koupel.jpg
-oslik.jpg
-oslik-prasatko.jpg
-kralik.jpg
-protivitr.jpg
-pu-koupelna.jpg
-pu-robin.jpg
-stopy.jpg
+<img src="obrazky/drak.jpg" alt="Papírový drak">
+<img src="obrazky/koupel.jpg" alt="Koupel ve vaně">
+<img src="obrazky/oslik.jpg" alt="Pú, Kryštůfek Robin a oslik">
+<img src="obrazky/oslik-prasatko.jpg" alt="Oslík s Prasátkem">
+<img src="obrazky/kralik.jpg" alt="Pú, prasátko a králík">
+<img src="obrazky/protivitr.jpg" alt="Pú a prasátko proti větru">
+<img src="obrazky/pu-koupelna.jpg" alt="Pú před rohožkou">
+<img src="obrazky/pu-robin.jpg" alt="Pú s Robinem u stolu">
+<img src="obrazky/stopy.jpg" alt="Pú s prasátkem zkoumají stopy">
 ```
 
 **Dej hotovo.**
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://05--tvorimweb1.repl.co/)
-
----
-
-## Shrnutí výkladu
-
-```html
-<head>
-	…
-	<title>Název stránky</title>
-	…
-</head>
-```
-
-----
-
-# 06 Doplníme titulek
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/05)
-
-Doplň titulek: `Kryštůfek Robin a medvídek Pú`
-
-Abys viděla výsledek, je třeba stránku v samostatném okně. Klikni na ikonu se šipkou vpravo vedle adresního řádku v podokně s náhledem. V _Repl.it_ totiž vidíme vlastně **náhled stránky** což stačí na vše, co dnes budeme dělat, kromě zobrazení titulku, kdy potřebujeme vidět stránku samostatně.
-
-**Dej hotovo.**
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://06--tvorimweb1.repl.co/)
 
 ----
 
@@ -286,10 +260,6 @@ font-size: 1.5rem;
 /* nebo */
 
 font-size: 20px;
-
-/* nebo */
-
-font-size: 150%;
 ```
 
 ----
@@ -350,7 +320,7 @@ h2 { background-color: color: hsl(120, 100%, 25%); }
 
 ----
 
-# 11 Využijeme třídy
+# 11 Přidáme třídy
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/10)
 
@@ -380,10 +350,31 @@ Nezapomeň smazat nastavení barvy pozadí pro všechny prvků `<div>`, které u
 ## Shrnutí výkladu
 
 ```css
+
+/* rozměry */
 .tip {
 	width: 300px;
 	height: 100px;
 }
+
+/* ohraničení */
+div {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+/* totéž pomocí shorthandu */
+div {
+	border: 1px solid black;
+}
+
+/* vnitřní výplň */
+.tip { padding: 25px; }
+
+
+/* vnější okraj */
+.tip { margin: 10px; }
 ```
 
 ----
@@ -393,92 +384,11 @@ Nezapomeň smazat nastavení barvy pozadí pro všechny prvků `<div>`, které u
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/11)
 
 1. Nastav obrázkům šířku 300 pixelů.
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://12--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-1. Obrázku mapy nastav šířku na celou šířku pomocí třídy `obrazek-siroky` a procent.
-
----
-
-## Shrnutí výkladu
-
-```css
-div {
-	border-width: 1px;
-	border-style: solid;
-	border-color: black;
-}
-
-/* to samé pomocí shorthandu */
-div {
-	border: 1px solid black;
-}
-```
-
-----
-
-# 13 Orámujeme obrázky
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/12)
-
 1. Nastav obrázkům zelený rámeček (třeba `#559933`) široký 2 pixely.
 1. Mapě nastav rámeček žlutý, třeba `rgb(255, 229, 102)`.
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://13--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-Změň obrázkům v galerii barvu třeba dolního ohraničení třeba na `#2a4d19`.
-
----
-
-## Shrnutí výkladu
-
-```css
-.tip { padding: 25px; }
-```
-
-----
-
-# 14 Vnitřní odsazení obrázků
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/13)
-
 1. Přidej vnitřní odsazení (padding) `0.6rem`.
 1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://14--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
-
----
-
-## Shrnutí výkladu
-
-```css
-.tip { margin: 10px; }
-```
-
-----
-
-# 15 Větší mezery mezi obrázky
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/14)
-
 1. Přidej obrázkům vnější odsazení `0.3rem`, aby na sebe nebyly tak nalepené.
-1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://15--tvorimweb1.repl.co/)
 
@@ -486,9 +396,12 @@ Změň obrázkům v galerii barvu třeba dolního ohraničení třeba na `#2a4d1
 
 ## Bonus
 
-Nastav obrázkům větší padding dole než na ostatních stranách.
+1. Obrázku mapy nastav šířku na celou šířku stránky pomocí třídy `obrazek-siroky` a procent.
+1. Změň obrázkům v galerii barvu třeba dolního ohraničení třeba na `#2a4d19`.
+1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
+1. Nastav obrázkům větší margin dole než na ostatních stranách.
 
----
+----
 
 # 16 Odsadíme obsah od okrajů
 
@@ -509,96 +422,10 @@ Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a K
 
 ---
 
-# 17 Roztáhneme pozadí až do okraje
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/16)
-
-Roztáhni pozadí Galerie až do kraje obrazovky, aniž by se zároveň roztáhl i její obsah.
-
-Nelze to vyřešit jen v CSS:
-
-1. Je třeba **uvnitř** _divu_ `galerie` všechny obrázky obalit novým `<div>`, třeba s třídou `obsah`.
-1. Pro `.kontakt` a `.galerie` odstraň nastavení maximální šířky…
-1. … a nastavit ji pro `<div class="obsah">`
-1. Aby to bylo opravdu až do kraje, je třeba také přepsat výchozí `margin` pro prvek `<body>` na nulu.
-1. Hlavní nadpis (h1) a odstavec pod ním je ale teď do kraje a chtělo by to vyřešit, třeba vycentrováním jejich textu.
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://17--tvorimweb1.repl.co/)
-
-----
-
 ## Bonus
 
 1. Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba nyní stejným způsobem vycentrovat _div_ s třídou `obsah`.
 1. Původní centrování můžeš odebrat, nemá už na nic vliv.
-
----
-
-## Shrnutí výkladu
-
-```css
-h1,
-h2 { color: green; }
-
-.tip h2 { color: blue; }
-```
-
-----
-
-# 18 Zjednodušujeme kód
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/17)
-
-1. Uprav CSS pro barvu nadpisů tak, aby využíval vícenásobný selektor.
-1. Využij vícenásobný selektor i pro nastavení stejného paddingu jednotlivých sekcí (Galerie a Kontakt).
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://18--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-1. Obarvi všechny odkazy v patičce bíle aniž bys přidávala novou třídu.
-
----
-
-## Shrnutí výkladu
-
-```css
-a { color: navy; }
-
-a:link { color: blue; } /* nenavštívený */
-
-a:visited { color: purple; } /* navštívený */
-
-a:hover { color: red; } /* najetí myší */
-
-a:focus { color: green; } /* aktivovaný */
-
-a:active { color: yellow; } /* při kliknutí */
-```
-
-----
-
-# 19 Měníme barvu odkazů po najetí myši
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/18)
-
-1. Udělej jinou barvou odkaz(y) po najetí kurzorem v kontaktech, třeba zelenou `hsl(100, 50%, 40%)`. 
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://19--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-1. Uprav všechny odkazy na stránce tak, aby jim po najetí myši zmizelo podtržení.
-1. Odkazy v patičce udělej bílou barvou, pokud už to nemáš z předchozího cvičení.
-1. Odkazům v patičce při najetí myši nastav jinou barvu (jinou než v kontaktech), třeba žlutou `hsl(50, 100%, 70%)`.
-
 
 ---
 
@@ -624,7 +451,7 @@ a:active { color: yellow; } /* při kliknutí */
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://20--tvorimweb1.repl.co/)
 
----
+----
 
 ## Shrnutí výkladu
 
@@ -674,7 +501,7 @@ K témuž cíli často vede více cest. Podobného výsledku dosáhneš i [pomoc
 1. Ponechej uspořádání, které ti vyhovuje.
 1. Odstraň případné podbarvení položek seznamu.
 
----
+----
 
 # 22 Přidáme sekci _O mně_
 
@@ -705,38 +532,6 @@ Obrázek Kryštůfka Robina není moc dobře vidět. Líp by vypadal, kdyby byl 
 Pokud už jsi to udělala pro mapu, není nic snazšího než přidat stejnou třídu i tomuhle obrázku.
 
 Pokud ne, nastav šířku na celou šířku pomocí třídy `obrazek-siroky` a procent jak obrázku v _O mně_, tak mapě v sekci _Kontakt_.
-
----
-
-# 23 Rozdělíme web na jednotlivé stránky
-
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/22)
-
-1. V _Repl.it_ vytvoř nové HTML soubory `kontakt.html` a `galerie.html`. V levém sloupci nahoře je ikona dokumentu se symbolem plus a po kliknutí vyplň jeho název včetně `.html` na konci.
-1. Do navigace přidej odkazy na tyto soubory a nezapomeň taky na odkaz na `index.html`.
-1. Zkopíruj do obou všechen HTML kód z `index.html`.
-1. Odmaž na každé ze 3 stránek obsah, který tam nepatří. O mně bude na stránce _Úvod_. Záhlaví a patičku budou mít všechny stránky stejnou.
-1. Proklikej si svůj nový web.
-1. Dej hotovo.
-
-_Pozor, aby při odmazávání nezůstaly nadbytečné otvírací/uzavírací tagy!_
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://23--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-1. Na každé stránce zvýrazni (odliš) v navigaci odkaz na aktuální stránku (musíš přidat novou třídu a přiřadit ji na každé stránce u jiného odkazu).
-1. Nahraď aktivní odkazy elementem `span` (řádková obdoba neutrálního `div`), aby na aktivní odkaz nešlo kliknout. Pomocí pokročilých selektorů zachovej pro takto změněný prvek vzhled aktivního odkazu.
-
----
-
-# Publikujeme hotový web na internet
-
-1. V podokně s náhledem stránky klikni na iknou se šipkou vpravo vedle adresního řádku.
-1. Na nové záložce vidíš svou stránku. Na adrese, kterou vidíš v adresním řádku je tvůj web veřejně k vidění.
-1. Dej hotovo.
 
 ---
 
