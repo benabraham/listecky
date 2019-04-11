@@ -1,6 +1,6 @@
 # Přidáme odkazy na sekce
 
-## Shrnutí výkladu
+Shrnutí výkladu
 
 ```htmlmixed
 <a href="#kontakt">Spojení na nás</a>
@@ -11,7 +11,7 @@
 </div>
 ```
 
-## Zadání
+Zadání
 
 1. Přidej unikátní atribut `id` O mně, Galerie, Kontakty nadpisu nebo lépe elementu obalujícímu příslušnou sekci.
 1. Přidej odpovídající hodnoty `href` v navigaci.
