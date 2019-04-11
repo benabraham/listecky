@@ -1,12 +1,5 @@
 # Přidáme odkazy na sekce
 
-1. Přidej unikátní atribut `id` O mně, Galerie, Kontakty nadpisu nebo lépe elementu obalujícímu příslušnou sekci.
-1. Přidej odpovídající hodnoty `href` v navigaci.
-1. Vyzkoušej že fungují.
-1. Dej „Hotovo“.
-
----
-
 ## Shrnutí výkladu
 
 ```htmlmixed
@@ -17,6 +10,16 @@
     …
 </div>
 ```
+
+## Zadání
+
+1. Přidej unikátní atribut `id` O mně, Galerie, Kontakty nadpisu nebo lépe elementu obalujícímu příslušnou sekci.
+1. Přidej odpovídající hodnoty `href` v navigaci.
+1. Vyzkoušej že fungují.
+1. Dej „Hotovo“.
+
+---
+
 
 ----
 
