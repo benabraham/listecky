@@ -1,9 +1,3 @@
----
-title: Úkoly k workshopu Tvořím web 2 (Bootstrap)
-lang: cs
-tags: me280
----
-
 # Přidáme odkazy na sekce
 
 1. Přidej unikátní atribut `id` O mně, Galerie, Kontakty nadpisu nebo lépe elementu obalujícímu příslušnou sekci.
