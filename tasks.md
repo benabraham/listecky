@@ -231,8 +231,8 @@ Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůf
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/06)
 
 1. Připoj si `styly.css` k HTML.
-1. Nastav barvu písma pro celou stránku (třeba šedou `hsl(0, 0%, 40%)`)
-1. Nastav oběma nadpisům jinou barvu (třeba zelenou `hsl(100, 50%, 40%)`)
+1. Nastav barvu písma pro celou stránku (třeba šedou `darkgrey`)
+1. Nastav oběma nadpisům jinou barvu (třeba zelenou `darkgreen`)
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://07--tvorimweb1.repl.co/)
@@ -586,7 +586,7 @@ a:active { color: yellow; } /* při kliknutí */
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/18)
 
-1. Udělej jinou barvou odkaz(y) po najetí kurzorem v kontaktech, třeba zelenou `hsl(100, 50%, 40%)`.
+1. Udělej jinou barvou odkaz(y) po najetí kurzorem v kontaktech, třeba zelenou `hsl(100, 50%, 40%)`. 
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://19--tvorimweb1.repl.co/)
@@ -642,8 +642,8 @@ span { display: inline-block; }
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/20)
 
-1. Přidej menu (`<ul>`) třídu `menu`.
-1. Nastyluj menu tak, aby položky byly vedle sebe.
+1. Přidej navigaci (`<ul>`) třídu `menu`.
+1. Nastyluj navigaci tak, aby položky byly vedle sebe.
 1. Položky vycentruj.
 1. Aby se na ně lépe trefovalo, zvětši písmo odkazů, třeba na `1.5rem`.
 1. Aby se na ně trefovalo ještě líp, dej jim padding vertikálně i horizontálně.
