@@ -434,7 +434,7 @@ div {
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/12)
 
 1. Nastav obrázkům zelený rámeček (třeba `#559933`) široký 2 pixely.
-1. Mapě nastav rámeček žlutý, třeba `rgb(255, 229, 102)`.
+1. Mapě nastav rámeček žlutý, třeba `#ffe566`.
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://13--tvorimweb1.repl.co/)
@@ -596,7 +596,7 @@ a:active { color: yellow; } /* při kliknutí */
 1. Udělej jinou barvou odkaz(y) po najetí kurzorem v kontaktech, třeba zelenou `#559933`. 
 1. Dej hotovo.
 
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://19--tvorimweb1.repl.co/)
+> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://repl.it/@tvorimweb1/19)
 
 ----
 
