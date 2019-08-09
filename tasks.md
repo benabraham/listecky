@@ -62,7 +62,7 @@
 1. Otevři si [výchozí cvičení](https://repl.it/@tvorimweb1/00) a nahoře klikni na _fork_.
 1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu (_font size_) a barevné schéma (_theme_) tak, abys kód dobře viděla.
 1. Dále si případně pod ozubeným kolečkem nastav: _code intelligence_ na _disabled_
-1. Zkopíruj si následující text <kbd>Ctrl+C</kbd> a vlož ho do souboru `index.html` <kbd>Ctrl+V</kbd> místo komentáře v souboru.
+1. Zkopíruj si následující text <kbd>Ctrl+C</kbd> a vlož ho do souboru `index.html` <kbd>Ctrl+V</kbd> **místo** komentáře v souboru (šedý text).
     ```
     Web Kryštůfka Robina
 
@@ -224,6 +224,13 @@ Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůf
 </head>
 ```
 
+```css
+p {
+    color: white;
+    background-color: black;
+}
+```
+
 ----
 
 # 07 Připojíme styly
@@ -327,7 +334,7 @@ h2 { background-color: color: hsl(120, 100%, 25%); }
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/09)
 
-1. Obal každou ze tří sekcí webu: kontakt, galerii a patičku tagem `<div>`. Patička jsou texty na konci stránky (odkaz na FB a informaci o licenci).
+1. Obal každou ze tří sekcí webu: kontakt, galerii a patičku tagem `<div>`. Patička je odstavec na konci stránky s informací o licenci.
 1. Nastav všem třem nějakou (stejnou) světlou barvu pozadí, třeba `hsl(50, 90%, 90%)`
 1. Dej hotovo.
 
@@ -339,10 +346,12 @@ h2 { background-color: color: hsl(120, 100%, 25%); }
 
 ```html
 <h1 class="tip">Tip</h1>
+<p class="perex tip"></p>
 ```
 
 ```css
 .tip { color: blue; }
+.perex { font-size: 1.2rem; }
 ```
 
 ----
@@ -380,6 +389,7 @@ Nezapomeň smazat nastavení barvy pozadí pro všechny prvků `<div>`, které u
 .tip {
     width: 300px;
     height: 100px;
+    max-width: 100%;
 }
 ```
 
@@ -449,7 +459,7 @@ Změň obrázkům v galerii barvu třeba dolního ohraničení třeba na `#2a4d1
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/13)
 
-1. Přidej vnitřní odsazení (padding) `0.6rem`.
+1. Přidej obrázkům vnitřní odsazení (padding) `0.6rem`.
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://14--tvorimweb1.repl.co/)
