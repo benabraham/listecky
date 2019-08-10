@@ -21,9 +21,9 @@
         "41": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
         "42": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
 
-        "50": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "51": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
-        "52": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 3 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } }
+        "50": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "51": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } },
+        "52": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 4 }, "rotation": 0, "chairs": 2, "shape": "rectangle" } }
 
     }
 }
