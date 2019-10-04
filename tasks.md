@@ -105,7 +105,7 @@
 </ul>
 ```
 
----
+----
 
 # 03 _Ceník_ jako odrážkový seznam
 
@@ -132,9 +132,9 @@
 
 ----
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-02)
-
 # 04 Přidáme odkazy
+
+> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-02)
 
 1. V sekci _Kontakt_ vytvoř odkaz z textu „napiš na email“. Odkaz povede na e-mailovou adresu `adela@email.cz`.
 1. V témže odstavci vytvoř odkaz na Facebook z textu „ozvi na Facebooku“.
@@ -220,7 +220,7 @@ Abys viděla výsledek, je třeba stránku v samostatném okně. Klikni na ikonu
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-05--tvorimweb1.repl.co)
 
-----
+---
 
 ## Shrnutí výkladu
 
@@ -364,7 +364,7 @@ Každá sekce bude mít jinou barvu pozadí. Střídavě béžovou a světle hn�
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-09--tvorimweb1.repl.co)
 
-----
+---
 
 ## Shrnutí výkladu
 
@@ -379,7 +379,7 @@ a {
 .tip h2 { color: aqua; }
 ```
 
----
+----
 
 # 11 Zjednodušujeme kód
 
@@ -389,7 +389,7 @@ a {
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-10--tvorimweb1.repl.co)
-> 
+
 ---
 
 ## Shrnutí výkladu
@@ -402,7 +402,7 @@ a:visited { color: purple; } /* navštívený */
 a:active { color: yellow; } /* při kliknutí */
 ```
 
----
+----
 
 # 12 Změníme vzhled odkazů po najetí myši
 
@@ -413,7 +413,7 @@ a:active { color: yellow; } /* při kliknutí */
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-11--tvorimweb1.repl.co)
 
-----
+---
 
 ## Shrnutí výkladu
 
@@ -532,7 +532,7 @@ div {
 
 ```
 
----
+----
 
 # 17 Přidáme navigaci
 
@@ -590,7 +590,7 @@ li { display: inline-block; }
     background-repeat: no-repeat; /* nebo repeat, pokud chceme, aby se obrázek opakoval */
 ```
 
----
+----
 
 # 19 Záhlaví s fotkou na pozadí
 
@@ -620,12 +620,10 @@ Abys web odpovídal předloze, zbývá dotáhnout tabulku.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-19--tvorimweb1.repl.co)
 
----
+----
 
 # Publikujeme hotový web na internet
 
 1. V podokně s náhledem stránky klikni na iknou se šipkou vpravo vedle adresního řádku.
 1. Na nové záložce vidíš svou stránku. Na adrese, kterou vidíš v adresním řádku je tvůj web veřejně k vidění.
 1. Dej hotovo.
-
----
