@@ -585,12 +585,12 @@ li { display: inline-block; }
 ## Shrnutí (místo) výkladu
 
 ```css
-    background-image: url('obrazky/hlavicka.jpg');
-    background-position: center;
-    background-repeat: no-repeat; /* nebo repeat, pokud chceme, aby se obrázek opakoval */
+background-image: url('obrazky/hlavicka.jpg');
+background-position: center;
+background-repeat: no-repeat; /* nebo repeat, pokud chceme, aby se obrázek opakoval */
 ```
 
----
+----
 
 # 19 Záhlaví s fotkou na pozadí
 
