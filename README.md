@@ -102,3 +102,13 @@ localhost:4000 (browsersync)
 ```
 > npm run watch
 ```
+
+## Struktura `tasks.md`
+
+Aby regulár, který zpracovává zdrojový soubor `tasks.md` správně interpretoval zadání úkolů, které se vkládají do chatu, je třeba dodržovat následující pravidla pro psaní oddělovačů:
+
+1. Před i za oddělovač přijde volný řádek
+2. Oddělovač tvořený `---` (tj. 3 spojovníky) předchází shrnutí výkladu (nebo jiný text před samotným zadáním) případně předchází řádek s nadpisem pokud před zadáním není žádný úvodní text.
+3. Oddělovač tvořený `----` (tj. 4 spojovníky) oděluje uvozující text a zadání nebo zadání a bonusový úkol.
+
+Nejlépe konfrontovat tento popis se [vzorovým `tasks.md`](https://github.com/benabraham/listecky/edit/master/tasks.md). ;) 
