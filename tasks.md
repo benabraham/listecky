@@ -1,7 +1,7 @@
 # Založíme si účet na Repl.it
 
 1. [otevři si Repl](https://repl.it)
-1. Dole klikni na _Sign up_.
+1. Klikni na _Sign up_.
 1. Uživatelské jméno musí být 2‒15 znaků dlouhé.
 1. Zadej e-mail, na který máš přístup, přijde ti na něj ověřovací odkaz.
 1. Heslo musí být nejméně 6 znaků dlouhé.
@@ -63,6 +63,7 @@
 1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu (_font size_) a barevné schéma (_theme_) tak, abys kód dobře viděla.
 1. Dále si případně pod ozubeným kolečkem nastav: _code intelligence_ na _disabled_
 1. Ve složce `podklady` nalezneš soubor `texty.txt`. Vyber z něj všechen text <kbd>Ctrl+A</kbd>, zkopíruj ho <kbd>Ctrl+C</kbd> a vlož ho do souboru `index.html` <kbd>Ctrl+V</kbd> **místo** komentáře v souboru (šedý text). 
+1. Klávesovou zkratkou <kbd>Ctrl+Enter</kbd> (na Macu <kbd>Cmd+Enter</kbd>) aktualizuj náhled stránky.
 1. Opět dej prosím „Hotovo“.
 
 ---
@@ -158,6 +159,7 @@
 <img src="adela.jpg" alt="Adéla">
 ```
 
+<kbd>Alt+Shift+↑</kbd>/<kbd>Alt+Shift+↓</kbd> Pohybem nahoru/dolů se přidávají kurzory.
 <kbd>Alt+Shift+I</kbd> Vloží kurzor na každý řádek ve výběru
 <kbd>Home</kbd> <kbd>End</kbd> začátek, konec řádku (srovná kurzory na stejnou pozici)
 
@@ -168,8 +170,9 @@
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-03)
 
 1. Přidej fotku Adély `foto.jpg` za nadpis O mně
-1. Přidej 9 obrázků `hory1-9.jpg` za odstavec v sekci Fotogalerie
-
+1. Přidej obrázek `turistika.jpg` za nadpis Turistický průvodce
+1. Přidej obrázek `mapa.png` před nadpis _Kontaktní údaje_
+1. Přidej 9 obrázků `hory1-9.jpg` za odstavec v sekci Fotogalerie. Ale použij vícenásobný kurzor! Nevíš, co to je? Za chvíli ti to předvedeme.
 ```
 hory1.jpg
 hory2.jpg
@@ -181,9 +184,6 @@ hory7.jpg
 hory8.jpg
 hory9.jpg
 ```
-
-1. Přidej obrázek `turistika.jpg` za nadpis Turistický průvodce
-1. Přidej obrázek `mapa.png` před nadpis _Kontaktní údaje_
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-04--tvorimweb1.repl.co)
@@ -427,7 +427,7 @@ a:active { color: yellow; } /* při kliknutí */
 
 ----
 
-# 13 Nastavíme obrázkům šířku
+# 13 Nastavíme obrázkům v galerii šířku
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-11)
 
@@ -441,14 +441,14 @@ a:active { color: yellow; } /* při kliknutí */
 ## Shrnutí výkladu
 
 ```css
-div {
+p {
     border-width: 1px;
     border-style: solid;
     border-color: black;
 }
 
 /* totéž pomocí shorthandu */
-div {
+p {
     border: 1px solid black;
     border-radius: 6px;
 }
@@ -626,4 +626,4 @@ Abys web odpovídal předloze, zbývá dotáhnout tabulku.
 
 1. V podokně s náhledem stránky klikni na iknou se šipkou vpravo vedle adresního řádku.
 1. Na nové záložce vidíš svou stránku. Na adrese, kterou vidíš v adresním řádku je tvůj web veřejně k vidění.
-1. Dej hotovo.
+1. **Máš hotovo!**
