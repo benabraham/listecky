@@ -590,7 +590,7 @@ li { display: inline-block; }
     background-repeat: no-repeat; /* nebo repeat, pokud chceme, aby se obrázek opakoval */
 ```
 
-----
+---
 
 # 19 Záhlaví s fotkou na pozadí
 
@@ -605,7 +605,7 @@ li { display: inline-block; }
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-18--tvorimweb1.repl.co)
 
-----
+---
 
 # 20 Vylepšíme tabulku
 
@@ -620,7 +620,7 @@ Abys web odpovídal předloze, zbývá dotáhnout tabulku.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-19--tvorimweb1.repl.co)
 
-----
+---
 
 # Publikujeme hotový web na internet
 
