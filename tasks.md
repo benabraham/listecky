@@ -193,12 +193,6 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://05--tvorimweb1.repl.co/)
 
-----
-
-## Bonus
-
-Doplň do hlavičky ještě popis stránky pro vyhledavače `To je web Kryštůfka Robina o medvídkovi Pú a jeho kamarádech.` [najdi si jak](https://www.google.cz/search?q=meta+description)
-
 ---
 
 ## Shrnutí výkladu
