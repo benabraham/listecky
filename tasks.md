@@ -13,56 +13,62 @@
 
 ## Shrnutí zkratek
 
+### Začátek, konec řádku
 
-### Základní
+Win: <kbd>Home</kbd> <kbd>End</kbd>
 
-<kbd>Home</kbd> <kbd>End</kbd> začátek, konec řádku
+Mac: <kbd>Command+→</kbd>, <kbd>Command+←</kbd>
 
-<kbd class="nichtvergissmeinnicht">Ctrl+A</kbd> Výběr všeho
+### Výběr všeho
 
-<kbd>Ctrl+C</kbd> Kopírovat _výběr nebo bez výběru pro celý řádek_
+Win: <kbd>Ctrl+A</kbd>
 
-<kbd>Ctrl+V</kbd> Vložit
+Mac: <kbd>Cmd+A</kbd> 
 
-<kbd>Ctrl+X</kbd> Kopírovat a smazat (vyjmout) _výběr nebo bez výběru pro celý řádek_
+### Kopírovat _výběr nebo bez výběru pro celý řádek_
 
-<kbd>Tab</kbd> odsazení přidat <kbd>Shift+Tab</kbd> ubrat <br> _lze odsazovat více řádků najednou_
+Win:  <kbd>Ctrl+C</kbd>
 
-<kbd>Ctrl+Enter</kbd> spustit kód (to samé, co kliknutí na zelené tlačítko run)
+Mac:  <kbd>Cmd+C</kbd>
 
-### Další
+### Vložit
 
-<kbd class="nichtvergissmeinnicht">Ctrl+→</kbd> Posun po slovech doprava
+Win:  <kbd>Ctrl+V</kbd>
 
-<kbd class="nichtvergissmeinnicht">Ctrl+←</kbd> Posun po slovech doleva
+Mac:  <kbd>Cmd+V</kbd>
 
-<kbd>Ctrl+Shift+→</kbd> Výběr po slovech doprava
+### Kopírovat a smazat (vyjmout) 
 
-<kbd>Ctrl+Shift+←</kbd> Výběr po slovech doleva
+_výběr nebo bez výběru pro celý řádek_
 
-<kbd>Shift+Alt+F</kbd> zformátovat celý dokument
+Win:  <kbd>Ctrl+X</kbd>
 
-<kbd>F1</kbd> nebo <kbd>Ctrl+Shift+P</kbd> vyhledávání ve všech dostupných příkazech
+Mac:  <kbd>Cmd+X</kbd>
+
+### odsazení přidat, odsazení ubrat ubrat
+
+<kbd>Tab</kbd>, <kbd>Shift+Tab</kbd>
+
+_lze odsazovat více řádků najednou, stačí je vybrat_
 
 
-### Pokročilé
+### spustit kód 
 
-<kbd class="nichtvergissmeinnicht">Ctrl+K Ctrl+C</kbd> zakomentuje/odkomentuje řádek (není nutno vybírat)
+(to samé, co kliknutí na zelené tlačítko run)
 
-<kbd class="nichtvergissmeinnicht">Ctrl+D</kbd> Najde další výskyt vybraného (označeného) textu
+Win:  <kbd>Ctrl+Enter</kbd>
 
-<kbd class="nichtvergissmeinnicht">Ctrl+I</kbd> vybere celý řádek
+Mac:  <kbd>Cmd+Enter</kbd> 
 
-<kbd class="nichtvergissmeinnicht">Alt+G</kbd> přenese kurzor na zadané číslo řádku
 
 ----
 
 # 01 Osaháme si Repl.it a klávesové zkratky
 
-1. Otevři si [výchozí cvičení](https://repl.it/@tvorimweb1/00) a nahoře klikni na _fork_.
+1. Otevři si [výchozí cvičení](https://repl.it/@tvorimweb1/00) a nahoře klikni na _FORK_.
 1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu (_font size_) a barevné schéma (_theme_) tak, abys kód dobře viděla.
 1. Dále si případně pod ozubeným kolečkem nastav: _code intelligence_ na _disabled_
-1. Zkopíruj si následující text <kbd>Ctrl+C</kbd> a vlož ho do souboru `index.html` <kbd>Ctrl+V</kbd> **místo** komentáře v souboru (šedý text).
+1. Zkopíruj si následující text a vlož ho do souboru `index.html` **místo** komentáře v souboru (šedý text).
 	```
 	Web Kryštůfka Robina
 
@@ -409,17 +415,6 @@ div {
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://15--tvorimweb1.repl.co/)
 
-----
-
-## Bonus
-
-1. Obrázku mapy nastav šířku na celou šířku stránky pomocí třídy `obrazek-siroky` a procent.
-1. Změň obrázkům v galerii barvu třeba dolního ohraničení třeba na `#2a4d19`.
-1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
-1. Nastav obrázkům větší margin dole než na ostatních stranách.
-
-----
-
 # 16 Odsadíme obsah od okrajů
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/15)
@@ -433,13 +428,21 @@ div {
 
 ----
 
-## Bonus
+## Bonusy
+
+
+### První
+
+1. Obrázku mapy nastav šířku na celou šířku stránky pomocí třídy `obrazek-siroky` a procent.
+1. Změň obrázkům v galerii barvu třeba dolního ohraničení třeba na `#2a4d19`.
+1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
+1. Nastav obrázkům větší margin dole než na ostatních stranách.
+
+### Druhý
 
 Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a Kontakt ‒ [najdi si jak](https://www.google.cz/search?q=horizontální%20centrování%20css)
 
----
-
-## Bonus
+### Třetí
 
 1. Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba nyní stejným způsobem vycentrovat _div_ s třídou `obsah`.
 1. Původní centrování můžeš odebrat, nemá už na nic vliv.
@@ -468,7 +471,7 @@ Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a K
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://20--tvorimweb1.repl.co/)
 
-----
+---
 
 ## Shrnutí výkladu
 
@@ -502,23 +505,14 @@ span { display: inline-block; }
 1. Odstraň odkazům v menu podtržení.
 1. Odstraň odkazům v menu tučnost.
 
-Případně ještě můžeš změnit barevnost menu:
+## Případně ještě můžeš změnit barevnost menu:
 
 1. Podbarvi menu třeba zelenou `#559933`.
 1. Aby se daly položky přečíst, obarvi odkazy třeba na žluto `#ffe566`.
 1. Položku v menu po najetí kurzorem nastyluj inverzně (zelený text na žlutém pozadí).
 1. Odstraň bílou mezeru mezi menu a Galerií.
 
-
-K témuž cíli často vede více cest. Podobného výsledku dosáhneš i [pomocí **flexboxu**](https://www.vzhurudolu.cz/prirucka/css3-flexbox#sup-na-zakladni-pojmy-flex-kontejner-a-flex-polozka-hlavni-a-pricna-osa).
-
-1. Nastav seznamu s odkazy `display: flex;`.
-1. Odstraň odrážky pomocí vlastnosti `list-style-type`.
-1. Pomocí vlastnosti `justify-content` změň výchozí uspořádání odkazů. [Podívej se jak na to.](https://www.vzhurudolu.cz/prirucka/css3-flexbox-kontejner#justify-content) Když si podbarvíš položky seznamu nějakou výraznější barvou, bude ti možná jasnější, co jednotlivé hodnoty `justify-content` způsobují.
-1. Ponechej uspořádání, které ti vyhovuje.
-1. Odstraň případné podbarvení položek seznamu.
-
-----
+---
 
 # 22 Přidáme sekci _O mně_
 
