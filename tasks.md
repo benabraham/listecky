@@ -18,9 +18,6 @@
 1. Vyzkoušej že fungují.
 1. Dej „Hotovo“.
 
-note:
-- forkovat v rámci třídy, abychom měli výstupy pěkně pohromadě!!!
-
 ---
 
 # Připoj Bootstrap
