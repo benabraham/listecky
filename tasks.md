@@ -18,6 +18,9 @@
 1. Vyzkoušej že fungují.
 1. Dej „Hotovo“.
 
+note:
+- forkovat v rámci třídy, abychom měli výstupy pěkně pohromadě!!!
+
 ---
 
 # Připoj Bootstrap
@@ -33,7 +36,7 @@
 1. najdi si v dokumentaci Components / Jumbotron
 1. Divu s `class="uvod"` přidej třídu `jumbotron` viz dokumentace
 1. nadpisu přidej třídu `display-4`
-1. odstavci přidej třídu `lead`
+1. odstavci  v úvodu přidej třídu `lead`
 1. Dej „Hotovo“.
 
 ---
@@ -48,7 +51,7 @@
 # Utility classes
 
 1. Vycentruj text v úvodu (Jumbotron) pomocí `text-center`
-1. Odstraň spodní padding Jumbotronu pomocí `mb-0`
+1. Odstraň spodní margin Jumbotronu pomocí `mb-0`
 1. Vycentruj položky v navigaci pomocí `justify-content-center`
 1. Dej „Hotovo“.
 
@@ -64,7 +67,7 @@
 
 # Responzivní grid
 
-1. obrázku dej třídu `img-fluid`
+1. obrázkům dej třídu `img-fluid`
 1. udělej sloupce v úvodu responzivní v jednotlivých šířkách, dle svého uvážení
 1. Dej „Hotovo“.
 
@@ -79,13 +82,14 @@
 # Galerii a Kontakty do gridu
 
 - Pro obrázky využij komponentu Figure
-- V Kontaktech  první dva odstavce dát vedle sebe, třetí přes celou šířku.
+- V Kontaktech první dva bloky textu (Facebook a e-mail) dát vedle sebe, třetí přes celou šířku.
 - Vše reponzivně
--  Dej „Hotovo“.
+- Dej „Hotovo“.
 
 ---
 
 # Vlastní styly
+
 
 1. připoj si další CSS `styly.css`
 1. zkus upravit barvy nadpisů
