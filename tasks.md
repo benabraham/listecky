@@ -2,12 +2,24 @@
 
 1. [otevři si Repl](https://repl.it)
 1. Klikni na _Sign up_.
+1. Nyní máš 2 možnosti: přihlásit se prostřednictvím svého účtu na Facebooku či Googlu, anebo vytvořit účet.
+
+## 1. varianta: prostřednictvím Facebooku/Googlu
+
+1. Klikni na správnou ikonku.
+1. Dotazníkem se nezabývej.
+1. Nic dalšího v Repl.it nepodnikej, stránku klidně zavři. 
+1. Dej nám vědět, že máš hotovo, kliknutím na tlačítko „Hotovo“ na této stránce.
+
+## 2. varianta: vytvořit účet na Repl.it
+
 1. Uživatelské jméno musí být 2‒15 znaků dlouhé.
 1. Zadej e-mail, na který máš přístup, přijde ti na něj ověřovací odkaz.
 1. Heslo musí být nejméně 6 znaků dlouhé.
 1. V dalším okně vyplň svůj profil (stačí skutečné jméno a příjmení ‒ zjednoduší to komunikaci).
+1. Dotazníkem se nezabývej.
 1. Podívej se do doručené pošty (prohledej i spam) a najdi e-mail od Repl.it s textem _Verify your e-mail_. Klikni na odkaz v něm obsažený a účet máš ověřen.
-1. Nic dalšího v Repl.it nepodnikej, stránku klidně zavři.
+1. Nic dalšího v Repl.it nepodnikej, stránku klidně zavři. 
 1. Dej nám vědět, že máš hotovo, kliknutím na tlačítko „Hotovo“ na této stránce.
 
 ---
@@ -88,13 +100,20 @@
 # 02 Vytvoříme základní strukturu stránky
 
 1. Vytvoř nadpis nejvyšší úrovně (název webu) z textu „Adéla na cestách“.
-1. Nadpisy 4 hlavních sekcí budou nadpisy 2. úrovně: _O mně, Fotogalerie, Turistický průvodce, Kontakt_
+1. Nadpisy 4 hlavních sekcí budou nadpisy 2. úrovně: _O mně, Fotogalerie_, _Turistický průvodce_, _Kontakt_
+1. V sekcích _Průvodce_ a _Kontakt_ jsou ještě nadpisy 3. úrovně:_Orientační ceník_, _Kontaktní údaje_.
 1. Zbývající texty uvnitř sekcí jsou odstavce. Ceník zatím přeskoč.
-1. V sekcích _Průvodce_ a _Kontakt_ jsou ještě nadpisy 3. úrovně:_Orientační ceník, Oficiální kontakt_.
 1. Patička je jen odstavec. 
 1. Nezapomeň dát vědět, že máš hotovo a nezapomeň na to ani až dokončíš další úkoly.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-01--tvorimweb1.repl.co)
+
+----
+
+## Bonus (pokud máš hotovo)
+
+1. Označ nadpisy _E-mail_ a _Mobil_ v sekci _Kontakty_ jako důležitý text
+1. Zalom adresu na víc řádku pomocí značky `<br>` (nový řádek)
 
 ---
 
@@ -122,7 +141,7 @@
 
 ## Bonus (pokud máš hotovo)
 
-1. Ceník patří do tabulky. Mrkni se do taháku, jakou strukturu musí mít tabulky v HTML, a nahraď odrážkový seznam tabulkou.
+1. Ceník patří do tabulky. [Mrkni se, jakou strukturu mají tabulky v HTML](https://jecas.cz/html-tabulky#znacky), a nahraď odrážkový seznam tabulkou.
 
 ---
 
@@ -138,7 +157,7 @@
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-02)
 
-1. V sekci _Kontakt_ vytvoř odkaz z textu „napiš na email“. Odkaz povede na e-mailovou adresu `adela@email.cz`.
+1. V sekci _Kontakt_ (uvnitř odstavce) vytvoř odkaz z textu „napiš na email“. Odkaz povede na e-mailovou adresu `adela@email.cz`.
 1. V témže odstavci vytvoř odkaz na Facebook z textu „ozvi na Facebooku“.
 1. V kontaktních údajích doplň znovu odkaz na Adélin e-mail.
 1. Vyzkoušej, že odkazy fungují!
@@ -160,7 +179,7 @@
 <img src="adela.jpg" alt="Adéla">
 ```
 
-<kbd>Alt+Shift+↑</kbd>/<kbd>Alt+Shift+↓</kbd> Pohybem nahoru/dolů se přidávají kurzory.
+<kbd>Ctr+Alt+Shift+↑</kbd>/<kbd>Ctrl+Alt+Shift+↓</kbd> Pohybem nahoru/dolů se přidávají kurzory.
 <kbd>Alt+Shift+I</kbd> Vloží kurzor na každý řádek ve výběru
 <kbd>Home</kbd> <kbd>End</kbd> začátek, konec řádku (srovná kurzory na stejnou pozici)
 
@@ -170,10 +189,10 @@
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-03)
 
-1. Přidej fotku Adély `foto.jpg` za nadpis O mně
-1. Přidej obrázek `turistika.jpg` za nadpis Turistický průvodce
+1. Přidej fotku Adély `foto.jpg` za nadpis _O mně_
+1. Přidej obrázek `turistika.jpg` za nadpis _Turistický průvodce_
 1. Přidej obrázek `mapa.png` před nadpis _Kontaktní údaje_
-1. Přidej 9 obrázků `hory1-9.jpg` za odstavec v sekci Fotogalerie. Ale použij vícenásobný kurzor! Nevíš, co to je? Za chvíli ti to předvedeme.
+1. Přidej 9 obrázků `hory1-9.jpg` za odstavec v sekci _Fotogalerie_. Ale použij vícenásobný kurzor! Nevíš, co to je? Za chvíli ti to předvedeme.
 ```
 hory1.jpg
 hory2.jpg
@@ -213,25 +232,15 @@ hory9.jpg
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-04)
 
-Doplň titulek: `Adéliny cesty po horách`
-
-Abys viděla výsledek, je třeba stránku v samostatném okně. Klikni na ikonu se šipkou vpravo vedle adresního řádku v podokně s náhledem. V _Repl.it_ totiž vidíme vlastně **náhled stránky** což stačí na vše, co dnes budeme dělat, kromě zobrazení titulku, kdy potřebujeme vidět stránku samostatně.
-
-**Dej hotovo.**
+1. Doplň titulek: `Adéliny cesty po horách`
+1. Abys viděla výsledek, je třeba stránku v samostatném okně. Klikni na ikonu se šipkou vpravo vedle adresního řádku v podokně s náhledem. V _Repl.it_ totiž vidíme vlastně **náhled stránky** což stačí na vše, co dnes budeme dělat, kromě zobrazení titulku, kdy potřebujeme vidět stránku samostatně.
+1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-05--tvorimweb1.repl.co)
 
 ---
 
 ## Shrnutí výkladu
-
-```html
-<head>
-    …
-    <link rel="stylesheet" href="nazevsouboru.css">
-    …
-</head>
-```
 
 ```css
 p {
@@ -248,13 +257,30 @@ p {
 
 Použij barvy ze souboru `podklady/barvy.txt`, ale zkus klidně i svoje vlastní barvy. Záleží jen na tobě, jak moc chceš, aby se tvůj web podobal vzorové stránce.
 
-1. Připoj si `style.css` k HTML.
 1. Hlavní nadpis obarvi na červenou.
 1. Nadpisy 2. úrovně obarvi na hnědou.
 1. Odkazy budou hnědé.
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-06--tvorimweb1.repl.co)
+
+---
+
+## Shrnutí výkladu
+
+```html
+<head>
+    …
+    <link rel="stylesheet" href="nazev-stylopisu.css">
+    …
+</head>
+```
+
+----
+
+# 08 Připojíme styly (a obarvíme nadpisy a odkazy)
+
+1. Připoj si `style.css` k HTML.
 
 ---
 
@@ -276,14 +302,14 @@ p {
 
 ----
 
-# 08 Upravíme písmo
+# 09 Upravíme písmo
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-06)
 
 1. Všechny texty na stránce udělej bezpatkovým písmem (`sans-serif`) o velikosti `1.2rem`.
 1. Všechny nadpisy patkovým písmem (`serif`) a kurzívou.
 1. Hlavní nadpis na střed a písmem velkým `5rem`
-1. Nadpisy 2. úrovně jsou na střed a písmem velkým `3rem`.
+1. Nadpisy 2. úrovně jsou písmem velkým `3rem`.
 1. Nadpisy 3. úrovně jsou písmem velkým `1.5rem`.
 1. Odkazy kurzívou.
 1. Dej hotovo.
@@ -323,14 +349,14 @@ section {
 
 ----
 
-# 09 Rozdělení stránky
+# 10 Rozdělení stránky
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-07)
 
 1. Obal hlavní nadpis značkou pro záhlaví.
 1. Obal odstavec s patičkou značkou pro zápatí.
 1. Rozděl zbytek stránky na sekce pomocí značek pro sekci
-1. Všechny sekce budou mít žlutou barvu pozadí (později změníme).
+1. Všechny sekce stránky (_O mně_, _Fotogalerie_, _Turistický průvodce_ a _Kontakt_) budou mít žlutou barvu pozadí (později změníme).
 1. Dej hotovo
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-08--tvorimweb1.repl.co)
@@ -340,8 +366,8 @@ section {
 ## Shrnutí výkladu
 
 ```html
-<h1 class="tip">Tip</h1>
-<p class="perex tip"></p>
+<h1 class="tip">Nadpis článku</h1>
+<p class="perex tip">Úvodní odstavec článku…</p>
 ```
 
 ```css
@@ -351,17 +377,13 @@ section {
 
 ----
 
-# 10 Využijeme třídy
+# 11 Využijeme třídy
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-08)
 
-1. Pomocí tříd nastav každé sekci jinou barvu pozadí (dej si pozor na dostatečný kontrast).
-
-Doporučené názvy tříd: `omne`, `fotogalerie`, `pruvodce`, `kontakt`
-
-Každá sekce bude mít jinou barvu pozadí. Střídavě béžovou a světle hnědou (`#fff1e6`, `#f9e3d0`). Případně vyzkoušej vlastní barvy.
-
-**Dej hotovo.**
+1. Pomocí tříd nastav každé sekci jinou barvu pozadí (dej si pozor na dostatečný kontrast). Doporučené názvy tříd: `omne`, `fotogalerie`, `pruvodce`, `kontakt`
+1. Každá sekce bude mít jinou barvu pozadí. Střídavě béžovou a světle hnědou (`#fff1e6`, `#f9e3d0`). Případně vyzkoušej vlastní barvy.
+1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-09--tvorimweb1.repl.co)
 
@@ -382,7 +404,7 @@ a {
 
 ----
 
-# 11 Zjednodušujeme kód
+# 12 Zjednodušujeme kód
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-09)
 
@@ -405,7 +427,7 @@ a:active { color: yellow; } /* při kliknutí */
 
 ----
 
-# 12 Změníme vzhled odkazů po najetí myši
+# 13 Změníme vzhled odkazů po najetí myši
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-10)
 
@@ -428,11 +450,11 @@ a:active { color: yellow; } /* při kliknutí */
 
 ----
 
-# 13 Nastavíme obrázkům v galerii šířku
+# 14 Nastavíme obrázkům v galerii šířku
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-11)
 
-1. Obrázky v galerii budou široké ⅓ stránky.
+1. Obrázky v galerii budou široké 30% stránky.
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-12--tvorimweb1.repl.co)
@@ -457,7 +479,7 @@ p {
 
 ----
 
-# 14 Orámujeme obrázky
+# 15 Orámujeme obrázky
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-12)
 
@@ -477,7 +499,7 @@ p {
 
 ----
 
-# 15 Odsazení sekcí
+# 16 Odsazení sekcí
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-13)
 
@@ -500,7 +522,7 @@ p {
 
 ----
 
-# 16 Obtékání obrázků
+# 17 Obtékání obrázků
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-14)
 
@@ -514,7 +536,7 @@ p {
 
 ## Bonus
 
-1. Nastav fotce v sekci _O mně_ takový `border-radius`, aby byla úplně kulatá. Tip: použij procenta.
+1. Nastav fotce v sekci _O mně_ menší šířku a takový `border-radius`, aby byla úplně kulatá. Tip: použij procenta.
 1. Fotce v sekci _Turistický průvodce_ nastav `border-radius` jen pro 3 rohy.
 
 ---
@@ -535,12 +557,11 @@ p {
 
 ----
 
-# 17 Přidáme navigaci
+# 18 Přidáme navigaci
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-15)
 
-1. Vytvoř navigaci pomocí tagu `<nav>`.
-1. Navigaci umísti za úvod.
+1. Mezi hlavičku stránky a sekci _O mně_ přidej navigaci pomocí tagu `<nav>`.
 1. Dovnitř vlož odkazy pro všechny sekce stránky.
 1. Aby ti navigace fungovala, musíš ještě přidat atribut `id` jednotlivým sekcím.
 1. Dej hotovo.
@@ -561,7 +582,7 @@ li { display: inline-block; }
 
 ----
 
-# 18 Odkazy v navigaci do pruhu
+# 19 Odkazy v navigaci do pruhu
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-16)
 
@@ -593,26 +614,33 @@ background-repeat: no-repeat; /* nebo repeat, pokud chceme, aby se obrázek opak
 
 ----
 
-# 19 Záhlaví s fotkou na pozadí
+# 20 Záhlaví s fotkou na pozadí
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-17)
 
 1. Záhlaví přidej obrázek na pozadí pomocí vlastnosti `background-image`. 
 1. Nechceme, aby se obrázek opakoval, proto mu nastav `background-repeat` na `no-repeat`.
 1. Obrázek na pozadí vycentruj.
-1. Aby byl obrázek vidět celý, dej hlavnímu nadpisu opravud velký svislý padding (aspoň 150px).
+1. Aby byl obrázek vidět celý, dej hlavnímu nadpisu opravdu velký svislý padding (aspoň 150px).
 1. Jestli chceš mít obrázek roztažený pěkně do kraje, vynuluj margin na prvku `body`.
 1. Dej hotovo.
 
 > Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://Adela-cestuje-18--tvorimweb1.repl.co)
 
+----
+
+## Bonus
+
+1. Pro lepší kontrast změň barvu hlavního nadpisu na bílou.
+1. Vlasnost `background-size` umožňuje nastavit velikost pozadí. Nastav ji na hodnotu `cover`, aby obrázek vždy vyplnil celou hlavičku (i kdyby měl prohlížeč obrázek zvětšit víc, než na 100%)
+
 ---
 
-# 20 Vylepšíme tabulku
+# 21 Vylepšíme tabulku
 
 > Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/Adela-cestuje-18)
 
-Abys web odpovídal předloze, zbývá dotáhnout tabulku.
+Aby web odpovídal předloze, zbývá dotáhnout tabulku.
 
 1. Buňkám v pravém sloupci přidej třídu `cena`.
 1. Buňky s třídou `cena` zarovnej doprava.
