@@ -68,7 +68,7 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 # 01 Osaháme si Repl.it a klávesové zkratky
 
-1. Na stránce https://repl.it/student/ si otevři classroom _Tvořím web 1…_ a v _Projects_ na _me280-ls-20_
+1. Na stránce https://repl.it/student/ si otevři classroom _Tvořím web 1…_ a v _Projects_ klikni na _me280-ls-20_
 1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu (_font size_) a barevné schéma (_theme_) tak, abys kód dobře viděla.
 1. Dále si případně pod ozubeným kolečkem nastav: _code intelligence_ na _disabled_
 1. Zkopíruj si následující text a vlož ho do souboru `index.html` **místo** řádku s komentářem v souboru (šedý text).
@@ -549,4 +549,4 @@ Pokud ne, nastav šířku na celou šířku pomocí třídy `obrazek-siroky`, kt
 
 [Púův web, jak by taky mohl vypadat, když se udělají všechny bonusové úkoly (v plné verzi workshopu)](https://24--tvorimweb1.repl.co/) a jeho [zdrojové kódy](https://repl.it/@tvorimweb1/24)
 
-4.&thinsp;4.&nbsp;2020 v2
+4.&thinsp;4.&nbsp;2020 v3
