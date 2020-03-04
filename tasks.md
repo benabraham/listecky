@@ -545,3 +545,5 @@ Pokud ne, nastav šířku na celou šířku pomocí třídy `obrazek-siroky`, kt
 [Všechny úkoly, k dispozici tak, aby sis je mohla projít i doma](https://hackmd.io/ECDLL0EdRBCdi5KTavkj4A)
 
 [Púův web, jak by taky mohl vypadat, když se udělají všechny bonusové úkoly (v plné verzi workshopu)](https://24--tvorimweb1.repl.co/) a jeho [zdrojové kódy](https://repl.it/@tvorimweb1/24)
+
+4.&thinsp;4.&nbsp;2020 v1
