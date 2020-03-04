@@ -1,3 +1,5 @@
+
+
 # Založíme si účet na Repl.it
 
 1. [otevři si Repl](https://repl.it)
@@ -7,6 +9,7 @@
 1. Heslo musí být nejméně 6 znaků dlouhé.
 1. V dalším okně vyplň svůj profil (stačí skutečné jméno a příjmení ‒ zjednoduší to komunikaci).
 1. Podívej se do doručené pošty (prohledej i spam) a najdi e-mail od Repl.it s textem _Verify your e-mail_. Klikni na odkaz v něm obsažený a účet máš ověřen.
+1. Přijmi pozvání do Classroom kliknutím na tento odkaz https://repl.it/classroom/invite/m9zMC3x
 1. Dej nám vědět, že máš hotovo, kliknutím na tlačítko „Hotovo“ na této stránce.
 
 ---
@@ -65,16 +68,16 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 # 01 Osaháme si Repl.it a klávesové zkratky
 
-1. Otevři si [výchozí cvičení](https://repl.it/@tvorimweb1/00) a nahoře klikni na _FORK_.
+1. Na stránce https://repl.it/student/ si otevři classroom _Tvořím web 1…_ a v _Projects_ na _me280-ls-20_
 1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu (_font size_) a barevné schéma (_theme_) tak, abys kód dobře viděla.
 1. Dále si případně pod ozubeným kolečkem nastav: _code intelligence_ na _disabled_
-1. Zkopíruj si následující text a vlož ho do souboru `index.html` **místo** komentáře v souboru (šedý text).
-	```
-	Web Kryštůfka Robina
+1. Zkopíruj si následující text a vlož ho do souboru `index.html` **místo** řádku s komentářem v souboru (šedý text).
+    ```
+    Web Kryštůfka Robina
 
-	Představím vám zde své dobré kamarády:
-	medvídka Pú, Tygříka, Íjáčka a Prasátko.
-	```
+    Představím vám zde své dobré kamarády:
+    medvídka Pú, Tygříka, Íjáčka a Prasátko.
+    ```
 1. Opět dej prosím „Hotovo“.
 
 ---
@@ -118,16 +121,16 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 # 03 Přidáme _Kontakt_
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/02)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/02)
 
 1. Vytvoř sekci Kontakt, tedy
-	* nadpis `Kontakt`
-	* a text
-	```
-	Budeme rádi, když nám napíšeš na e-mail nebo se s námi skamarádíš na Facebooku.
+    - nadpis `Kontakt`
+    - a text
+    ```
+    Budeme rádi, když nám napíšeš na e-mail nebo se s námi skamarádíš na Facebooku.
 
-	To je mapa, která tě dovede do Stokorcového lesa, kde s medvídkem Pú a jeho kamarády provádíme všechny naše lotroviny.
-	```
+    To je mapa, která tě dovede do Stokorcového lesa, kde s medvídkem Pú a jeho kamarády provádíme všechny naše lotroviny.
+    ```
 1. Ze slova „Facebooku“ udělej odkaz na Facebook.
 1. Vyzkoušej, že odkaz funguje.
 1. Dej hotovo.
@@ -153,7 +156,7 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 # 04 Přidáme mapu
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/03)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/03)
 
 1. Přidej obrázek mapy do kontaktu za text, který už tam máš.
 1. Přidej za mapu licencí vyžadované texty:`Autorem skenů je Paul K. pod licencí CC 2.0`.
@@ -174,7 +177,7 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 # 05 Přidáme obrázkovou galerii
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/04)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/04)
 
 **Před** nadpis _Kontakt_ dej další nadpis „Galerie“ a pod něj text `Společně se svými zvířecími kamarády zažíváme bláznivá dobrodružství.` a tyto obrázky (můžeš si zkopírovat)
 ```
@@ -199,16 +202,16 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 ```html
 <head>
-	…
-	<link rel="stylesheet" href="nazevsouboru.css">
-	…
+    …
+    <link rel="stylesheet" href="nazevsouboru.css">
+    …
 </head>
 ```
 
 ```css
 p {
-	color: white;
-	background-color: black;
+    color: white;
+    background-color: black;
 }
 ```
 
@@ -216,7 +219,7 @@ p {
 
 # 07 Připojíme styly
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/06)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/06)
 
 1. Připoj si `styly.css` k HTML.
 1. Nastav barvu písma pro celou stránku (třeba šedou `dimgrey`)
@@ -231,13 +234,13 @@ p {
 
 ```css
 p {
-	font-style: italic;  /* nebo normal */
+    font-style: italic;  /* nebo normal */
 
-	font-weight: bold; /* nebo normal */
+    font-weight: bold; /* nebo normal */
 
-	font-family: sans-serif; /* nebo serif */
+    font-family: sans-serif; /* nebo serif */
 
-	text-align: center; /* nebo left nebo right */
+    text-align: center; /* nebo left nebo right */
 }
 ```
 
@@ -245,7 +248,7 @@ p {
 
 # 08 Upravíme písmo
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/07)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/07)
 
 1. Nastav celé stránce bezpatkové písmo.
 1. Nastav odkazům tučný řez písma.
@@ -280,7 +283,7 @@ font-size: 20px;
 
 # 09 Měníme velikosti písma
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/08)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/08)
 
 Nadpisy udělej o něco větší než byly doposud, třeba `3.5rem` a `2.5rem`
 
@@ -312,7 +315,7 @@ h2 { background-color: rgb(0, 128, 0); }
 
 # 10 Nastavíme barvu pozadí
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/09)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/09)
 
 1. Obal každou ze tří sekcí webu: kontakt, galerii a patičku tagem `<div>`. Patička je odstavec na konci stránky s informací o licenci.
 1. Nastav všem třem nějakou (stejnou) světlou barvu pozadí, třeba `#fcf5cf`
@@ -338,7 +341,7 @@ h2 { background-color: rgb(0, 128, 0); }
 
 # 11 Přidáme třídy
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/10)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/10)
 
 1. Pomocí tříd nastav každé sekci jinou barvu pozadí (dej si pozor na dostatečný kontrast).
 
@@ -369,21 +372,21 @@ Nezapomeň smazat nastavení barvy pozadí pro všechny prvků `<div>`, které u
 
 /* rozměry */
 .tip {
-	width: 300px;
-	height: 100px;
-	max-width: 100%;
+    width: 300px;
+    height: 100px;
+    max-width: 100%;
 }
 
 /* ohraničení */
 div {
-	border-width: 1px;
-	border-style: solid;
-	border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
 }
 
 /* totéž pomocí shorthandu */
 div {
-	border: 1px solid black;
+    border: 1px solid black;
 }
 
 /* vnitřní výplň */
@@ -398,7 +401,7 @@ div {
 
 # 12 Nastavíme obrázkům šířku
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/11)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/11)
 
 1. Nastav obrázkům šířku 300 pixelů.
 1. Nastav obrázkům zelený rámeček (třeba `#559933`) široký 2 pixely.
@@ -411,7 +414,7 @@ div {
 
 # 16 Odsadíme obsah od okrajů
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/15)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/15)
 
 1. Odsaď obsah kontaktu, galerie a patičky od okraje jejich boxu, ať na něj není tak nalepený, třeba `1rem`.
 1. V patičce odsaď text od horního a dolního okraje víc než po stranách.
@@ -447,8 +450,8 @@ Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a K
 
 ```html
 <ul>
-	<li>odrážkový</li>
-	<li>seznam</li>
+    <li>odrážkový</li>
+    <li>seznam</li>
 </ul>
 ```
 
@@ -456,7 +459,7 @@ Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a K
 
 # 20 Přidáme navigaci (menu)
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/19)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/19)
 
 1. Vytvoř navigaci jako odrážkový seznam: podle sekcí stránky a nezapomeň na odkaz na úvodní stránku! Bude tedy mít celkem 3 položky.
 1. Navigaci umísti za úvod.
@@ -481,7 +484,7 @@ span { display: inline-block; }
 
 # 21 Odkazy v navigaci na jeden řádek
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/20)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/20)
 
 1. Přidej menu (`<ul>`) třídu `menu`.
 1. Nastyluj menu tak, aby položky byly vedle sebe.
@@ -510,17 +513,17 @@ span { display: inline-block; }
 
 # 22 Přidáme sekci _O mně_
 
-> Pokud jsi nestihla předchozí cvičení, udělej si znovu _fork_ [z této verze](https://repl.it/@tvorimweb1/21)
+> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/21)
 
 Všechno, co je potřeba pro tenhle úkol, už umíš.
 
 1. Přidej další sekci, tentokrát `O mně` nad Galerii.
 1. Dej do ní text
-	```
-	Ahoj. Jmenuji se Kryštůfek Robin a jsem malý chlapec, se kterým se zvířátka ze Stokorcového lesa spřátelila a hrají si se mnou jako s jediným člověkem z lidského světa. Kamarádím se s Medvídkem Pú, Prasátkem, Ijáčkem, Tygrem, Králíčkem se všemi jeho přáteli a příbuznými, Sovou a Klokanicí s Klokánkem.
+    ```
+    Ahoj. Jmenuji se Kryštůfek Robin a jsem malý chlapec, se kterým se zvířátka ze Stokorcového lesa spřátelila a hrají si se mnou jako s jediným člověkem z lidského světa. Kamarádím se s Medvídkem Pú, Prasátkem, Ijáčkem, Tygrem, Králíčkem se všemi jeho přáteli a příbuznými, Sovou a Klokanicí s Klokánkem.
 
-	Znám a mám nejrůznější věci, které svým kamarádům rád půjčuji a rád je všemu naučím. Rád pořádám nebezpečné výpravy, ale všechna zvířátka se se mnou cítí v bezpečí. Občas cestuji do Afriky a zase zpátky, a mám moc rád svého medvídka. Dopoledne trávím hledáním Hnetubuda.
-	```
+    Znám a mám nejrůznější věci, které svým kamarádům rád půjčuji a rád je všemu naučím. Rád pořádám nebezpečné výpravy, ale všechna zvířátka se se mnou cítí v bezpečí. Občas cestuji do Afriky a zase zpátky, a mám moc rád svého medvídka. Dopoledne trávím hledáním Hnetubuda.
+    ```
 1. Před text dej obrázek `krystufek-robin.png`.
 1. Nastav barvu pozadí nové sekce na nějakou světle modrou, třeba `#ccf2ff`.
 1. Dej hotovo.
@@ -546,4 +549,4 @@ Pokud ne, nastav šířku na celou šířku pomocí třídy `obrazek-siroky`, kt
 
 [Púův web, jak by taky mohl vypadat, když se udělají všechny bonusové úkoly (v plné verzi workshopu)](https://24--tvorimweb1.repl.co/) a jeho [zdrojové kódy](https://repl.it/@tvorimweb1/24)
 
-4.&thinsp;4.&nbsp;2020 v1
+4.&thinsp;4.&nbsp;2020 v2
