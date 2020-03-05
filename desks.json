@@ -52,13 +52,13 @@
         "55": { "name": "", "coach": "", "layout": { "position": { "x": 5, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
         "56": { "name": "", "coach": "", "layout": { "position": { "x": 6, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
 
-        "60": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
-        "61": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
-        "62": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
-        "63": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
-        "64": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
-        "65": { "name": "", "coach": "", "layout": { "position": { "x": 5, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
-        "66": { "name": "", "coach": "", "layout": { "position": { "x": 6, "y": 5 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } }
+        "60": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 6 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
+        "61": { "name": "", "coach": "", "layout": { "position": { "x": 1, "y": 6 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
+        "62": { "name": "", "coach": "", "layout": { "position": { "x": 2, "y": 6 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
+        "63": { "name": "", "coach": "", "layout": { "position": { "x": 3, "y": 6 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
+        "64": { "name": "", "coach": "", "layout": { "position": { "x": 4, "y": 6 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
+        "65": { "name": "", "coach": "", "layout": { "position": { "x": 5, "y": 6 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
+        "66": { "name": "", "coach": "", "layout": { "position": { "x": 6, "y": 6 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } }
 
     }
 }
