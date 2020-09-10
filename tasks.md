@@ -481,12 +481,11 @@ div {
 1. Nastav kartičkám kamarádů větší šířku, třeba 320px pomocí nové třídy `kamarad`
 2. Nastav kartičkám kamarádů zelený rámeček (třeba `#559933`) široký 2 pixely.
 3. Mapě nastav rámeček žlutý, třeba `rgb(255, 229, 102)`, opět pomocí nové třídy.
-1. Přidej vnitřní odsazení (padding) galerii a kontaktu `1rem`. Můžeš si na to udělat jednu novou třídu nebo použít ty stávající.
-1. V patičce odsaď text od horního a dolního okraje víc než po stranách.
-1. Nastav mapě (jejímu obalovacímu prvku `<figure>`) maximální šířku `700px`.
-2. Vynuluj margin nadpisu h1 
-3. Zvětši padding navigace
-4. Dej hotovo.
+4. Přidej vnitřní odsazení (padding) galerii a kontaktu `1rem`. Můžeš si na to udělat jednu novou třídu nebo použít ty stávající.
+5. V patičce odsaď text od horního a dolního okraje víc než po stranách.
+6. Nastav mapě (jejímu obalovacímu prvku `<figure>`) maximální šířku `700px`.
+7. Vynuluj margin nadpisu h1 
+8. Dej hotovo.
 
 
 ---
