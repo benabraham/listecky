@@ -1,26 +1,13 @@
+# Založíme si účet na Glitch.com
 
-
-# Založíme si účet na Repl.it
-
-1. [otevři si Repl](https://repl.it)
-1. Dole klikni na _Sign up_.
-1. Uživatelské jméno musí být 2‒15 znaků dlouhé.
+1. [otevři si Glitch](https://glitch.com)
 1. Zadej e-mail, na který máš přístup, přijde ti na něj ověřovací odkaz.
-1. Heslo musí být nejméně 6 znaků dlouhé.
-1. V dalším okně vyplň svůj profil (stačí skutečné jméno a příjmení ‒ zjednoduší to komunikaci).
-1. Podívej se do doručené pošty (prohledej i spam) a najdi e-mail od Repl.it s textem _Verify your e-mail_. Klikni na odkaz v něm obsažený a účet máš ověřen.
-1. Přijmi pozvání do Classroom kliknutím na tento odkaz https://repl.it/classroom/invite/m9zMC3x
+1. Zadej raději skutečné jméno a příjmení ‒ zjednoduší to komunikaci.
 1. Dej nám vědět, že máš hotovo, kliknutím na tlačítko „Hotovo“ na této stránce.
 
 ---
 
 ## Shrnutí zkratek
-
-### Začátek, konec řádku
-
-Win: <kbd>Home</kbd> <kbd>End</kbd>
-
-Mac: <kbd>Command+→</kbd>, <kbd>Command+←</kbd>
 
 ### Výběr všeho
 
@@ -54,23 +41,11 @@ Mac:  <kbd>Cmd+X</kbd>
 
 _lze odsazovat více řádků najednou, stačí je vybrat_
 
-
-### spustit kód 
-
-(to samé, co kliknutí na zelené tlačítko run)
-
-Win:  <kbd>Ctrl+Enter</kbd>
-
-Mac:  <kbd>Cmd+Enter</kbd> 
-
-
 ----
 
-# 01 Osaháme si Repl.it a klávesové zkratky
+# Osaháme si Glitch a klávesové zkratky
 
-1. Na stránce https://repl.it/student/ si otevři classroom _Tvořím web 1…_ a v _Projects_ klikni na _me280-ls-20_
-1. Podívej se pod ozubené kolečko (nastavení): nastav si velikost textu (_font size_) a barevné schéma (_theme_) tak, abys kód dobře viděla.
-1. Dále si případně pod ozubeným kolečkem nastav: _code intelligence_ na _disabled_
+1. Otevři si https://glitch.com/edit/#!/remix/pooh
 1. Zkopíruj si následující text a vlož ho do souboru `index.html` **místo** řádku s komentářem v souboru (šedý text).
     ```
     Web Kryštůfka Robina
@@ -84,7 +59,7 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 ## Shrnutí výkladu
 
-```html
+```htmlmixed
 <h1>Nadpis nejvyšší úrovně</h1>
 
 <p>odstavec</p>
@@ -94,20 +69,18 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 ----
 
-# 02 Zkusíme si první tagy
+# Zkusíme si první tagy
 
 1. Vytvoř nadpis nejvyšší úrovně (název webu) z textu „Web Kryštůfka Robina“.
 1. Zbývající větu označkuj jako odstavec.
 1. Protože kamarádství je pro medvídka Pú podstatné, označ text „dobré kamarády“ jako velmi důležitý.
 1. Nezapomeň dát vědět, že máš hotovo a nezapomeň na to ani až dokončíš další úkoly.
 
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://02--tvorimweb1.repl.co/)
-
 ---
 
 ## Shrnutí výkladu
 
-```html
+```htmlmixed
 <h1>Nadpis nejvyšší úrovně</h1>
 
 <h2>Nadpis druhé úrovně</h2>
@@ -119,9 +92,7 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 ----
 
-# 03 Přidáme _Kontakt_
-
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/02)
+# Přidáme _Kontakt_
 
 1. Vytvoř sekci Kontakt, tedy
     - nadpis `Kontakt`
@@ -132,39 +103,33 @@ Mac:  <kbd>Cmd+Enter</kbd>
     To je mapa, která tě dovede do Stokorcového lesa, kde s medvídkem Pú a jeho kamarády provádíme všechny naše lotroviny.
     ```
 1. Ze slova „Facebooku“ udělej odkaz na Facebook.
-1. Vyzkoušej, že odkaz funguje.
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://03--tvorimweb1.repl.co/)
+2. Vyzkoušej, že odkaz funguje.
+3. Dej hotovo.
 
 ----
 
 ## Bonus (pokud máš hotovo)
 
 1. Slovo „e-mail“ udělej jako odkaz na medvídkův mail (pooh@example.com), [najdi si jak](https://google.com).
-1. Přidej stejnému odkazu další atribut `title` s hodnotou _Když pošleš med, budu radši._. Co to dělá, zjištíš tak, že zaparkuješ šipku myši (kurzor) nad odkazem v náhledu stránky.
+2. Přidej stejnému odkazu další atribut `title` s hodnotou _Když pošleš med, budu radši._. Co to dělá, zjistíš tak, že zaparkuješ šipku myši (kurzor) nad odkazem v náhledu stránky.
 
 ---
 
 ## Shrnutí výkladu
 
-```html
+```htmlmixed
 <img src="pu.jpg" alt="medvěd">
 ```
 
 ----
 
-# 04 Přidáme mapu
-
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/03)
+# Přidáme mapu
 
 1. Přidej obrázek mapy do kontaktu za text, který už tam máš.
-1. Přidej za mapu licencí vyžadované texty:`Autorem skenů je Paul K. pod licencí CC 2.0`.
-1. Vytvoř odkaz z „Paul K.“ `https://www.flickr.com/photos/bibliodyssey/3066814584`
-1. Vytvoř odkaz na licenci z textu „licencí CC 2.0“ `https://creativecommons.org/licenses/by/2.0/`
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://04--tvorimweb1.repl.co/)
+2. Přidej za mapu licencí vyžadované texty:`Autorem skenů je Paul K. pod licencí CC 2.0`.
+3. Vytvoř odkaz z „Paul K.“ `https://www.flickr.com/photos/bibliodyssey/3066814584`
+4. Vytvoř odkaz na licenci z textu „licencí CC 2.0“ `https://creativecommons.org/licenses/by/2.0/`
+5. Dej hotovo.
 
 ---
 
@@ -175,9 +140,7 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 ----
 
-# 05 Přidáme obrázkovou galerii
-
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/04)
+# Přidáme obrázkovou galerii
 
 **Před** nadpis _Kontakt_ dej další nadpis „Galerie“ a pod něj text `Společně se svými zvířecími kamarády zažíváme bláznivá dobrodružství.` a tyto obrázky (můžeš si zkopírovat)
 ```
@@ -194,13 +157,155 @@ Mac:  <kbd>Cmd+Enter</kbd>
 
 **Dej hotovo.**
 
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://05--tvorimweb1.repl.co/)
+---
+
+## Shrnutí výkladu
+
+```htmlmixed
+<head>
+    …
+    <link rel="stylesheet" href="nazevsouboru.css">
+    …
+</head>
+```
+
+----
+
+# Připojíme MVP.css
+
+1. Připoj si `https://unpkg.com/mvp.css` k HTML.
+2. Dej hotovo.
 
 ---
 
 ## Shrnutí výkladu
 
-```html
+```htmlmixed
+<header> záhlaví </header>
+<main> hlavní obsah stránky </main>
+<footer> patička </footer>
+<article> obsah </article>
+<div> obsah </div>
+```
+----
+
+# Vyznačíme části stránky
+
+1. Záhlaví bude obsahovat název webu a úvodní větu.
+2. Do patičky dej informaci o autorských právech.
+3. Hlavní obsah stránky je vše ostatní.
+4. V hlavním obsahu zabal do vlastního `<article>` jak galerii, tak i kontakt.
+5. Dej hotovo.
+
+---
+
+## Shrnutí výkladu
+
+```htmlmixed
+<section>
+    <aside> karta </aside>
+</section>
+```
+
+----
+
+# Přidáme sekci s charakteristikou kamarádů
+
+1. každý kamarád bude mít vlastní kartičku (`<aside>`)
+2. jméno jako nadpis (dbej na hierarchii)
+3. popis jako odstavec
+4. celou sekci umísti do `<header>` na konec
+5. použij následující texty:
+
+```
+Medvídek Pú
+je malý, tlusťoučký, trošku přitroublý a 
+hlavně věčně hladový medvídek, jehož hlavní 
+touhou je mít pro sebe pořád dostatek medu.
+
+Ijáček
+je snad nejsmutnější člen celé party 
+ze Stokorcového lesa. Bývá často zamračený 
+a neustále někde hledá svůj ztracený ocásek.
+
+Prasátko 
+je malé a drobné, ale s velkým srdcem. 
+Občas má mindráky z toho, jak je malinké 
+a slabé a je stále vystrašené.
+```
+---
+
+## Shrnutí výkladu
+
+
+```htmlmixed
+<section>
+    <aside> 
+        <figure> 
+            <img>
+        </figure> 
+    </aside>
+</section>
+```
+
+Zkratky pro vícenásobný kurzor:
+
+<kbd>Myš + Alt</kbd> táhnutím výběr přes více řádků pod sebou
+<kbd>Ctrl/Cmd + D</kbd> pokud je vybrán text, přidá do výběru další výskyty téhož textu
+<kbd>Esc</kbd> zrušit výběr
+
+----
+
+# Upravíme galerii
+
+1. Každý obrázek zabal do značky `<figure>`.
+2. Každou `<figure>` obal do `<aside>`.
+3. Celé to obal do `<section>`
+
+## Uprav také mapu
+
+1. Mapu zabal do značky `<figure>`
+
+
+---
+
+## Shrnutí výkladu
+
+```htmlmixed
+<nav>
+    odkazy sem!
+</nav>
+
+<ul>
+    <li>odrážkový</li>
+    <li>seznam</li>
+</ul>
+```
+
+
+```htmlmixed
+<a href="#nazev-kotvy">Odkaz na „kotvu“</a>
+
+<article id="nazev-kotvy">…</article>
+
+```
+
+----
+
+# Přidáme navigaci (menu)
+
+1. Vytvoř navigaci jako odrážkový seznam: podle sekcí stránky. Bude tedy mít celkem 2 položky.
+2. Navigaci umísti jako první věc v záhlaví.
+3. Název stránky je dobré mít jako odkaz na úvodní stránku. Udělej z něj tedy odkaz a dej ho jako první v navigaci.
+4. Přidej oběma sekcím unikátní hodnotu atributu `id`.
+5. Oběma odkazům na sekce v navigaci nastav hodnotu atributu `href` aby vedly na příslušnou sekci.
+6. Dej hotovo.
+
+---
+
+## Shrnutí výkladu
+
+```htmlmixed
 <head>
     …
     <link rel="stylesheet" href="nazevsouboru.css">
@@ -217,16 +322,14 @@ p {
 
 ----
 
-# 07 Připojíme styly
+# Připojíme vlastní styly
 
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/06)
+Pokud si nejsi jistý, že máš vše ok, tak si udělej remix z [této verze](https://glitch.com/~pooh-stop-a)
 
-1. Připoj si `styly.css` k HTML.
-1. Nastav barvu písma pro celou stránku (třeba šedou `dimgrey`)
-1. Nastav oběma nadpisům jinou barvu (třeba zelenou `darkgreen`)
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://07--tvorimweb1.repl.co/)
+1. Připoj si `styly.css` k HTML za již připojené mvp.css.
+2. Nastav barvu písma pro celou stránku (třeba šedou `dimgrey`)
+3. Nastav všem nadpisům jinou barvu (třeba zelenou `darkgreen`)
+4. Dej hotovo.
 
 ---
 
@@ -246,26 +349,21 @@ p {
 
 ----
 
-# 08 Upravíme písmo
+# Upravíme písmo
 
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/07)
-
-1. Nastav celé stránce bezpatkové písmo.
-1. Nastav odkazům tučný řez písma.
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://08--tvorimweb1.repl.co/)
+1. Nastav nadpisům patkové písmo.
+2. Text v patičce vycentruj.
+3. Dej hotovo.
 
 
 ----
 
 ## Bonus
 
-1. Vycentruj hlavní nadpis.
 1. Použij zajímavější písma. Na nadpisy písmo _Mali_ a pro všechen ostatní text nastav písmo _Nunito_.
-1. Abys je mohla používat, je potřeba připojit fonty ze služby Google Fonts. To se udělá připojením CSS (získá se na jejich stránce v závislosti na požadovaných písmech a jejich řezech). Do hlavičky dokumentu přidej následující `link`, který písma načte:
-`<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali:400,700|Nunito:400,700&amp;subset=latin-ext">`
-1. Odteď s nimi můžeš v CSS pracovat, upravuj vlastnost `font-family`.
+2. Abys je mohla používat, je potřeba připojit fonty ze služby Google Fonts. To se udělá připojením CSS (získá se na jejich stránce v závislosti na požadovaných písmech a jejich řezech). Do hlavičky dokumentu přidej následující `link`, který písma načte:
+`<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">`
+3. Odteď s nimi můžeš v CSS pracovat, upravuj vlastnost `font-family` (`Mali` a `Nunito`).
 
 ---
 
@@ -281,15 +379,11 @@ font-size: 20px;
 
 ----
 
-# 09 Měníme velikosti písma
+# Měníme velikosti písma
 
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/08)
-
-Nadpisy udělej o něco větší než byly doposud, třeba `3.5rem` a `2.5rem`
-
-**Dej hotovo**
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://09--tvorimweb1.repl.co/)
+1. Nadpis první úrovně je moc velký, zmenši ho třeba na `1rem`.
+2. Nadpisy druhé úrovně naopak zvětšíme, třeba na `2.5rem`.
+3. Dej hotovo
 
 ----
 
@@ -313,35 +407,28 @@ h2 { background-color: rgb(0, 128, 0); }
 
 ----
 
-# 10 Nastavíme barvu pozadí
+# Nastavíme barvu pozadí
 
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/09)
-
-1. Obal každou ze tří sekcí webu: kontakt, galerii a patičku tagem `<div>`. Patička je odstavec na konci stránky s informací o licenci.
-1. Nastav všem třem nějakou (stejnou) světlou barvu pozadí, třeba `#fcf5cf`
+1. Nastav všem Galerii, Kontaktům a patičce nějakou (stejnou) světlou barvu pozadí, třeba `#fcf5cf`
 1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://10--tvorimweb1.repl.co/)
 
 ---
 
 ## Shrnutí výkladu
 
-```html
-<h1 class="tip">Nadpis článku</h1>
-<p class="perex tip">Úvodní odstavec článku…</p>
+```htmlmixed
+<h1 class="prvni-trida">Modře</h1>
+<p class="prvni-trida druha-trida">Modře a větší</p>
 ```
 
 ```css
-.tip { color: blue; }
-.perex { font-size: 1.2rem; }
+.prvni-trida { color: blue; }
+.druha-trida { font-size: 1.2rem; }
 ```
 
 ----
 
-# 11 Přidáme třídy
-
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/10)
+# Přidáme třídy
 
 1. Pomocí tříd nastav každé sekci jinou barvu pozadí (dej si pozor na dostatečný kontrast).
 
@@ -351,18 +438,9 @@ Můžeš použít třeba tyto barvy: `#fcf5cf`, `#defccf`, `#804000`.
 
 _Tip: Poslední barva je hodně tmavá a text nebyl čitelný, nastav proto barvu textu v patičce na bílou._
 
-Nezapomeň smazat nastavení barvy pozadí pro všechny prvků `<div>`, které už není potřeba.
+Nezapomeň smazat nastavení barvy pozadí pro všechny prvky `<article>` a `<footer>`, které už není potřeba (pozadí budou tedy nastavena přes třídu).
 
 **Dej hotovo.**
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://11--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-1. V patičce vycentruj text
-1. Přidej třídu `.licence` a s její pomocí zmenši text v odstavci s licencí v patičce.
 
 ---
 
@@ -392,87 +470,28 @@ div {
 /* vnitřní výplň */
 .tip { padding: 25px; }
 
-
 /* vnější okraj */
 .tip { margin: 10px; }
 ```
 
 ----
 
-# 12 Nastavíme obrázkům šířku
+# Nastavíme šířku
 
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/11)
-
-1. Nastav obrázkům šířku 300 pixelů.
-1. Nastav obrázkům zelený rámeček (třeba `#559933`) široký 2 pixely.
-1. Mapě nastav rámeček žlutý, třeba `rgb(255, 229, 102)`.
-1. Přidej vnitřní odsazení (padding) `0.6rem`.
-1. Dej hotovo.
-1. Přidej obrázkům vnější odsazení `0.3rem`, aby na sebe nebyly tak nalepené.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://15--tvorimweb1.repl.co/)
-
-# 16 Odsadíme obsah od okrajů
-
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/15)
-
-1. Odsaď obsah kontaktu, galerie a patičky od okraje jejich boxu, ať na něj není tak nalepený, třeba `1rem`.
+1. Nastav kartičkám kamarádů větší šířku, třeba 320px pomocí nové třídy `kamarad`
+2. Nastav kartičkám kamarádů zelený rámeček (třeba `#559933`) široký 2 pixely.
+3. Mapě nastav rámeček žlutý, třeba `rgb(255, 229, 102)`, opět pomocí nové třídy.
+1. Přidej vnitřní odsazení (padding) galerii a kontaktu `1rem`. Můžeš si na to udělat jednu novou třídu nebo použít ty stávající.
 1. V patičce odsaď text od horního a dolního okraje víc než po stranách.
-1. Nastav maximální šířku `960px` sekcím Kontakt a Galerie.
+1. Nastav mapě (jejímu obalovacímu prvku `<figure>`) maximální šířku `700px`.
 1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://16--tvorimweb1.repl.co/)
-
-----
-
-## Bonusy
-
-
-### První
-
-1. Obrázku mapy nastav šířku na celou šířku stránky pomocí třídy `obrazek-siroky` a procent.
-1. Změň obrázkům v galerii barvu třeba dolního ohraničení třeba na `#2a4d19`.
-1. Nastav obrázkům také barvu pozadí, díky paddingu bude i vidět.
-1. Nastav obrázkům větší margin dole než na ostatních stranách.
-
-### Druhý
-
-Vycentruj *vodorovně* (vlevo a vpravo bude stejně volného místa) Galerii a Kontakt ‒ [najdi si jak](https://www.google.cz/search?q=horizontální%20centrování%20css)
-
-### Třetí
-
-1. Pokud máš Galerii a Kontakt vycentrovanou z předchozího Bonusu, je třeba nyní stejným způsobem vycentrovat _div_ s třídou `obsah`.
-1. Původní centrování můžeš odebrat, nemá už na nic vliv.
 
 ---
 
-## Shrnutí výkladu
-
-```html
-<ul>
-    <li>odrážkový</li>
-    <li>seznam</li>
-</ul>
-```
-
-----
-
-# 20 Přidáme navigaci (menu)
-
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/19)
-
-1. Vytvoř navigaci jako odrážkový seznam: podle sekcí stránky a nezapomeň na odkaz na úvodní stránku! Bude tedy mít celkem 3 položky.
-1. Navigaci umísti za úvod.
-1. To, kam odkazy povedou (atribut `href`) zatím neřeš a nechej ho prázdný: to znamená jen napsat uvozovky a nic mezi ně.
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://20--tvorimweb1.repl.co/)
-
----
 
 ## Shrnutí výkladu
 
-```html
+```htmlmixed
 a { display: block; }
 
 div { display: inline; }
@@ -482,18 +501,11 @@ span { display: inline-block; }
 
 ----
 
-# 21 Odkazy v navigaci na jeden řádek
+# Nadpis a text s popisem kamarádů do jednoho řádku
 
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/20)
-
-1. Přidej menu (`<ul>`) třídu `menu`.
-1. Nastyluj menu tak, aby položky byly vedle sebe.
-1. Položky vycentruj.
-1. Aby se na ně lépe trefovalo, zvětši písmo odkazů, třeba na `1.5rem`.
-1. Aby se na ně trefovalo ještě líp, dej jim padding vertikálně i horizontálně.
-1. Dej hotovo.
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://21--tvorimweb1.repl.co/)
+1. Nadpisům v kartách kamarádů změň vlastnost `display` na `inline`;
+2. Zmenši písmo nadpisům v kartách třeba na `1.2rem`.
+3. Dej hotovo.
 
 ----
 
@@ -502,18 +514,15 @@ span { display: inline-block; }
 1. Odstraň odkazům v menu podtržení.
 1. Odstraň odkazům v menu tučnost.
 
-## Případně ještě můžeš změnit barevnost menu:
+### Případně ještě můžeš změnit barevnost menu:
 
 1. Podbarvi menu třeba zelenou `#559933`.
 1. Aby se daly položky přečíst, obarvi odkazy třeba na žluto `#ffe566`.
 1. Položku v menu po najetí kurzorem nastyluj inverzně (zelený text na žlutém pozadí).
-1. Odstraň bílou mezeru mezi menu a Galerií.
 
 ---
 
-# 22 Přidáme sekci _O mně_
-
-> Pokud jsi nestihla předchozí cvičení, udělej si _fork_ (velké tlačítko nahoře) [z této verze](https://repl.it/@tvorimweb1/21)
+# Přidáme sekci _O mně_
 
 Všechno, co je potřeba pro tenhle úkol, už umíš.
 
@@ -528,25 +537,12 @@ Všechno, co je potřeba pro tenhle úkol, už umíš.
 1. Nastav barvu pozadí nové sekce na nějakou světle modrou, třeba `#ccf2ff`.
 1. Dej hotovo.
 
-
-> Pokud si nejsi jista, podívej se, jak má [výsledek vypadat](https://22--tvorimweb1.repl.co/)
-
-----
-
-## Bonus
-
-Obrázek Kryštůfka Robina není moc dobře vidět. Líp by vypadal, kdyby byl přes celou šířku stránky.
-
-Pokud už jsi to udělala pro mapu, není nic snazšího než přidat stejnou třídu i tomuhle obrázku.
-
-Pokud ne, nastav šířku na celou šířku pomocí třídy `obrazek-siroky`, které nastavíš šířku v procentech. Udělej to jak s obrázkem v _O mně_, tak mapou v sekci _Kontakt_.
-
 ---
 
-# 24 Dohráno
+## Dohráno
 
-[Všechny úkoly, k dispozici tak, aby sis je mohla projít i doma](https://hackmd.io/ECDLL0EdRBCdi5KTavkj4A)
+[Všechny úkoly, k dispozici tak, aby sis je mohla projít i doma](https://hackmd.io/@vsewebdev/ukoly)
 
-[Púův web, jak by taky mohl vypadat, když se udělají všechny bonusové úkoly (v plné verzi workshopu)](https://24--tvorimweb1.repl.co/) a jeho [zdrojové kódy](https://repl.it/@tvorimweb1/24)
+[Púův web, jak by taky mohl vypadat, když se udělají všechny bonusové úkoly (v plné verzi workshopu)](https://glitch.com/~pooh-final)
 
-4.&thinsp;4.&nbsp;2020 v3
+10.&thinsp;9.&nbsp;2020 v4
