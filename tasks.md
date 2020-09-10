@@ -428,7 +428,7 @@ h2 { background-color: rgb(0, 128, 0); }
 
 ----
 
-# Přidáme třídy
+# Využijeme třídy
 
 1. Pomocí tříd nastav každé sekci jinou barvu pozadí (dej si pozor na dostatečný kontrast).
 
@@ -476,7 +476,7 @@ div {
 
 ----
 
-# Nastavíme šířku
+# Nastavíme rozměry a odsazení
 
 1. Nastav kartičkám kamarádů větší šířku, třeba 320px pomocí nové třídy `kamarad`
 2. Nastav kartičkám kamarádů zelený rámeček (třeba `#559933`) široký 2 pixely.
@@ -484,7 +484,10 @@ div {
 1. Přidej vnitřní odsazení (padding) galerii a kontaktu `1rem`. Můžeš si na to udělat jednu novou třídu nebo použít ty stávající.
 1. V patičce odsaď text od horního a dolního okraje víc než po stranách.
 1. Nastav mapě (jejímu obalovacímu prvku `<figure>`) maximální šířku `700px`.
-1. Dej hotovo.
+2. Vynuluj margin nadpisu h1 
+3. Zvětši padding navigace
+4. Dej hotovo.
+
 
 ---
 
