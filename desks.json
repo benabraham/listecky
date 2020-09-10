@@ -1,7 +1,7 @@
 {
     "size": {
         "x": 7,
-        "y": 10
+        "y": 11
     },
     "desks": {
         "0": { "name": "", "coach": "", "layout": { "position": { "x": 0, "y": 0 }, "rotation": 0, "chairs": 1, "shape": "rectangle" } },
