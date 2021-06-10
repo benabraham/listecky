@@ -149,6 +149,7 @@
 
 ```html
 <a href="https://google.com">odkaz na Google.com</a>
+<a href="mailto:tomas.kout@seznam.com">tomas.kout@seznam.com</a>
 ```
 
 ----
